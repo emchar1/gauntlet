@@ -98,10 +98,10 @@ graph_offset = Vector2(-385.64038, 69.655754)
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_2ieo8"]
 filter_enabled = true
-filters = [".", "Visuals/BodyPivot/TorsoPivot/Head:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot:position", "Visuals/BodyPivot/TorsoPivot:rotation"]
+filters = [".", "Visuals/BodyPivot/TorsoPivot/Head:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot:rotation"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_u3pco"]
-graph_offset = Vector2(-471.93488, -102.61337)
+graph_offset = Vector2(-582.23303, -98.52577)
 nodes/output/position = Vector2(510, 120)
 nodes/Locomotion/node = SubResource("AnimationNodeStateMachine_2ieo8")
 nodes/Locomotion/position = Vector2(-320, -40)
