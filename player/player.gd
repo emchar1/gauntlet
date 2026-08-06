@@ -5,7 +5,7 @@ class_name Player
 # PROPERTIES
 
 enum State {
-	IDLE, RUN, ATTACK, HURT, DEAD
+	IDLE, RUN, ATTACK, HURT, DEAD, NONE
 }
 
 # Components
@@ -23,7 +23,7 @@ var attack_state: State
 
 func _ready() -> void:
 	move_state = State.IDLE
-	attack_state = State.IDLE
+	attack_state = State.NONE
 
 
 func _physics_process(_delta: float) -> void:
@@ -37,9 +37,6 @@ func _physics_process(_delta: float) -> void:
 
 # Player movement function.
 func _player_move():
-	if attack_state == State.ATTACK:
-		return
-	
 	input_component.read_movement()
 	
 	movement_component.move_dir = input_component.move_direction
@@ -53,29 +50,37 @@ func _player_move():
 
 # Player attack function.
 func _player_attack():
-	if movement_component.is_moving:
-		return
-	
 	input_component.read_combat()
 	
 	if input_component.main_pressed:
 		combat_component.start_attack(self)
-	elif input_component.main_released:
-		combat_component.end_attack(self)
+	#elif input_component.main_released: # Handled in attack_finished()
+		#combat_component.end_attack(self)
 	
 	if combat_component.is_attacking:
 		_update_attack_state(State.ATTACK)
-	else:
-		_update_attack_state(State.IDLE)
+	#else: # Handled in attack_finished()
+		#_update_attack_state(State.NONE)
 
 
 # Updates the move state and animation
 func _update_move_state(state: State):
+	if move_state == state:
+		return
+	
 	move_state = state
-	animation_component.play_animation(state)
+	animation_component.play_locomotion(state)
 
 
 # Updates the attack state and animation
 func _update_attack_state(state: State):
+	if attack_state == state:
+		return
+	
 	attack_state = state
-	animation_component.play_animation(state)
+	animation_component.play_combat(state)
+
+
+func attack_finished():
+	combat_component.end_attack(self)
+	_update_attack_state(State.NONE)

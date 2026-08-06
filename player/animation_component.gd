@@ -5,6 +5,7 @@ class_name AnimationComponent
 # PROPERTIES
 
 const LOCOMOTION_PLAYBACK_PATH = "parameters/Locomotion/playback"
+const COMBAT_ONESHOT_PATH = "parameters/OneShot/request"
 
 @export var animation_player: AnimationPlayer
 @export var animation_tree: AnimationTree
@@ -15,17 +16,11 @@ const LOCOMOTION_PLAYBACK_PATH = "parameters/Locomotion/playback"
 func play_animation(state: Player.State):
 	match state:
 		Player.State.IDLE:
-			#animation_player.speed_scale = 1.0
-			#animation_player.play("idle")
 			get_locomotion().travel("idle")
 		Player.State.RUN:
-			#animation_player.speed_scale = 1.5
-			#animation_player.play("run")
 			get_locomotion().travel("run")
 		Player.State.ATTACK:
-			#animation_player.speed_scale = 1.0
-			#animation_player.play("attack1")
-			get_locomotion().travel("attack1")
+			play_one_shot()
 		Player.State.HURT:
 			animation_player.speed_scale = 1.0
 			animation_player.play("hurt")
@@ -33,6 +28,27 @@ func play_animation(state: Player.State):
 			animation_player.speed_scale = 1.0
 
 
+func play_locomotion(state: Player.State):
+	match state:
+		Player.State.IDLE:
+			get_locomotion().travel("idle")
+		Player.State.RUN:
+			get_locomotion().travel("run")
+
+
+func play_combat(state: Player.State):
+	if state == Player.State.ATTACK:
+		play_one_shot()
+	elif state == Player.State.NONE:
+		print("You dun fucked up.")
+
+
 # Helper function to get locomotion playback parameter
 func get_locomotion() -> AnimationNodeStateMachinePlayback:
 	return animation_tree[LOCOMOTION_PLAYBACK_PATH]
+
+
+# OneShot Helper
+func play_one_shot():
+	animation_tree[COMBAT_ONESHOT_PATH] = \
+	AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE

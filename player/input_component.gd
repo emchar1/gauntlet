@@ -68,8 +68,4 @@ func read_combat() -> void:
 # Reads in mouse and actor positioning to calculate aiming.
 # TODO: - Need 3D Raycasting to get mouse aiming to work in 3D.
 func read_aiming(_actor: CharacterBody3D) -> void:
-	#var mouse_position = actor.get_global_mouse_position()
-	#var to_actor = mouse_position - actor.global_position
-	#
-	#aim_direction = to_actor.normalized()
 	pass

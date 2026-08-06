@@ -69,7 +69,7 @@ height = 1.0
 radius = 0.2
 height = 1.0
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rgyib"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8t03j"]
 animation = &"attack1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g6k8r"]
@@ -87,35 +87,29 @@ advance_mode = 0
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g6k8r"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8t03j"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ieo8"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ebec5"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yllr7"]
-advance_mode = 0
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2ieo8"]
 states/End/position = Vector2(633.5, 100.25)
-states/attack1/node = SubResource("AnimationNodeAnimation_rgyib")
-states/attack1/position = Vector2(488.125, 295.53055)
 states/idle/node = SubResource("AnimationNodeAnimation_g6k8r")
 states/idle/position = Vector2(407, 101.5)
 states/run/node = SubResource("AnimationNodeAnimation_boad6")
-states/run/position = Vector2(327.75, 295.5)
-transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_rgyib"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_hg6s5"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_g6k8r"), "run", "attack1", SubResource("AnimationNodeStateMachineTransition_8t03j"), "attack1", "run", SubResource("AnimationNodeStateMachineTransition_2ieo8"), "idle", "attack1", SubResource("AnimationNodeStateMachineTransition_ebec5"), "attack1", "idle", SubResource("AnimationNodeStateMachineTransition_yllr7")]
-graph_offset = Vector2(-313.28046, -5.7940598)
+states/run/position = Vector2(408.125, 297)
+transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_rgyib"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_hg6s5"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_g6k8r")]
+graph_offset = Vector2(-385.64038, 69.655754)
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_2ieo8"]
+filter_enabled = true
+filters = [".", "Visuals/BodyPivot/TorsoPivot/Head:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot:position", "Visuals/BodyPivot/TorsoPivot:rotation"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_u3pco"]
-graph_offset = Vector2(32.63998, -138.5997)
-nodes/output/position = Vector2(560, -10)
+graph_offset = Vector2(-471.93488, -102.61337)
+nodes/output/position = Vector2(510, 120)
 nodes/Locomotion/node = SubResource("AnimationNodeStateMachine_2ieo8")
-nodes/Locomotion/position = Vector2(230, -20)
-node_connections = [&"output", 0, &"Locomotion"]
+nodes/Locomotion/position = Vector2(-320, -40)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_8t03j")
+nodes/Animation/position = Vector2(-260, 240)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_2ieo8")
+nodes/OneShot/position = Vector2(210, 30)
+node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Locomotion", &"OneShot", 1, &"Animation"]
 
 [sub_resource type="Animation" id="Animation_kqu6x"]
 length = 0.001
@@ -312,7 +306,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.46666667, 0.6, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.2617994, 0.61086524, 0), Vector3(0, 1.0471976, 0), Vector3(0.13962634, 0.6981317, 0.13962634), Vector3(0, 1.0471976, 0), Vector3(-0.2617994, 0.61086524, 0)]
+"values": [Vector3(-0.08726646, 0.61086524, 0), Vector3(0, 1.0471976, 0), Vector3(0.13962634, 0.6981317, 0.13962634), Vector3(0, 1.0471976, 0), Vector3(-0.08726646, 0.61086524, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -433,6 +427,20 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646)]
+}
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_yw30f"]
@@ -756,6 +764,9 @@ tracks/12/keys = {
 "values": [Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646)]
 }
 
+[sub_resource type="Animation" id="Animation_yllr7"]
+resource_name = "none"
+
 [sub_resource type="Animation" id="Animation_rkbax"]
 resource_name = "run"
 length = 0.8
@@ -782,7 +793,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.2, 0), Vector3(0, 0.2, 0), Vector3(0, -0.2, 0), Vector3(0, 0.2, 0), Vector3(0, -0.2, 0)]
+"values": [Vector3(0, 0.25, 0), Vector3(0, 0, 0), Vector3(0, 0.25, 0), Vector3(0, 0, 0), Vector3(0, 0.25, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -794,7 +805,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.34906584, 0.34906584, 0), Vector3(-0.17453292, 0, 0), Vector3(-0.34906584, -0.34906584, 0), Vector3(-0.17453292, 0, 0), Vector3(-0.34906584, 0.34906584, 0)]
+"values": [Vector3(-0.34906584, 0.17453292, 0), Vector3(-0.17453292, 0, 0), Vector3(-0.34906584, -0.17453292, 0), Vector3(-0.17453292, 0, 0), Vector3(-0.34906584, 0.17453292, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -854,7 +865,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.85, 0), Vector3(0, -0.75, 0), Vector3(0, -0.85, 0), Vector3(0, -0.75, 0), Vector3(0, -0.85, 0)]
+"values": [Vector3(0, -0.35, 0), Vector3(0, -0.75, 0), Vector3(0, -0.35, 0), Vector3(0, -0.75, 0), Vector3(0, -0.35, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -923,6 +934,7 @@ _data = {
 &"attack1": SubResource("Animation_g1dw6"),
 &"hurt": SubResource("Animation_yw30f"),
 &"idle": SubResource("Animation_oul6g"),
+&"none": SubResource("Animation_yllr7"),
 &"run": SubResource("Animation_rkbax")
 }
 
@@ -1042,6 +1054,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ux1qv")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=550197871]
 tree_root = SubResource("AnimationNodeBlendTree_u3pco")
 anim_player = NodePath("../AnimationPlayer")
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1052487568]
 libraries/ = SubResource("AnimationLibrary_g1dw6")

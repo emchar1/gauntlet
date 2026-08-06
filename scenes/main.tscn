@@ -10,3 +10,7 @@
 transform = Transform3D(1, 0, 0, 0, 0.8231364, 0.56784374, 0, -0.56784374, 0.8231364, 0, 10, 8)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1342485182]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1657107296]
+transform = Transform3D(1, 0, 0, 0, 0.80281746, 0.59622484, 0, -0.59622484, 0.80281746, 0, 10, 0)
+shadow_enabled = true
