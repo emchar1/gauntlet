@@ -5,15 +5,15 @@ class_name Player
 # PROPERTIES
 
 enum State {
-	IDLE, RUN, ATTACK, HURT, DEAD, NONE
+	NONE, IDLE, RUN, ATTACK, HURT, DEAD
 }
 
 # Components
-@onready var input_component = %InputComponent
-@onready var movement_component = %MovementComponent
+@onready var animation_component = %AnimationComponent
 @onready var combat_component = %CombatComponent
 @onready var dodge_component = %DodgeComponent
-@onready var animation_component = %AnimationComponent
+@onready var input_component = %InputComponent
+@onready var movement_component = %MovementComponent
 
 var move_state: State
 var attack_state: State
@@ -53,14 +53,8 @@ func _player_attack():
 	input_component.read_combat()
 	
 	if input_component.main_pressed:
-		combat_component.start_attack(self)
-	#elif input_component.main_released: # Handled in attack_finished()
-		#combat_component.end_attack(self)
-	
-	if combat_component.is_attacking:
-		_update_attack_state(State.ATTACK)
-	#else: # Handled in attack_finished()
-		#_update_attack_state(State.NONE)
+		if combat_component.start_attack(self):
+			_update_attack_state(State.ATTACK)
 
 
 # Updates the move state and animation
@@ -81,6 +75,16 @@ func _update_attack_state(state: State):
 	animation_component.play_combat(state)
 
 
-func attack_finished():
+# ANIMATION PLAYER CALLBACK FUNCTIONS
+
+func attack_start_finished():
+	animation_component.continue_attack(true)
+
+
+func attack_loop_finished():
+	animation_component.continue_attack(input_component.main_pressed)
+
+
+func attack_end_finished():
 	combat_component.end_attack(self)
 	_update_attack_state(State.NONE)

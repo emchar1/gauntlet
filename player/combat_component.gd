@@ -10,11 +10,12 @@ var is_attacking := false
 # FUNCTIONS
 
 # Executes attack for the specified actor (player, enemy, etc.)
-func start_attack(_actor: CharacterBody3D) -> void:
+func start_attack(_actor: CharacterBody3D) -> bool:
 	if is_attacking:
-		return
+		return false
 	
 	is_attacking = true
+	return true
 
 
 # Ends the attack for the player.
