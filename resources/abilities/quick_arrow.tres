@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://d247jaoq51rdi"]
+
+[ext_resource type="PackedScene" uid="uid://3lr1pxxn2te0" path="res://scenes/attacks/arrow.tscn" id="1_emyq1"]
+[ext_resource type="Script" uid="uid://bevu6tut80mwa" path="res://resources/abilities/ability.gd" id="1_vtj14"]
+
+[resource]
+script = ExtResource("1_vtj14")
+scene = ExtResource("1_emyq1")
+cooldown = 0.0
+speed = 40.0
+max_distance = 40.3

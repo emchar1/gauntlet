@@ -1,0 +1,40 @@
+extends Resource
+class_name Ability
+
+
+# VISUALS / SPAWNING
+
+@export var scene: PackedScene
+@export var color: Color = Color(1, 1, 1, 1)
+
+
+# STATS
+
+@export var cooldown: float = 0.2
+@export var damage: float = 2
+@export var speed: float = 10
+@export var max_distance: float = 40
+
+
+# FLAGS
+
+@export var piercing: bool = false
+@export var explodes: bool = false
+@export var usable_while_dodging: bool = false
+
+
+# FUNCTIONS
+
+func configure(obj):
+	obj.color = color
+	#obj.modulate = color
+	
+	#obj.rotation = Vector3(0, 0, PI / 2)
+	
+	obj.damage = damage
+	obj.speed = speed
+	obj.max_distance = max_distance
+	
+	obj.piercing = piercing
+	obj.explodes = explodes
+	obj.usable_while_dodging = usable_while_dodging

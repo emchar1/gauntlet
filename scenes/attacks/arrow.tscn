@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://3lr1pxxn2te0"]
+
+[ext_resource type="Script" uid="uid://i05x6by33xdp" path="res://scenes/attacks/arrow.gd" id="1_cxvvu"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2lmhc"]
+top_radius = 0.0
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3pco"]
+albedo_color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lb7rc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
+albedo_color = Color(0.40784314, 0.25882354, 0.07450981, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n4x87"]
+size = Vector3(0.5, 0.01, 0.07)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jpsmn"]
+radius = 0.25
+height = 0.6
+
+[node name="Arrow" type="Area3D" unique_id=1013970594]
+collision_layer = 16
+collision_mask = 768
+script = ExtResource("1_cxvvu")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=98348504]
+
+[node name="Head" type="MeshInstance3D" parent="Visuals" unique_id=445131855]
+transform = Transform3D(-1.5298985e-08, 0.5, 1.5298985e-08, 0, -2.1855694e-08, 0.35, 0.35, 2.1855694e-08, 6.687399e-16, 0.25, 0, 0)
+mesh = SubResource("CylinderMesh_2lmhc")
+surface_material_override/0 = SubResource("StandardMaterial3D_u3pco")
+
+[node name="Shaft" type="MeshInstance3D" parent="Visuals" unique_id=593007856]
+transform = Transform3D(-3.496911e-09, 1, -3.496911e-09, 0, -4.371139e-08, -0.08, -0.08, -4.371139e-08, 1.5285484e-16, -1, 0, 0)
+mesh = SubResource("CylinderMesh_lb7rc")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="Fletching" type="Node3D" parent="Visuals" unique_id=692853265]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="RFletching" type="Node3D" parent="Visuals/Fletching" unique_id=210931802]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Tail1" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=1785502792]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.1420345)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail2" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=1234888776]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.0333643)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail3" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=278057100]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.9295578)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail4" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=1320459703]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.8254976)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail5" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=72418982]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.7170923)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="TFletching" type="Node3D" parent="Visuals/Fletching" unique_id=998816217]
+transform = Transform3D(-0.70710677, -0.70710677, 0, 0.70710677, -0.70710677, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Tail1" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=1228482755]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.1420345)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail2" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=152062510]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.0333643)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail3" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=241516472]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.9295578)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail4" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=269125409]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.8254976)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail5" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=364991087]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.7170923)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="BFletching" type="Node3D" parent="Visuals/Fletching" unique_id=824757422]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Tail1" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=2018072448]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.1420345)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail2" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=890924785]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.0333643)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail3" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=788246447]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.9295578)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail4" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=961003229]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.8254976)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail5" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=1581734341]
+transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.7170923)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="LFletching" type="Node3D" parent="Visuals/Fletching" unique_id=270065203]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Tail1" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=809368639]
+transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 2.1420345)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail2" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=1418140169]
+transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 2.0335922)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail3" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=1473240553]
+transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 1.923892)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail4" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=448147235]
+transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 1.8228695)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="Tail15" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=883527301]
+transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 1.7235575)
+mesh = SubResource("BoxMesh_n4x87")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1740955878]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.2, 0, 0)
+shape = SubResource("CapsuleShape3D_jpsmn")

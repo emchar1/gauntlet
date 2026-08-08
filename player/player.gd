@@ -15,8 +15,12 @@ enum State {
 @onready var input_component = %InputComponent
 @onready var movement_component = %MovementComponent
 
+@onready var aiming_reticle = $AimingReticle
+
 var move_state: State
 var attack_state: State
+
+var facing_dir := Vector2.RIGHT
 
 
 # FUNCTIONS
@@ -24,6 +28,8 @@ var attack_state: State
 func _ready() -> void:
 	move_state = State.IDLE
 	attack_state = State.NONE
+	
+	combat_component.attack_executed.connect(_helper_attack_executed)
 
 
 func _physics_process(_delta: float) -> void:
@@ -51,6 +57,7 @@ func _player_move():
 # Player attack function.
 func _player_attack():
 	input_component.read_combat()
+	input_component.read_aiming(self)
 	
 	if input_component.main_pressed:
 		if combat_component.start_attack(self):
@@ -81,6 +88,13 @@ func attack_start_finished():
 	animation_component.continue_attack(true)
 
 
+func attack_loop_started():
+	print("loose an arrow!")
+	
+	combat_component.execute_attack(self)
+	#combat_component.update_ability_timers(0)
+
+
 func attack_loop_finished():
 	animation_component.continue_attack(input_component.main_pressed)
 
@@ -88,3 +102,12 @@ func attack_loop_finished():
 func attack_end_finished():
 	combat_component.end_attack(self)
 	_update_attack_state(State.NONE)
+
+
+# SIGNAL CALLBACKS
+
+func _helper_attack_executed(ability: Ability):
+	match ability:
+		combat_component.quick_arrow:
+			facing_dir = input_component.aim_direction
+			print("facing_dir: ", facing_dir)

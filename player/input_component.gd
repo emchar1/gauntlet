@@ -66,6 +66,23 @@ func read_combat() -> void:
 
 
 # Reads in mouse and actor positioning to calculate aiming.
-# TODO: - Need 3D Raycasting to get mouse aiming to work in 3D.
-func read_aiming(_actor: CharacterBody3D) -> void:
-	pass
+func read_aiming(actor: CharacterBody3D) -> void:
+	var camera := actor.get_viewport().get_camera_3d()
+	var mouse_pos := actor.get_viewport().get_mouse_position()
+	
+	var ray_origin := camera.project_ray_origin(mouse_pos)
+	var ray_direction := camera.project_ray_normal(mouse_pos)
+	var plane_y := actor.global_position.y
+	
+	if abs(ray_direction.y) > 0.0001:
+		var distance := (plane_y - ray_origin.y) / ray_direction.y
+		var target := ray_origin + ray_direction * distance
+		
+		var direction_3d := target - actor.global_position
+		direction_3d.y = 0.0
+		
+		# Prevents edge case where arrows shoot backwards if mouse too high up.
+		if distance < 0.0:
+			direction_3d = -direction_3d
+		
+		aim_direction = GameState.map_3d_to_2d(direction_3d).normalized()
