@@ -19,7 +19,6 @@ enum State {
 
 var move_state: State
 var attack_state: State
-
 var facing_dir := Vector2.RIGHT
 
 
@@ -29,6 +28,7 @@ func _ready() -> void:
 	move_state = State.IDLE
 	attack_state = State.NONE
 	
+	combat_component.set_ability_timers()
 	combat_component.attack_executed.connect(_helper_attack_executed)
 
 
@@ -75,6 +75,7 @@ func _update_move_state(state: State):
 
 # Updates the attack state and animation
 func _update_attack_state(state: State):
+	# Prevents locking when holding down the attack button.
 	if attack_state == state:
 		return
 	
@@ -89,8 +90,6 @@ func attack_start_finished():
 
 
 func attack_loop_started():
-	print("loose an arrow!")
-	
 	combat_component.execute_attack(self)
 	#combat_component.update_ability_timers(0)
 
@@ -106,8 +105,8 @@ func attack_end_finished():
 
 # SIGNAL CALLBACKS
 
+# Reorients the facing_dir so arrows always move towards mouse position.
 func _helper_attack_executed(ability: Ability):
 	match ability:
 		combat_component.quick_arrow:
 			facing_dir = input_component.aim_direction
-			print("facing_dir: ", facing_dir)
