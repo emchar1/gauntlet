@@ -8,8 +8,11 @@ var direction := Vector2.ZERO
 var color: Color
 
 var damage: float = 2
-var speed: float = 800
-var max_distance: float = 400
+var speed: float = 40
+var max_distance: float = 40
+
+var initial_velocity: float = 6
+var vertical_velocity: float = 0
 
 var piercing: bool = false
 var explodes: bool = false
@@ -35,13 +38,25 @@ func _physics_process(delta: float) -> void:
 func setup(pos: Vector2, dir: Vector2):
 	position = GameState.map_2d_to_3d(pos)
 	initial_position = pos
-	
 	direction = dir
-	rotation.y = -direction.angle()
+	#rotation.y = -direction.angle()
+	vertical_velocity = initial_velocity
 
 
 func _fire(delta: float):
-	global_position += GameState.map_2d_to_3d(direction) * speed * delta
+	# Horizontal velocity
+	var velocity_3d := GameState.map_2d_to_3d(direction) * speed
+	
+	# Apply gravity to vertical velocity
+	vertical_velocity -= gravity * delta
+	velocity_3d.y = vertical_velocity
+	
+	# Move
+	global_position += velocity_3d * delta
+	
+	# Point arrow along its actual trajectory
+	if velocity_3d.length_squared() > 0.001:
+		look_at(global_position + velocity_3d, Vector3.UP)
 	
 	var current_position = GameState.map_3d_to_2d(global_position)
 	var distance_traveled = initial_position.distance_to(current_position)
