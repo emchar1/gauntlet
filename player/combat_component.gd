@@ -20,7 +20,6 @@ signal attack_executed(ability: Ability)
 var ability_timers: Dictionary = {}
 
 # States
-var is_attacking := false
 var is_aiming := false
 var is_performing_ultimate := false
 
@@ -43,31 +42,17 @@ func update_ability_timers(delta: float) -> void:
 
 
 # Executes attack for the specified actor (player, enemy, etc.)
-func start_attack(_actor: CharacterBody3D) -> bool:
-	if is_attacking:
-		return false
-	
-	is_attacking = true
-	return true
-
-
-# Ends the attack for the player.
-func end_attack(_actor: CharacterBody3D) -> void:
-	is_attacking = false
-
-
-# Executes attack for the specified actor (player, enemy, etc.)
 func execute_attack(actor: CharacterBody3D) -> void:
-	if input_component.main_pressed:
-		if not _can_use(quick_arrow):
-			return
-		
-		is_attacking = true
-		attack_executed.emit(quick_arrow) # ORDER MATTERS!!! MUST GO HERE!
-		_use_ability(actor, quick_arrow)
+	#if input_component.main_pressed:
+	if not _can_use(quick_arrow):
+		return
 	
-	elif input_component.main_released:
-		is_attacking = false
+	#is_attacking = true
+	attack_executed.emit(quick_arrow) # ORDER MATTERS!!! MUST GO HERE!
+	_use_ability(actor, quick_arrow)
+	
+	#elif input_component.main_released:
+		#is_attacking = false
 
 
 # HELPER FUNCTIONS

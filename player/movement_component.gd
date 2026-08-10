@@ -18,17 +18,6 @@ func update_movement(actor: CharacterBody3D) -> void:
 	actor.velocity.z = move_dir.y * speed
 	
 	is_moving = move_dir != Vector2.ZERO
-	
-	# ROTATION
-	if actor and move_dir.length_squared() > 0.001:
-		var look_dir := Vector3(-move_dir.x, 0.0, -move_dir.y).normalized()
-		var target_angle := atan2(look_dir.x, look_dir.z)
-		
-		actor.rotation.y = lerp_angle(
-			actor.rotation.y,
-			target_angle,
-			0.2
-		)
 
 
 # Updates the movement speed.
