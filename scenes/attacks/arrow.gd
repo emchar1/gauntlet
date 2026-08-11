@@ -39,7 +39,7 @@ func setup(pos: Vector2, dir: Vector2):
 	position = GameState.map_2d_to_3d(pos)
 	initial_position = pos
 	direction = dir
-	#rotation.y = -direction.angle()
+	rotation.y = -direction.angle() - (PI / 2.0)
 	vertical_velocity = initial_velocity
 
 

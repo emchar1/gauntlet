@@ -16,6 +16,7 @@ enum State {
 @onready var movement_component = %MovementComponent
 
 @onready var aiming_reticle = $AimingReticle
+var aiming_reticle_tween: Tween
 
 var move_state: State
 var attack_state: State
@@ -76,8 +77,33 @@ func _update_facing() -> void:
 
 
 func _update_aiming_reticle():
-	# TODO: - Charged Shot
-	aiming_reticle.visible = input_component.charge_held
+	var cylinder = aiming_reticle.mesh as CylinderMesh
+	var tween_speed: float = 0.5
+	
+	if input_component.charge_pressed:
+		if aiming_reticle_tween:
+			aiming_reticle_tween.kill()
+		
+		aiming_reticle_tween = create_tween()
+		aiming_reticle_tween.tween_property(
+			aiming_reticle,
+			"transparency",
+			0.0,
+			tween_speed
+		)
+		aiming_reticle_tween.parallel().tween_property(
+			cylinder,
+			"bottom_radius",
+			1.0,
+			tween_speed
+		)
+		
+	elif input_component.charge_released:
+		if aiming_reticle_tween:
+			aiming_reticle_tween.kill()
+		
+		aiming_reticle.transparency = 1.0
+		cylinder.bottom_radius = 20.0
 
 
 # Player attack function.
