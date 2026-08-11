@@ -58,30 +58,26 @@ func _player_move():
 
 # Updates the direction player is facing based on if aiming vs movement
 func _update_facing() -> void:
-	if combat_component.is_aiming:
-		# Face mouse pointer
-		var target_angle = _get_aim_target_angle()
-		var lerp_speed: float = 0.5
+	if input_component.charge_pressed:
+		var target_angle := _get_target_angle(-input_component.aim_direction)
+		rotation.y = target_angle
 		
-		# TODO: - Charged Shot
-		if input_component.charge_pressed:
-			lerp_speed = 0.02
+	elif input_component.charge_held:
+		var target_angle := _get_target_angle(-input_component.aim_direction)
+		rotation.y = lerp_angle(rotation.y, target_angle, 0.02)
 		
-		rotation.y = lerp_angle(rotation.y, target_angle, lerp_speed)
+	elif combat_component.is_aiming:
+		var target_angle := _get_target_angle(-input_component.aim_direction)
+		rotation.y = lerp_angle(rotation.y, target_angle, 0.5)
 		
 	elif movement_component.is_moving:
-		# Face movement
-		var look_dir := GameState.map_2d_to_3d(
-			-input_component.move_direction
-		).normalized()
-		
-		var target_angle := atan2(look_dir.x, look_dir.z)
+		var target_angle := _get_target_angle(-input_component.move_direction)
 		rotation.y = lerp_angle(rotation.y, target_angle, 0.5)
 
 
 func _update_aiming_reticle():
 	# TODO: - Charged Shot
-	aiming_reticle.visible = input_component.charge_pressed
+	aiming_reticle.visible = input_component.charge_held
 
 
 # Player attack function.
@@ -118,8 +114,9 @@ func _update_attack_state(state: State):
 
 
 # Retrieves the target angle based on the aim direction.
-func _get_aim_target_angle() -> float:
-	return -input_component.aim_direction.angle() - (PI / 2.0)
+func _get_target_angle(direction: Vector2) -> float:
+	var aim_dir := GameState.map_2d_to_3d(direction)
+	return atan2(aim_dir.x, aim_dir.z)
 
 
 # ANIMATION PLAYER CALLBACK FUNCTIONS
@@ -131,7 +128,7 @@ func attack_start_finished():
 func attack_loop_started():
 	# Quickly snap to mouse pointer direction on first attack press.
 	if not combat_component.is_aiming:
-		var target_angle := _get_aim_target_angle()
+		var target_angle := _get_target_angle(-input_component.aim_direction)
 		rotation.y = target_angle
 	
 	combat_component.is_aiming = true

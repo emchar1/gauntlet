@@ -26,6 +26,7 @@ var aim_direction := Vector2.ZERO
 var main_pressed := false
 var main_released := false
 var charge_pressed := false
+var charge_held := false
 var charge_released := false
 var special_pressed := false
 var potion_pressed := false
@@ -57,7 +58,8 @@ func read_movement() -> void:
 func read_combat() -> void:
 	main_pressed = Input.is_action_pressed(ATTACK_MAIN)
 	main_released = Input.is_action_just_released(ATTACK_MAIN)
-	charge_pressed = Input.is_action_pressed(ATTACK_CHARGE)
+	charge_pressed = Input.is_action_just_pressed(ATTACK_CHARGE)
+	charge_held = Input.is_action_pressed(ATTACK_CHARGE)
 	charge_released = Input.is_action_just_released(ATTACK_CHARGE)
 	special_pressed = Input.is_action_just_pressed(ATTACK_SPECIAL)
 	potion_pressed = Input.is_action_just_pressed(USE_POTION)
