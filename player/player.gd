@@ -33,7 +33,8 @@ func _ready() -> void:
 	combat_component.attack_executed.connect(_helper_attack_executed)
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	_apply_gravity(delta)
 	_player_move()
 	_update_facing()
 	_update_aiming_reticle()
@@ -43,6 +44,12 @@ func _physics_process(_delta: float) -> void:
 
 
 # HELPER FUNCTIONS
+
+# Anchors the player to the ground.
+func _apply_gravity(delta: float):
+	if not is_on_floor():
+		velocity.y += get_gravity().y * delta
+
 
 # Player movement function.
 func _player_move():

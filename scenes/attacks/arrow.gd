@@ -35,9 +35,9 @@ func _physics_process(delta: float) -> void:
 
 
 # Call this after instantiation to configure BEFORE adding to the scene tree.
-func setup(pos: Vector2, dir: Vector2):
-	position = GameState.map_2d_to_3d(pos)
-	initial_position = pos
+func setup(pos: Vector3, dir: Vector2):
+	position = pos
+	initial_position = GameState.map_3d_to_2d(pos)
 	direction = dir
 	rotation.y = -direction.angle() - (PI / 2.0)
 	vertical_velocity = initial_velocity

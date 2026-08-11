@@ -60,9 +60,8 @@ func execute_attack(actor: CharacterBody3D) -> void:
 # Uses attack ability. Assumes 'actor' has a property, 'facing_dir'.
 func _use_ability(actor: CharacterBody3D, ability: Ability) -> void:
 	# Create Ability object
-	var current_position = GameState.map_3d_to_2d(actor.global_position)
 	var obj = ability.scene.instantiate()
-	obj.setup(current_position, actor.facing_dir)
+	obj.setup(actor.global_position, actor.facing_dir)
 	
 	ability.configure(obj)
 	get_tree().current_scene.add_child(obj)
