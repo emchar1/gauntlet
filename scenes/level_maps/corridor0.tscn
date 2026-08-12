@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bwcaxivsuf4vk"]
+
+[ext_resource type="Script" uid="uid://bgqf168djh7wc" path="res://scenes/level_maps/level_map_zone.gd" id="1_g8fmj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u3pco"]
+size = Vector3(30, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8fmj"]
+albedo_color = Color(1, 1, 0.34509805, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lb7rc"]
+size = Vector3(30, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3pco"]
+size = Vector3(30, 4, 100)
+
+[node name="Corridor0" type="Node3D" unique_id=869249047]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=723930255]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=661000978]
+mesh = SubResource("BoxMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_g8fmj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=756624798]
+shape = SubResource("BoxShape3D_lb7rc")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1686297263 groups=["zone"]]
+script = ExtResource("1_g8fmj")
+zone_type = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1941530657]
+shape = SubResource("BoxShape3D_u3pco")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

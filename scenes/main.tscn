@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://csrqul1o4rknl"]
 
 [ext_resource type="PackedScene" uid="uid://d0wpdauwxuhl0" path="res://player/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dp54chl2fbltr" path="res://scenes/level_maps/level_map.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dtl8dv746mrep" path="res://scenes/camera_controller.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node3D" unique_id=1117782995]
 
 [node name="Player" parent="." unique_id=1083748732 instance=ExtResource("1_o5qli")]
-
-[node name="CameraPivot" type="Node3D" parent="." unique_id=450538312]
-transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 20, 10)
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1342485182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1657107296]
 transform = Transform3D(1, 0, 0, 0, 0.80281746, 0.59622484, 0, -0.59622484, 0.80281746, 0, 10, 0)
-shadow_enabled = true
+
+[node name="CameraController" parent="." unique_id=1757878680 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427876, 0, -0.6427876, 0.76604444, 0, 20, 0)
+
+[node name="LevelMap" parent="." unique_id=925975153 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
