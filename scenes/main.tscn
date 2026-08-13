@@ -13,7 +13,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 transform = Transform3D(1, 0, 0, 0, 0.80281746, 0.59622484, 0, -0.59622484, 0.80281746, 0, 10, 0)
 
 [node name="CameraController" parent="." unique_id=1757878680 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 0.17364821, 0.9848076, 0, -0.9848076, 0.17364821, 0, 100, 0)
+transform = Transform3D(1, 0, 0, 0, 0.7660443, 0.64278746, 0, -0.64278746, 0.7660443, 0, 100, 0)
 
 [node name="LevelMap" parent="." unique_id=925975153 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)

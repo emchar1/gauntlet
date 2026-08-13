@@ -14,6 +14,7 @@ enum State {
 @onready var dodge_component = %DodgeComponent
 @onready var input_component = %InputComponent
 @onready var movement_component = %MovementComponent
+@onready var bow = %Bow
 
 @onready var aiming_reticle = $AimingReticle
 var aiming_reticle_tween: Tween
@@ -39,6 +40,8 @@ func _physics_process(delta: float) -> void:
 	_update_facing()
 	_update_aiming_reticle()
 	_player_attack()
+	
+	bow.visible = attack_state == State.ATTACK
 	
 	move_and_slide()
 
