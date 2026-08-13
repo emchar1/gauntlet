@@ -91,6 +91,7 @@ use_relic={
 3d_physics/layer_10="Spawner Hurt"
 3d_physics/layer_11="Destructible"
 3d_physics/layer_12="Collectible"
+3d_physics/layer_13="Zone Trigger"
 
 [physics]
 

@@ -26,6 +26,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_g8fmj")
 shape = SubResource("BoxShape3D_lb7rc")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1686297263 groups=["zone"]]
+collision_layer = 4096
+collision_mask = 6
 script = ExtResource("1_g8fmj")
 zone_type = 1
 
