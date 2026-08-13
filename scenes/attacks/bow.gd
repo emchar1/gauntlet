@@ -4,7 +4,7 @@ extends Node3D
 # PROPERTIES
 
 const BOW_RADIUS := 0.1
-const RING_SIDES := 3
+const RING_SIDES := 6
 const CURVE_SAMPLES := 24
 
 @onready var curve_path: Path3D = $CurvePath
@@ -18,6 +18,7 @@ func _ready() -> void:
 	_generate_bow_mesh()
 
 
+# Draws the bow mesh using the CurvePath created in scene editor.
 func _generate_bow_mesh():
 	var curve := curve_path.curve
 	var curve_length := curve.get_baked_length()
@@ -65,6 +66,7 @@ func _generate_bow_mesh():
 	
 	bow_mesh.mesh = array_mesh
 	
+	# Adds color to the bow.
 	var material := StandardMaterial3D.new()
-	material.albedo_color = Color.GOLD
+	material.albedo_color = Color.SADDLE_BROWN
 	bow_mesh.material_override = material

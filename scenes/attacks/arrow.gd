@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 # Call this after instantiation to configure BEFORE adding to the scene tree.
 func setup(pos: Vector3, dir: Vector2):
 	var forward := GameState.map_2d_to_3d(dir).normalized()
-	var offset := Vector3(forward.z, 1.0, -forward.x)
+	var offset := Vector3(0.75 * forward.z, 1.0, -forward.x)
 	
 	position = pos + offset
 	initial_position = GameState.map_3d_to_2d(pos)

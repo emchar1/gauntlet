@@ -4,15 +4,15 @@
 
 [sub_resource type="Curve3D" id="Curve3D_ypqsl"]
 _data = {
-"points": PackedVector3Array(-0.7, 0.5, 0, 0, -0.7, 0, 0, 3, 0, 0, 0.7, 0, 0, -0.7, 0, 1, 1.7, 0, 0, 0.7, 0, 0, 0, 0, 0.5, 0.25, 0, 0, 0, 0, 0, -0.7, 0, 0.5, -0.25, 0, 0, 0.7, 0, 0, -0.7, 0, 1, -1.7, 0, 0, 0.7, 0, 0, 0, 0, 0, -3, 0),
+"points": PackedVector3Array(-0.7, 0.5, 0, 0, -0.7, 0, 0, 2.5, 0, 0, 0.7, 0, 0, -0.7, 0, 1.5, 1.25, 0, 0, 0.7, 0, 0, 0, 0, 1.25, 0.25, 0, 0, 0, 0, 0, -0.7, 0, 1.25, -0.25, 0, 0, 0.7, 0, 0, -0.7, 0, 1.5, -1.25, 0, 0, 0.7, 0, 0, 0, 0, 0, -2.5, 0),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lb7rc"]
-top_radius = 0.02
-bottom_radius = 0.02
-height = 5.8
+top_radius = 0.05
+bottom_radius = 0.05
+height = 5.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gof8m"]
 
@@ -20,11 +20,13 @@ height = 5.8
 script = ExtResource("1_gof8m")
 
 [node name="CurvePath" type="Path3D" parent="." unique_id=1298933983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 0)
 curve = SubResource("Curve3D_ypqsl")
 
 [node name="BowMesh" type="MeshInstance3D" parent="." unique_id=1909866404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 0)
 
 [node name="StringMesh" type="MeshInstance3D" parent="." unique_id=892093255]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07104492, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0, 0)
 mesh = SubResource("CylinderMesh_lb7rc")
 surface_material_override/0 = SubResource("StandardMaterial3D_gof8m")
