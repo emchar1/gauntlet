@@ -4,7 +4,7 @@ class_name MovementComponent
 
 # PROPERTIES
 
-@export var speed: float = 10.0
+@export var speed: float = 12.0
 
 var move_dir := Vector2.ZERO
 var is_moving := false
