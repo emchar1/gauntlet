@@ -17,13 +17,21 @@ albedo_color = Color(0.40784314, 0.25882354, 0.07450981, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_n4x87"]
 size = Vector3(0.5, 0.01, 0.07)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jpsmn"]
 radius = 0.25
 height = 0.6
 
-[node name="Arrow" type="Area3D" unique_id=1013970594]
+[node name="Arrow" type="Area3D" unique_id=1013970594 groups=["projectile"]]
 collision_layer = 16
-collision_mask = 768
+collision_mask = 1793
 script = ExtResource("1_cxvvu")
 
 [node name="Visuals" type="Node3D" parent="." unique_id=98348504]
@@ -46,22 +54,27 @@ transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0
 [node name="Tail1" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=1785502792]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.1420345)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_sugp2")
 
 [node name="Tail2" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=1234888776]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.0333643)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_sugp2")
 
 [node name="Tail3" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=278057100]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.9295578)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_sugp2")
 
 [node name="Tail4" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=1320459703]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.8254976)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_sugp2")
 
 [node name="Tail5" type="MeshInstance3D" parent="Visuals/Fletching/RFletching" unique_id=72418982]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.7170923)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_sugp2")
 
 [node name="TFletching" type="Node3D" parent="Visuals/Fletching" unique_id=998816217]
 transform = Transform3D(-0.70710677, -0.70710677, 0, 0.70710677, -0.70710677, 0, 0, 0, 1, 0, 0, 0)
@@ -69,22 +82,27 @@ transform = Transform3D(-0.70710677, -0.70710677, 0, 0.70710677, -0.70710677, 0,
 [node name="Tail1" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=1228482755]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.1420345)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_jyhfs")
 
 [node name="Tail2" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=152062510]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.0333643)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_jyhfs")
 
 [node name="Tail3" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=241516472]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.9295578)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_jyhfs")
 
 [node name="Tail4" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=269125409]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.8254976)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_jyhfs")
 
 [node name="Tail5" type="MeshInstance3D" parent="Visuals/Fletching/TFletching" unique_id=364991087]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.7170923)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_jyhfs")
 
 [node name="BFletching" type="Node3D" parent="Visuals/Fletching" unique_id=824757422]
 transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
@@ -92,22 +110,27 @@ transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0
 [node name="Tail1" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=2018072448]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.1420345)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="Tail2" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=890924785]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 2.0333643)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="Tail3" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=788246447]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.9295578)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="Tail4" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=961003229]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.8254976)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="Tail5" type="MeshInstance3D" parent="Visuals/Fletching/BFletching" unique_id=1581734341]
 transform = Transform3D(0.49999994, -0.86602527, 3.785517e-08, 0, -4.371138e-08, -0.9999999, 0.8660254, 0.49999988, -2.185569e-08, 0.14171338, 0, 1.7170923)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="LFletching" type="Node3D" parent="Visuals/Fletching" unique_id=270065203]
 transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
@@ -115,23 +138,30 @@ transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0
 [node name="Tail1" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=809368639]
 transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 2.1420345)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Tail2" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=1418140169]
 transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 2.0335922)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Tail3" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=1473240553]
 transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 1.923892)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="Tail4" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=448147235]
 transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 1.8228695)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
-[node name="Tail15" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=883527301]
+[node name="Tail5" type="MeshInstance3D" parent="Visuals/Fletching/LFletching" unique_id=883527301]
 transform = Transform3D(0.4999999, 0.86602527, -3.785517e-08, 0, -4.371138e-08, -0.9999999, -0.8660253, 0.49999988, -2.185569e-08, -0.13878444, 0, 1.7235575)
 mesh = SubResource("BoxMesh_n4x87")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1740955878]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.2)
 shape = SubResource("CapsuleShape3D_jpsmn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

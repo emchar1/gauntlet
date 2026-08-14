@@ -24,6 +24,13 @@ GameState="*uid://cw76i22tp88yk"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+projectile="arrows, fireballs, bullets in general"
+player="main player(s)"
+zone="a room or a corridor"
+world="walls or floor, the game world"
+
 [input]
 
 move_up={

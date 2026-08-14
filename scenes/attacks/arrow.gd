@@ -21,6 +21,9 @@ var usable_while_dodging: bool = false
 # Ensures quick and charged arrows cannot damage multiple overlapping enemies.
 var has_hit := false
 
+# Stops an arrow, like if it hits the world
+var is_inert := false
+
 
 # FUNCTIONS
 
@@ -31,7 +34,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	_fire(delta)
+	if not is_inert:
+		_fire(delta)
 
 
 # Call this after instantiation to configure BEFORE adding to the scene tree.
@@ -68,12 +72,63 @@ func _fire(delta: float):
 		queue_free()
 
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Walls":
-		queue_free()
+# SIGNAL CALLBACK FUNCTIONS
+
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group("world"):
+		dissolve_arrow()
 
 
-func _on_area_entered(area: Area2D) -> void:
+# Dissolves and queue_free's the arrow.
+func dissolve_arrow():
+	if is_inert:
+		return
+	
+	is_inert = true
+	
+	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
+	
+	for mesh in meshes:
+		var tween := create_tween()
+		var material = mesh.get_active_material(0)
+		var dissolve_speed: float = 0.5
+		
+		if material == null:
+			continue
+		
+		material = material.duplicate()
+		mesh.material_override = material
+		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		
+		tween.tween_property(
+			material,
+			"albedo_color",
+			Color.BLACK,
+			dissolve_speed
+		)
+		
+		tween.tween_property(
+			material,
+			"albedo_color:a",
+			0.0,
+			dissolve_speed
+		)
+		
+		tween.finished.connect(queue_free)
+
+
+func get_meshes(node: Node) -> Array[MeshInstance3D]:
+	var meshes: Array[MeshInstance3D] = []
+	
+	for child in node.get_children():
+		if child is MeshInstance3D:
+			meshes.append(child)
+		meshes.append_array(get_meshes(child))
+	
+	return meshes
+
+
+func _on_area_entered(area: Area3D) -> void:
 	if has_hit and not piercing:
 		return
 	

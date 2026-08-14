@@ -44,7 +44,7 @@ size = Vector3(30, 4, 102)
 
 [node name="Corridor0" type="Node3D" unique_id=869249047]
 
-[node name="Floor" type="StaticBody3D" parent="." unique_id=723930255]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=723930255 groups=["world"]]
 collision_mask = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=661000978]
@@ -61,7 +61,7 @@ cols = 46
 
 [node name="Walls" type="Node3D" parent="." unique_id=591281277]
 
-[node name="WallL" type="StaticBody3D" parent="Walls" unique_id=1489891874]
+[node name="WallL" type="StaticBody3D" parent="Walls" unique_id=1489891874 groups=["world"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, -0.5, 0)
 collision_mask = 0
 
@@ -74,7 +74,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3gdj4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 shape = SubResource("BoxShape3D_jpsmn")
 
-[node name="WallR" type="StaticBody3D" parent="Walls" unique_id=633361024]
+[node name="WallR" type="StaticBody3D" parent="Walls" unique_id=633361024 groups=["world"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, -0.5, 0)
 collision_mask = 0
 
@@ -87,7 +87,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pv4fg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 shape = SubResource("BoxShape3D_3gdj4")
 
-[node name="WallB" type="StaticBody3D" parent="Walls" unique_id=1464065279]
+[node name="WallB" type="StaticBody3D" parent="Walls" unique_id=1464065279 groups=["world"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 51)
 collision_mask = 0
 
