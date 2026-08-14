@@ -4,10 +4,167 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u3pco"]
 
-[node name="Enemy" type="CharacterBody3D" unique_id=1150225623]
-script = ExtResource("1_7p1mj")
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7p1mj"]
+height = 4.5
 
-[node name="Visuals" type="Node3D" parent="." unique_id=659667911]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7p1mj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md0e3"]
+albedo_color = Color(0.78431374, 0.7647059, 0.74509805, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4ra3w"]
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5uy6h"]
+albedo_color = Color(0.78431374, 0.7647059, 0.74509805, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c4w8v"]
+radius = 0.2
+height = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwavj"]
+albedo_color = Color(1, 0.38431373, 0.5019608, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_nenq2"]
+radius = 0.125
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md484"]
+albedo_color = Color(0.78431374, 0.7647059, 0.74509805, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ipns3"]
+radius = 0.125
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8qclf"]
+radius = 0.125
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w8i8w"]
+radius = 0.125
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_otmr2"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtq4b"]
+albedo_color = Color(0.78431374, 0.7647059, 0.74509805, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_j0cyh"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g0wcc"]
+radius = 0.2
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_s1ycm"]
+radius = 0.2
+height = 1.0
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1150225623]
+collision_layer = 4
+collision_mask = 15
+script = ExtResource("1_7p1mj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=104712642]
 shape = SubResource("CapsuleShape3D_u3pco")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=201771145]
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=2006871598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("CapsuleShape3D_7p1mj")
+debug_color = Color(0.94293565, 0.1730679, 0.4268677, 0.41960785)
+
+[node name="Visuals" type="Node3D" parent="." unique_id=659667911]
+
+[node name="BodyPivot" type="Node3D" parent="Visuals" unique_id=333751509]
+
+[node name="TorsoPivot" type="Node3D" parent="Visuals/BodyPivot" unique_id=152151049]
+
+[node name="Torso" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=165047799]
+mesh = SubResource("CapsuleMesh_7p1mj")
+surface_material_override/0 = SubResource("StandardMaterial3D_md0e3")
+
+[node name="Head" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=1460065352]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 1.5, 0)
+mesh = SubResource("CapsuleMesh_4ra3w")
+surface_material_override/0 = SubResource("StandardMaterial3D_5uy6h")
+
+[node name="Face" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot/Head" unique_id=966571541]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, -0.5)
+mesh = SubResource("CapsuleMesh_c4w8v")
+surface_material_override/0 = SubResource("StandardMaterial3D_xwavj")
+
+[node name="LShoulderPivot" type="Node3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=117495545]
+transform = Transform3D(-4.3711356e-08, 0.9999995, 0, -0.9999993, -4.3711367e-08, 0, 0, 0, 0.9999997, -0.6, 0.75, 0)
+
+[node name="LUpperArm" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot/LShoulderPivot" unique_id=748447771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CapsuleMesh_nenq2")
+surface_material_override/0 = SubResource("StandardMaterial3D_md484")
+
+[node name="LElbowPivot" type="Node3D" parent="Visuals/BodyPivot/TorsoPivot/LShoulderPivot" unique_id=1663714152]
+transform = Transform3D(0.9999996, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="LLowerArm" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot" unique_id=1773324348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CapsuleMesh_ipns3")
+surface_material_override/0 = SubResource("StandardMaterial3D_md484")
+
+[node name="RShoulderPivot" type="Node3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=73632801]
+transform = Transform3D(-4.371137e-08, -0.9999995, 0, 0.9999996, -4.3711367e-08, 0, 0, 0, 0.99999976, 0.6, 0.75, 0)
+
+[node name="RUpperArm" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot/RShoulderPivot" unique_id=228992831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CapsuleMesh_8qclf")
+surface_material_override/0 = SubResource("StandardMaterial3D_md484")
+
+[node name="RElbowPivot" type="Node3D" parent="Visuals/BodyPivot/TorsoPivot/RShoulderPivot" unique_id=1821672247]
+transform = Transform3D(0.9999995, 0, 0, 0, 0.9999996, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="RLowerArm" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot" unique_id=624370270]
+transform = Transform3D(1, 0, 0, 3.7252903e-09, 1, -2.9802322e-08, -7.450581e-09, 0, 1, 5.9604645e-08, -0.5, -2.2351742e-08)
+mesh = SubResource("CapsuleMesh_w8i8w")
+surface_material_override/0 = SubResource("StandardMaterial3D_md484")
+
+[node name="PelvisPivot" type="Node3D" parent="Visuals/BodyPivot" unique_id=1218031448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+
+[node name="LHipPivot" type="Node3D" parent="Visuals/BodyPivot/PelvisPivot" unique_id=595160129]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 1, -0.25, 0, 0)
+
+[node name="LUpperLeg" type="MeshInstance3D" parent="Visuals/BodyPivot/PelvisPivot/LHipPivot" unique_id=1258267134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CapsuleMesh_otmr2")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtq4b")
+
+[node name="LKneePivot" type="Node3D" parent="Visuals/BodyPivot/PelvisPivot/LHipPivot" unique_id=729436095]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="LLowerLeg" type="MeshInstance3D" parent="Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot" unique_id=1037318509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CapsuleMesh_j0cyh")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtq4b")
+
+[node name="RHipPivot" type="Node3D" parent="Visuals/BodyPivot/PelvisPivot" unique_id=1236557047]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 1, 0.25, 0, 0)
+
+[node name="RUpperLeg" type="MeshInstance3D" parent="Visuals/BodyPivot/PelvisPivot/RHipPivot" unique_id=1842129987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CapsuleMesh_g0wcc")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtq4b")
+
+[node name="RKneePivot" type="Node3D" parent="Visuals/BodyPivot/PelvisPivot/RHipPivot" unique_id=2128372883]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="RLowerLeg" type="MeshInstance3D" parent="Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot" unique_id=57737981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CapsuleMesh_s1ycm")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtq4b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1804860605]
