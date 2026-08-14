@@ -12,7 +12,7 @@ class_name Ability
 
 @export var cooldown: float = 0.2
 @export var damage: float = 2
-@export var speed: float = 40
+@export var speed: float = 50
 @export var max_distance: float = 400
 
 
