@@ -12,4 +12,12 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	pass
+	_apply_gravity(delta)
+	
+	move_and_slide()
+
+
+# Anchors the player to the ground.
+func _apply_gravity(delta: float):
+	if not is_on_floor():
+		velocity.y += get_gravity().y * delta
