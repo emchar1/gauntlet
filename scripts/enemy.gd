@@ -41,3 +41,15 @@ func _update_state(state: State):
 			animation_player.play("run")
 		_:
 			animation_player.play("RESET")
+
+
+# SIGNAL FUNCTIONS
+
+func _on_hurtbox_area_entered(area: Area3D) -> void:
+	if area.is_in_group("projectile"):
+		print("Ow")
+	pass # Replace with function body.
+
+
+func damage(amount: float):
+	print("damaged by: ", amount)
