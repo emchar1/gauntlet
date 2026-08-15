@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://d3mx8h7ksamic" path="res://scenes/level_maps/corridor1.tscn" id="2_xbe8y"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_u3pco"]
-vertices = PackedVector3Array(-14.25, 1, -48.5, 14.5, 1, -48.5, 14.75, 1, -50.5, 16.75, 1, -79.5, -14.5, 1, -79.5, 16.75, 1, -50.5, 84.5, 1, -50.5, 84.5, 1, -79.5, -14.25, 1, 49.5, 14.5, 1, 49.5)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(3, 7, 5), PackedInt32Array(5, 7, 6), PackedInt32Array(9, 8, 1), PackedInt32Array(1, 8, 0)]
+vertices = PackedVector3Array(117.5, 10, -80.5, 117.5, 10, -50.5, 118, 10, -50.5, 118, 10, -80.5, 14.5, 1, -51.5, 16, 1, -51.5, 15.75, 1, -79.25, 14.25, 1, -51, -14.25, 1, -79.25, -14.25, 1, -51, 116.75, 1, -51.5, 116.75, 1, -79.25, -14.25, 1, 50, 14.5, 1, 50)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(6, 5, 4), PackedInt32Array(4, 7, 6), PackedInt32Array(6, 7, 9), PackedInt32Array(6, 9, 8), PackedInt32Array(10, 5, 11), PackedInt32Array(11, 5, 6), PackedInt32Array(9, 7, 12), PackedInt32Array(12, 7, 13)]
 
 [node name="LevelMap" type="Node3D" unique_id=925975153]
 
@@ -15,4 +15,4 @@ navigation_mesh = SubResource("NavigationMesh_u3pco")
 [node name="Corridor0" parent="NavigationRegion3D" unique_id=124440472 instance=ExtResource("1_26fg6")]
 
 [node name="Corridor1" parent="NavigationRegion3D" unique_id=1766526933 instance=ExtResource("2_xbe8y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, -65.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5, 0, -65.5)

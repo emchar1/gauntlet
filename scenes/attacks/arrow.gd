@@ -8,10 +8,10 @@ var direction := Vector2.ZERO
 var color: Color
 
 var damage: float = 2
-var speed: float = 50
-var max_distance: float = 400
+var speed: float = 10
+var max_distance: float = 40
 
-var initial_velocity: float = 4
+var initial_velocity: float = 0
 var vertical_velocity: float = 0
 
 var piercing: bool = false
@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 # Call this after instantiation to configure BEFORE adding to the scene tree.
 func setup(pos: Vector3, dir: Vector2):
 	var forward := GameState.map_2d_to_3d(dir).normalized()
-	var offset := Vector3(0.75 * forward.z, 1.0, -forward.x)
+	var offset := Vector3(0.5 * forward.z, 1.0, -0.5 * forward.x)
 	
 	position = pos + offset
 	initial_position = GameState.map_3d_to_2d(pos)
