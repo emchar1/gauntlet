@@ -16,4 +16,4 @@ enum EnemyType {
 @export var speed: float = 8
 @export var attack_dmg: float = 5
 @export var spawn_duration: float = 1
-@export var slay_duration: float = 0.25
+@export var slay_duration: float = 0.5

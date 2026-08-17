@@ -121,7 +121,6 @@ func slay():
 	
 	var tween := create_tween()
 	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
-	var dissolve_speed: float = 0.5
 	
 	for mesh in meshes:
 		var material = mesh.get_active_material(0)
@@ -137,7 +136,7 @@ func slay():
 			material,
 			"albedo_color:a",
 			0.0,
-			dissolve_speed
+			enemy_config.slay_duration
 		)
 		
 	tween.finished.connect(queue_free)
