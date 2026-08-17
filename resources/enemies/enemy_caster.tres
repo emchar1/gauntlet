@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyConfig" format=3 uid="uid://bls22scq6c3ee"]
+
+[ext_resource type="Script" uid="uid://di3ctmsvh4q" path="res://scripts/enemy_config.gd" id="1_8v0gj"]
+
+[resource]
+script = ExtResource("1_8v0gj")
+enemy_type = 3
+hp = 18.0
+speed = 6.0
+attack_dmg = 10.0

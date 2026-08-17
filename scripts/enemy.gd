@@ -7,10 +7,11 @@ enum State {
 	NONE, IDLE, RUN, ATTACK, HURT, DEAD
 }
 
+@export var enemy_config: EnemyConfig
+
 @onready var animation_player = $AnimationPlayer
 @onready var nav_agent = $NavigationAgent3D
-
-@export var speed := 8.0
+@onready var enemy_hp = $EnemyHP
 
 var current_state: State
 
@@ -19,18 +20,29 @@ var current_state: State
 
 var player_in_attack_range: bool = false
 
+var has_spawned: bool = true
+var is_slaying: bool = false
+var current_hp: float
+
 
 # FUNCTIONS
 
 func _ready() -> void:
-	_update_state(State.RUN)
+	_setup_enemy()
 
 
 func _physics_process(delta: float) -> void:
 	_apply_gravity(delta)
 	_process_movement()
+	enemy_hp.position_hp(self)
 	
 	move_and_slide()
+
+
+func _setup_enemy():
+	enemy_hp.setup_values(enemy_config.hp)
+	current_hp = enemy_config.hp
+	_update_state(State.RUN)
 
 
 # Anchors the player to the ground.
@@ -58,8 +70,8 @@ func _process_movement():
 	path_dir.y = 0
 	path_dir = path_dir.normalized()
 	
-	velocity.x = path_dir.x * speed
-	velocity.z = path_dir.z * speed
+	velocity.x = path_dir.x * enemy_config.speed
+	velocity.z = path_dir.z * enemy_config.speed
 	
 	# Rotate enemy to face player
 	if path_dir.length_squared() > 0.0:
@@ -85,7 +97,57 @@ func _update_state(state: State):
 
 # This is what registers enemy hurtbox from player's hitbox, i.e. arrow.
 func damage(amount: float):
-	print("damaged by arrow, amt: ", amount)
+	if not has_spawned:
+		return
+	
+	if is_slaying:
+		return
+	
+	current_hp -= amount
+	current_hp = clamp(current_hp, 0, enemy_config.hp)
+	enemy_hp.update_health(current_hp)
+	
+	if current_hp <= 0:
+		call_deferred("slay")
+
+
+
+
+
+func slay():
+	if is_slaying:
+		return
+	
+	is_slaying = true
+	$CollisionShape3D.disabled = true
+	_update_state(State.IDLE)
+	
+	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
+	var dissolve_speed: float = 2
+	
+	for mesh in meshes:
+		var tween := create_tween()
+		var material = mesh.get_active_material(0)
+		
+		if material == null:
+			continue
+		
+		material = material.duplicate()
+		mesh.material_override = material
+		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		
+		tween.tween_property(
+			material,
+			"albedo_color:a",
+			0.0,
+			dissolve_speed
+		)
+		
+		tween.finished.connect(queue_free)
+
+
+
+
 
 
 # And this registers when player gets hit by enemy.

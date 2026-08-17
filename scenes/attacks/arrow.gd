@@ -118,17 +118,6 @@ func dissolve_arrow():
 		tween.finished.connect(queue_free)
 
 
-func get_meshes(node: Node) -> Array[MeshInstance3D]:
-	var meshes: Array[MeshInstance3D] = []
-	
-	for child in node.get_children():
-		if child is MeshInstance3D:
-			meshes.append(child)
-		meshes.append_array(get_meshes(child))
-	
-	return meshes
-
-
 func _on_area_entered(area: Area3D) -> void:
 	if has_hit and not piercing:
 		return
