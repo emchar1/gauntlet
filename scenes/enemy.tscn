@@ -813,7 +813,7 @@ mesh = SubResource("CapsuleMesh_7p1mj")
 surface_material_override/0 = SubResource("StandardMaterial3D_md0e3")
 
 [node name="Head" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=1460065352]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9937507, 0.11161898, 0, -0.11161898, 0.9937507, 0, 1.349552, -0.36090708)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99375063, 0.11161897, 0, -0.11161897, 0.99375063, 0, 1.349552, -0.36090708)
 mesh = SubResource("CapsuleMesh_4ra3w")
 surface_material_override/0 = SubResource("StandardMaterial3D_5uy6h")
 
@@ -851,7 +851,7 @@ mesh = SubResource("CapsuleMesh_nenq2")
 surface_material_override/0 = SubResource("StandardMaterial3D_md484")
 
 [node name="LElbowPivot" type="Node3D" parent="Visuals/BodyPivot/TorsoPivot/LShoulderPivot" unique_id=1663714152]
-transform = Transform3D(0.9999996, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999994, 0, -1, 0)
+transform = Transform3D(0.9999996, 0, 0, 0, 0.9999996, 0, 0, 0, 0.99999994, 0, -1, 0)
 
 [node name="LLowerArm" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot" unique_id=1773324348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -859,7 +859,7 @@ mesh = SubResource("CapsuleMesh_ipns3")
 surface_material_override/0 = SubResource("StandardMaterial3D_md484")
 
 [node name="RShoulderPivot" type="Node3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=73632801]
-transform = Transform3D(-4.371137e-08, -0.99999964, 0, 0.9999996, -4.3711374e-08, 0, 0, 0, 0.9999997, 0.5, 0.575, -0.165)
+transform = Transform3D(-4.371137e-08, -0.9999997, 0, 0.9999996, -4.3711374e-08, 0, 0, 0, 0.9999997, 0.5, 0.575, -0.165)
 
 [node name="RUpperArm" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot/RShoulderPivot" unique_id=228992831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

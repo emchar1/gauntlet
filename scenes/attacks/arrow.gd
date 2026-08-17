@@ -87,10 +87,10 @@ func dissolve_arrow():
 	
 	is_inert = true
 	
+	var tween := create_tween()
 	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
 	
 	for mesh in meshes:
-		var tween := create_tween()
 		var material = mesh.get_active_material(0)
 		var dissolve_speed: float = 0.5
 		
@@ -101,21 +101,21 @@ func dissolve_arrow():
 		mesh.material_override = material
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 		
-		tween.tween_property(
+		tween.parallel().tween_property(
 			material,
 			"albedo_color",
 			Color.BLACK,
 			dissolve_speed
 		)
 		
-		tween.tween_property(
+		tween.parallel().tween_property(
 			material,
 			"albedo_color:a",
 			0.0,
 			dissolve_speed
-		)
+		).set_delay(dissolve_speed)
 		
-		tween.finished.connect(queue_free)
+	tween.finished.connect(queue_free)
 
 
 func _on_area_entered(area: Area3D) -> void:

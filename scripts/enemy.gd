@@ -111,22 +111,18 @@ func damage(amount: float):
 		call_deferred("slay")
 
 
-
-
-
 func slay():
 	if is_slaying:
 		return
 	
 	is_slaying = true
-	$CollisionShape3D.disabled = true
 	_update_state(State.IDLE)
 	
+	var tween := create_tween()
 	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
-	var dissolve_speed: float = 2
+	var dissolve_speed: float = 0.5
 	
 	for mesh in meshes:
-		var tween := create_tween()
 		var material = mesh.get_active_material(0)
 		
 		if material == null:
@@ -136,18 +132,14 @@ func slay():
 		mesh.material_override = material
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 		
-		tween.tween_property(
+		tween.parallel().tween_property(
 			material,
 			"albedo_color:a",
 			0.0,
 			dissolve_speed
 		)
 		
-		tween.finished.connect(queue_free)
-
-
-
-
+	tween.finished.connect(queue_free)
 
 
 # And this registers when player gets hit by enemy.
