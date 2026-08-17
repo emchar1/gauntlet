@@ -26,12 +26,12 @@ window/stretch/aspect="expand"
 
 [global_group]
 
-projectile="arrows, fireballs, bullets in general"
 player="main player(s)"
 zone="a room or a corridor"
 world="walls or floor, the game world"
 enemy="enemies"
-hurtbox="hurtboxes for player, enemies, and spawner"
+hurtbox="hurtbox for enemies, players, spawners, destructibles"
+hitbox="hitbox for enemies, players, spawners, destructibles"
 
 [input]
 

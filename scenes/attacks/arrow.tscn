@@ -29,7 +29,7 @@ size = Vector3(0.5, 0.01, 0.07)
 radius = 0.25
 height = 0.6
 
-[node name="Arrow" type="Area3D" unique_id=1013970594 groups=["projectile"]]
+[node name="Arrow" type="Area3D" unique_id=1013970594 groups=["hitbox"]]
 collision_layer = 16
 collision_mask = 1793
 script = ExtResource("1_cxvvu")

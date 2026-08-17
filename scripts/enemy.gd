@@ -79,13 +79,9 @@ func _update_state(state: State):
 
 # SIGNAL FUNCTIONS
 
-func _on_hurtbox_area_entered(area: Area3D) -> void:
-	if area.is_in_group("projectile"):
-		print("Ow")
-
-
+# This is what registers enemy hurtbox from player's hitbox, i.e. arrow.
 func damage(amount: float):
-	print("damaged by: ", amount)
+	print("damaged by arrow, amt: ", amount)
 
 
 func _on_hitbox_area_entered(area: Area3D) -> void:
