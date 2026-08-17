@@ -116,6 +116,7 @@ func slay():
 		return
 	
 	is_slaying = true
+	turn_off_collisions()
 	_update_state(State.IDLE)
 	
 	var tween := create_tween()
@@ -140,6 +141,19 @@ func slay():
 		)
 		
 	tween.finished.connect(queue_free)
+
+
+func turn_off_collisions():
+	set_collision_layer_value(GameState.COLLISION_ENEMY_BODY, false)
+	set_collision_mask_value(GameState.COLLISION_PLAYER_BODY, false)
+	set_collision_mask_value(GameState.COLLISION_ENEMY_BODY, false)
+	set_collision_mask_value(GameState.COLLISION_SPAWNER_BODY, false)
+	
+	$Hurtbox.set_collision_layer_value(GameState.COLLISION_ENEMY_HURT, false)
+	$Hurtbox.set_collision_mask_value(GameState.COLLISION_PLAYER_HIT, false)
+	
+	$Hitbox.set_collision_layer_value(GameState.COLLISION_ENEMY_HIT, false)
+	$Hitbox.set_collision_mask_value(GameState.COLLISION_PLAYER_HURT, false)
 
 
 # And this registers when player gets hit by enemy.
