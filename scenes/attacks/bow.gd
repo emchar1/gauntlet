@@ -8,7 +8,7 @@ const RING_SIDES := 6
 const CURVE_SAMPLES := 24
 
 @onready var curve_path: Path3D = $CurvePath
-@onready var bow_mesh: MeshInstance3D = $BowMesh
+@onready var bow_mesh: MeshInstance3D = $BowMeshIgnoreTheWarning
 
 
 # FUNCTIONS

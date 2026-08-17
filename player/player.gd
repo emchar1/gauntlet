@@ -41,8 +41,6 @@ func _physics_process(delta: float) -> void:
 	_update_aiming_reticle()
 	_player_attack()
 	
-	bow.visible = attack_state == State.ATTACK
-	
 	move_and_slide()
 
 

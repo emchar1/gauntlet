@@ -43,6 +43,9 @@ func _process_movement():
 		print("No player assigned. Assign player to enemy.")
 		return
 	
+	if current_state != State.RUN:
+		return
+	
 	nav_agent.target_position = player.global_position
 	
 	var next_nav_point = nav_agent.get_next_path_position()
@@ -68,6 +71,8 @@ func _update_state(state: State):
 			animation_player.play("idle")
 		State.RUN:
 			animation_player.play("run")
+		State.ATTACK:
+			animation_player.play("attack")
 		_:
 			animation_player.play("RESET")
 
@@ -81,3 +86,8 @@ func _on_hurtbox_area_entered(area: Area3D) -> void:
 
 func damage(amount: float):
 	print("damaged by: ", amount)
+
+
+func _on_hitbox_area_entered(area: Area3D) -> void:
+	if area.is_in_group("hurtbox"):
+		print("Player attacked!")
