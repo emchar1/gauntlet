@@ -17,6 +17,8 @@ var current_state: State
 # FIXME: - Remove @export after initializing enemies from a Packed Scene.
 @export var player: Player
 
+var player_in_attack_range: bool = false
+
 
 # FUNCTIONS
 
@@ -44,6 +46,8 @@ func _process_movement():
 		return
 	
 	if current_state != State.RUN:
+		velocity.x = 0
+		velocity.z = 0
 		return
 	
 	nav_agent.target_position = player.global_position
@@ -84,6 +88,31 @@ func damage(amount: float):
 	print("damaged by arrow, amt: ", amount)
 
 
+# And this registers when player gets hit by enemy.
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area.is_in_group("hurtbox"):
 		print("Player attacked!")
+
+
+# This detector triggers when player enters enemy's PlayerDetector.
+func _on_player_detector_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		player_in_attack_range = true
+		
+		if current_state == State.RUN:
+			_update_state(State.ATTACK)
+
+
+# This triggers when player leaves PlayerDetector.
+func _on_player_detector_body_exited(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		player_in_attack_range = false
+
+
+# And this causes enemy to re-attack if player is still in detector.
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "attack":
+		if player_in_attack_range:
+			_update_state(State.ATTACK)
+		else:
+			_update_state(State.RUN)
