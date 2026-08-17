@@ -11,11 +11,11 @@ radius = 1.9912109
 height = 5.189148
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
-radius = 1.8305664
+radius = 1.5
 height = 4.224285
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ra3w"]
-radius = 1.8305664
+radius = 1.5
 height = 4.224285
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7p1mj"]
@@ -269,7 +269,7 @@ tracks/0/path = NodePath("Visuals/BodyPivot/TorsoPivot/Head:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.1118521, 0, 0), Vector3(0.86219263, -0.08028515, 0), Vector3(0.37524578, -0.08028515, 0), Vector3(0.37524578, -0.08028515, 0), Vector3(-0.1118521, 0, 0), Vector3(-0.1118521, 0, 0)]
@@ -281,7 +281,7 @@ tracks/1/path = NodePath("Visuals/BodyPivot/TorsoPivot:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
@@ -293,7 +293,7 @@ tracks/2/path = NodePath("Visuals/BodyPivot/TorsoPivot:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.25830874, 0, 0), Vector3(-1.5550884, 0, 0), Vector3(0.39095375, 0, 0), Vector3(0.30892327, 0, 0), Vector3(-0.25830874, 0, 0), Vector3(-0.25830874, 0, 0)]
@@ -305,7 +305,7 @@ tracks/3/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.57595867, 0, -0.10471976), Vector3(1.8744836, 0, -0.10471976), Vector3(2.523746, 0, -0.10471976), Vector3(2.3614304, 0, -0.10471976), Vector3(0.57595867, 0, -0.10471976), Vector3(0.57595867, 0, -0.10471976)]
@@ -317,7 +317,7 @@ tracks/4/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivo
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.34906584, 0.38397244, 0), Vector3(-1.4032447, 0.38397244, 0), Vector3(0.5427974, 0.38397244, 0), Vector3(0.30019662, 0.38397244, 0), Vector3(-0.34906584, 0.38397244, 0), Vector3(-0.34906584, 0.38397244, 0)]
@@ -329,7 +329,7 @@ tracks/5/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.4886922, 0, 0.10471976), Vector3(1.9477874, 0, 0.10471976), Vector3(2.3527038, 0, 0.10471976), Vector3(2.1903882, 0, 0.10471976), Vector3(0.4886922, 0, 0.10471976), Vector3(0.4886922, 0, 0.10471976)]
@@ -341,7 +341,7 @@ tracks/6/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivo
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.38920844, -0.36826447, 0), Vector3(-1.5254178, -0.20594884, 0), Vector3(0.6632251, -0.20594884, 0), Vector3(0.42062435, -0.20594884, 0), Vector3(-0.38920844, -0.36826447, 0), Vector3(-0.38920844, -0.36826447, 0)]
@@ -353,7 +353,7 @@ tracks/7/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.47155648, 0.123208165), Vector3(0, 0, 0.4), Vector3(0, -0.472, -0.123), Vector3(0, -0.472, -0.123), Vector3(0, -0.47155648, 0.123208165), Vector3(0, -0.47155648, 0.123208165)]
@@ -365,7 +365,7 @@ tracks/8/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
@@ -377,7 +377,7 @@ tracks/9/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.34906584, 0, 0), Vector3(-0.18675023, 0, 0), Vector3(-0.34906584, 0, 0), Vector3(-0.34906584, 0, 0), Vector3(-0.34906584, 0, 0), Vector3(-0.34906584, 0, 0)]
@@ -389,7 +389,7 @@ tracks/10/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:ro
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.5235988, 0, 0), Vector3(0.19896753, 0, 0), Vector3(0.5235988, 0, 0), Vector3(0.5235988, 0, 0), Vector3(0.5235988, 0, 0), Vector3(0.5235988, 0, 0)]
@@ -401,7 +401,7 @@ tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.43633232, 0, 0), Vector3(-0.19373155, 0, 0), Vector3(-0.43633232, 0, 0), Vector3(-0.43633232, 0, 0), Vector3(-0.43633232, 0, 0), Vector3(-0.43633232, 0, 0)]
@@ -413,7 +413,7 @@ tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:ro
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.90000004, 1.2, 1.4, 2),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.6981317, 0, 0), Vector3(0.21118484, 0, 0), Vector3(0.6981317, 0, 0), Vector3(0.6981317, 0, 0), Vector3(0.6981317, 0, 0), Vector3(0.6981317, 0, 0)]
@@ -425,7 +425,7 @@ tracks/13/path = NodePath("Hitbox:monitoring")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.9),
+"times": PackedFloat32Array(0, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -786,7 +786,7 @@ collision_mask = 128
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=645310989]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512167, 1.2417307)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 1.5)
 shape = SubResource("CapsuleShape3D_md0e3")
 debug_color = Color(0.64157456, 0.52293575, 0.0062679714, 0.41960785)
 
@@ -796,7 +796,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector" unique_id=278705425]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512167, 1.2417307)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 1.5)
 shape = SubResource("CapsuleShape3D_4ra3w")
 debug_color = Color(0.06200199, 0.5917603, 0.7279707, 0.41960785)
 
