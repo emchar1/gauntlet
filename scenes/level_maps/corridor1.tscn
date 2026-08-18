@@ -22,10 +22,10 @@ albedo_color = Color(0.46666667, 0.5921569, 0.5921569, 1)
 size = Vector3(1, 10, 29)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xkok1"]
-size = Vector3(1, 10, 29)
+size = Vector3(1, 10, 12.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5ts5"]
-size = Vector3(1, 10, 29)
+size = Vector3(1, 10, 12.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_u3pco"]
 size = Vector3(134.4, 10, 1)
@@ -79,16 +79,29 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xkok1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 shape = SubResource("BoxShape3D_kn6i5")
 
-[node name="WallR" type="StaticBody3D" parent="Walls" unique_id=284372378 groups=["world"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4, -0.5, 0)
+[node name="WallR0" type="StaticBody3D" parent="Walls" unique_id=284372378 groups=["world"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4, -0.5, -8.5)
 collision_mask = 0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallR" unique_id=614042086]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallR0" unique_id=614042086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 mesh = SubResource("BoxMesh_xkok1")
 surface_material_override/0 = SubResource("StandardMaterial3D_xkok1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallR" unique_id=1313226718]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallR0" unique_id=1313226718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_x5ts5")
+
+[node name="WallR1" type="StaticBody3D" parent="Walls" unique_id=1902591462 groups=["world"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4, -0.5, 8.5)
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallR1" unique_id=1798005290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+mesh = SubResource("BoxMesh_xkok1")
+surface_material_override/0 = SubResource("StandardMaterial3D_xkok1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallR1" unique_id=685559434]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 shape = SubResource("BoxShape3D_x5ts5")
 
