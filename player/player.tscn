@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://266p7t1thh4b" path="res://player/dodge_component.gd" id="4_g6k8r"]
 [ext_resource type="Script" uid="uid://du44qatpt1b6h" path="res://player/combat_component.gd" id="4_qjkh3"]
 [ext_resource type="Script" uid="uid://pc67l4sp8nhg" path="res://player/animation_component.gd" id="6_g6k8r"]
+[ext_resource type="Resource" uid="uid://bbqhly2bk7mef" path="res://resources/abilities/charged_arrow.tres" id="6_hg6s5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tuyoq"]
 height = 4.5
@@ -1322,11 +1323,11 @@ _data = {
 }
 
 [sub_resource type="Gradient" id="Gradient_kqu6x"]
-colors = PackedColorArray(0, 0.64705884, 0, 1, 0, 1, 0, 1)
+colors = PackedColorArray(0, 0.64705884, 0, 0.19607843, 0, 1, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_u3pco"]
 gradient = SubResource("Gradient_kqu6x")
-width = 10000
+width = 16000
 height = 1
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_u3pco"]
@@ -1498,6 +1499,7 @@ script = ExtResource("4_qjkh3")
 input_component = NodePath("../InputComponent")
 dodge_component = NodePath("../DodgeComponent")
 quick_arrow = ExtResource("4_boad6")
+charged_arrow = ExtResource("6_hg6s5")
 metadata/_custom_type_script = "uid://du44qatpt1b6h"
 
 [node name="DodgeComponent" type="Node" parent="Components" unique_id=355791576]
