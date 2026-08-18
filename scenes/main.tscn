@@ -17,6 +17,7 @@ point_count = 4
 [node name="Main" type="Node3D" unique_id=1117782995]
 script = ExtResource("1_tefeu")
 enemy_scene = ExtResource("4_jyhfs")
+total_enemies = 9
 
 [node name="Player" parent="." unique_id=1083748732 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -5)
@@ -38,7 +39,6 @@ curve = SubResource("Curve3D_o6xl0")
 transform = Transform3D(0.023517568, 0, -0.99971944, 0, 1, 0, 0.99971944, 0, 0.023517568, -11.591509, 0.49998474, -89.82915)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=1643140536]
-wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]

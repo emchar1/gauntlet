@@ -3,7 +3,10 @@ extends Node3D
 # PROPERTIES
 
 @export var enemy_scene: PackedScene
+@export var total_enemies: int = 5
 @onready var player = $Player
+
+var current_enemy: int = 0
 
 var enemy_configs = [
 	preload("res://resources/enemies/enemy_melee.tres"),
@@ -26,6 +29,12 @@ func _process(delta: float) -> void:
 
 
 func _on_enemy_timer_timeout() -> void:
+	if current_enemy >= total_enemies:
+		$EnemyTimer.stop()
+		return
+	
+	current_enemy += 1
+
 	var enemy_spawn_location = $EnemySpawn/EnemySpawnLocation
 	enemy_spawn_location.progress_ratio = randf()
 	
