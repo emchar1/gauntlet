@@ -16,8 +16,9 @@ enum State {
 @onready var movement_component = %MovementComponent
 @onready var bow = %Bow
 
-@onready var aiming_reticle = $AimingReticle
-var aiming_reticle_tween: Tween
+@onready var aiming_l = $AimingReticleL
+@onready var aiming_r = $AimingReticleR
+var aiming_tween: Tween
 
 var move_state: State
 var attack_state: State
@@ -85,33 +86,31 @@ func _update_facing() -> void:
 
 
 func _update_aiming_reticle():
-	var cylinder = aiming_reticle.mesh as CylinderMesh
-	var tween_speed: float = 0.5
-	
 	if input_component.charge_pressed:
-		if aiming_reticle_tween:
-			aiming_reticle_tween.kill()
+		if aiming_tween:
+			aiming_tween.kill()
 		
-		aiming_reticle_tween = create_tween()
-		aiming_reticle_tween.tween_property(
-			aiming_reticle,
-			"transparency",
-			0.0,
-			tween_speed
-		)
-		aiming_reticle_tween.parallel().tween_property(
-			cylinder,
-			"bottom_radius",
-			1.0,
-			tween_speed
-		)
+		var speed: float = 0.5
+		
+		aiming_tween = create_tween()
+		aiming_tween.set_parallel(true)
+		aiming_tween.tween_property(aiming_l, "transparency", 0.0, speed)
+		aiming_tween.tween_property(aiming_r, "transparency", 0.0, speed)
+		aiming_tween.tween_property(aiming_l, "rotation:y", 0.0, speed)
+		aiming_tween.tween_property(aiming_r, "rotation:y", 0.0, speed)
+		aiming_tween.tween_property(aiming_l, "texture:height", 20, speed)
+		aiming_tween.tween_property(aiming_r, "texture:height", 20, speed)
 		
 	elif input_component.charge_released:
-		if aiming_reticle_tween:
-			aiming_reticle_tween.kill()
+		if aiming_tween:
+			aiming_tween.kill()
 		
-		aiming_reticle.transparency = 1.0
-		cylinder.bottom_radius = 20.0
+		aiming_l.transparency = 1.0
+		aiming_r.transparency = 1.0
+		aiming_l.rotation.y = 8.0 * PI / 180
+		aiming_r.rotation.y = -8.0 * PI / 180
+		aiming_l.texture.height = 1
+		aiming_r.texture.height = 1
 
 
 # Player attack function.
