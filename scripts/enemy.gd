@@ -7,20 +7,16 @@ enum State {
 	NONE, IDLE, RUN, ATTACK, HURT, DEAD
 }
 
-@export var enemy_config: EnemyConfig
-
 @onready var animation_player = $AnimationPlayer
 @onready var nav_agent = $NavigationAgent3D
 @onready var enemy_hp = $EnemyHP
 
+var enemy_config: EnemyConfig
+var player: Player
 var current_state: State
-
-# FIXME: - Remove @export after initializing enemies from a Packed Scene.
-@export var player: Player
-
 var player_in_attack_range: bool = false
 
-var has_spawned: bool = true
+var has_spawned: bool = false
 var is_slaying: bool = false
 var current_hp: float
 
@@ -93,7 +89,22 @@ func _update_state(state: State):
 			animation_player.play("RESET")
 
 
-# SIGNAL FUNCTIONS
+# OTHER FUNCTIONS
+
+func spawn():
+	if has_spawned:
+		return
+	
+	has_spawned = true
+	
+	#var tween = create_tween()
+	#tween.tween_property(
+		#self,
+		#"scale",
+		#mob_config.scale,
+		#mob_config.spawn_duration
+	#)
+
 
 # This is what registers enemy hurtbox from player's hitbox, i.e. arrow.
 func damage(amount: float):
@@ -154,6 +165,8 @@ func turn_off_collisions():
 	$Hitbox.set_collision_layer_value(GameState.COLLISION_ENEMY_HIT, false)
 	$Hitbox.set_collision_mask_value(GameState.COLLISION_PLAYER_HURT, false)
 
+
+# SIGNAL FUNCTIONS
 
 # And this registers when player gets hit by enemy.
 func _on_hitbox_area_entered(area: Area3D) -> void:
