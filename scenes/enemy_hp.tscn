@@ -9,7 +9,7 @@ colors = PackedColorArray(0.7121294, 0.7121294, 0.71212935, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ojfl1"]
 gradient = SubResource("Gradient_8cbqm")
 width = 530
-height = 80
+height = 60
 fill_from = Vector2(0, 1)
 
 [sub_resource type="Gradient" id="Gradient_vd27a"]
@@ -19,6 +19,7 @@ colors = PackedColorArray(0, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wyfsw"]
 gradient = SubResource("Gradient_vd27a")
 width = 512
+height = 42
 
 [sub_resource type="Gradient" id="Gradient_0sh1a"]
 offsets = PackedFloat32Array(0.9939759)
@@ -27,6 +28,7 @@ colors = PackedColorArray(1, 0.84313726, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_eaxu2"]
 gradient = SubResource("Gradient_0sh1a")
 width = 512
+height = 42
 
 [node name="EnemyHP" type="Node2D" unique_id=1591301229]
 scale = Vector2(0.08, 0.08)
@@ -37,19 +39,20 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_group_ = true
 
 [node name="Border" type="TextureRect" parent="Control" unique_id=248226869]
 layout_mode = 0
 offset_left = -10.0
 offset_top = -10.0
 offset_right = 522.0
-offset_bottom = 72.0
+offset_bottom = 52.0
 texture = SubResource("GradientTexture2D_ojfl1")
 
 [node name="Background" type="TextureRect" parent="Control" unique_id=399861663]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 512.0
+offset_bottom = 42.0
 texture = SubResource("GradientTexture2D_wyfsw")
 
 [node name="Bar" type="TextureRect" parent="Control" unique_id=1846584544]
