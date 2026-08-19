@@ -13,7 +13,7 @@ signal attack_executed(ability: Ability)
 
 # Abilities Resources
 @export var quick_arrow: Ability
-#@export var charged_arrow: Ability
+@export var charged_arrow: Ability
 #@export var timed_bomb: Ability
 #@export var ultimate_arrow: Ability
 
@@ -29,7 +29,7 @@ var is_performing_ultimate := false
 # Initializes ability_timers for first use.
 func set_ability_timers() -> void:
 	ability_timers[quick_arrow] = 0.0
-	#ability_timers[charged_arrow] = 0.0
+	ability_timers[charged_arrow] = 0.0
 	#ability_timers[timed_bomb] = 0.0
 	#ability_timers[ultimate_arrow] = 0.0
 
