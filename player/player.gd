@@ -7,6 +7,9 @@ class_name Player
 enum MoveState {
 	IDLE, RUN, HURT, DEAD
 }
+
+enum AttackState {
+	NONE, STARTING, CHARGING, CHARGED, FIRING, ENDING
 }
 
 # Components
@@ -22,7 +25,7 @@ enum MoveState {
 var aiming_tween: Tween
 
 var move_state: MoveState
-var attack_state: State
+var attack_state: AttackState
 var facing_dir := Vector2.RIGHT
 
 
@@ -30,7 +33,7 @@ var facing_dir := Vector2.RIGHT
 
 func _ready() -> void:
 	move_state = MoveState.IDLE
-	attack_state = State.NONE
+	attack_state = AttackState.NONE
 	
 	combat_component.set_ability_timers()
 	combat_component.attack_executed.connect(_helper_attack_executed)
@@ -138,7 +141,7 @@ func _update_move_state(state: MoveState):
 
 
 # Updates the attack state and animation
-func _update_attack_state(state: State):
+func _update_attack_state(state: AttackState):
 	# Prevents locking when holding down the attack button.
 	if attack_state == state:
 		return
@@ -177,7 +180,7 @@ func attack_loop_finished():
 func attack_end_finished():
 	combat_component.is_aiming = false
 	#combat_component.end_attack(self)
-	_update_attack_state(State.NONE)
+	_update_attack_state(AttackState.NONE)
 
 
 # SIGNAL CALLBACKS
