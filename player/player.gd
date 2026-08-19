@@ -121,7 +121,7 @@ func _player_attack():
 	if input_component.main_pressed:
 		#if combat_component.start_attack(self):
 		_update_attack_state(State.ATTACK)
-	
+		
 	# Immediately snaps to direction of movement if attack button is released.
 	elif input_component.main_released:
 		combat_component.is_aiming = false
