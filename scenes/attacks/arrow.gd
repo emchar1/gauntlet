@@ -15,6 +15,7 @@ var initial_velocity: float = 0
 var vertical_velocity: float = 0
 var weight: float = 3
 
+var obeys_gravity: bool = true
 var piercing: bool = false
 var explodes: bool = false
 var usable_while_dodging: bool = false
@@ -56,8 +57,9 @@ func _fire(delta: float):
 	var velocity_3d := GameState.map_2d_to_3d(direction) * speed
 	
 	# Apply gravity to vertical velocity
-	vertical_velocity -= gravity * weight * delta
-	velocity_3d.y = vertical_velocity
+	if obeys_gravity:
+		vertical_velocity -= gravity * weight * delta
+		velocity_3d.y = vertical_velocity
 	
 	# Move
 	global_position += velocity_3d * delta

@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("2_attil")
 scene = ExtResource("1_attil")
-cooldown = 1.0
+cooldown = 0.0
 damage = 4.0
-speed = 100.0
+speed = 200.0
 max_distance = 400.0
+obeys_gravity = false

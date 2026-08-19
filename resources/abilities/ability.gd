@@ -18,6 +18,7 @@ class_name Ability
 
 # FLAGS
 
+@export var obeys_gravity: bool = true
 @export var piercing: bool = false
 @export var explodes: bool = false
 @export var usable_while_dodging: bool = false
@@ -35,6 +36,7 @@ func configure(obj):
 	obj.speed = speed
 	obj.max_distance = max_distance
 	
+	obj.obeys_gravity = obeys_gravity
 	obj.piercing = piercing
 	obj.explodes = explodes
 	obj.usable_while_dodging = usable_while_dodging
