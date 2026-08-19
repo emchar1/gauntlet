@@ -21,11 +21,11 @@ const ONESHOT_PATH = "parameters/OneShot/request"
 
 # FUNCTIONS
 
-func play_locomotion(state: Player.State):
+func play_locomotion(state: Player.MoveState):
 	match state:
-		Player.State.IDLE:
+		Player.MoveState.IDLE:
 			get_locomotion().travel(ANIM_IDLE)
-		Player.State.RUN:
+		Player.MoveState.RUN:
 			get_locomotion().travel(ANIM_RUN)
 
 

@@ -4,8 +4,9 @@ class_name Player
 
 # PROPERTIES
 
-enum State {
-	NONE, IDLE, RUN, ATTACK, HURT, DEAD
+enum MoveState {
+	IDLE, RUN, HURT, DEAD
+}
 }
 
 # Components
@@ -20,7 +21,7 @@ enum State {
 @onready var aiming_r = $AimingReticleR
 var aiming_tween: Tween
 
-var move_state: State
+var move_state: MoveState
 var attack_state: State
 var facing_dir := Vector2.RIGHT
 
@@ -28,7 +29,7 @@ var facing_dir := Vector2.RIGHT
 # FUNCTIONS
 
 func _ready() -> void:
-	move_state = State.IDLE
+	move_state = MoveState.IDLE
 	attack_state = State.NONE
 	
 	combat_component.set_ability_timers()
@@ -61,9 +62,9 @@ func _player_move():
 	movement_component.update_movement(self)
 	
 	if movement_component.is_moving:
-		_update_move_state(State.RUN)
+		_update_move_state(MoveState.RUN)
 	else:
-		_update_move_state(State.IDLE)
+		_update_move_state(MoveState.IDLE)
 
 
 # Updates the direction player is facing based on if aiming vs movement
@@ -128,7 +129,7 @@ func _player_attack():
 
 
 # Updates the move state and animation
-func _update_move_state(state: State):
+func _update_move_state(state: MoveState):
 	if move_state == state:
 		return
 	
