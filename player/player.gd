@@ -9,7 +9,7 @@ enum MoveState {
 }
 
 enum AttackState {
-	NONE, STARTING, CHARGING, CHARGED, FIRING, ENDING
+	NONE, STARTING, CHARGED, FIRING, ENDING
 }
 
 # Components
