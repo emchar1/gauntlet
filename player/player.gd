@@ -37,6 +37,8 @@ func _ready() -> void:
 	
 	combat_component.set_ability_timers()
 	combat_component.attack_executed.connect(_helper_attack_executed)
+	combat_component.charge_started.connect(_helper_charge_started)
+	combat_component.charge_ended.connect(_helper_charge_ended)
 
 
 func _physics_process(delta: float) -> void:
@@ -122,11 +124,16 @@ func _player_attack():
 	input_component.read_combat()
 	input_component.read_aiming(self)
 	
-	if input_component.main_pressed:
-		#if combat_component.start_attack(self):
-		_update_attack_state(State.ATTACK)
+	if input_component.charge_pressed:
+		_update_attack_state(AttackState.STARTING)
 		
-	# Immediately snaps to direction of movement if attack button is released.
+	elif input_component.charge_released:
+		if attack_state == AttackState.CHARGED:
+			_update_attack_state(AttackState.FIRING)
+		
+	elif input_component.main_pressed:
+		_update_attack_state(AttackState.STARTING)
+		
 	elif input_component.main_released:
 		combat_component.is_aiming = false
 
@@ -159,7 +166,11 @@ func _get_target_angle(direction: Vector2) -> float:
 # ANIMATION PLAYER CALLBACK FUNCTIONS
 
 func attack_start_finished():
-	animation_component.continue_attack(true)
+	if attack_state == AttackState.STARTING:
+		if input_component.charge_held:
+			_update_attack_state(AttackState.CHARGED)
+		else:
+			_update_attack_state(AttackState.FIRING)
 
 
 func attack_loop_started():
@@ -174,12 +185,14 @@ func attack_loop_started():
 
 
 func attack_loop_finished():
-	animation_component.continue_attack(input_component.main_pressed)
+	if input_component.main_pressed:
+		_update_attack_state(AttackState.FIRING)
+	else:
+		_update_attack_state(AttackState.ENDING)
 
 
 func attack_end_finished():
 	combat_component.is_aiming = false
-	#combat_component.end_attack(self)
 	_update_attack_state(AttackState.NONE)
 
 
@@ -196,3 +209,15 @@ func _helper_attack_executed(ability: Ability):
 			facing_dir = GameState.map_3d_to_2d(
 				-global_transform.basis.z
 			).normalized()
+		combat_component.charged_arrow:
+			facing_dir = GameState.map_3d_to_2d(
+				-global_transform.basis.z
+			).normalized()
+
+
+func _helper_charge_started():
+	print("charge started")
+
+
+func _helper_charge_ended():
+	print("charge ended")

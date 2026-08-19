@@ -5,8 +5,8 @@ class_name CombatComponent
 # PROPERTIES
 
 signal attack_executed(ability: Ability)
-#signal charge_started
-#signal charge_ended
+signal charge_started
+signal charge_ended
 
 @export var input_component: InputComponent
 @export var dodge_component: DodgeComponent
@@ -43,16 +43,29 @@ func update_ability_timers(delta: float) -> void:
 
 # Executes attack for the specified actor (player, enemy, etc.)
 func execute_attack(actor: CharacterBody3D) -> void:
-	#if input_component.main_pressed:
-	if not _can_use(quick_arrow):
-		return
-	
-	#is_attacking = true
-	attack_executed.emit(quick_arrow) # ORDER MATTERS!!! MUST GO HERE!
-	_use_ability(actor, quick_arrow)
-	
-	#elif input_component.main_released:
-		#is_attacking = false
+	if input_component.charge_pressed:
+		print("charge_pressed")
+		charge_started.emit()
+		
+	elif input_component.charge_released:
+		print("charge_released")
+		charge_ended.emit()
+		
+		if not _can_use(charged_arrow):
+			return
+		
+		attack_executed.emit(charged_arrow)
+		_use_ability(actor, charged_arrow)
+		
+	elif input_component.main_pressed:
+		print("quick_pressed")
+		if not _can_use(quick_arrow):
+			return
+		
+		attack_executed.emit(quick_arrow) # ORDER MATTERS!!! MUST GO HERE!
+		_use_ability(actor, quick_arrow)
+		
+	# No need to check input_component.main_released (yet).
 
 
 # HELPER FUNCTIONS
