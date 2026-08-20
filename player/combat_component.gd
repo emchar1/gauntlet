@@ -5,8 +5,6 @@ class_name CombatComponent
 # PROPERTIES
 
 signal attack_executed(ability: Ability)
-signal charge_started
-signal charge_ended
 
 @export var input_component: InputComponent
 @export var dodge_component: DodgeComponent

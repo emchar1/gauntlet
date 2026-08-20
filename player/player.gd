@@ -41,8 +41,6 @@ func _ready() -> void:
 	
 	combat_component.set_ability_timers()
 	combat_component.attack_executed.connect(_helper_attack_executed)
-	combat_component.charge_started.connect(_helper_charge_started)
-	combat_component.charge_ended.connect(_helper_charge_ended)
 
 
 func _physics_process(delta: float) -> void:
@@ -225,11 +223,3 @@ func _helper_attack_executed(ability: Ability):
 			facing_dir = GameState.map_3d_to_2d(
 				-global_transform.basis.z
 			).normalized()
-
-
-func _helper_charge_started():
-	print("charge started")
-
-
-func _helper_charge_ended():
-	print("charge ended")
