@@ -132,7 +132,7 @@ func _player_attack():
 			_update_attack_state(AttackState.FIRING)
 		
 	elif input_component.main_pressed:
-		_update_attack_state(AttackState.STARTING)
+		_update_attack_state(AttackState.FIRING)
 		
 	elif input_component.main_released:
 		combat_component.is_aiming = false

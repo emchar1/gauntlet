@@ -35,10 +35,12 @@ func play_combat(state: Player.AttackState):
 			stop_one_shot()
 		Player.AttackState.STARTING:
 			play_one_shot()
+			get_combat().travel(ANIM_ATTACK_START)
 		Player.AttackState.CHARGED:
 			# Hold the final frame of attack_start.
 			pass
 		Player.AttackState.FIRING:
+			play_one_shot()
 			get_combat().travel(ANIM_ATTACK_LOOP)
 		Player.AttackState.ENDING:
 			get_combat().travel(ANIM_ATTACK_END)
