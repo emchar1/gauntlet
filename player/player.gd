@@ -179,6 +179,7 @@ func _get_target_angle(direction: Vector2) -> float:
 # ANIMATION PLAYER CALLBACK FUNCTIONS
 
 func attack_start_finished():
+	can_fire_charged = true
 	# STARTING state is no longer in use 8/20/26.
 	#if attack_state == AttackState.STARTING:
 		#if input_component.charge_held:
