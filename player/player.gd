@@ -130,9 +130,11 @@ func _player_attack():
 	
 	if input_component.charge_pressed:
 		current_ability = combat_component.charged_arrow
+		_update_attack_state(AttackState.STARTING)
 		
 	elif input_component.charge_released:
 		current_ability = combat_component.quick_arrow
+		_update_attack_state(AttackState.ENDING)
 		
 	elif input_component.main_pressed:
 		_update_attack_state(AttackState.FIRING)
@@ -174,11 +176,11 @@ func _get_target_angle(direction: Vector2) -> float:
 
 func attack_start_finished():
 	# STARTING state is no longer in use 8/20/26.
-	# if attack_state == AttackState.STARTING:
-	# 	if input_component.charge_held:
-	# 		_update_attack_state(AttackState.CHARGED)
-	# 	else:
-	# 		_update_attack_state(AttackState.FIRING)
+	#if attack_state == AttackState.STARTING:
+		#if input_component.charge_held:
+			#_update_attack_state(AttackState.CHARGED)
+		#else:
+			#_update_attack_state(AttackState.FIRING)
 	pass
 
 
