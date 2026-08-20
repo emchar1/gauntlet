@@ -9,6 +9,7 @@ const ANIM_IDLE = "idle"
 const ANIM_RUN = "run"
 const ANIM_ATTACK_START = "attack_start"
 const ANIM_ATTACK_LOOP = "attack_loop"
+const ANIM_ATTACK_LOOP_SLOW = "attack_loop_slow"
 const ANIM_ATTACK_END = "attack_end"
 
 # AnimationTree constants
@@ -29,7 +30,7 @@ func play_locomotion(state: Player.MoveState):
 			get_locomotion().travel(ANIM_RUN)
 
 
-func play_combat(state: Player.AttackState):
+func play_combat(state: Player.AttackState, charged: bool):
 	match state:
 		Player.AttackState.NONE:
 			stop_one_shot()
@@ -41,7 +42,11 @@ func play_combat(state: Player.AttackState):
 			pass
 		Player.AttackState.FIRING:
 			play_one_shot()
-			get_combat().travel(ANIM_ATTACK_LOOP)
+			
+			if charged:
+				get_combat().travel(ANIM_ATTACK_LOOP_SLOW)
+			else:
+				get_combat().travel(ANIM_ATTACK_LOOP)
 		Player.AttackState.ENDING:
 			get_combat().travel(ANIM_ATTACK_END)
 

@@ -72,38 +72,30 @@ height = 1.0
 radius = 0.2
 height = 1.0
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rgyib"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hg6s5"]
 animation = &"attack_end"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hg6s5"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ebec5"]
 animation = &"attack_loop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8t03j"]
+animation = &"attack_loop_slow"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2ieo8"]
 animation = &"attack_start"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yllr7"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8t03j"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hg6s5"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ieo8"]
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wodsf"]
-states/End/position = Vector2(610, 99.77881)
-states/Start/position = Vector2(128.5, 100.2168)
-states/attack_end/node = SubResource("AnimationNodeAnimation_rgyib")
-states/attack_end/position = Vector2(372.12646, 388.73438)
-states/attack_loop/node = SubResource("AnimationNodeAnimation_hg6s5")
-states/attack_loop/position = Vector2(372.06543, 248.17188)
+states/End/position = Vector2(813.5, 360.00204)
+states/Start/position = Vector2(-45, 100.175735)
+states/attack_end/node = SubResource("AnimationNodeAnimation_hg6s5")
+states/attack_end/position = Vector2(367.28516, 359.90118)
+states/attack_loop/node = SubResource("AnimationNodeAnimation_ebec5")
+states/attack_loop/position = Vector2(236, 227.1753)
+states/attack_loop_slow/node = SubResource("AnimationNodeAnimation_8t03j")
+states/attack_loop_slow/position = Vector2(524.375, 227.5503)
 states/attack_start/node = SubResource("AnimationNodeAnimation_2ieo8")
-states/attack_start/position = Vector2(372.1875, 101.46094)
-transitions = ["attack_start", "attack_loop", SubResource("AnimationNodeStateMachineTransition_yllr7"), "attack_loop", "attack_end", SubResource("AnimationNodeStateMachineTransition_8t03j"), "Start", "attack_start", SubResource("AnimationNodeStateMachineTransition_hg6s5"), "Start", "attack_loop", SubResource("AnimationNodeStateMachineTransition_2ieo8")]
-graph_offset = Vector2(-220, 50.800285)
+states/attack_start/position = Vector2(367.04688, 100.16205)
+graph_offset = Vector2(-220, 38.42998)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g6k8r"]
 animation = &"idle"
@@ -135,14 +127,14 @@ filter_enabled = true
 filters = [".", "Visuals/BodyPivot/TorsoPivot/Head:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot:position", "Visuals/BodyPivot/TorsoPivot:rotation"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_u3pco"]
-graph_offset = Vector2(-356.91132, 6.463852)
+graph_offset = Vector2(-429.5986, 0)
 nodes/output/position = Vector2(510, 120)
 nodes/Locomotion/node = SubResource("AnimationNodeStateMachine_2ieo8")
 nodes/Locomotion/position = Vector2(-320, -40)
-nodes/Combat/node = SubResource("AnimationNodeStateMachine_wodsf")
-nodes/Combat/position = Vector2(-320, 210)
 nodes/OneShot/node = SubResource("AnimationNodeOneShot_2ieo8")
 nodes/OneShot/position = Vector2(140, 30)
+nodes/Combat/node = SubResource("AnimationNodeStateMachine_wodsf")
+nodes/Combat/position = Vector2(-320, 210)
 node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Locomotion", &"OneShot", 1, &"Combat"]
 
 [sub_resource type="Animation" id="Animation_kqu6x"]
@@ -478,6 +470,7 @@ tracks/13/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_boad6"]
+resource_name = "attack_loop"
 length = 0.25
 loop_mode = 1
 tracks/0/type = "value"
@@ -644,6 +637,184 @@ tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"attack_loop_started"
+}, {
+"args": [],
+"method": &"attack_loop_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wodsf"]
+resource_name = "attack_loop"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/BodyPivot/TorsoPivot/Head:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.0471976, 0), Vector3(-0.17453292, -0.5235988, 0), Vector3(0, -1.0471976, 0), Vector3(0, -1.0471976, 0), Vector3(0, -1.0471976, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/BodyPivot/TorsoPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/BodyPivot/TorsoPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.0471976, 0), Vector3(0.13962634, 0.6981317, 0.13962634), Vector3(0, 1.0471976, 0), Vector3(-0.13962634, 1.3089969, -0.13962634), Vector3(0, 1.0471976, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.17453292, 0.5235988, -1.8325957), Vector3(0.17453292, 0, -2.0943952), Vector3(0.17453292, 0.5235988, -1.8325957), Vector3(-3.312635, -2.0699606, -1.4276793), Vector3(0.17453292, 0.5235988, -1.8325957)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2.6179938, 0, -0.20943952), Vector3(2.0071287, 0, 0), Vector3(2.6179938, 0, -0.20943952), Vector3(-0.3822271, 1.7104226, -0.8552113), Vector3(2.6179938, 0, -0.20943952)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0.6981317, 1.3962634), Vector3(-1.5707964, 1.0471976, 1.3962634), Vector3(-1.5707964, 0.6981317, 1.3962634), Vector3(-1.5707964, 0.6981317, 1.3962634), Vector3(-1.5707964, 0.6981317, 1.3962634)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.20943952), Vector3(0, 0, 0.20943952), Vector3(0, 0, 0.20943952), Vector3(0, 0, 0.20943952), Vector3(0, 0, 0.20943952)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.75, 0), Vector3(0, -0.75, 0), Vector3(0, -0.75, 0), Vector3(0, -0.75, 0), Vector3(0, -0.75, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.3089969, 0), Vector3(0, 1.3089969, 0), Vector3(0, 1.3089969, 0), Vector3(0, 1.3089969, 0), Vector3(0, 1.3089969, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.2617994), Vector3(0, 0, -0.2617994), Vector3(0, 0, -0.2617994), Vector3(0, 0, -0.2617994), Vector3(0, 0, -0.2617994)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.08726645), Vector3(0, 0, 0.08726645), Vector3(0, 0, 0.08726645), Vector3(0, 0, 0.08726645), Vector3(0, 0, 0.08726645)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.2617994), Vector3(0, 0, 0.2617994), Vector3(0, 0, 0.2617994), Vector3(0, 0, 0.2617994), Vector3(0, 0, 0.2617994)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.06666665, 0.25, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646), Vector3(0, 0, -0.08726646)]
+}
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -1318,6 +1489,7 @@ _data = {
 &"RESET": SubResource("Animation_kqu6x"),
 &"attack_end": SubResource("Animation_g6k8r"),
 &"attack_loop": SubResource("Animation_boad6"),
+&"attack_loop_slow": SubResource("Animation_wodsf"),
 &"attack_start": SubResource("Animation_rgyib"),
 &"hurt": SubResource("Animation_yw30f"),
 &"idle": SubResource("Animation_oul6g"),

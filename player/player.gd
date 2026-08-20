@@ -26,6 +26,8 @@ var aiming_tween: Tween
 
 var move_state: MoveState
 var attack_state: AttackState
+var current_ability: Ability
+var last_ability: Ability
 var facing_dir := Vector2.RIGHT
 
 
@@ -34,6 +36,8 @@ var facing_dir := Vector2.RIGHT
 func _ready() -> void:
 	move_state = MoveState.IDLE
 	attack_state = AttackState.NONE
+	current_ability = combat_component.quick_arrow
+	last_ability = combat_component.quick_arrow
 	
 	combat_component.set_ability_timers()
 	combat_component.attack_executed.connect(_helper_attack_executed)
@@ -125,11 +129,10 @@ func _player_attack():
 	input_component.read_aiming(self)
 	
 	if input_component.charge_pressed:
-		_update_attack_state(AttackState.STARTING)
+		current_ability = combat_component.charged_arrow
 		
 	elif input_component.charge_released:
-		if attack_state == AttackState.CHARGED:
-			_update_attack_state(AttackState.FIRING)
+		current_ability = combat_component.quick_arrow
 		
 	elif input_component.main_pressed:
 		_update_attack_state(AttackState.FIRING)
@@ -150,11 +153,15 @@ func _update_move_state(state: MoveState):
 # Updates the attack state and animation
 func _update_attack_state(state: AttackState):
 	# Prevents locking when holding down the attack button.
-	if attack_state == state:
+	if attack_state == state and last_ability == current_ability:
 		return
 	
+	last_ability = current_ability
+	
+	var is_charged = current_ability == combat_component.charged_arrow
+	
 	attack_state = state
-	animation_component.play_combat(state)
+	animation_component.play_combat(state, is_charged)
 
 
 # Retrieves the target angle based on the aim direction.
@@ -166,11 +173,13 @@ func _get_target_angle(direction: Vector2) -> float:
 # ANIMATION PLAYER CALLBACK FUNCTIONS
 
 func attack_start_finished():
-	if attack_state == AttackState.STARTING:
-		if input_component.charge_held:
-			_update_attack_state(AttackState.CHARGED)
-		else:
-			_update_attack_state(AttackState.FIRING)
+	# STARTING state is no longer in use 8/20/26.
+	# if attack_state == AttackState.STARTING:
+	# 	if input_component.charge_held:
+	# 		_update_attack_state(AttackState.CHARGED)
+	# 	else:
+	# 		_update_attack_state(AttackState.FIRING)
+	pass
 
 
 func attack_loop_started():
