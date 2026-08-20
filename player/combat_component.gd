@@ -42,30 +42,12 @@ func update_ability_timers(delta: float) -> void:
 
 
 # Executes attack for the specified actor (player, enemy, etc.)
-func execute_attack(actor: CharacterBody3D) -> void:
-	if input_component.charge_pressed:
-		print("charge_pressed")
-		charge_started.emit()
-		
-	elif input_component.charge_released:
-		print("charge_released")
-		charge_ended.emit()
-		
-		if not _can_use(charged_arrow):
-			return
-		
-		attack_executed.emit(charged_arrow)
-		_use_ability(actor, charged_arrow)
-		
-	elif input_component.main_pressed:
-		print("quick_pressed")
-		if not _can_use(quick_arrow):
-			return
-		
-		attack_executed.emit(quick_arrow) # ORDER MATTERS!!! MUST GO HERE!
-		_use_ability(actor, quick_arrow)
-		
-	# No need to check input_component.main_released (yet).
+func execute_attack(actor: CharacterBody3D, ability: Ability) -> void:
+	if not _can_use(ability):
+		return
+	
+	attack_executed.emit(ability)
+	_use_ability(actor, ability)
 
 
 # HELPER FUNCTIONS

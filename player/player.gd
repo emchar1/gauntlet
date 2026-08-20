@@ -180,7 +180,8 @@ func attack_loop_started():
 		rotation.y = target_angle
 	
 	combat_component.is_aiming = true
-	combat_component.execute_attack(self)
+	
+	combat_component.execute_attack(self, current_ability)
 	#combat_component.update_ability_timers(0)
 
 
