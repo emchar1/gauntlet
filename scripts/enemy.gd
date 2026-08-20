@@ -85,6 +85,8 @@ func _update_state(state: State):
 			animation_player.play("run")
 		State.ATTACK:
 			animation_player.play("attack")
+		State.DEAD:
+			animation_player.play("dead")
 		_:
 			animation_player.play("RESET")
 
@@ -142,7 +144,7 @@ func slay(direction: Vector2, knockback: float):
 	
 	is_slaying = true
 	turn_off_collisions()
-	_update_state(State.IDLE)
+	_update_state(State.DEAD)
 	
 	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
 	
