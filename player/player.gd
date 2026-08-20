@@ -28,6 +28,7 @@ var move_state: MoveState
 var attack_state: AttackState
 var current_ability: Ability
 var last_ability: Ability
+var can_fire_charged: bool = false
 var facing_dir := Vector2.RIGHT
 
 
@@ -131,11 +132,16 @@ func _player_attack():
 		_update_attack_state(AttackState.STARTING)
 		
 	elif input_component.charge_released:
+		can_fire_charged = false
 		current_ability = combat_component.quick_arrow
 		_update_attack_state(AttackState.ENDING)
 		
 	elif input_component.main_pressed:
-		_update_attack_state(AttackState.FIRING)
+		if current_ability == combat_component.charged_arrow:
+			if can_fire_charged:
+				_update_attack_state(AttackState.FIRING)
+		else:
+			_update_attack_state(AttackState.FIRING)
 		
 	elif input_component.main_released:
 		combat_component.is_aiming = false
