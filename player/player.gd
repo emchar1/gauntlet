@@ -180,13 +180,6 @@ func _get_target_angle(direction: Vector2) -> float:
 
 func attack_start_finished():
 	can_fire_charged = true
-	# STARTING state is no longer in use 8/20/26.
-	#if attack_state == AttackState.STARTING:
-		#if input_component.charge_held:
-			#_update_attack_state(AttackState.CHARGED)
-		#else:
-			#_update_attack_state(AttackState.FIRING)
-	pass
 
 
 func attack_loop_started():
