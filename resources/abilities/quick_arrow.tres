@@ -8,4 +8,5 @@ script = ExtResource("1_vtj14")
 scene = ExtResource("1_emyq1")
 cooldown = 0.0
 speed = 60.0
+knockback = 1.0
 max_distance = 400.0

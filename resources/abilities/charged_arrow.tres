@@ -9,5 +9,6 @@ scene = ExtResource("1_attil")
 cooldown = 0.0
 damage = 4.0
 speed = 200.0
+knockback = 6.0
 max_distance = 400.0
 obeys_gravity = false

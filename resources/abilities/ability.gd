@@ -13,6 +13,7 @@ class_name Ability
 @export var cooldown: float = 0.2
 @export var damage: float = 2
 @export var speed: float = 10
+@export var knockback: float = 0
 @export var max_distance: float = 40
 
 
@@ -34,6 +35,7 @@ func configure(obj):
 	
 	obj.damage = damage
 	obj.speed = speed
+	obj.knockback = knockback
 	obj.max_distance = max_distance
 	
 	obj.obeys_gravity = obeys_gravity

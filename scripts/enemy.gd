@@ -107,7 +107,7 @@ func spawn():
 
 
 # This is what registers enemy hurtbox from player's hitbox, i.e. arrow.
-func damage(amount: float):
+func damage(amount: float, direction: Vector2, knockback: float):
 	if not has_spawned:
 		return
 	
@@ -119,18 +119,31 @@ func damage(amount: float):
 	enemy_hp.update_health(current_hp)
 	
 	if current_hp <= 0:
-		call_deferred("slay")
+		call_deferred("slay", direction, knockback)
 
 
-func slay():
+func slay(direction: Vector2, knockback: float):
 	if is_slaying:
 		return
+	
+	# Apply knockback
+	var knockback_direction := GameState.map_2d_to_3d(direction.normalized())
+	var target_position := global_position + knockback_direction * knockback
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_parallel(true)
+	tween.tween_property(
+		self,
+		"global_position",
+		target_position,
+		enemy_config.slay_duration
+	)
 	
 	is_slaying = true
 	turn_off_collisions()
 	_update_state(State.IDLE)
 	
-	var tween := create_tween()
 	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
 	
 	for mesh in meshes:
@@ -143,12 +156,12 @@ func slay():
 		mesh.material_override = material
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 		
-		tween.parallel().tween_property(
+		tween.tween_property(
 			material,
 			"albedo_color:a",
 			0.0,
 			enemy_config.slay_duration
-		)
+		).set_delay(enemy_config.slay_duration)
 		
 	tween.finished.connect(queue_free)
 

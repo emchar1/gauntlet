@@ -9,6 +9,7 @@ var color: Color
 
 var damage: float = 2
 var speed: float = 10
+var knockback: float = 0
 var max_distance: float = 40
 
 var initial_velocity: float = 0
@@ -126,7 +127,7 @@ func _on_area_entered(area: Area3D) -> void:
 	
 	if area.is_in_group("hurtbox"):
 		has_hit = true
-		area.get_parent().damage(damage)
+		area.get_parent().damage(damage, direction, knockback)
 	
 		# TODO: - Build for mobs
 		#if area.get_parent() is Mob:
