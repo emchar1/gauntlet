@@ -19,7 +19,7 @@ func setup_values(max_hp: float):
 
 
 func position_hp(enemy: Node3D):
-	var offset := Vector3(-1.5, 0, 2)
+	var offset := Vector3(-0.75, 0, 2)
 	var world_position := enemy.global_position + offset + Vector3.UP * 1.5
 	position = camera.unproject_position(world_position)
 
