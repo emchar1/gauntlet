@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ck780h86s3l8"]
 
 [ext_resource type="PackedScene" uid="uid://bo5gsbc8muutd" path="res://scenes/level_maps/floor_tiles.tscn" id="1_lfv5x"]
-[ext_resource type="Script" uid="uid://bgqf168djh7wc" path="res://scenes/level_maps/level_map_zone.gd" id="2_n56ti"]
+[ext_resource type="Script" uid="uid://bgqf168djh7wc" path="res://scenes/level_maps/zone.gd" id="2_n56ti"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
 albedo_color = Color(0.23777552, 0.30820453, 0.30820453, 1)

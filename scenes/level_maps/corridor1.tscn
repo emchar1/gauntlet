@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3mx8h7ksamic"]
 
 [ext_resource type="PackedScene" uid="uid://bo5gsbc8muutd" path="res://scenes/level_maps/floor_tiles.tscn" id="1_b4pee"]
-[ext_resource type="Script" uid="uid://bgqf168djh7wc" path="res://scenes/level_maps/level_map_zone.gd" id="1_gnqwy"]
+[ext_resource type="Script" uid="uid://bgqf168djh7wc" path="res://scenes/level_maps/zone.gd" id="1_gnqwy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_b4pee"]
 size = Vector3(133, 1, 29)
