@@ -4,7 +4,7 @@ extends Node3D
 
 @export var enemy_scene: PackedScene
 @export var total_enemies: int = 5
-@onready var player = $Player
+@export var player: Player
 
 var current_enemy: int = 0
 
@@ -43,7 +43,6 @@ func _on_enemy_timer_timeout() -> void:
 	enemy.player = player
 	enemy.position = enemy_spawn_location.position
 	enemy.enemy_config = enemy_configs.pick_random()
-	#enemy.apply_config()
 	enemy.spawn()
 	
 	add_child(enemy)

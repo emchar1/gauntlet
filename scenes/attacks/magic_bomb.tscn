@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://6pirq7234u1e"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_u3pco"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
+albedo_color = Color(0, 1, 0, 1)
+
+[node name="MagicBomb" type="Node3D" unique_id=379279929]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=282075276]
+mesh = SubResource("SphereMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")

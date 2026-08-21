@@ -1,23 +1,11 @@
 [gd_scene format=3 uid="uid://csrqul1o4rknl"]
 
 [ext_resource type="PackedScene" uid="uid://d0wpdauwxuhl0" path="res://player/player.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://50dxxlmu2646" path="res://scripts/main.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dp54chl2fbltr" path="res://scenes/level_maps/level_map.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dtl8dv746mrep" path="res://scenes/camera_controller.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c2hs3iqsoq2kk" path="res://scenes/enemy.tscn" id="4_jyhfs"]
 
-[sub_resource type="Curve3D" id="Curve3D_o6xl0"]
-closed = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11.591509, 0.49998474, -89.82915, 0, 0, 0, 0, 0, 0, 11.109762, 0.49998474, -90.363174, 0, 0, 0, 0, 0, 0, 11.268337, 0.5, -50.104984, 0, 0, 0, 0, 0, 0, -11.461029, 0.5, -52.711266),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
-
 [node name="Main" type="Node3D" unique_id=1117782995]
-script = ExtResource("1_tefeu")
-enemy_scene = ExtResource("4_jyhfs")
-total_enemies = 9
 
 [node name="Player" parent="." unique_id=1083748732 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -5)
@@ -29,16 +17,8 @@ transform = Transform3D(1, 0, 0, 0, 0.80281746, 0.59622484, 0, -0.59622484, 0.80
 transform = Transform3D(1, 0, 0, 0, 0.17364813, 0.9848072, 0, -0.9848072, 0.17364813, 0, 0, 0)
 follow_offset = Vector3(0, 50, 8)
 
-[node name="LevelMap" parent="." unique_id=925975153 instance=ExtResource("2_0wfyh")]
+[node name="LevelMap" parent="." unique_id=925975153 node_paths=PackedStringArray("player") instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
-
-[node name="EnemySpawn" type="Path3D" parent="." unique_id=15169790]
-curve = SubResource("Curve3D_o6xl0")
-
-[node name="EnemySpawnLocation" type="PathFollow3D" parent="EnemySpawn" unique_id=389499167]
-transform = Transform3D(0.023517568, 0, -0.99971944, 0, 1, 0, 0.99971944, 0, 0.023517568, -11.591509, 0.49998474, -89.82915)
-
-[node name="EnemyTimer" type="Timer" parent="." unique_id=1643140536]
-autostart = true
-
-[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
+enemy_scene = ExtResource("4_jyhfs")
+total_enemies = 9
+player = NodePath("../Player")
