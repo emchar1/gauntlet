@@ -1,12 +1,115 @@
 [gd_scene format=3 uid="uid://6pirq7234u1e"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_u3pco"]
+radius = 8.0
+height = 16.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
-albedo_color = Color(0, 1, 0, 1)
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0.2509804, 1, 0.5019608, 0.34509805)
 
-[node name="MagicBomb" type="Node3D" unique_id=379279929]
+[sub_resource type="SphereShape3D" id="SphereShape3D_u3pco"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_vbv3b"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.063, 0.063, 0.063)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.063, 0.063, 0.063)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:surface_material_override/0:albedo_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.2509804, 1, 0.5019608, 0.34509805)]
+}
+
+[sub_resource type="Animation" id="Animation_qs88h"]
+resource_name = "RESET"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.09953491, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.063, 0.063, 0.063), Vector3(1, 1, 1), Vector3(1.25, 1.25, 1.25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09953491, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.063, 0.063, 0.063), Vector3(1, 1, 1), Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:surface_material_override/0:albedo_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.2509804, 1, 0.5019608, 0.34509805), Color(0.2509804, 1, 0.5019608, 0.34509805), Color(0.2509804, 1, 0.5019608, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qs88h"]
+_data = {
+&"RESET": SubResource("Animation_vbv3b"),
+&"explode": SubResource("Animation_qs88h")
+}
+
+[node name="MagicBomb" type="Area3D" unique_id=1768420655]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=282075276]
+transform = Transform3D(0.063, 0, 0, 0, 0.063, 0, 0, 0, 0.063, 0, 0, 0)
 mesh = SubResource("SphereMesh_u3pco")
 surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=508153975]
+transform = Transform3D(0.063, 0, 0, 0, 0.063, 0, 0, 0, 0.063, 0, 0, 0)
+shape = SubResource("SphereShape3D_u3pco")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1874883498]
+libraries/ = SubResource("AnimationLibrary_qs88h")
+autoplay = &"explode"
