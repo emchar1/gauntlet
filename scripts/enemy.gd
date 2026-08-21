@@ -9,7 +9,7 @@ enum State {
 
 @onready var animation_player = $AnimationPlayer
 @onready var nav_agent = $NavigationAgent3D
-@onready var enemy_hp = $EnemyHP
+@onready var hp_bar = $HPBar
 
 var enemy_config: EnemyConfig
 var player: Player
@@ -30,13 +30,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	_apply_gravity(delta)
 	_process_movement()
-	enemy_hp.position_hp(self)
+	hp_bar.position_hp(self)
 	
 	move_and_slide()
 
 
 func _setup_enemy():
-	enemy_hp.setup_values(enemy_config.hp)
+	hp_bar.setup_values(enemy_config.hp)
 	current_hp = enemy_config.hp
 	_update_state(State.RUN)
 
@@ -118,7 +118,7 @@ func damage(amount: float, direction: Vector2, knockback: float):
 	
 	current_hp -= amount
 	current_hp = clamp(current_hp, 0, enemy_config.hp)
-	enemy_hp.update_health(current_hp)
+	hp_bar.update_health(current_hp)
 	
 	if current_hp <= 0:
 		call_deferred("slay", direction, knockback)
@@ -186,7 +186,7 @@ func turn_off_collisions():
 # And this registers when player gets hit by enemy.
 func _on_hitbox_area_entered(area: Area3D) -> void:
 	if area.is_in_group("hurtbox"):
-		print("Player attacked!")
+		player.update_hp(-enemy_config.attack_dmg)
 
 
 # This detector triggers when player enters enemy's PlayerDetector.

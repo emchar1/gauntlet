@@ -12,6 +12,9 @@ enum AttackState {
 	NONE, STARTING, CHARGED, FIRING, ENDING
 }
 
+@export var hp_max := 100.0
+var hp_current: float
+
 # Components
 @onready var animation_component = %AnimationComponent
 @onready var combat_component = %CombatComponent
@@ -20,6 +23,7 @@ enum AttackState {
 @onready var movement_component = %MovementComponent
 @onready var bow = %Bow
 
+@onready var hp_bar = $HPBar
 @onready var aiming_l = $AimingReticleL
 @onready var aiming_r = $AimingReticleR
 var aiming_tween: Tween
@@ -32,13 +36,16 @@ var can_fire_charged: bool = false
 var facing_dir := Vector2.RIGHT
 
 
-# FUNCTIONS
+# INIT FUNCTIONS
 
 func _ready() -> void:
 	move_state = MoveState.IDLE
 	attack_state = AttackState.NONE
 	current_ability = combat_component.quick_arrow
 	last_ability = combat_component.quick_arrow
+	
+	hp_bar.setup_values(hp_max)
+	hp_current = hp_max
 	
 	combat_component.set_ability_timers()
 	combat_component.attack_executed.connect(_helper_attack_executed)
@@ -51,7 +58,17 @@ func _physics_process(delta: float) -> void:
 	_update_aiming_reticle()
 	_player_attack()
 	
+	hp_bar.position_hp(self)
+
 	move_and_slide()
+
+
+# FUNCTIONS
+
+func update_hp(amount: float):
+	hp_current += amount
+	hp_current = clamp(hp_current, 0, hp_max)
+	hp_bar.update_health(hp_current)
 
 
 # HELPER FUNCTIONS

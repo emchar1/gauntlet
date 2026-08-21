@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2hs3iqsoq2kk"]
 
 [ext_resource type="Script" uid="uid://oqxnj1gfpfic" path="res://scripts/enemy.gd" id="1_7p1mj"]
-[ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/enemy_hp.tscn" id="2_md0e3"]
+[ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/hp_bar.tscn" id="2_md0e3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u3pco"]
 radius = 1.0708008
@@ -986,7 +986,7 @@ mesh = SubResource("CapsuleMesh_7p1mj")
 surface_material_override/0 = SubResource("StandardMaterial3D_md0e3")
 
 [node name="Head" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=1460065352]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.99375045, 0.11161895, 0, -0.11161895, 0.99375045, 0, 1.349552, -0.36090708)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9937504, 0.11161894, 0, -0.11161894, 0.9937504, 0, 1.349552, -0.36090708)
 mesh = SubResource("CapsuleMesh_4ra3w")
 surface_material_override/0 = SubResource("StandardMaterial3D_5uy6h")
 
@@ -1088,7 +1088,7 @@ libraries/ = SubResource("AnimationLibrary_md0e3")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1569762757]
 path_desired_distance = 2.0
 
-[node name="EnemyHP" parent="." unique_id=1591301229 instance=ExtResource("2_md0e3")]
+[node name="HPBar" parent="." unique_id=1591301229 instance=ExtResource("2_md0e3")]
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

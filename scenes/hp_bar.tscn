@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bly6lllpd5h1i"]
 
-[ext_resource type="Script" uid="uid://behcq5c6cwhen" path="res://scripts/enemy_hp.gd" id="1_ojfl1"]
+[ext_resource type="Script" uid="uid://behcq5c6cwhen" path="res://scripts/hp_bar.gd" id="1_e8frx"]
 
 [sub_resource type="Gradient" id="Gradient_8cbqm"]
 offsets = PackedFloat32Array(0.43674698, 1)
@@ -30,9 +30,9 @@ gradient = SubResource("Gradient_0sh1a")
 width = 512
 height = 42
 
-[node name="EnemyHP" type="Node2D" unique_id=1591301229]
+[node name="HPBar" type="Node2D" unique_id=1591301229]
 scale = Vector2(0.08, 0.08)
-script = ExtResource("1_ojfl1")
+script = ExtResource("1_e8frx")
 
 [node name="Control" type="Control" parent="." unique_id=476097051]
 layout_mode = 3
