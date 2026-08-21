@@ -51,6 +51,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0.2509804, 1, 0.5019608, 0.34509805)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OmniLight3D:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OmniLight3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_qs88h"]
 resource_name = "RESET"
@@ -75,7 +99,7 @@ tracks/1/path = NodePath("CollisionShape3D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.09953491, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.063, 0.063, 0.063), Vector3(1, 1, 1), Vector3(1, 1, 1)]
@@ -91,6 +115,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.2509804, 1, 0.5019608, 0.34509805), Color(0.2509804, 1, 0.5019608, 0.34509805), Color(0.2509804, 1, 0.5019608, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OmniLight3D:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 5.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OmniLight3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.100438364, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 8, 0), Vector3(0, 8, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qs88h"]
@@ -109,6 +157,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=508153975]
 transform = Transform3D(0.063, 0, 0, 0, 0.063, 0, 0, 0, 0.063, 0, 0, 0)
 shape = SubResource("SphereShape3D_u3pco")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=804387144]
+light_color = Color(0.20784314, 1, 0.45882353, 1)
+light_energy = 0.0
+omni_range = 20.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1874883498]
 libraries/ = SubResource("AnimationLibrary_qs88h")
