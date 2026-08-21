@@ -1,16 +1,21 @@
 [gd_scene format=3 uid="uid://6pirq7234u1e"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_u3pco"]
-radius = 8.0
-height = 16.0
+radius = 1.0
+height = 2.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
 transparency = 1
 blend_mode = 1
-albedo_color = Color(0.2509804, 1, 0.5019608, 0.34509805)
+albedo_color = Color(0.2509804, 1, 0.5019608, 1)
+metallic = 0.8
+roughness = 0.25
+emission_enabled = true
+emission = Color(0, 1, 0.2509804, 1)
+emission_energy_multiplier = 0.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u3pco"]
-radius = 8.0
+radius = 1.0
 
 [sub_resource type="Animation" id="Animation_vbv3b"]
 resource_name = "RESET"
@@ -25,7 +30,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.063, 0.063, 0.063)]
+"values": [Vector3(0.5, 0.5, 0.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -37,7 +42,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.063, 0.063, 0.063)]
+"values": [Vector3(0.5, 0.5, 0.5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -49,7 +54,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.2509804, 1, 0.5019608, 0.34509805)]
+"values": [Color(0.2509804, 1, 0.5019608, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -87,10 +92,10 @@ tracks/0/path = NodePath("MeshInstance3D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.09953491, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.063, 0.063, 0.063), Vector3(1, 1, 1), Vector3(1.25, 1.25, 1.25)]
+"values": [Vector3(0.5, 0.5, 0.5), Vector3(8, 8, 8), Vector3(10, 10, 10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -102,7 +107,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.063, 0.063, 0.063), Vector3(1, 1, 1), Vector3(1, 1, 1)]
+"values": [Vector3(0.5, 0.5, 0.5), Vector3(8, 8, 8), Vector3(10, 10, 10)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -114,7 +119,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0.2509804, 1, 0.5019608, 0.34509805), Color(0.2509804, 1, 0.5019608, 0.34509805), Color(0.2509804, 1, 0.5019608, 0)]
+"values": [Color(0.2509804, 1, 0.5019608, 1), Color(0.2509804, 1, 0.5019608, 1), Color(0.2509804, 1, 0.5019608, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -135,7 +140,7 @@ tracks/4/path = NodePath("OmniLight3D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.100438364, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 8, 0), Vector3(0, 8, 0)]
@@ -150,12 +155,12 @@ _data = {
 [node name="MagicBomb" type="Area3D" unique_id=1768420655]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=282075276]
-transform = Transform3D(0.063, 0, 0, 0, 0.063, 0, 0, 0, 0.063, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_u3pco")
 surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=508153975]
-transform = Transform3D(0.063, 0, 0, 0, 0.063, 0, 0, 0, 0.063, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_u3pco")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=804387144]
