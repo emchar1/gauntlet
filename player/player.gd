@@ -212,10 +212,13 @@ func attack_loop_started():
 
 
 func attack_loop_finished():
-	if input_component.main_pressed:
-		_update_attack_state(AttackState.FIRING)
+	if current_ability == combat_component.charged_arrow:
+		_update_attack_state(AttackState.CHARGED)
 	else:
-		_update_attack_state(AttackState.ENDING)
+		if input_component.main_pressed:
+			_update_attack_state(AttackState.FIRING)
+		else:
+			_update_attack_state(AttackState.ENDING)
 
 
 func attack_end_finished():
