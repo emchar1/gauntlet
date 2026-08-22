@@ -35,13 +35,17 @@ height = 0.1
 albedo_color = Color(0, 0.7254902, 0, 1)
 roughness = 0.2
 emission_enabled = true
-emission = Color(0.14117648, 1, 0.24313726, 1)
-emission_energy_multiplier = 16.0
+emission = Color(0.23529412, 1, 0.13725491, 1)
+emission_energy_multiplier = 8.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_l2i1x"]
 material = SubResource("StandardMaterial3D_1it6l")
 radius = 0.1
-height = 0.2
+height = 0.4
+
+[sub_resource type="Curve" id="Curve_qs88h"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7004504, 0.8436724), 6.2863913, 6.2863913, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Animation" id="Animation_vbv3b"]
 resource_name = "RESET"
@@ -273,25 +277,30 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 180.0
 flatness = 1.0
-gravity = Vector3(0, 0, 0)
+gravity = Vector3(0, 2, 0)
 initial_velocity_max = 2.0
+tangential_accel_min = 16.0
+tangential_accel_max = 16.0
 scale_amount_min = 0.5
 scale_amount_max = 2.0
 
 [node name="CPUParticles3DLG" type="CPUParticles3D" parent="." unique_id=971526148]
 transparency = 1.0
-amount = 150
+amount = 200
 lifetime = 0.8
 mesh = SubResource("SphereMesh_l2i1x")
 emission_shape = 1
-emission_sphere_radius = 8.0
+emission_sphere_radius = 1.0
 spread = 180.0
 flatness = 1.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 8.0
+gravity = Vector3(0, 20, 0)
+initial_velocity_min = 20.0
 initial_velocity_max = 20.0
+tangential_accel_min = 100.0
+tangential_accel_max = 100.0
 scale_amount_min = 2.0
-scale_amount_max = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_qs88h")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=804387144]
 light_color = Color(0.20784314, 1, 0.45882353, 1)
