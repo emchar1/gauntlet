@@ -146,11 +146,22 @@ tracks/7/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CPUParticles3DLG:scale_amount_max")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8.0]
+}
 
 [sub_resource type="Animation" id="Animation_qs88h"]
 resource_name = "RESET"
-length = 3.5
-loop_mode = 1
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -158,10 +169,10 @@ tracks/0/path = NodePath("MeshInstance3D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 3.1, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3, 3.1, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(8, 8, 8), Vector3(10, 10, 10)]
+"values": [Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(8, 8, 8), Vector3(10, 10, 10), Vector3(10, 10, 10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -170,10 +181,10 @@ tracks/1/path = NodePath("CollisionShape3D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 3.1, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3, 3.1, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(8, 8, 8), Vector3(10, 10, 10)]
+"values": [Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(8, 8, 8), Vector3(10, 10, 10), Vector3(10, 10, 10)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -182,10 +193,10 @@ tracks/2/path = NodePath("MeshInstance3D:surface_material_override/0:albedo_colo
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3, 3.1, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3, 3.1, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.2509804, 1, 0.5019608, 1), Color(0.2509804, 1, 0.5019608, 1), Color(0.2509804, 1, 0.5019608, 1), Color(0.2509804, 1, 0.5019608, 0)]
+"values": [Color(0.2509804, 1, 0.5019608, 1), Color(0.2509804, 1, 0.5019608, 1), Color(0.2509804, 1, 0.5019608, 1), Color(0.2509804, 1, 0.5019608, 0), Color(0.2509804, 1, 0.5019608, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -194,10 +205,10 @@ tracks/3/path = NodePath("OmniLight3D:light_energy")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3, 3.1, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3, 3.1, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 5.0, 0.0]
+"values": [0.0, 0.0, 5.0, 0.0, 0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -206,10 +217,10 @@ tracks/4/path = NodePath("OmniLight3D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3, 3.1, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3, 3.1, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 8, 0), Vector3(0, 8, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 8, 0), Vector3(0, 8, 0), Vector3(0, 8, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -218,10 +229,10 @@ tracks/5/path = NodePath("CPUParticles3DSM:transparency")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 3, 3.1, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3, 3.1, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 1.0, 1.0]
+"values": [0.0, 0.0, 1.0, 1.0, 1.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -230,10 +241,10 @@ tracks/6/path = NodePath("CPUParticles3DLG:transparency")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 3, 3.1, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3, 3.1, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 1.0, 0.0, 0.0]
+"values": [1.0, 1.0, 0.0, 0.0, 0.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -242,10 +253,22 @@ tracks/7/path = NodePath("CollisionShape3D:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 3, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 3, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true]
+"values": [true, false, true, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CPUParticles3DLG:scale_amount_max")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [8.0, 8.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qs88h"]
@@ -293,12 +316,10 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 180.0
 flatness = 1.0
-gravity = Vector3(0, 20, 0)
-initial_velocity_min = 20.0
-initial_velocity_max = 20.0
+gravity = Vector3(0, 2, 0)
 tangential_accel_min = 100.0
 tangential_accel_max = 100.0
-scale_amount_min = 2.0
+scale_amount_min = 0.0
 scale_amount_max = 8.0
 scale_amount_curve = SubResource("Curve_qs88h")
 
@@ -309,6 +330,5 @@ omni_range = 20.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1874883498]
 libraries/ = SubResource("AnimationLibrary_qs88h")
-autoplay = &"explode"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
