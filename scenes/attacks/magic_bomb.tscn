@@ -270,6 +270,20 @@ tracks/8/keys = {
 "update": 0,
 "values": [8.0, 8.0, 0.0]
 }
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_did_explode"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qs88h"]
 _data = {
@@ -330,5 +344,6 @@ omni_range = 20.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1874883498]
 libraries/ = SubResource("AnimationLibrary_qs88h")
+autoplay = &"explode"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

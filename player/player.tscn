@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://du44qatpt1b6h" path="res://player/combat_component.gd" id="4_qjkh3"]
 [ext_resource type="Script" uid="uid://pc67l4sp8nhg" path="res://player/animation_component.gd" id="6_g6k8r"]
 [ext_resource type="Resource" uid="uid://bbqhly2bk7mef" path="res://resources/abilities/charged_arrow.tres" id="6_hg6s5"]
+[ext_resource type="Resource" uid="uid://cs17y0saltl64" path="res://resources/abilities/timed_bomb.tres" id="7_2ieo8"]
 [ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/hp_bar.tscn" id="10_8t03j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tuyoq"]
@@ -1675,6 +1676,7 @@ input_component = NodePath("../InputComponent")
 dodge_component = NodePath("../DodgeComponent")
 quick_arrow = ExtResource("4_boad6")
 charged_arrow = ExtResource("6_hg6s5")
+timed_bomb = ExtResource("7_2ieo8")
 metadata/_custom_type_script = "uid://du44qatpt1b6h"
 
 [node name="DodgeComponent" type="Node" parent="Components" unique_id=355791576]

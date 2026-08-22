@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	_player_move()
 	_update_facing()
 	_update_aiming_reticle()
-	_player_attack()
+	_player_attack(delta)
 	
 	hp_bar.position_hp(self)
 
@@ -140,9 +140,10 @@ func _update_aiming_reticle():
 
 
 # Player attack function.
-func _player_attack():
+func _player_attack(delta: float):
 	input_component.read_combat()
 	input_component.read_aiming(self)
+	combat_component.update_ability_timers(delta)
 	
 	if input_component.charge_pressed:
 		current_ability = combat_component.charged_arrow
@@ -162,6 +163,9 @@ func _player_attack():
 		
 	elif input_component.main_released:
 		combat_component.is_aiming = false
+	
+	if input_component.special_pressed:
+		combat_component.execute_attack(self, combat_component.timed_bomb)
 
 
 # Updates the move state and animation
