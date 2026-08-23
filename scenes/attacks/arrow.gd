@@ -5,7 +5,6 @@ extends Area3D
 
 var initial_position: Vector2
 var direction := Vector2.ZERO
-var color: Color
 
 var damage: float = 2
 var speed: float = 10

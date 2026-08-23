@@ -165,7 +165,7 @@ func _player_attack(delta: float):
 		combat_component.is_aiming = false
 	
 	if input_component.special_pressed:
-		combat_component.execute_attack(self, combat_component.timed_bomb)
+		combat_component.execute_attack(self, combat_component.magic_bomb)
 
 
 # Updates the move state and animation

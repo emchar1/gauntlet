@@ -5,7 +5,6 @@ class_name Ability
 # VISUALS / SPAWNING
 
 @export var scene: PackedScene
-@export var color: Color = Color(1, 1, 1, 1)
 
 
 # STATS
@@ -28,11 +27,6 @@ class_name Ability
 # FUNCTIONS
 
 func configure(obj):
-	obj.color = color
-	#obj.modulate = color
-	
-	#obj.rotation = Vector3(0, 0, PI / 2)
-	
 	obj.damage = damage
 	obj.speed = speed
 	obj.knockback = knockback

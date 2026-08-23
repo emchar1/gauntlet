@@ -12,7 +12,7 @@ signal attack_executed(ability: Ability)
 # Abilities Resources
 @export var quick_arrow: Ability
 @export var charged_arrow: Ability
-@export var timed_bomb: Ability
+@export var magic_bomb: Ability
 #@export var ultimate_arrow: Ability
 
 var ability_timers: Dictionary = {}
@@ -28,7 +28,7 @@ var is_performing_ultimate := false
 func set_ability_timers() -> void:
 	ability_timers[quick_arrow] = 0.0
 	ability_timers[charged_arrow] = 0.0
-	ability_timers[timed_bomb] = 0.0
+	ability_timers[magic_bomb] = 0.0
 	#ability_timers[ultimate_arrow] = 0.0
 
 
@@ -51,6 +51,11 @@ func execute_attack(actor: CharacterBody3D, ability: Ability) -> void:
 
 # Uses attack ability. Assumes 'actor' has a property, 'facing_dir'.
 func _use_ability(actor: CharacterBody3D, ability: Ability) -> void:
+	# Check ability is valid!
+	if not ability:
+		print("Invalid ability. Check CombatComponent node in Player.tscn.")
+		return
+	
 	# Create Ability object
 	var obj = ability.scene.instantiate()
 	obj.setup(actor.global_position, actor.facing_dir)
