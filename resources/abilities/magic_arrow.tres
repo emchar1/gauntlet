@@ -6,7 +6,9 @@
 [resource]
 script = ExtResource("2_jl0cy")
 scene = ExtResource("1_eavby")
+cooldown = 9.0
 damage = 0.0
 speed = 200.0
 max_distance = 400.0
 obeys_gravity = false
+explodes = true

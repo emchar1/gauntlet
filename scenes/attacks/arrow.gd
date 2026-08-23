@@ -3,6 +3,8 @@ extends Area3D
 
 # PROPERTIES
 
+@onready var particles = $CPUParticles3D
+
 var initial_position: Vector2
 var direction := Vector2.ZERO
 
@@ -31,7 +33,7 @@ var is_inert := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	particles.visible = explodes
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
