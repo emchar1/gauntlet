@@ -30,10 +30,13 @@ var aiming_tween: Tween
 
 var move_state: MoveState
 var attack_state: AttackState
+var facing_dir := Vector2.RIGHT
+
+# Ability-handling Properties
+var selected_ability: Ability
 var current_ability: Ability
 var last_ability: Ability
 var can_fire_charged: bool = false
-var facing_dir := Vector2.RIGHT
 
 
 # INIT FUNCTIONS
@@ -41,8 +44,10 @@ var facing_dir := Vector2.RIGHT
 func _ready() -> void:
 	move_state = MoveState.IDLE
 	attack_state = AttackState.NONE
-	current_ability = combat_component.quick_arrow
-	last_ability = combat_component.quick_arrow
+	
+	selected_ability = combat_component.quick_arrow
+	current_ability = selected_ability
+	last_ability = selected_ability
 	
 	hp_bar.setup_values(hp_max)
 	hp_current = hp_max
@@ -147,19 +152,23 @@ func _player_attack(delta: float):
 	
 	# Basic Attacks
 	if input_component.charge_pressed:
-		current_ability = combat_component.charged_arrow
+		selected_ability = combat_component.charged_arrow
+		current_ability = selected_ability
 		_update_attack_state(AttackState.STARTING)
 		
 	elif input_component.charge_released:
 		can_fire_charged = false
-		current_ability = combat_component.quick_arrow
+		selected_ability = combat_component.quick_arrow
+		current_ability = selected_ability
 		_update_attack_state(AttackState.ENDING)
 		
 	elif input_component.main_pressed:
-		if current_ability == combat_component.charged_arrow:
+		if selected_ability == combat_component.charged_arrow:
 			if can_fire_charged:
+				current_ability = selected_ability
 				_update_attack_state(AttackState.FIRING)
 		else:
+			current_ability = selected_ability
 			_update_attack_state(AttackState.FIRING)
 		
 	elif input_component.main_released:
@@ -167,7 +176,11 @@ func _player_attack(delta: float):
 	
 	# Magical Attacks
 	if input_component.special_pressed:
-		combat_component.execute_attack(self, combat_component.magic_bomb)
+		if can_fire_charged:
+			current_ability = combat_component.magic_arrow
+			_update_attack_state(AttackState.FIRING)
+		else:
+			combat_component.execute_attack(self, combat_component.magic_bomb)
 
 
 # Updates the move state and animation
@@ -185,12 +198,26 @@ func _update_attack_state(state: AttackState):
 	if attack_state == state and last_ability == current_ability:
 		return
 	
+	if not combat_component._can_use(current_ability):
+		# If you don't set last_ability == null, function will always return
+		# via above guard check due to last_ability = current_ability!
+		# This is especially needed for attacks with a cooldown, i.e. the
+		# magic arrow.
+		last_ability = null
+		return
+	
 	last_ability = current_ability
 	
-	var is_charged = current_ability == combat_component.charged_arrow
+	var is_basic_charged = current_ability == combat_component.charged_arrow
+	var is_magic_charged = current_ability == combat_component.magic_arrow
+	var is_charged = is_basic_charged or is_magic_charged
 	
 	attack_state = state
 	animation_component.play_combat(state, is_charged)
+	
+	if is_magic_charged:
+		# Shake camera on magic arrow
+		GameState.shake_main_camera(2, 15)
 
 
 # Retrieves the target angle based on the aim direction.
@@ -212,12 +239,11 @@ func attack_loop_started():
 		rotation.y = target_angle
 	
 	combat_component.is_aiming = true
-	
 	combat_component.execute_attack(self, current_ability)
 
 
 func attack_loop_finished():
-	if current_ability == combat_component.charged_arrow:
+	if selected_ability == combat_component.charged_arrow:
 		_update_attack_state(AttackState.CHARGED)
 	else:
 		if input_component.main_pressed:
@@ -228,6 +254,7 @@ func attack_loop_finished():
 
 func attack_end_finished():
 	combat_component.is_aiming = false
+	current_ability = selected_ability
 	_update_attack_state(AttackState.NONE)
 
 

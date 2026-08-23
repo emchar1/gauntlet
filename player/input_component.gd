@@ -61,7 +61,7 @@ func read_combat() -> void:
 	charge_pressed = Input.is_action_just_pressed(ATTACK_CHARGE)
 	charge_held = Input.is_action_pressed(ATTACK_CHARGE)
 	charge_released = Input.is_action_just_released(ATTACK_CHARGE)
-	special_pressed = Input.is_action_pressed(ATTACK_SPECIAL)
+	special_pressed = Input.is_action_just_pressed(ATTACK_SPECIAL)
 	potion_pressed = Input.is_action_just_pressed(USE_POTION)
 	dodge_pressed = Input.is_action_just_pressed(DODGE)
 	relic_pressed = Input.is_action_just_pressed(USE_RELIC)

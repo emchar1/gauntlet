@@ -48,7 +48,7 @@ func _on_area_entered(area: Area3D) -> void:
 
 
 func _is_exploding():
-	GameState.shake_main_camera(0.5, 5)
+	GameState.shake_main_camera(1.5, 5)
 
 
 # Must free up bomb after it explodes otherwise it'll keep stacking.
