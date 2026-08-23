@@ -29,7 +29,8 @@ func _process(_delta: float) -> void:
 
 
 func setup(pos: Vector3, _dir: Vector2):
-	position = pos
+	var player_offset = Vector3(0, -2.5, 0)
+	position = pos + player_offset
 
 
 # SIGNAL CALLBACK FUNCTIONS
