@@ -265,9 +265,12 @@ tracks/8/path = NodePath(".")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"_is_exploding"
+}, {
 "args": [],
 "method": &"_did_explode"
 }]

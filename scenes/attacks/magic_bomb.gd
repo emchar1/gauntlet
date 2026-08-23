@@ -47,6 +47,15 @@ func _on_area_entered(area: Area3D) -> void:
 		enemy.damage(damage, direction, knockback)
 
 
+func _is_exploding():
+	var camera = get_tree().current_scene.get_node("CameraController")
+	var shake_strength := 0.5
+	var shake_speed := 5.0
+	
+	if camera:
+		camera.shake(shake_strength, shake_speed)
+
+
 # Must free up bomb after it explodes otherwise it'll keep stacking.
 func _did_explode():
 	queue_free()

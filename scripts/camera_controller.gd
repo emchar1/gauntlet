@@ -18,6 +18,10 @@ var mode = CameraMode.FOLLOW
 var tween: Tween
 var current_zone: Zone
 
+var shake_offset: Vector3 = Vector3.ZERO
+var shake_strength: float = 0
+var shake_speed: float = 5
+
 
 # FUNCTIONS
 
@@ -30,9 +34,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if mode == CameraMode.FOLLOW:
 		follow_player()
+	
+	_update_shake(delta)
 
 
 # Call this in _process() to track the object
@@ -101,3 +107,20 @@ func switch_to_anchor(zone: Zone):
 		zone.center_point.global_position,
 		zoom_duration
 	)
+
+
+func _update_shake(delta: float):
+	shake_strength = lerpf(shake_strength, 0.0, shake_speed * delta)
+	
+	shake_offset = Vector3(
+		randf_range(-shake_strength, shake_strength),
+		randf_range(-shake_strength * 0.5, shake_strength * 0.5),
+		randf_range(-shake_strength, shake_strength)
+	)
+	
+	global_position += shake_offset
+
+
+func shake(strength: float, speed: float = 5):
+	shake_speed = speed
+	shake_strength = max(shake_strength, strength)
