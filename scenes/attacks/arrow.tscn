@@ -29,6 +29,23 @@ size = Vector3(0.5, 0.01, 0.07)
 radius = 0.25
 height = 0.6
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxvvu"]
+albedo_color = Color(0, 1, 0.3882353, 1)
+metallic = 0.37
+roughness = 0.16
+emission_enabled = true
+emission = Color(0.31764707, 1, 0.31764707, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_u3pco"]
+material = SubResource("StandardMaterial3D_cxvvu")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="Curve" id="Curve_cxvvu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.019851089), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Arrow" type="Area3D" unique_id=1013970594 groups=["hitbox"]]
 collision_layer = 16
 collision_mask = 1793
@@ -163,6 +180,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1740955878]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.2)
 shape = SubResource("CapsuleShape3D_jpsmn")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1897019796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5142298)
+amount = 60
+lifetime = 0.75
+mesh = SubResource("SphereMesh_u3pco")
+direction = Vector3(0, 0, 1)
+spread = 15.0
+gravity = Vector3(0, 0, 2)
+initial_velocity_min = 2.0
+initial_velocity_max = 8.0
+tangential_accel_min = 8.0
+tangential_accel_max = 8.0
+scale_amount_min = 0.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_cxvvu")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
