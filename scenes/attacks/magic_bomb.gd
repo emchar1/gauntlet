@@ -48,12 +48,7 @@ func _on_area_entered(area: Area3D) -> void:
 
 
 func _is_exploding():
-	var camera = get_tree().current_scene.get_node("CameraController")
-	var shake_strength := 0.5
-	var shake_speed := 5.0
-	
-	if camera:
-		camera.shake(shake_strength, shake_speed)
+	GameState.shake_main_camera(0.5, 5)
 
 
 # Must free up bomb after it explodes otherwise it'll keep stacking.

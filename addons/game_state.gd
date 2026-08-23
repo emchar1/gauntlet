@@ -27,3 +27,14 @@ func map_2d_to_3d(vector2: Vector2) -> Vector3:
 
 func map_3d_to_2d(vector3: Vector3) -> Vector2:
 	return Vector2(vector3.x, vector3.z)
+
+
+func shake_main_camera(strength: float, speed: float):
+	var main_scene = get_tree().current_scene
+	var camera_controller = main_scene.get_node("CameraController")
+	
+	if not camera_controller:
+		print("Unable to get CameraController. Check main.tscn.")
+		return
+	
+	camera_controller.shake(strength, speed)
