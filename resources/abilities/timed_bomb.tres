@@ -8,3 +8,7 @@ script = ExtResource("2_75ool")
 scene = ExtResource("1_qg7ia")
 cooldown = 9.0
 damage = 5.0
+knockback = 5.0
+obeys_gravity = false
+explodes = true
+usable_while_dodging = true

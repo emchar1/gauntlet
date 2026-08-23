@@ -212,7 +212,6 @@ func attack_loop_started():
 	combat_component.is_aiming = true
 	
 	combat_component.execute_attack(self, current_ability)
-	#combat_component.update_ability_timers(0)
 
 
 func attack_loop_finished():

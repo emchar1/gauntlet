@@ -36,7 +36,6 @@ func set_ability_timers() -> void:
 func update_ability_timers(delta: float) -> void:
 	for ability in ability_timers:
 		ability_timers[ability] -= delta
-		print(ability_timers[ability])
 
 
 # Executes attack for the specified actor (player, enemy, etc.)
