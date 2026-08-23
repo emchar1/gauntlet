@@ -173,9 +173,9 @@ func _player_attack(delta: float):
 		
 	elif input_component.main_released:
 		combat_component.is_aiming = false
-	
+		
 	# Magical Attacks
-	if input_component.special_pressed:
+	elif input_component.special_pressed:
 		if can_fire_charged:
 			current_ability = combat_component.magic_arrow
 			_update_attack_state(AttackState.FIRING)
