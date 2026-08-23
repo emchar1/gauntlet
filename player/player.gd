@@ -145,6 +145,7 @@ func _player_attack(delta: float):
 	input_component.read_aiming(self)
 	combat_component.update_ability_timers(delta)
 	
+	# Basic Attacks
 	if input_component.charge_pressed:
 		current_ability = combat_component.charged_arrow
 		_update_attack_state(AttackState.STARTING)
@@ -164,6 +165,7 @@ func _player_attack(delta: float):
 	elif input_component.main_released:
 		combat_component.is_aiming = false
 	
+	# Magical Attacks
 	if input_component.special_pressed:
 		combat_component.execute_attack(self, combat_component.magic_bomb)
 
