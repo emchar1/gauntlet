@@ -233,16 +233,18 @@ func attack_end_finished():
 
 # Reorients the facing_dir so arrows always move towards mouse position.
 func _helper_attack_executed(ability: Ability):
+	var normalized_global_transform_basis_z := GameState.map_3d_to_2d(
+		-global_transform.basis.z
+	).normalized()
+	
 	match ability:
 		combat_component.quick_arrow:
 			# Updates facing dir to direction of mouse pointer
 			#facing_dir = input_component.aim_direction
 			
 			# Updates facing dir to player's actual facing direction
-			facing_dir = GameState.map_3d_to_2d(
-				-global_transform.basis.z
-			).normalized()
+			facing_dir = normalized_global_transform_basis_z
 		combat_component.charged_arrow:
-			facing_dir = GameState.map_3d_to_2d(
-				-global_transform.basis.z
-			).normalized()
+			facing_dir = normalized_global_transform_basis_z
+		combat_component.magic_arrow:
+			facing_dir = normalized_global_transform_basis_z
