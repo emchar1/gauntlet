@@ -67,6 +67,12 @@ func _use_ability(actor: CharacterBody3D, ability: Ability) -> void:
 	
 	# Update timers
 	ability_timers[ability] = ability.cooldown
+	
+	# Magical attacks share same cooldown
+	if ability == magic_arrow:
+		ability_timers[magic_bomb] = magic_bomb.cooldown
+	elif ability == magic_bomb:
+		ability_timers[magic_arrow] = magic_arrow.cooldown
 
 
 # Checks if ability cooldown has been met and is ready for use.
