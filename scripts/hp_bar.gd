@@ -3,6 +3,7 @@ extends Node2D
 # PROPERTIES
 
 @export var bar_scale := 1.0
+@export var color: GradientTexture2D
 
 @onready var health_bar = $Control/Bar
 @onready var show_hp_timer = $ShowHPTimer
@@ -19,6 +20,9 @@ func setup_values(max_hp: float):
 	camera = get_viewport().get_camera_3d()
 	modulate.a = 0
 	$Control.scale = Vector2(bar_scale, bar_scale)
+	
+	if color:
+		health_bar.texture = color
 
 
 func position_hp(actor: Node3D):
