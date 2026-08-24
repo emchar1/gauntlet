@@ -4,3 +4,4 @@
 
 [resource]
 script = ExtResource("1_h48oh")
+acceleration = 2.0

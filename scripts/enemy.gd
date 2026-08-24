@@ -20,6 +20,8 @@ var has_spawned: bool = false
 var is_slaying: bool = false
 var current_hp: float
 
+var current_speed: float = 0
+
 
 # FUNCTIONS
 
@@ -66,8 +68,14 @@ func _process_movement():
 	path_dir.y = 0
 	path_dir = path_dir.normalized()
 	
-	velocity.x = path_dir.x * enemy_config.speed
-	velocity.z = path_dir.z * enemy_config.speed
+	current_speed = move_toward(
+		current_speed,
+		enemy_config.speed,
+		enemy_config.acceleration * get_physics_process_delta_time()
+	)
+	
+	velocity.x = path_dir.x * current_speed
+	velocity.z = path_dir.z * current_speed
 	
 	# Rotate enemy to face player
 	if path_dir.length_squared() > 0.0:
@@ -109,12 +117,21 @@ func spawn():
 
 
 # This is what registers enemy hurtbox from player's hitbox, i.e. arrow.
-func damage(amount: float, direction: Vector2, knockback: float):
+func damage(
+	amount: float,
+	direction: Vector2,
+	knockback: float,
+	interrupt: int
+):
 	if not has_spawned:
 		return
 	
 	if is_slaying:
 		return
+	
+	match interrupt:
+		1: current_speed *= 0.5
+		2: current_speed = 0
 	
 	current_hp -= amount
 	current_hp = clamp(current_hp, 0, enemy_config.hp)

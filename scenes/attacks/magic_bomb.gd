@@ -8,6 +8,7 @@ var color: Color
 var damage: float = 2
 var speed: float = 10
 var knockback: float = 0
+var interrupt: int = 0
 var max_distance: float = 40
 
 var obeys_gravity: bool = true
@@ -45,7 +46,7 @@ func _on_area_entered(area: Area3D) -> void:
 		var direction_to_enemy = enemy.global_position - global_position
 		var direction = GameState.map_3d_to_2d(direction_to_enemy)
 		
-		enemy.damage(damage, direction, knockback)
+		enemy.damage(damage, direction, knockback, interrupt)
 
 
 func _is_exploding():

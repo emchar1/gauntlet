@@ -10,5 +10,6 @@ cooldown = 0.0
 damage = 4.0
 speed = 200.0
 knockback = 6.0
+interrupt = 1
 max_distance = 400.0
 obeys_gravity = false

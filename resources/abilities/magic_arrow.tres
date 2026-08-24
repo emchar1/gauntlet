@@ -9,6 +9,7 @@ scene = ExtResource("1_eavby")
 cooldown = 9.0
 damage = 0.0
 speed = 200.0
+interrupt = 2
 max_distance = 400.0
 obeys_gravity = false
 explodes = true

@@ -183,6 +183,7 @@ shape = SubResource("CapsuleShape3D_jpsmn")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1897019796]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5142298)
+visible = false
 amount = 60
 lifetime = 0.75
 mesh = SubResource("SphereMesh_u3pco")
