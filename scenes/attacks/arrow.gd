@@ -6,6 +6,7 @@ extends Area3D
 @export var magic_bomb_focused: Ability
 
 @onready var particles = $CPUParticles3D
+@onready var shape_cast = $ShapeCast3D
 
 var initial_position: Vector2
 var direction := Vector2.ZERO
@@ -66,8 +67,26 @@ func _fire(delta: float):
 		vertical_velocity -= gravity * weight * delta
 		velocity_3d.y = vertical_velocity
 	
+	var movement := velocity_3d * delta
+	
+	# Shapecast logic to combat tunneling
+	shape_cast.target_position = movement
+	
+	if shape_cast.is_colliding():
+		for i in shape_cast.get_collision_count():
+			var collider = shape_cast.get_collider(i)
+			
+			if collider.is_in_group("world"):
+				print("collide WORLD via shape_cast")
+				dissolve_arrow()
+				return
+			elif collider.is_in_group("hurtbox"):
+				print("collide ENEMY via shape_cast")
+				_handle_hurbox_hit(collider)
+				return
+	
 	# Move
-	global_position += velocity_3d * delta
+	global_position += movement
 	
 	# Point arrow along its actual trajectory
 	if velocity_3d.length_squared() > 0.001:
@@ -84,25 +103,32 @@ func _fire(delta: float):
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("world"):
-		if explodes:
-			_explode()
-		
 		dissolve_arrow()
 
 
+func _on_area_entered(area: Area3D) -> void:
+	if area.is_in_group("hurtbox"):
+		_handle_hurbox_hit(area)
+
+
+# SIGNAL HELPER FUNCTIONS
+
 # Dissolves and queue_free's the arrow.
-func dissolve_arrow():
+func dissolve_arrow(dissolve_speed: float = 0.5):
 	if is_inert:
 		return
+	
+	if explodes:
+		_explode()
 	
 	is_inert = true
 	
 	var tween := create_tween()
 	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
 	
+	# Dissolve arrow by fading to black, then out by going through all meshes.
 	for mesh in meshes:
 		var material = mesh.get_active_material(0)
-		var dissolve_speed: float = 0.5
 		
 		if material == null:
 			continue
@@ -128,6 +154,7 @@ func dissolve_arrow():
 	tween.finished.connect(queue_free)
 
 
+# Explodes a magic arrow on contact.
 func _explode():
 	var bomb = magic_bomb_focused.scene.instantiate()
 	bomb.setup(global_position, Vector2.ZERO)
@@ -136,20 +163,19 @@ func _explode():
 	get_tree().current_scene.add_child(bomb)
 
 
-func _on_area_entered(area: Area3D) -> void:
+# Helper function to handle hit detection on a hurtbox, ideally.
+func _handle_hurbox_hit(hurbox: Node3D):
 	if has_hit and not piercing:
 		return
 	
-	if area.is_in_group("hurtbox"):
-		has_hit = true
-		area.get_parent().damage(damage, direction, knockback, interrupt)
+	has_hit = true
 	
-		# TODO: - Build for mobs
-		#if area.get_parent() is Mob:
-			#area.get_parent().speed *= 0.5
-		
-		if not piercing:
-			if explodes:
-				_explode()
-			
-			queue_free()
+	var enemy = hurbox.get_parent() as Enemy
+	
+	if not enemy:
+		return
+	
+	enemy.damage(damage, direction, knockback, interrupt)
+	
+	if not piercing:
+		dissolve_arrow(0)
