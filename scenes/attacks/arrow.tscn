@@ -47,10 +47,6 @@ height = 0.1
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.019851089), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u3pco"]
-radius = 0.25
-height = 3.0
-
 [node name="Arrow" type="Area3D" unique_id=1013970594 groups=["hitbox"]]
 collision_layer = 16
 collision_mask = 1793
@@ -187,6 +183,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.2)
 shape = SubResource("CapsuleShape3D_jpsmn")
 
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=567820599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+target_position = Vector3(0, 0, 0)
+collision_mask = 1793
+
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1897019796]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5142298)
 visible = false
@@ -203,11 +204,6 @@ tangential_accel_max = 8.0
 scale_amount_min = 0.0
 scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_cxvvu")
-
-[node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=505947944]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_u3pco")
-collision_mask = 1793
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

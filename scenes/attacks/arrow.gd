@@ -6,7 +6,7 @@ extends Area3D
 @export var magic_bomb_focused: Ability
 
 @onready var particles = $CPUParticles3D
-@onready var shape_cast = $ShapeCast3D
+@onready var ray_cast = $RayCast3D
 
 var initial_position: Vector2
 var direction := Vector2.ZERO
@@ -48,8 +48,9 @@ func _physics_process(delta: float) -> void:
 
 # Call this after instantiation to configure BEFORE adding to the scene tree.
 func setup(pos: Vector3, dir: Vector2):
+	var fwd_mult := 2.0
 	var forward := GameState.map_2d_to_3d(dir).normalized()
-	var offset := Vector3(0.5 * forward.z, 1.0, -0.5 * forward.x)
+	var offset := Vector3(fwd_mult * forward.x, 1.0, fwd_mult * forward.z)
 	
 	position = pos + offset
 	initial_position = GameState.map_3d_to_2d(pos)
@@ -69,21 +70,23 @@ func _fire(delta: float):
 	
 	var movement := velocity_3d * delta
 	
-	# Shapecast logic to combat tunneling
-	shape_cast.target_position = movement
+	# Raycast logic to combat tunneling
+	var travel_distance = movement.length()
 	
-	if shape_cast.is_colliding():
-		for i in shape_cast.get_collision_count():
-			var collider = shape_cast.get_collider(i)
-			
-			if collider.is_in_group("world"):
-				print("collide WORLD via shape_cast")
-				dissolve_arrow()
-				return
-			elif collider.is_in_group("hurtbox"):
-				print("collide ENEMY via shape_cast")
-				_handle_hurbox_hit(collider)
-				return
+	ray_cast.target_position = Vector3(0, 0, -travel_distance)
+	ray_cast.force_raycast_update()
+	
+	if ray_cast.is_colliding():
+		var collider = ray_cast.get_collider()
+		
+		if collider.is_in_group("world"):
+			print("collide WORLD via ray_cast")
+			dissolve_arrow()
+			return
+		elif collider.is_in_group("hurtbox"):
+			print("collide ENEMY via ray_cast")
+			_handle_hurbox_hit(collider)
+			return
 	
 	# Move
 	global_position += movement
@@ -157,7 +160,7 @@ func dissolve_arrow(dissolve_speed: float = 0.5):
 # Explodes a magic arrow on contact.
 func _explode():
 	var bomb = magic_bomb_focused.scene.instantiate()
-	bomb.setup(global_position, Vector2.ZERO)
+	bomb.setup(global_position, direction)
 	
 	magic_bomb_focused.configure(bomb)
 	get_tree().current_scene.add_child(bomb)

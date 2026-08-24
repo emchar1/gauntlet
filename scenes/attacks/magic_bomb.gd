@@ -9,6 +9,8 @@ enum BombType {
 
 @export var bomb_type: BombType
 
+var direction := Vector2.ZERO
+
 var damage: float = 2
 var speed: float = 10
 var knockback: float = 0
@@ -33,13 +35,16 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func setup(pos: Vector3, _dir: Vector2):
+func setup(pos: Vector3, dir: Vector2):
 	var player_offset = Vector3(0, -2.5, 0)
 	
 	if bomb_type == BombType.NORMAL:
 		position = pos + player_offset
 	else:
 		position = pos
+	
+	direction = dir
+	rotation.y = -direction.angle() - (PI / 2.0)
 
 
 # SIGNAL CALLBACK FUNCTIONS
@@ -52,9 +57,9 @@ func _on_area_entered(area: Area3D) -> void:
 			return
 		
 		var direction_to_enemy = enemy.global_position - global_position
-		var direction = GameState.map_3d_to_2d(direction_to_enemy)
+		var knockback_direction = GameState.map_3d_to_2d(direction_to_enemy)
 		
-		enemy.damage(damage, direction, knockback, interrupt)
+		enemy.damage(damage, knockback_direction, knockback, interrupt)
 
 
 func _is_exploding():
