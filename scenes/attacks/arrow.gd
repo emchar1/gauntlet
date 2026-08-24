@@ -84,6 +84,9 @@ func _fire(delta: float):
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("world"):
+		if explodes:
+			_explode()
+		
 		dissolve_arrow()
 
 
