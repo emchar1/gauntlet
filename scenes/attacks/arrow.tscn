@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3lr1pxxn2te0"]
 
 [ext_resource type="Script" uid="uid://i05x6by33xdp" path="res://scenes/attacks/arrow.gd" id="1_cxvvu"]
+[ext_resource type="Resource" uid="uid://dg48ecrnt0we4" path="res://resources/abilities/magic_bomb_focused.tres" id="2_yjijy"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_2lmhc"]
 top_radius = 0.0
@@ -50,6 +51,7 @@ point_count = 2
 collision_layer = 16
 collision_mask = 1793
 script = ExtResource("1_cxvvu")
+magic_bomb_focused = ExtResource("2_yjijy")
 
 [node name="Visuals" type="Node3D" parent="." unique_id=98348504]
 

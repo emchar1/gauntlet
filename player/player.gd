@@ -214,10 +214,6 @@ func _update_attack_state(state: AttackState):
 	
 	attack_state = state
 	animation_component.play_combat(state, is_charged)
-	
-	if is_magic_charged:
-		# Shake camera on magic arrow
-		GameState.shake_main_camera(2, 15)
 
 
 # Retrieves the target angle based on the aim direction.

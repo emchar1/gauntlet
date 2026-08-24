@@ -3,7 +3,11 @@ extends Area3D
 
 # PROPERTIES
 
-var color: Color
+enum BombType { 
+	NORMAL, FOCUSED
+}
+
+@export var bomb_type: BombType
 
 var damage: float = 2
 var speed: float = 10
@@ -31,7 +35,11 @@ func _process(_delta: float) -> void:
 
 func setup(pos: Vector3, _dir: Vector2):
 	var player_offset = Vector3(0, -2.5, 0)
-	position = pos + player_offset
+	
+	if bomb_type == BombType.NORMAL:
+		position = pos + player_offset
+	else:
+		position = pos
 
 
 # SIGNAL CALLBACK FUNCTIONS
@@ -50,7 +58,10 @@ func _on_area_entered(area: Area3D) -> void:
 
 
 func _is_exploding():
-	GameState.shake_main_camera(1.5, 5)
+	if bomb_type == BombType.NORMAL:
+		GameState.shake_main_camera(1.5, 5)
+	else:
+		GameState.shake_main_camera(0.75, 10)
 
 
 # Must free up bomb after it explodes otherwise it'll keep stacking.

@@ -3,6 +3,8 @@ extends Area3D
 
 # PROPERTIES
 
+@export var magic_bomb_focused: Ability
+
 @onready var particles = $CPUParticles3D
 
 var initial_position: Vector2
@@ -123,6 +125,14 @@ func dissolve_arrow():
 	tween.finished.connect(queue_free)
 
 
+func _explode():
+	var bomb = magic_bomb_focused.scene.instantiate()
+	bomb.setup(global_position, Vector2.ZERO)
+	
+	magic_bomb_focused.configure(bomb)
+	get_tree().current_scene.add_child(bomb)
+
+
 func _on_area_entered(area: Area3D) -> void:
 	if has_hit and not piercing:
 		return
@@ -136,4 +146,7 @@ func _on_area_entered(area: Area3D) -> void:
 			#area.get_parent().speed *= 0.5
 		
 		if not piercing:
+			if explodes:
+				_explode()
+			
 			queue_free()

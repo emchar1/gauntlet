@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://dg48ecrnt0we4"]
+
+[ext_resource type="PackedScene" uid="uid://cnrbl0dy6c4l" path="res://scenes/attacks/magic_bomb_focused.tscn" id="1_jurga"]
+[ext_resource type="Script" uid="uid://bevu6tut80mwa" path="res://resources/abilities/ability.gd" id="2_m6yo4"]
+
+[resource]
+script = ExtResource("2_m6yo4")
+scene = ExtResource("1_jurga")
+cooldown = 0.0
+damage = 6.0
+knockback = 5.0
+interrupt = 2
+obeys_gravity = false
+explodes = true
