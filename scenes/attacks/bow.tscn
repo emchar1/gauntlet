@@ -10,8 +10,8 @@ _data = {
 point_count = 6
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lb7rc"]
-top_radius = 0.05
-bottom_radius = 0.05
+top_radius = 0.02
+bottom_radius = 0.02
 height = 3.9
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gof8m"]
