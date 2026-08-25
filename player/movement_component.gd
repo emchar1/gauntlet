@@ -42,9 +42,7 @@ func start_dodge(actor: CharacterBody3D) -> void:
 			-actor.global_transform.basis.z.normalized()
 		)
 	
-	
-	
-	# TODO: - need separate layer for dodging
+	actor.set_collision_layer_value(GameState.COLLISION_PLAYER_BODY, false)
 	actor.set_collision_mask_value(GameState.COLLISION_ENEMY_BODY, false)
 
 
@@ -60,7 +58,5 @@ func stop_dodge(actor: CharacterBody3D) -> void:
 	actor.velocity.x = 0
 	actor.velocity.z = 0
 	
-	
-	
-	# TODO: - need separate layer for dodging
+	actor.set_collision_layer_value(GameState.COLLISION_PLAYER_BODY, true)
 	actor.set_collision_mask_value(GameState.COLLISION_ENEMY_BODY, true)
