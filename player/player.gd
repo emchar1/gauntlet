@@ -102,7 +102,6 @@ func _player_move():
 	
 	# Dodging
 	if input_component.dodge_pressed:
-		print("DODGE PRESSED")
 		_dodge_begin()
 	elif movement_component.is_moving:
 		_update_move_state(MoveState.RUN)
@@ -277,6 +276,10 @@ func attack_end_finished():
 # ANIMATION PLAYER: DODGE - CALLBACK FUNCTIONS
 
 func _dodge_begin():
+	# Used to prevent a bug where if dodge button spammed, input is softlocked.
+	if animation_component.is_dodge_animation_playing():
+		return
+	
 	_update_move_state(MoveState.DODGE)
 	_update_attack_state(AttackState.NONE)
 	
@@ -293,15 +296,10 @@ func _dodge_launch():
 
 func _dodge_land():
 	movement_component.stop_dodge(self)
-	print("land")
 
 
 func _dodge_recover():
-	print("recover")
-	print("    before: ", move_state)
 	_update_move_state(MoveState.IDLE)
-	print("    after: ", move_state)
-	print("   locomotion: ", animation_component.get_locomotion().get_current_node())
 
 
 # SIGNAL CONNECTED CALLBACK FUNCTIONS

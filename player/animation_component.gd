@@ -56,6 +56,11 @@ func play_combat(state: Player.AttackState, charged: bool):
 
 # HELPER FUNCTIONS
 
+# Returns true if dodge animation is currently playing.
+func is_dodge_animation_playing() -> bool:
+	return get_locomotion().get_current_node() == ANIM_DODGE
+
+
 # Helper function to get locomotion playback parameter
 func get_locomotion() -> AnimationNodeStateMachinePlayback:
 	return animation_tree[LOCOMOTION_PLAYBACK_PATH]
