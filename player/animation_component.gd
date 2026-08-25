@@ -7,6 +7,7 @@ class_name AnimationComponent
 # Animation constants
 const ANIM_IDLE = "idle"
 const ANIM_RUN = "run"
+const ANIM_DODGE = "dodge"
 const ANIM_ATTACK_START = "attack_start"
 const ANIM_ATTACK_LOOP = "attack_loop"
 const ANIM_ATTACK_LOOP_SLOW = "attack_loop_slow"
@@ -28,6 +29,8 @@ func play_locomotion(state: Player.MoveState):
 			get_locomotion().travel(ANIM_IDLE)
 		Player.MoveState.RUN:
 			get_locomotion().travel(ANIM_RUN)
+		Player.MoveState.DODGE:
+			get_locomotion().travel(ANIM_DODGE)
 
 
 func play_combat(state: Player.AttackState, charged: bool):

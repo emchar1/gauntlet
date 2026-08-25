@@ -5,7 +5,7 @@ class_name Player
 # PROPERTIES
 
 enum MoveState {
-	IDLE, RUN, HURT, DEAD
+	IDLE, RUN, DODGE, HURT, DEAD
 }
 
 enum AttackState {
@@ -58,10 +58,18 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	_apply_gravity(delta)
+	
+	# Read input and update timers independently of player state.
+	input_component.read_input(self)
+	combat_component.update_ability_timers(delta)
+	
 	_player_move()
 	_update_facing()
 	_update_aiming_reticle()
-	_player_attack(delta)
+	_player_attack()
+	
+	if movement_component.is_dodging:
+		movement_component.traverse_dodge(self)
 	
 	hp_bar.position_hp(self)
 	
@@ -86,12 +94,17 @@ func _apply_gravity(delta: float):
 
 # Player movement function.
 func _player_move():
-	input_component.read_movement()
+	if move_state == MoveState.DODGE:
+		return
 	
 	movement_component.move_dir = input_component.move_direction
 	movement_component.update_movement(self)
 	
-	if movement_component.is_moving:
+	# Dodging
+	if input_component.dodge_pressed:
+		print("DODGE PRESSED")
+		_dodge_begin()
+	elif movement_component.is_moving:
 		_update_move_state(MoveState.RUN)
 	else:
 		_update_move_state(MoveState.IDLE)
@@ -99,6 +112,9 @@ func _player_move():
 
 # Updates the direction player is facing based on if aiming vs movement
 func _update_facing() -> void:
+	if move_state == MoveState.DODGE:
+		return
+	
 	if input_component.charge_pressed:
 		var target_angle := _get_target_angle(-input_component.aim_direction)
 		rotation.y = target_angle
@@ -117,6 +133,9 @@ func _update_facing() -> void:
 
 
 func _update_aiming_reticle():
+	if move_state == MoveState.DODGE:
+		return
+	
 	if input_component.charge_pressed:
 		if aiming_tween:
 			aiming_tween.kill()
@@ -145,10 +164,11 @@ func _update_aiming_reticle():
 
 
 # Player attack function.
-func _player_attack(delta: float):
-	input_component.read_combat()
-	input_component.read_aiming(self)
-	combat_component.update_ability_timers(delta)
+func _player_attack():
+	if move_state == MoveState.DODGE:
+		if input_component.special_pressed:
+			combat_component.execute_attack(self, combat_component.magic_bomb)
+		return
 	
 	# Basic Attacks
 	if input_component.charge_pressed:
@@ -257,19 +277,31 @@ func attack_end_finished():
 # ANIMATION PLAYER: DODGE - CALLBACK FUNCTIONS
 
 func _dodge_begin():
-	pass
+	_update_move_state(MoveState.DODGE)
+	_update_attack_state(AttackState.NONE)
+	
+	# THIS IS NEEDED else if dodge while attacking aiming gets stuck!
+	combat_component.is_aiming = false
 
 
 func _dodge_launch():
-	pass
+	movement_component.start_dodge(self)
+	
+	# Must come AFTER start_dodge()!
+	rotation.y = -movement_component.dodge_dir.angle() - PI / 2.0
 
 
 func _dodge_land():
-	pass
+	movement_component.stop_dodge(self)
+	print("land")
 
 
 func _dodge_recover():
-	pass
+	print("recover")
+	print("    before: ", move_state)
+	_update_move_state(MoveState.IDLE)
+	print("    after: ", move_state)
+	print("   locomotion: ", animation_component.get_locomotion().get_current_node())
 
 
 # SIGNAL CONNECTED CALLBACK FUNCTIONS

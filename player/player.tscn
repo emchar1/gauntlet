@@ -1962,11 +1962,11 @@ script = ExtResource("6_g6k8r")
 animation_tree = NodePath("../../AnimationTree")
 metadata/_custom_type_script = "uid://pc67l4sp8nhg"
 
-[node name="CombatComponent" type="Node" parent="Components" unique_id=1670569265 node_paths=PackedStringArray("input_component", "dodge_component")]
+[node name="CombatComponent" type="Node" parent="Components" unique_id=1670569265 node_paths=PackedStringArray("input_component", "movement_component")]
 unique_name_in_owner = true
 script = ExtResource("4_qjkh3")
 input_component = NodePath("../InputComponent")
-dodge_component = NodePath("../DodgeComponent")
+movement_component = NodePath("../MovementComponent")
 quick_arrow = ExtResource("4_boad6")
 charged_arrow = ExtResource("6_hg6s5")
 magic_arrow = ExtResource("7_ebec5")

@@ -7,7 +7,7 @@ class_name CombatComponent
 signal attack_executed(ability: Ability)
 
 @export var input_component: InputComponent
-@export var dodge_component: DodgeComponent
+@export var movement_component: MovementComponent
 
 # Abilities Resources
 @export var quick_arrow: Ability
@@ -77,7 +77,7 @@ func _use_ability(actor: CharacterBody3D, ability: Ability) -> void:
 
 # Checks if ability cooldown has been met and is ready for use.
 func _can_use(ability: Ability) -> bool:
-	if dodge_component.is_dodging and not ability.usable_while_dodging:
+	if movement_component.is_dodging and not ability.usable_while_dodging:
 		return false
 	
 	if not ability_timers.has(ability):
