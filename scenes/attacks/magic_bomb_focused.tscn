@@ -149,7 +149,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_qs88h"]
 resource_name = "RESET"
-length = 1.1
+length = 1.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -157,7 +157,7 @@ tracks/0/path = NodePath("MeshInstance3D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.5999999, 0.8, 1.1),
+"times": PackedFloat32Array(0, 0.8, 0.8999999, 1.0999999, 1.4000001),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(4, 4, 4), Vector3(6, 6, 6), Vector3(6, 6, 6)]
@@ -169,7 +169,7 @@ tracks/1/path = NodePath("CollisionShape3D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.5999999, 0.8, 1.1),
+"times": PackedFloat32Array(0, 0.8, 0.8999999, 1.0999999, 1.4000001),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(4, 4, 4), Vector3(6, 6, 6), Vector3(6, 6, 6)]
@@ -181,7 +181,7 @@ tracks/2/path = NodePath("OmniLight3D:light_energy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.5999999, 0.8, 1.1),
+"times": PackedFloat32Array(0, 0.8, 0.8999999, 1.0999999, 1.4000001),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 5.0, 0.0, 0.0]
@@ -193,7 +193,7 @@ tracks/3/path = NodePath("CPUParticles3DSM:transparency")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6, 0.8, 1.1),
+"times": PackedFloat32Array(0, 0.8, 0.90000004, 1.0999999, 1.4000001),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 1.0, 1.0]
@@ -205,7 +205,7 @@ tracks/4/path = NodePath("CPUParticles3DLG:transparency")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.5999999, 0.8, 1.1),
+"times": PackedFloat32Array(0, 0.8, 0.8999999, 1.0999999, 1.4000001),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [1.0, 1.0, 0.0, 0.0, 0.0]
@@ -217,7 +217,7 @@ tracks/5/path = NodePath("CPUParticles3DLG:scale_amount_max")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6, 0.8, 1.1),
+"times": PackedFloat32Array(0, 0.8, 0.90000004, 1.0999999, 1.4000001),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [4.0, 4.0, 4.0, 4.0, 0.0]
@@ -229,7 +229,7 @@ tracks/6/path = NodePath("MeshInstance3D:transparency")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.5999999, 0.8, 1.1),
+"times": PackedFloat32Array(0, 0.8, 0.8999999, 1.0999999, 1.4000001),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 1.0, 1.0]
@@ -241,7 +241,7 @@ tracks/7/path = NodePath("CollisionShape3D:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.8, 1.1),
+"times": PackedFloat32Array(0, 0.8, 1.0999999, 1.4000001),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, true]
@@ -253,7 +253,7 @@ tracks/8/path = NodePath(".")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.5, 1.1),
+"times": PackedFloat32Array(0.8, 1.4000001),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],

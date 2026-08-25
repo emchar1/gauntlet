@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_24ajb")
 scene = ExtResource("1_ax64i")
-cooldown = 9.0
+cooldown = 6.0
 damage = 5.0
 knockback = 5.0
 interrupt = 2
