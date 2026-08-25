@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	_player_attack(delta)
 	
 	hp_bar.position_hp(self)
-
+	
 	move_and_slide()
 
 
