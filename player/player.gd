@@ -68,7 +68,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-# FUNCTIONS
+# PUBLIC FUNCTIONS
 
 func update_hp(amount: float):
 	hp_current += amount
@@ -222,7 +222,7 @@ func _get_target_angle(direction: Vector2) -> float:
 	return atan2(aim_dir.x, aim_dir.z)
 
 
-# ANIMATION PLAYER CALLBACK FUNCTIONS
+# ANIMATION PLAYER: ATTACK - CALLBACK FUNCTIONS
 
 func attack_start_finished():
 	can_fire_charged = true
@@ -254,7 +254,25 @@ func attack_end_finished():
 	_update_attack_state(AttackState.NONE)
 
 
-# SIGNAL CALLBACKS
+# ANIMATION PLAYER: DODGE - CALLBACK FUNCTIONS
+
+func _dodge_begin():
+	pass
+
+
+func _dodge_launch():
+	pass
+
+
+func _dodge_land():
+	pass
+
+
+func _dodge_recover():
+	pass
+
+
+# SIGNAL CONNECTED CALLBACK FUNCTIONS
 
 # Reorients the facing_dir so arrows always move towards mouse position.
 func _helper_attack_executed(ability: Ability):
