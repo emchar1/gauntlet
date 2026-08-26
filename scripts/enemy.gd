@@ -18,6 +18,7 @@ var player_in_attack_range: bool = false
 
 var has_spawned: bool = false
 var is_slaying: bool = false
+var interrupt_strength: int = 0
 var current_hp: float
 
 var current_speed: float = 0
@@ -93,6 +94,8 @@ func _update_state(state: State):
 			animation_player.play("run")
 		State.ATTACK:
 			animation_player.play("attack")
+		State.HURT:
+			animation_player.play("hurt")
 		State.DEAD:
 			animation_player.play("dead")
 		_:
@@ -133,9 +136,13 @@ func damage(
 		1: current_speed *= 0.5
 		2: current_speed = 0
 	
+	interrupt_strength = interrupt
 	current_hp -= amount
 	current_hp = clamp(current_hp, 0, enemy_config.hp)
 	hp_bar.update_health(current_hp)
+	
+	if interrupt > 0:
+		_update_state(State.HURT)
 	
 	if current_hp <= 0:
 		call_deferred("slay", direction, knockback)
@@ -227,4 +234,14 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		if player_in_attack_range:
 			_update_state(State.ATTACK)
 		else:
+			_update_state(State.RUN)
+	
+	if anim_name == "hurt":
+		if player_in_attack_range:
+			_update_state(State.ATTACK)
+		else:
+			if interrupt_strength > 0:
+				_update_state(State.IDLE)
+				await get_tree().create_timer(randf_range(1, 2)).timeout
+			
 			_update_state(State.RUN)
