@@ -80,7 +80,7 @@ func _physics_process(delta: float) -> void:
 # PUBLIC FUNCTIONS
 
 func update_hp(amount: float):
-	if is_invincible:
+	if amount < 0 and is_invincible:
 		return
 	
 	hp_current += amount
