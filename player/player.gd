@@ -136,22 +136,26 @@ func _update_aiming_reticle():
 		return
 	
 	if input_component.charge_pressed:
-		if aiming_tween:
-			aiming_tween.kill()
-		
-		var speed: float = 0.5
-		
-		aiming_tween = create_tween()
-		aiming_tween.set_parallel(true)
-		aiming_tween.tween_property(aiming_l, "transparency", 0.0, speed)
-		aiming_tween.tween_property(aiming_r, "transparency", 0.0, speed)
-		aiming_tween.tween_property(aiming_l, "rotation:y", 0.0, speed)
-		aiming_tween.tween_property(aiming_r, "rotation:y", 0.0, speed)
-		aiming_tween.tween_property(aiming_l, "texture:height", 20, speed)
-		aiming_tween.tween_property(aiming_r, "texture:height", 20, speed)
+		_set_aiming()
 		
 	elif input_component.charge_released:
 		_reset_aiming()
+
+
+func _set_aiming():
+	if aiming_tween:
+			aiming_tween.kill()
+	
+	var speed := 0.5
+	
+	aiming_tween = create_tween()
+	aiming_tween.set_parallel(true)
+	aiming_tween.tween_property(aiming_l, "transparency", 0.0, speed)
+	aiming_tween.tween_property(aiming_r, "transparency", 0.0, speed)
+	aiming_tween.tween_property(aiming_l, "rotation:y", 0.0, speed)
+	aiming_tween.tween_property(aiming_r, "rotation:y", 0.0, speed)
+	aiming_tween.tween_property(aiming_l, "texture:height", 20, speed)
+	aiming_tween.tween_property(aiming_r, "texture:height", 20, speed)
 
 
 func _reset_aiming():
@@ -305,6 +309,10 @@ func _dodge_land():
 
 func _dodge_recover():
 	_update_move_state(MoveState.IDLE)
+	
+	if input_component.charge_held:
+		_set_aiming()
+		_update_attack_state(AttackState.STARTING)
 
 
 # SIGNAL CONNECTED CALLBACK FUNCTIONS
