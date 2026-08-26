@@ -107,6 +107,12 @@ func switch_to_anchor(zone: Zone):
 		zone.center_point.global_position,
 		zoom_duration
 	)
+	tween.parallel().tween_property(
+		self,
+		"rotation",
+		zone.center_point.rotation,
+		zoom_duration
+	)
 
 
 func _update_shake(delta: float):
