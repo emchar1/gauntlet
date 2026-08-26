@@ -151,15 +151,19 @@ func _update_aiming_reticle():
 		aiming_tween.tween_property(aiming_r, "texture:height", 20, speed)
 		
 	elif input_component.charge_released:
-		if aiming_tween:
-			aiming_tween.kill()
+		_reset_aiming()
+
+
+func _reset_aiming():
+	if aiming_tween:
+		aiming_tween.kill()
 		
-		aiming_l.transparency = 1.0
-		aiming_r.transparency = 1.0
-		aiming_l.rotation.y = 8.0 * PI / 180
-		aiming_r.rotation.y = -8.0 * PI / 180
-		aiming_l.texture.height = 1
-		aiming_r.texture.height = 1
+	aiming_l.transparency = 1.0
+	aiming_r.transparency = 1.0
+	aiming_l.rotation.y = 8.0 * PI / 180
+	aiming_r.rotation.y = -8.0 * PI / 180
+	aiming_l.texture.height = 1
+	aiming_r.texture.height = 1
 
 
 # Player attack function.
@@ -280,6 +284,7 @@ func _dodge_begin():
 	if animation_component.is_dodge_animation_playing():
 		return
 	
+	_reset_aiming()
 	_update_move_state(MoveState.DODGE)
 	_update_attack_state(AttackState.NONE)
 	
