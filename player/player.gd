@@ -31,6 +31,7 @@ var aiming_tween: Tween
 var move_state: MoveState
 var attack_state: AttackState
 var facing_dir := Vector2.RIGHT
+var is_invincible: bool = false
 
 # Ability-handling Properties
 var selected_ability: Ability
@@ -79,9 +80,15 @@ func _physics_process(delta: float) -> void:
 # PUBLIC FUNCTIONS
 
 func update_hp(amount: float):
+	if is_invincible:
+		return
+	
 	hp_current += amount
 	hp_current = clamp(hp_current, 0, hp_max)
 	hp_bar.update_health(hp_current)
+	
+	if amount < 0:
+		_update_iframes()
 
 
 # HELPER FUNCTIONS
@@ -90,6 +97,13 @@ func update_hp(amount: float):
 func _apply_gravity(delta: float):
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta
+
+
+# Adds iframes to the player.
+func _update_iframes():
+	is_invincible = true
+	await get_tree().create_timer(0.8).timeout
+	is_invincible = false
 
 
 # Player movement function.
