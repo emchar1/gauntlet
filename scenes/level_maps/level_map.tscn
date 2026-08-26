@@ -32,12 +32,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5, 0, -65.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 187.9, 0, -65.5)
 
 [node name="EnemySpawn" type="Path3D" parent="." unique_id=493865404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 237.30157, 0, -24.11858)
 curve = SubResource("Curve3D_6jptd")
 
 [node name="EnemySpawnLocation" type="PathFollow3D" parent="EnemySpawn" unique_id=551843513]
 transform = Transform3D(0.0040892772, 0, -0.99998593, 0, 1, 0, 0.99998593, 0, 0.0040892772, -11.591509, 0.49998474, -46.72329)
 
-[node name="EnemyTimer" type="Timer" parent="." unique_id=871071918]
+[node name="EnemyTimer" type="Timer" parent="EnemySpawn" unique_id=871071918]
 autostart = true
 
-[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
+[connection signal="timeout" from="EnemySpawn/EnemyTimer" to="." method="_on_enemy_timer_timeout"]

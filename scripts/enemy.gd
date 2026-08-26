@@ -254,12 +254,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		if player_in_attack_range:
 			_update_state(State.ATTACK)
 		else:
-			if anim_name == "hurt_knockback":
-				await get_tree().create_timer(knockback_strength / 3).timeout
-				
-				if is_slaying:
-					return
-			
 			if anim_name == "hurt" or anim_name == "hurt_knockback":
 				if interrupt_strength > 0:
 					_update_state(State.IDLE)

@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 
 func _on_enemy_timer_timeout() -> void:
 	if current_enemy >= total_enemies:
-		$EnemyTimer.stop()
+		$EnemySpawn/EnemyTimer.stop()
 		return
 	
 	current_enemy += 1
