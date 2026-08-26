@@ -259,9 +259,10 @@ func _update_attack_state(state: AttackState):
 
 # Resets attack_state, esp useful for dodge movement.
 func _reset_attack():
-	can_fire_charged = false
-	current_ability = selected_ability
 	attack_state = AttackState.NONE
+	selected_ability = combat_component.quick_arrow
+	current_ability = selected_ability
+	can_fire_charged = false
 	combat_component.is_aiming = false
 	_reset_aiming()
 	animation_component.play_combat(AttackState.NONE, false)
