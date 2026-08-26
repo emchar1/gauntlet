@@ -204,12 +204,7 @@ func slay():
 			3.0
 		)
 	
-	slay_tween.finished.connect(_queue_free_custom)
-
-
-func _queue_free_custom():
-	print("Enemy queue_free.")
-	queue_free()
+	slay_tween.finished.connect(queue_free)
 
 
 func turn_off_collisions():
@@ -250,6 +245,9 @@ func _on_player_detector_body_exited(body: Node3D) -> void:
 
 # And this causes enemy to re-attack if player is still in detector.
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if is_slaying:
+		return
+	
 	if anim_name == "attack" \
 	or anim_name == "hurt" \
 	or anim_name == "hurt_knockback":
@@ -258,10 +256,16 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		else:
 			if anim_name == "hurt_knockback":
 				await get_tree().create_timer(knockback_strength / 3).timeout
+				
+				if is_slaying:
+					return
 			
 			if anim_name == "hurt" or anim_name == "hurt_knockback":
 				if interrupt_strength > 0:
 					_update_state(State.IDLE)
 					await get_tree().create_timer(interrupt_strength).timeout
+					
+					if is_slaying:
+						return
 			
 			_update_state(State.RUN)
