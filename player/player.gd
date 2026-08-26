@@ -132,7 +132,7 @@ func _update_facing() -> void:
 		var target_angle := _get_target_angle(-input_component.aim_direction)
 		rotation.y = target_angle
 		
-	elif input_component.charge_held:
+	elif input_component.charge_held and can_fire_charged:
 		var target_angle := _get_target_angle(-input_component.aim_direction)
 		rotation.y = lerp_angle(rotation.y, target_angle, 0.02)
 		
@@ -330,10 +330,6 @@ func _dodge_land():
 
 func _dodge_recover():
 	_update_move_state(MoveState.IDLE)
-	
-	if input_component.charge_held:
-		_set_aiming()
-		_update_attack_state(AttackState.STARTING)
 
 
 # SIGNAL CONNECTED CALLBACK FUNCTIONS
