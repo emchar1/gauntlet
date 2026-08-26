@@ -34,15 +34,16 @@ func _on_enemy_timer_timeout() -> void:
 		return
 	
 	current_enemy += 1
-
+	
 	var enemy_spawn_location = $EnemySpawn/EnemySpawnLocation
 	enemy_spawn_location.progress_ratio = randf()
 	
 	var enemy = enemy_scene.instantiate()
-	
 	enemy.player = player
-	enemy.position = enemy_spawn_location.position
 	enemy.enemy_config = enemy_configs.pick_random()
 	enemy.spawn()
 	
 	add_child(enemy)
+	
+	# MUST come AFTER add_child!!
+	enemy.global_position = enemy_spawn_location.global_position
