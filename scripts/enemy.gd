@@ -242,6 +242,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		else:
 			if interrupt_strength > 0:
 				_update_state(State.IDLE)
-				await get_tree().create_timer(randf_range(1, 2)).timeout
+				await get_tree().create_timer(interrupt_strength).timeout
 			
 			_update_state(State.RUN)

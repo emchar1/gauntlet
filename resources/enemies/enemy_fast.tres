@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_hjs0k")
 enemy_type = 1
-hp = 6.0
 speed = 10.0
 acceleration = 20.0
 attack_dmg = 8.0
