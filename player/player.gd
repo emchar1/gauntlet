@@ -243,6 +243,16 @@ func _update_attack_state(state: AttackState):
 	animation_component.play_combat(state, is_charged)
 
 
+# Resets attack_state, esp useful for dodge movement.
+func _reset_attack():
+	can_fire_charged = false
+	current_ability = selected_ability
+	attack_state = AttackState.NONE
+	combat_component.is_aiming = false
+	_reset_aiming()
+	animation_component.play_combat(AttackState.NONE, false)
+
+
 # Retrieves the target angle based on the aim direction.
 func _get_target_angle(direction: Vector2) -> float:
 	var aim_dir := GameState.map_2d_to_3d(direction)
@@ -288,12 +298,8 @@ func _dodge_begin():
 	if animation_component.is_dodge_animation_playing():
 		return
 	
-	_reset_aiming()
+	_reset_attack()
 	_update_move_state(MoveState.DODGE)
-	_update_attack_state(AttackState.NONE)
-	
-	# THIS IS NEEDED else if dodge while attacking aiming gets stuck!
-	combat_component.is_aiming = false
 
 
 func _dodge_launch():
