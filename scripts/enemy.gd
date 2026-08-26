@@ -18,8 +18,9 @@ var player_in_attack_range: bool = false
 
 var has_spawned: bool = false
 var is_slaying: bool = false
-var interrupt_strength: int = 0
 var current_hp: float
+var knockback_strength: float = 0
+var interrupt_strength: int = 0
 
 var current_speed: float = 0
 
@@ -95,7 +96,10 @@ func _update_state(state: State):
 		State.ATTACK:
 			animation_player.play("attack")
 		State.HURT:
-			animation_player.play("hurt")
+			if knockback_strength > 1:
+				animation_player.play("hurt_knockback")
+			else:
+				animation_player.play("hurt")
 		State.DEAD:
 			animation_player.play("dead")
 		_:
@@ -136,41 +140,52 @@ func damage(
 		1: current_speed *= 0.5
 		2: current_speed = 0
 	
-	interrupt_strength = interrupt
 	current_hp -= amount
 	current_hp = clamp(current_hp, 0, enemy_config.hp)
 	hp_bar.update_health(current_hp)
 	
+	# Need to preserve these values!!!
+	knockback_strength = knockback
+	interrupt_strength = interrupt
+	
 	if interrupt > 0:
 		_update_state(State.HURT)
 	
-	if current_hp <= 0:
-		call_deferred("slay", direction, knockback)
-
-
-func slay(direction: Vector2, knockback: float):
-	if is_slaying:
-		return
+	if knockback > 1:
+		apply_knockback(direction, knockback)
 	
-	# Apply knockback
+	if current_hp <= 0:
+		call_deferred("slay")
+
+
+func apply_knockback(direction: Vector2, knockback: float):
 	var knockback_direction := GameState.map_2d_to_3d(direction.normalized())
 	var target_position := global_position + knockback_direction * knockback
-	var tween := create_tween()
-	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_parallel(true)
-	tween.tween_property(
+	
+	var knockback_tween := create_tween()
+	knockback_tween.set_trans(Tween.TRANS_CUBIC)
+	knockback_tween.set_ease(Tween.EASE_OUT)
+	knockback_tween.set_parallel(true)
+	
+	knockback_tween.tween_property(
 		self,
 		"global_position",
 		target_position,
-		enemy_config.slay_duration
+		0.5
 	)
+
+
+func slay():
+	if is_slaying:
+		return
 	
 	is_slaying = true
 	turn_off_collisions()
 	_update_state(State.DEAD)
 	
 	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
+	var slay_tween := create_tween()
+	slay_tween.set_parallel(true)
 	
 	for mesh in meshes:
 		var material = mesh.get_active_material(0)
@@ -182,14 +197,19 @@ func slay(direction: Vector2, knockback: float):
 		mesh.material_override = material
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 		
-		tween.tween_property(
+		slay_tween.tween_property(
 			material,
 			"albedo_color:a",
 			0.0,
-			enemy_config.slay_duration
-		).set_delay(enemy_config.slay_duration)
-		
-	tween.finished.connect(queue_free)
+			3.0
+		)
+	
+	slay_tween.finished.connect(_queue_free_custom)
+
+
+func _queue_free_custom():
+	print("Enemy queue_free.")
+	queue_free()
 
 
 func turn_off_collisions():
@@ -230,18 +250,18 @@ func _on_player_detector_body_exited(body: Node3D) -> void:
 
 # And this causes enemy to re-attack if player is still in detector.
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "attack":
+	if anim_name == "attack" \
+	or anim_name == "hurt" \
+	or anim_name == "hurt_knockback":
 		if player_in_attack_range:
 			_update_state(State.ATTACK)
 		else:
-			_update_state(State.RUN)
-	
-	if anim_name == "hurt":
-		if player_in_attack_range:
-			_update_state(State.ATTACK)
-		else:
-			if interrupt_strength > 0:
-				_update_state(State.IDLE)
-				await get_tree().create_timer(interrupt_strength).timeout
+			if anim_name == "hurt_knockback":
+				await get_tree().create_timer(knockback_strength / 3).timeout
+			
+			if anim_name == "hurt" or anim_name == "hurt_knockback":
+				if interrupt_strength > 0:
+					_update_state(State.IDLE)
+					await get_tree().create_timer(interrupt_strength).timeout
 			
 			_update_state(State.RUN)
