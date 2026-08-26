@@ -135,7 +135,6 @@ filter_enabled = true
 filters = [".", "Visuals/BodyPivot/TorsoPivot/Head:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/LShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation", "Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation", "Visuals/BodyPivot/TorsoPivot:position", "Visuals/BodyPivot/TorsoPivot:rotation"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_u3pco"]
-graph_offset = Vector2(-507.8399, -125.75995)
 nodes/output/position = Vector2(510, 120)
 nodes/Locomotion/node = SubResource("AnimationNodeStateMachine_2ieo8")
 nodes/Locomotion/position = Vector2(-320, -40)
@@ -1247,7 +1246,7 @@ tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.20000002, 0.30000004, 0.3999999, 0.59999996, 0.7, 0.9, 1.1, 1.2000002),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 2, 0), Vector3(0, 2, 0), Vector3(0, 2, 0), Vector3(0, 2, 0), Vector3(0, -0.25, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.5), Vector3(0, 0, -0.5), Vector3(0, 0, -0.5), Vector3(0, 0, -0.5), Vector3(0, 0, -0.5), Vector3(0, -0.25, 0.5), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -1986,6 +1985,7 @@ metadata/_custom_type_script = "uid://pj2an3p32h0r"
 [node name="MovementComponent" type="Node" parent="Components" unique_id=1316346280]
 unique_name_in_owner = true
 script = ExtResource("3_qjkh3")
+dodge_speed = 32.0
 metadata/_custom_type_script = "uid://b4kw2dp73cdpo"
 
 [node name="HPBar" parent="." unique_id=1591301229 instance=ExtResource("10_8t03j")]
