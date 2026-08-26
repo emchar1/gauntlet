@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_jauvc")
 enemy_type = 2
-hp = 32.0
+hp = 100.0
 speed = 4.0
 attack_dmg = 20.0
 spawn_duration = 2.0
