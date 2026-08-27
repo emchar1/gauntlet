@@ -177,91 +177,91 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
+tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0)]
+"values": [Vector3(0, -0.4, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
+tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 1.5707964)]
+"values": [Vector3(-1.5707964, 0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
+tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 1.5707964)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
+tracks/11/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -0.472, 0)]
+"values": [Vector3(0, -0.4, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
+tracks/12/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(-1.5707964, 0, 0)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
+tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0, -0.472, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
+tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -273,7 +273,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
+tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -285,7 +285,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
+tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -297,38 +297,38 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Hitbox:monitoring")
+tracks/17/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
+tracks/18/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
+tracks/19/path = NodePath("Hitbox:monitoring")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_5uy6h"]
@@ -421,158 +421,158 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
+tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.4, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6, 0.73333335, 0.8666667, 1, 1.2, 1.5, 2, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.46666667, 0.73333335, 1, 1.2, 1.5, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.17453292, 0, 0.10471976), Vector3(-0.34906584, 0, 0.87266463), Vector3(-0.34906584, 0, 0.87266463), Vector3(-1.0471976, 0, 0.87266463), Vector3(-1.0471976, 0, 0.87266463), Vector3(-1.0471976, 0, 3.1415927), Vector3(-1.0471976, 0, 3.1415927), Vector3(0.17453292, 0, 0.10471976), Vector3(0.17453292, 0, 0.10471976)]
-}
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
+tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.46666667, 0.73333335, 1, 1.2, 1.5, 2, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.87266463, 0, -0.10471976), Vector3(1.7453293, 0, -0.10471976), Vector3(1.7453293, 0, -0.10471976), Vector3(0.10471976, 0, 0.5235988), Vector3(0.10471976, 0, 0.5235988), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.87266463, 0, -0.10471976), Vector3(0.87266463, 0, -0.10471976)]
+"values": [Vector3(0.17453292, 0, 0.10471976), Vector3(-0.34906584, 0, 0.87266463), Vector3(-0.34906584, 0, 0.87266463), Vector3(-1.0471976, 0, 0.87266463), Vector3(-1.0471976, 0, 0.87266463), Vector3(-1.0471976, 0, 3.1415927), Vector3(-1.0471976, 0, 3.1415927), Vector3(0.17453292, 0, 0.10471976), Vector3(0.17453292, 0, 0.10471976)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.46666667, 0.73333335, 1, 1.2, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.87266463, 0, -0.10471976), Vector3(1.7453293, 0, -0.10471976), Vector3(1.7453293, 0, -0.10471976), Vector3(0.10471976, 0, 0.5235988), Vector3(0.10471976, 0, 0.5235988), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.87266463, 0, -0.10471976), Vector3(0.87266463, 0, -0.10471976)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.4, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.46666667, 0.73333335, 1, 1.0666667, 1.2, 1.5, 2, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-8.028515, 0, -1.0471976), Vector3(-8.028515, 0, -1.0471976), Vector3(-11.868238, 0, 1.2217305), Vector3(-9.424778, 0, 0), Vector3(-9.424778, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6, 0.73333335, 0.8666667, 1, 1.2, 1.5, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6, 0.73333335, 0.8666667, 1, 1.2, 1.5, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.27925268, 0, -0.2617994), Vector3(-0.27925268, 0, -0.2617994), Vector3(-0.27925268, 0.2617994, -0.2617994), Vector3(-0.27925268, 0, -0.2617994), Vector3(-0.27925268, 0.2617994, -0.2617994), Vector3(-0.27925268, 0, -0.2617994), Vector3(-0.27925268, 1.0908308, 0), Vector3(-0.27925268, 1.0908308, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
+tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6, 0.73333335, 0.8666667, 1, 1.2, 1.5, 2, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.10471976), Vector3(1.0471976, 0, -1.0471976), Vector3(1.0471976, 0, -1.0471976), Vector3(0, 0, 0.2617994), Vector3(1.0471976, 0, -1.0471976), Vector3(0, 0, 0.2617994), Vector3(1.0471976, 0, -1.0471976), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0.10471976), Vector3(0, 0, 0.10471976)]
+"values": [Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
+tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6, 0.73333335, 0.8666667, 1, 1.2, 1.5, 2, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.20943952), Vector3(-1.0471976, 0, 0.9599311), Vector3(-1.0471976, 0, 0.9599311), Vector3(0.34906584, 0, 0.34906584), Vector3(-1.0471976, 0, 0.9599311), Vector3(0.34906584, 0, 0.34906584), Vector3(-1.0471976, 0, 0.9599311), Vector3(-0.5235988, 0, 0), Vector3(-0.5235988, 0, 0), Vector3(0, 0, -0.20943952), Vector3(0, 0, -0.20943952)]
+"values": [Vector3(0, 0, 0), Vector3(-0.27925268, 0, -0.2617994), Vector3(-0.27925268, 0, -0.2617994), Vector3(-0.27925268, 0.2617994, -0.2617994), Vector3(-0.27925268, 0, -0.2617994), Vector3(-0.27925268, 0.2617994, -0.2617994), Vector3(-0.27925268, 0, -0.2617994), Vector3(-0.27925268, 1.0908308, 0), Vector3(-0.27925268, 1.0908308, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
+tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6, 0.73333335, 0.8666667, 1, 1.2, 1.5, 2, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.10471976), Vector3(0.34906584, 0, 0.61086524), Vector3(0.34906584, 0, 0.61086524), Vector3(1.0471976, 0, -0.43633232), Vector3(0.34906584, 0, 0.61086524), Vector3(1.0471976, 0, -0.43633232), Vector3(0.34906584, 0, 0.61086524), Vector3(1.7453293, 0, 0), Vector3(1.7453293, 0, 0), Vector3(0, 0, -0.10471976), Vector3(0, 0, -0.10471976)]
+"values": [Vector3(0, 0, 0.10471976), Vector3(1.0471976, 0, -1.0471976), Vector3(1.0471976, 0, -1.0471976), Vector3(0, 0, 0.2617994), Vector3(1.0471976, 0, -1.0471976), Vector3(0, 0, 0.2617994), Vector3(1.0471976, 0, -1.0471976), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0.10471976), Vector3(0, 0, 0.10471976)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
+tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6, 0.73333335, 0.8666667, 1, 1.2, 1.5, 2, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.20943952), Vector3(0, 0, -0.20943952), Vector3(0, 0, -0.20943952), Vector3(-1.0471976, 0, 1.0471976), Vector3(0, 0, -0.20943952), Vector3(-1.0471976, 0, 1.0471976), Vector3(0, 0, -0.20943952), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0, 0, 0.20943952), Vector3(0, 0, 0.20943952)]
+"values": [Vector3(0, 0, -0.20943952), Vector3(-1.0471976, 0, 0.9599311), Vector3(-1.0471976, 0, 0.9599311), Vector3(0.34906584, 0, 0.34906584), Vector3(-1.0471976, 0, 0.9599311), Vector3(0.34906584, 0, 0.34906584), Vector3(-1.0471976, 0, 0.9599311), Vector3(-0.5235988, 0, 0), Vector3(-0.5235988, 0, 0), Vector3(0, 0, -0.20943952), Vector3(0, 0, -0.20943952)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Hitbox:monitoring")
+tracks/17/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
+"times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6, 0.73333335, 0.8666667, 1, 1.2, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.10471976), Vector3(0.34906584, 0, 0.61086524), Vector3(0.34906584, 0, 0.61086524), Vector3(1.0471976, 0, -0.43633232), Vector3(0.34906584, 0, 0.61086524), Vector3(1.0471976, 0, -0.43633232), Vector3(0.34906584, 0, 0.61086524), Vector3(1.7453293, 0, 0), Vector3(1.7453293, 0, 0), Vector3(0, 0, -0.10471976), Vector3(0, 0, -0.10471976)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
+tracks/18/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.46666667, 0.6, 0.73333335, 0.8666667, 1, 1.2, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"values": [Vector3(0, 0, 0.20943952), Vector3(0, 0, -0.20943952), Vector3(0, 0, -0.20943952), Vector3(-1.0471976, 0, 1.0471976), Vector3(0, 0, -0.20943952), Vector3(-1.0471976, 0, 1.0471976), Vector3(0, 0, -0.20943952), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0, 0, 0.20943952), Vector3(0, 0, 0.20943952)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
+tracks/19/path = NodePath("Hitbox:monitoring")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 tracks/20/type = "method"
 tracks/20/imported = false
@@ -685,158 +685,158 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
+tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0.07853982, -1.3735741, 0)]
+"values": [Vector3(0, -0.4, 0), Vector3(0, -0.4, 0), Vector3(0.25, -2, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
+tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.17453292, 0, 0.10471976), Vector3(0, 1.3788102, 2.5377088), Vector3(1.5411258, 1.3788102, 2.5377088)]
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0.07853982, -1.3735741, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
+tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.87266463, 0, -0.10471976), Vector3(0, 0, 0), Vector3(-0.48694685, 0, 0)]
+"values": [Vector3(0.17453292, 0, 0.10471976), Vector3(0, 1.3788102, 2.5377088), Vector3(1.5411258, 1.3788102, 2.5377088)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0.9616764, 0, 3.4836771)]
+"values": [Vector3(0.87266463, 0, -0.10471976), Vector3(0, 0, 0), Vector3(-0.48694685, 0, 0)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
+tracks/11/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.4, 0), Vector3(0, -0.4, 0), Vector3(0, -0.4, 0), Vector3(1.5, -2, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0.9616764, 0, 3.4836771)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.472, 0), Vector3(0, -0.47155648, 0.123208165), Vector3(0, -1.6, 0)]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(1.5411258, 0, 0), Vector3(1.5411258, 0, 0)]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.1605703)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, -0.20943952), Vector3(0, 0, 0), Vector3(0.7295476, 0, -0.72431165)]
-}
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
+tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.24085544)]
+"values": [Vector3(0, 0, 0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.1605703)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
+tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.20943952), Vector3(0, 0, 0), Vector3(0, 0, 0.4834562)]
+"values": [Vector3(0, 0, -0.20943952), Vector3(0, 0, 0), Vector3(0.7295476, 0, -0.72431165)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Hitbox:monitoring")
+tracks/17/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.24085544)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
+tracks/18/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.4, 0), Vector3(0, -0.4, 0), Vector3(0.25, -2, 0)]
+"values": [Vector3(0, 0, 0.20943952), Vector3(0, 0, 0), Vector3(0, 0, 0.4834562)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
+tracks/19/path = NodePath("Hitbox:monitoring")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.4, 0), Vector3(0, -0.4, 0), Vector3(0, -0.4, 0), Vector3(1.5, -2, 0)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_xwavj"]
@@ -929,158 +929,158 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
+tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
+"values": [Vector3(0, -0.4, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
+tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.57595867, 0, 2.7925267), Vector3(0.57595867, 0, 2.7925267), Vector3(0.4886922, 0, 0.10471976)]
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
+tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.25132743, -0.5235988, 0), Vector3(-0.25132743, -0.5235988, 0), Vector3(0.43458697, -0.5235988, 0)]
+"values": [Vector3(0.57595867, 0, 2.7925267), Vector3(0.57595867, 0, 2.7925267), Vector3(0.4886922, 0, 0.10471976)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(2.0001473, 0, 0), Vector3(2.0001473, 0, 0), Vector3(4.8834314, 0, 0)]
+"values": [Vector3(-0.25132743, -0.5235988, 0), Vector3(-0.25132743, -0.5235988, 0), Vector3(0.43458697, -0.5235988, 0)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
+tracks/11/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0.15)]
+"values": [Vector3(0, -0.4, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
+tracks/12/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -1.0995574, 0)]
+"values": [Vector3(2.0001473, 0, 0), Vector3(2.0001473, 0, 0), Vector3(4.8834314, 0, 0)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
+tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.06806784), Vector3(0, 0, 0.06806784), Vector3(-0.06806784, 0, -0.20420352)]
+"values": [Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0.15)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
+tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.34208453), Vector3(0, 0, -0.34208453), Vector3(-0.13788101, 0, 0.47822022)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -1.0995574, 0)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
+tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.13613568), Vector3(0, 0, -0.13613568), Vector3(0, 0, 0.27227136)]
+"values": [Vector3(0, 0, 0.06806784), Vector3(0, 0, 0.06806784), Vector3(-0.06806784, 0, -0.20420352)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
+tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.20420352), Vector3(0, 0, 0.20420352), Vector3(-0.27401668, 0, 0.27401668)]
+"values": [Vector3(0, 0, -0.34208453), Vector3(0, 0, -0.34208453), Vector3(-0.13788101, 0, 0.47822022)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Hitbox:monitoring")
+tracks/17/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.13613568), Vector3(0, 0, -0.13613568), Vector3(0, 0, 0.27227136)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
+tracks/18/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"values": [Vector3(0, 0, 0.20420352), Vector3(0, 0, 0.20420352), Vector3(-0.27401668, 0, 0.27401668)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
+tracks/19/path = NodePath("Hitbox:monitoring")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_kw8yf"]
@@ -1173,158 +1173,158 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
+tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0.07853982, -1.3735741, 0), Vector3(0.07853982, -1.3735741, 0), Vector3(-1.5707964, 0, 0)]
+"values": [Vector3(0, -0.4, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
+tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.17453292, 0, 0.10471976), Vector3(0, 1.3788102, 2.5377088), Vector3(1.5411258, 1.3788102, 2.5377088), Vector3(1.5411258, 1.3788102, 2.5377088), Vector3(0.17453292, 0, 0.10471976)]
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0.07853982, -1.3735741, 0), Vector3(0.07853982, -1.3735741, 0), Vector3(-1.5707964, 0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
+tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.87266463, 0, -0.10471976), Vector3(0, 0, 0), Vector3(-0.48694685, 0, 0), Vector3(-0.48694685, 0, 0), Vector3(0.87266463, 0, -0.10471976)]
+"values": [Vector3(0.17453292, 0, 0.10471976), Vector3(0, 1.3788102, 2.5377088), Vector3(1.5411258, 1.3788102, 2.5377088), Vector3(1.5411258, 1.3788102, 2.5377088), Vector3(0.17453292, 0, 0.10471976)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0.9616764, 0, 3.4836771), Vector3(0.9616764, 0, 3.4836771), Vector3(-1.5707964, 12.566371, 0)]
+"values": [Vector3(0.87266463, 0, -0.10471976), Vector3(0, 0, 0), Vector3(-0.48694685, 0, 0), Vector3(-0.48694685, 0, 0), Vector3(0.87266463, 0, -0.10471976)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
+tracks/11/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.4, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0.9616764, 0, 3.4836771), Vector3(0.9616764, 0, 3.4836771), Vector3(-1.5707964, 12.566371, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.472, 0), Vector3(0, -0.47155648, 0.123208165), Vector3(0, -1.6, 0), Vector3(0, -1.6, 0), Vector3(0, -0.472, 0)]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(1.5411258, 0, 0), Vector3(1.5411258, 0, 0), Vector3(1.5411258, 0, 0), Vector3(0, 0, 0)]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.1605703), Vector3(0, 0, -0.1605703), Vector3(0, 0, 0.10471976)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, -0.20943952), Vector3(0, 0, 0), Vector3(0.7295476, 0, -0.72431165), Vector3(0.7295476, 0, -0.72431165), Vector3(0, 0, -0.20943952)]
-}
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
+tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.24085544), Vector3(0, 0, -0.24085544), Vector3(0, 0, -0.10471976)]
+"values": [Vector3(0, 0, 0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.1605703), Vector3(0, 0, -0.1605703), Vector3(0, 0, 0.10471976)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
+tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.20943952), Vector3(0, 0, 0), Vector3(0, 0, 0.4834562), Vector3(0, 0, 0.4834562), Vector3(0, 0, 0.20943952)]
+"values": [Vector3(0, 0, -0.20943952), Vector3(0, 0, 0), Vector3(0.7295476, 0, -0.72431165), Vector3(0.7295476, 0, -0.72431165), Vector3(0, 0, -0.20943952)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Hitbox:monitoring")
+tracks/17/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.24085544), Vector3(0, 0, -0.24085544), Vector3(0, 0, -0.10471976)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
+tracks/18/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"values": [Vector3(0, 0, 0.20943952), Vector3(0, 0, 0), Vector3(0, 0, 0.4834562), Vector3(0, 0, 0.4834562), Vector3(0, 0, 0.20943952)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
+tracks/19/path = NodePath("Hitbox:monitoring")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_md0e3"]
@@ -1417,158 +1417,158 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
+tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
+"values": [Vector3(0, -0.4, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
+tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.17453292, 0, 0.10471976), Vector3(0.17453292, 0, 0.17453292), Vector3(0.17453292, 0, 0.10471976)]
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
+tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.87266463, 0, -0.10471976), Vector3(0.9599311, 0.08726646, -0.5235988), Vector3(0.87266463, 0, -0.10471976)]
+"values": [Vector3(0.17453292, 0, 0.10471976), Vector3(0.17453292, 0, 0.17453292), Vector3(0.17453292, 0, 0.10471976)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
+"values": [Vector3(0.87266463, 0, -0.10471976), Vector3(0.9599311, 0.08726646, -0.5235988), Vector3(0.87266463, 0, -0.10471976)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
+tracks/11/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0)]
+"values": [Vector3(0, -0.4, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
+tracks/12/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.34906584, 0), Vector3(0, 0, 0)]
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
+tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.10471976), Vector3(0, 0, 0), Vector3(0, 0, 0.10471976)]
+"values": [Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
+tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.20943952), Vector3(0, 0, 0), Vector3(0, 0, -0.20943952)]
+"values": [Vector3(0, 0, 0), Vector3(0, -0.34906584, 0), Vector3(0, 0, 0)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
+tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.10471976)]
+"values": [Vector3(0, 0, 0.10471976), Vector3(0, 0, 0), Vector3(0, 0, 0.10471976)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
+tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.20943952), Vector3(0, 0, 0), Vector3(0, 0, 0.20943952)]
+"values": [Vector3(0, 0, -0.20943952), Vector3(0, 0, 0), Vector3(0, 0, -0.20943952)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Hitbox:monitoring")
+tracks/17/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.10471976), Vector3(0, 0, 0), Vector3(0, 0, -0.10471976)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
+tracks/18/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"values": [Vector3(0, 0, 0.20943952), Vector3(0, 0, 0), Vector3(0, 0, 0.20943952)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
+tracks/19/path = NodePath("Hitbox:monitoring")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_ulpps"]
@@ -1662,158 +1662,158 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
+tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
+"values": [Vector3(0, -0.4, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
+tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.7853982, 0, 0.87266463), Vector3(0.038397245, 0, 0.46251225), Vector3(-0.7853982, 0, 0.87266463)]
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
+tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(1.7453293, 0, -0.10471976), Vector3(1.7453293, 0, -0.10471976), Vector3(1.7453293, 0, -0.10471976)]
+"values": [Vector3(-0.7853982, 0, 0.87266463), Vector3(0.038397245, 0, 0.46251225), Vector3(-0.7853982, 0, 0.87266463)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
+tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
+"values": [Vector3(1.7453293, 0, -0.10471976), Vector3(1.7453293, 0, -0.10471976), Vector3(1.7453293, 0, -0.10471976)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
+tracks/11/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0)]
+"values": [Vector3(0, -0.4, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
+tracks/12/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0.5235988, 0), Vector3(0, 0.5235988, 0), Vector3(0, 0.5235988, 0)]
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
+tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.7853982, 0, 0), Vector3(-0.17627825, 0, 0), Vector3(0.7853982, 0, 0)]
+"values": [Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
+tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.2617994, 0, 0), Vector3(-1.1536627, 0, 0), Vector3(-0.2617994, 0, 0)]
+"values": [Vector3(0, 0.5235988, 0), Vector3(0, 0.5235988, 0), Vector3(0, 0.5235988, 0)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
+tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.2617994, 0, 0), Vector3(0.9738937, 0, 0), Vector3(-0.2617994, 0, 0)]
+"values": [Vector3(0.7853982, 0, 0), Vector3(-0.17627825, 0, 0), Vector3(0.7853982, 0, 0)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
+tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.0471976, 0, 0), Vector3(-0.22340214, 0, 0), Vector3(-1.0471976, 0, 0)]
+"values": [Vector3(-0.2617994, 0, 0), Vector3(-1.1536627, 0, 0), Vector3(-0.2617994, 0, 0)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Hitbox:monitoring")
+tracks/17/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.2617994, 0, 0), Vector3(0.9738937, 0, 0), Vector3(-0.2617994, 0, 0)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivot/LLowerArm/LHand:position")
+tracks/18/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"values": [Vector3(-1.0471976, 0, 0), Vector3(-0.22340214, 0, 0), Vector3(-1.0471976, 0, 0)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivot/RLowerArm/RHand:position")
+tracks/19/path = NodePath("Hitbox:monitoring")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.4, 0)]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_md0e3"]
