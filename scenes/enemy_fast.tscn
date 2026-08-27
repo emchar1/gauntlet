@@ -849,7 +849,7 @@ tracks/0/path = NodePath("Visuals/BodyPivot/TorsoPivot/Head:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.29999998),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(1.1571532, 0, 1.5707964), Vector3(1.1571532, 0, 1.5707964), Vector3(-0.11170107, 0, 1.5707964)]
@@ -861,7 +861,7 @@ tracks/1/path = NodePath("Visuals/BodyPivot:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.3),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
@@ -873,7 +873,7 @@ tracks/2/path = NodePath("Visuals/BodyPivot:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.3),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
@@ -885,7 +885,7 @@ tracks/3/path = NodePath("Visuals/BodyPivot/TorsoPivot:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.29999998),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0.25, 0.4), Vector3(0, 0.25, -0.4), Vector3(0, 0.25, 0)]
@@ -897,7 +897,7 @@ tracks/4/path = NodePath("Visuals/BodyPivot/TorsoPivot:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.29999998),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.6335545, 0, 0), Vector3(-0.7853982, 0, 0), Vector3(-0.27401668, 0, 0)]
@@ -909,7 +909,7 @@ tracks/5/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.29999998),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.57595867, 0, -2.7925267), Vector3(0.57595867, 0, -2.7925267), Vector3(0.57595867, 0, -0.58294)]
@@ -921,7 +921,7 @@ tracks/6/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivo
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.29999998),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.21991149, 0.38397244, 0), Vector3(-0.21991149, 0.38397244, 0), Vector3(1.2304571, 0.38397244, 0.41015238)]
@@ -933,7 +933,7 @@ tracks/7/path = NodePath("Visuals/BodyPivot/TorsoPivot/LShoulderPivot/LElbowPivo
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.3),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 0, 0)]
@@ -945,7 +945,7 @@ tracks/8/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.29999998),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.57595867, 0, 2.7925267), Vector3(0.57595867, 0, 2.7925267), Vector3(0.4886922, 0, 0.10471976)]
@@ -957,7 +957,7 @@ tracks/9/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPivo
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.29999998),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.25132743, -0.5235988, 0), Vector3(-0.25132743, -0.5235988, 0), Vector3(0.43458697, -0.5235988, 0)]
@@ -969,7 +969,7 @@ tracks/10/path = NodePath("Visuals/BodyPivot/TorsoPivot/RShoulderPivot/RElbowPiv
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.3),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(2.0001473, 0, 0), Vector3(2.0001473, 0, 0), Vector3(4.8834314, 0, 0)]
@@ -981,7 +981,7 @@ tracks/11/path = NodePath("Visuals/BodyPivot/PelvisPivot:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.29999998),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.472, 0), Vector3(0, -0.472, 0), Vector3(0, -0.472, 0.15)]
@@ -993,7 +993,7 @@ tracks/12/path = NodePath("Visuals/BodyPivot/PelvisPivot:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.29999998),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -1.0995574, 0)]
@@ -1005,7 +1005,7 @@ tracks/13/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.3),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0.06806784), Vector3(0, 0, 0.06806784), Vector3(-0.06806784, 0, -0.20420352)]
@@ -1017,7 +1017,7 @@ tracks/14/path = NodePath("Visuals/BodyPivot/PelvisPivot/LHipPivot/LKneePivot:ro
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.3),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, -0.34208453), Vector3(0, 0, -0.34208453), Vector3(-0.13788101, 0, 0.47822022)]
@@ -1029,7 +1029,7 @@ tracks/15/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.3),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, -0.13613568), Vector3(0, 0, -0.13613568), Vector3(0, 0, 0.27227136)]
@@ -1041,7 +1041,7 @@ tracks/16/path = NodePath("Visuals/BodyPivot/PelvisPivot/RHipPivot/RKneePivot:ro
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0.1, 0.13333334, 0.3),
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0.20420352), Vector3(0, 0, 0.20420352), Vector3(-0.27401668, 0, 0.27401668)]

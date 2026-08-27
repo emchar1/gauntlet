@@ -55,8 +55,7 @@ func stop_dodge(actor: CharacterBody3D) -> void:
 	is_dodging = false
 	
 	dodge_dir = Vector2.ZERO
-	actor.velocity.x = 0
-	actor.velocity.z = 0
+	actor.stop_movement()
 	
 	actor.set_collision_layer_value(GameState.COLLISION_PLAYER_BODY, true)
 	actor.set_collision_mask_value(GameState.COLLISION_ENEMY_BODY, true)

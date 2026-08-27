@@ -88,7 +88,14 @@ func update_hp(amount: float):
 	hp_bar.update_health(hp_current)
 	
 	if amount < 0:
+		_reset_attack()
+		_update_move_state(MoveState.HURT)
 		_update_iframes()
+
+
+func stop_movement():
+	velocity.x = 0
+	velocity.z = 0
 
 
 # HELPER FUNCTIONS
@@ -111,6 +118,10 @@ func _player_move():
 	if move_state == MoveState.DODGE:
 		return
 	
+	if move_state == MoveState.HURT:
+		stop_movement()
+		return
+	
 	movement_component.move_dir = input_component.move_direction
 	movement_component.update_movement(self)
 	
@@ -125,7 +136,7 @@ func _player_move():
 
 # Updates the direction player is facing based on if aiming vs movement
 func _update_facing() -> void:
-	if move_state == MoveState.DODGE:
+	if move_state == MoveState.DODGE or move_state == MoveState.HURT:
 		return
 	
 	if input_component.charge_pressed:
@@ -146,7 +157,7 @@ func _update_facing() -> void:
 
 
 func _update_aiming_reticle():
-	if move_state == MoveState.DODGE:
+	if move_state == MoveState.DODGE or move_state == MoveState.HURT:
 		return
 	
 	if input_component.charge_pressed:
@@ -186,6 +197,9 @@ func _reset_aiming():
 
 # Player attack function.
 func _player_attack():
+	if move_state == MoveState.HURT:
+		return
+	
 	if move_state == MoveState.DODGE:
 		if input_component.special_pressed:
 			combat_component.execute_attack(self, combat_component.magic_bomb)
@@ -329,6 +343,12 @@ func _dodge_land():
 
 
 func _dodge_recover():
+	_update_move_state(MoveState.IDLE)
+
+
+# ANIMATION PLAYER: HURT - CALLBACK FUNCTIONS
+
+func _hurt_finished():
 	_update_move_state(MoveState.IDLE)
 
 
