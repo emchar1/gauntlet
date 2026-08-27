@@ -4,6 +4,8 @@ class_name Player
 
 # PROPERTIES
 
+signal died
+
 enum MoveState {
 	IDLE, RUN, DODGE, HURT, DEAD
 }
@@ -87,6 +89,10 @@ func update_hp(amount: float):
 	hp_current = clamp(hp_current, 0, hp_max)
 	hp_bar.update_health(hp_current)
 	
+	if hp_current <= 0:
+		_die()
+		return
+	
 	if amount < 0:
 		_reset_attack()
 		_update_move_state(MoveState.HURT)
@@ -118,7 +124,7 @@ func _player_move():
 	if move_state == MoveState.DODGE:
 		return
 	
-	if move_state == MoveState.HURT:
+	if move_state == MoveState.HURT or move_state == MoveState.DEAD:
 		stop_movement()
 		return
 	
@@ -136,7 +142,9 @@ func _player_move():
 
 # Updates the direction player is facing based on if aiming vs movement
 func _update_facing() -> void:
-	if move_state == MoveState.DODGE or move_state == MoveState.HURT:
+	if move_state == MoveState.DODGE \
+	or move_state == MoveState.HURT \
+	or move_state == MoveState.DEAD:
 		return
 	
 	if input_component.charge_pressed:
@@ -157,7 +165,9 @@ func _update_facing() -> void:
 
 
 func _update_aiming_reticle():
-	if move_state == MoveState.DODGE or move_state == MoveState.HURT:
+	if move_state == MoveState.DODGE \
+	or move_state == MoveState.HURT \
+	or move_state == MoveState.DEAD:
 		return
 	
 	if input_component.charge_pressed:
@@ -197,7 +207,7 @@ func _reset_aiming():
 
 # Player attack function.
 func _player_attack():
-	if move_state == MoveState.HURT:
+	if move_state == MoveState.HURT or move_state == MoveState.DEAD:
 		return
 	
 	if move_state == MoveState.DODGE:
@@ -288,6 +298,15 @@ func _get_target_angle(direction: Vector2) -> float:
 	return atan2(aim_dir.x, aim_dir.z)
 
 
+# Handle death.
+func _die():
+	if move_state == MoveState.DEAD:
+		return
+	
+	_reset_attack()
+	_update_move_state(MoveState.DEAD)
+
+
 # ANIMATION PLAYER: ATTACK - CALLBACK FUNCTIONS
 
 func attack_start_finished():
@@ -346,10 +365,14 @@ func _dodge_recover():
 	_update_move_state(MoveState.IDLE)
 
 
-# ANIMATION PLAYER: HURT - CALLBACK FUNCTIONS
+# ANIMATION PLAYER: HURT/DEAD - CALLBACK FUNCTIONS
 
 func _hurt_finished():
 	_update_move_state(MoveState.IDLE)
+
+
+func _dead_finished():
+	died.emit()
 
 
 # SIGNAL CONNECTED CALLBACK FUNCTIONS

@@ -59,13 +59,8 @@ func _apply_gravity(delta: float):
 
 # Movement and follow player
 func _process_movement():
-	if player == null:
-		print("No player assigned. Assign player to enemy.")
-		return
-	
 	if current_state != State.RUN:
-		velocity.x = 0
-		velocity.z = 0
+		_stop_movement()
 		return
 	
 	current_speed = move_toward(
@@ -78,8 +73,10 @@ func _process_movement():
 
 
 func _move_towards_player(movement_speed: float, snap_follow: bool = true):
-	if player == null:
-		print("No player assigned. Assign player to enemy.")
+	if not _can_target_player():
+		_stop_movement()
+		player_in_attack_range = false
+		_update_state(State.IDLE)
 		return
 	
 	nav_agent.target_position = player.global_position
@@ -129,6 +126,15 @@ func _update_state(state: State):
 			animation_player.play("dead")
 		_:
 			animation_player.play("RESET")
+
+
+func _can_target_player() -> bool:
+	return player != null and player.move_state != Player.MoveState.DEAD
+
+
+func _stop_movement():
+	velocity.x = 0
+	velocity.z = 0
 
 
 # OTHER FUNCTIONS
@@ -249,12 +255,18 @@ func turn_off_collisions():
 
 # And this registers when player gets hit by enemy.
 func _on_hitbox_area_entered(area: Area3D) -> void:
+	if not _can_target_player():
+		return
+	
 	if area.is_in_group("hurtbox"):
 		player.update_hp(-enemy_config.attack_dmg)
 
 
 # This detector triggers when player enters enemy's PlayerDetector.
 func _on_player_detector_body_entered(body: Node3D) -> void:
+	if not _can_target_player():
+		return
+	
 	if body.is_in_group("player"):
 		player_in_attack_range = true
 		
@@ -264,12 +276,18 @@ func _on_player_detector_body_entered(body: Node3D) -> void:
 
 # This triggers when player leaves PlayerDetector.
 func _on_player_detector_body_exited(body: Node3D) -> void:
+	if not _can_target_player():
+		return
+	
 	if body.is_in_group("player"):
 		player_in_attack_range = false
 
 
 # And this causes enemy to re-attack if player is still in detector.
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if not _can_target_player():
+		return
+	
 	if is_slaying:
 		return
 	
