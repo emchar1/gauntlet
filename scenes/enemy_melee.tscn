@@ -8,8 +8,8 @@ radius = 1.0708008
 height = 4.073303
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7p1mj"]
-radius = 1.9912109
-height = 5.189148
+radius = 2.0
+height = 5.2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_md0e3"]
 radius = 1.5
@@ -1356,7 +1356,7 @@ mesh = SubResource("CapsuleMesh_7p1mj")
 surface_material_override/0 = SubResource("StandardMaterial3D_md0e3")
 
 [node name="Head" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=1460065352]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9937501, 0.11161891, 0, -0.11161891, 0.9937501, 0, 1.349552, -0.36090708)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99375004, 0.111618906, 0, -0.111618906, 0.99375004, 0, 1.349552, -0.36090708)
 mesh = SubResource("CapsuleMesh_4ra3w")
 surface_material_override/0 = SubResource("StandardMaterial3D_5uy6h")
 
