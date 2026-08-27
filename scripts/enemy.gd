@@ -263,3 +263,15 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 						return
 			
 			_update_state(State.RUN)
+
+
+# ANIMATION CALLBACK FUNCTIONS
+
+func _fast_attack_start():
+	if enemy_config.enemy_type == EnemyConfig.EnemyType.FAST:
+		pass
+	pass
+
+
+func _fast_attack_end():
+	pass

@@ -7,6 +7,7 @@ enum EnemyType {
 	MELEE, FAST, TANK, CASTER
 }
 
+@export var enemy_scene: PackedScene
 @export var enemy_type: EnemyType = EnemyType.MELEE
 
 

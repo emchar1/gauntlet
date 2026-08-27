@@ -9,4 +9,3 @@ hp = 100.0
 speed = 4.0
 attack_dmg = 20.0
 spawn_duration = 2.0
-slay_duration = 0.75
