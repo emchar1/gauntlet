@@ -18,11 +18,14 @@ var player_in_attack_range: bool = false
 
 var has_spawned: bool = false
 var is_slaying: bool = false
+var fast_is_attacking: bool = false
+var fast_is_lunging: bool = false
 var current_hp: float
 var knockback_strength: float = 0
 var interrupt_strength: int = 0
 
 var current_speed: float = 0
+var move_dir: Vector3 = Vector3.ZERO
 
 
 # FUNCTIONS
@@ -35,6 +38,9 @@ func _physics_process(delta: float) -> void:
 	_apply_gravity(delta)
 	_process_movement()
 	hp_bar.position_hp(self)
+	
+	if fast_is_attacking:
+		_move_towards_player(enemy_config.speed * 2, false)
 	
 	move_and_slide()
 
@@ -62,6 +68,20 @@ func _process_movement():
 		velocity.z = 0
 		return
 	
+	current_speed = move_toward(
+		current_speed,
+		enemy_config.speed,
+		enemy_config.acceleration * get_physics_process_delta_time()
+	)
+	
+	_move_towards_player(current_speed)
+
+
+func _move_towards_player(movement_speed: float, snap_follow: bool = true):
+	if player == null:
+		print("No player assigned. Assign player to enemy.")
+		return
+	
 	nav_agent.target_position = player.global_position
 	
 	var next_nav_point = nav_agent.get_next_path_position()
@@ -70,23 +90,28 @@ func _process_movement():
 	path_dir.y = 0
 	path_dir = path_dir.normalized()
 	
-	current_speed = move_toward(
-		current_speed,
-		enemy_config.speed,
-		enemy_config.acceleration * get_physics_process_delta_time()
-	)
+	if snap_follow:
+		move_dir = path_dir
+	else:
+		if not fast_is_lunging:
+			# Loosely follows the player, i.e. used for fast enemy attack.
+			move_dir = move_dir.slerp(path_dir, 0.1).normalized()
 	
-	velocity.x = path_dir.x * current_speed
-	velocity.z = path_dir.z * current_speed
+	velocity.x = move_dir.x * movement_speed
+	velocity.z = move_dir.z * movement_speed
 	
 	# Rotate enemy to face player
 	if path_dir.length_squared() > 0.0:
-		look_at(global_position + path_dir, Vector3.UP)
+		look_at(global_position + move_dir, Vector3.UP)
 
 
 # Updates the current state and animation
 func _update_state(state: State):
 	current_state = state
+	
+	if current_state != State.ATTACK:
+		fast_is_attacking = false
+		fast_is_lunging = false
 	
 	match state:
 		State.IDLE:
@@ -269,9 +294,14 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _fast_attack_start():
 	if enemy_config.enemy_type == EnemyConfig.EnemyType.FAST:
-		pass
-	pass
+		fast_is_attacking = true
 
+
+func _fast_attack_commit():
+	if enemy_config.enemy_type == EnemyConfig.EnemyType.FAST:
+		fast_is_lunging = true
 
 func _fast_attack_end():
-	pass
+	if enemy_config.enemy_type == EnemyConfig.EnemyType.FAST:
+		fast_is_attacking = false
+		fast_is_lunging = false
