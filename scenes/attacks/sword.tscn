@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://7772rcy68bqc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u3pco"]
+top_radius = 0.12
+bottom_radius = 0.08
+height = 1.2
+radial_segments = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
+metallic = 0.5
+roughness = 0.2
+
+[sub_resource type="PrismMesh" id="PrismMesh_u3pco"]
+size = Vector3(0.17, 0.2, 0.17)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpsmn"]
+metallic = 0.5
+roughness = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lb7rc"]
+top_radius = 0.15
+bottom_radius = 0.25
+height = 0.1
+radial_segments = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lmhc"]
+albedo_color = Color(0.3882353, 0.24705882, 0.15294118, 1)
+roughness = 0.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u3pco"]
+radius = 0.05
+height = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47650"]
+albedo_color = Color(0.3882353, 0.24705882, 0.15294118, 1)
+roughness = 0.5
+
+[node name="Sword" type="Node3D" unique_id=2062912824]
+
+[node name="Blade" type="Node3D" parent="." unique_id=2014257124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Shaft" type="MeshInstance3D" parent="Blade" unique_id=1221907798]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+mesh = SubResource("CylinderMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="Tip" type="MeshInstance3D" parent="Blade" unique_id=736107392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("PrismMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_jpsmn")
+
+[node name="Handle" type="Node3D" parent="." unique_id=140268844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Guard" type="MeshInstance3D" parent="Handle" unique_id=772292366]
+mesh = SubResource("CylinderMesh_lb7rc")
+surface_material_override/0 = SubResource("StandardMaterial3D_2lmhc")
+
+[node name="Handle" type="MeshInstance3D" parent="Handle" unique_id=395786981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+mesh = SubResource("CapsuleMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_47650")

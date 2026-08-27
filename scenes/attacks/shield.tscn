@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://qjlyjifgmkxk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u3pco"]
+top_radius = 0.6
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
+albedo_color = Color(0.6431373, 0.4862745, 0, 1)
+metallic = 0.5
+roughness = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_u3pco"]
+radius = 0.25
+height = 0.1
+is_hemisphere = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpsmn"]
+albedo_color = Color(0.6431373, 0.4862745, 0, 1)
+metallic = 0.5
+roughness = 0.0
+
+[node name="Shield" type="Node3D" unique_id=1492089929]
+
+[node name="Plate" type="MeshInstance3D" parent="." unique_id=1624873597]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="Knob" type="MeshInstance3D" parent="." unique_id=466592175]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.05)
+mesh = SubResource("SphereMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_jpsmn")
