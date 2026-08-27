@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dx6jm31saw6se"]
 
-[ext_resource type="Script" uid="uid://oqxnj1gfpfic" path="res://scripts/enemy.gd" id="1_00nrq"]
+[ext_resource type="Script" uid="uid://d1jigcaynhkcm" path="res://enemy/enemy.gd" id="1_qo5bw"]
 [ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/hp_bar.tscn" id="2_pufb0"]
-[ext_resource type="PackedScene" uid="uid://qjlyjifgmkxk" path="res://scenes/attacks/shield.tscn" id="2_ulpps"]
-[ext_resource type="PackedScene" uid="uid://7772rcy68bqc" path="res://scenes/attacks/sword.tscn" id="3_kw8yf"]
+[ext_resource type="PackedScene" uid="uid://qjlyjifgmkxk" path="res://enemy/shield.tscn" id="2_ulpps"]
+[ext_resource type="PackedScene" uid="uid://7772rcy68bqc" path="res://enemy/sword.tscn" id="3_kw8yf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u3pco"]
 radius = 0.8
@@ -1830,7 +1830,7 @@ _data = {
 [node name="EnemyFast" type="CharacterBody3D" unique_id=1150225623 groups=["enemy"]]
 collision_layer = 4
 collision_mask = 15
-script = ExtResource("1_00nrq")
+script = ExtResource("1_qo5bw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=104712642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)

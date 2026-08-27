@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="EnemyConfig" format=3 uid="uid://dwu53ugce4dlh"]
 
-[ext_resource type="Script" uid="uid://di3ctmsvh4q" path="res://scripts/enemy_config.gd" id="1_hjs0k"]
-[ext_resource type="PackedScene" uid="uid://dx6jm31saw6se" path="res://scenes/enemy_fast.tscn" id="1_vv3ax"]
+[ext_resource type="PackedScene" uid="uid://dx6jm31saw6se" path="res://enemy/enemy_fast.tscn" id="1_vv3ax"]
+[ext_resource type="Script" uid="uid://s8d1huuxeegb" path="res://enemy/enemy_config.gd" id="2_vv3ax"]
 
 [resource]
-script = ExtResource("1_hjs0k")
+script = ExtResource("2_vv3ax")
 enemy_scene = ExtResource("1_vv3ax")
 enemy_type = 1
 speed = 10.0

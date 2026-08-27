@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c2hs3iqsoq2kk"]
 
-[ext_resource type="Script" uid="uid://oqxnj1gfpfic" path="res://scripts/enemy.gd" id="1_qcgh8"]
+[ext_resource type="Script" uid="uid://d1jigcaynhkcm" path="res://enemy/enemy.gd" id="1_mjw70"]
 [ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/hp_bar.tscn" id="2_wm50o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u3pco"]
@@ -1308,7 +1308,7 @@ _data = {
 [node name="EnemyMelee" type="CharacterBody3D" unique_id=1150225623 groups=["enemy"]]
 collision_layer = 4
 collision_mask = 15
-script = ExtResource("1_qcgh8")
+script = ExtResource("1_mjw70")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=104712642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2217102, 0)
@@ -1356,7 +1356,7 @@ mesh = SubResource("CapsuleMesh_7p1mj")
 surface_material_override/0 = SubResource("StandardMaterial3D_md0e3")
 
 [node name="Head" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=1460065352]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.99375004, 0.111618906, 0, -0.111618906, 0.99375004, 0, 1.349552, -0.36090708)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99375, 0.1116189, 0, -0.1116189, 0.99375, 0, 1.349552, -0.36090708)
 mesh = SubResource("CapsuleMesh_4ra3w")
 surface_material_override/0 = SubResource("StandardMaterial3D_5uy6h")
 
