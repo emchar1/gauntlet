@@ -17,7 +17,7 @@ roughness = 0.5
 resource_local_to_scene = true
 size = Vector3(5, 8, 5)
 
-[node name="Door" type="Node3D" unique_id=929769732]
+[node name="Door" type="Node3D" unique_id=929769732 groups=["door"]]
 script = ExtResource("1_ygqrh")
 
 [node name="Walls" type="Node3D" parent="." unique_id=1678208244]

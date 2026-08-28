@@ -32,6 +32,7 @@ world="walls or floor, the game world"
 enemy="enemies"
 hurtbox="hurtbox for enemies, players, spawners, destructibles"
 hitbox="hitbox for enemies, players, spawners, destructibles"
+door="used to open/close doors on room entry"
 
 [input]
 
