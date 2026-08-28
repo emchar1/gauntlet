@@ -89,7 +89,7 @@ func _physics_process(delta: float) -> void:
 	# MUST go AFTER move_and_slide()
 	if is_resurrecting and is_on_floor():
 		_apply_resurrection_knockback()
-		GameState.shake_main_camera(2.5, 30)
+		GameState.shake_main_camera(3.5, 30)
 		is_resurrecting = false
 
 
@@ -341,7 +341,7 @@ func _resurrect():
 	# Resurrect from above
 	var res_position = global_position
 	
-	global_position = res_position + Vector3.UP * 20
+	global_position = res_position + Vector3.UP * 30
 	velocity.y = 0
 	
 	# Reset ability timers
