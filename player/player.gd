@@ -25,6 +25,7 @@ var hp_current: float
 @onready var movement_component = %MovementComponent
 @onready var bow = %Bow
 
+@onready var resurrect_timer = $ResurrectTimer
 @onready var hp_bar = $HPBar
 @onready var aiming_l = $AimingReticleL
 @onready var aiming_r = $AimingReticleR
@@ -73,6 +74,10 @@ func _physics_process(delta: float) -> void:
 	
 	if movement_component.is_dodging:
 		movement_component.traverse_dodge(self)
+	
+	if move_state == MoveState.DEAD:
+		if resurrect_timer.is_stopped() and input_component.start_pressed:
+			_update_move_state(MoveState.IDLE)
 	
 	hp_bar.position_hp(self)
 	
@@ -305,6 +310,17 @@ func _die():
 	
 	_reset_attack()
 	_update_move_state(MoveState.DEAD)
+	resurrect_timer.start()
+
+
+func _resurrect():
+	if move_state != MoveState.DEAD:
+		print("Can't resurrect. Not dead.")
+		return
+	
+	hp_current = hp_max
+	hp_bar.update_health(hp_current)
+	_update_move_state(MoveState.IDLE)
 
 
 # ANIMATION PLAYER: ATTACK - CALLBACK FUNCTIONS

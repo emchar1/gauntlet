@@ -19,6 +19,7 @@ const ATTACK_SPECIAL = "attack_special"
 const DODGE = "dodge"
 const USE_POTION = "use_potion"
 const USE_RELIC = "use_relic"
+const START = "start"
 
 # States
 var move_direction := Vector2.ZERO
@@ -32,15 +33,23 @@ var special_pressed := false
 var potion_pressed := false
 var dodge_pressed := false
 var relic_pressed := false
+var start_pressed := false
+var start_released := false
 
 
 # FUNCTIONS
 
 # Convenience function. Reads all input: movement, combat, aiming.
 func read_input(actor: CharacterBody3D) -> void:
+	read_start()
 	read_movement()
 	read_combat()
 	read_aiming(actor)
+
+
+func read_start() -> void:
+	start_pressed = Input.is_action_just_pressed(START)
+	start_released = Input.is_action_just_released(START)
 
 
 # Reads in directional movement input.
