@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://vcvxjw1jl4v3"]
+
+[ext_resource type="Script" uid="uid://6si81awiklav" path="res://scenes/level_maps/floor.gd" id="1_1g3ln"]
+[ext_resource type="Script" uid="uid://cr7rd3cbo6mfq" path="res://scenes/level_maps/floor_tiles.gd" id="1_582tq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u3pco"]
+resource_local_to_scene = true
+size = Vector3(10, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
+albedo_color = Color(0.23777552, 0.30820453, 0.30820453, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jpsmn"]
+resource_local_to_scene = true
+size = Vector3(10, 1, 10)
+
+[node name="Floor" type="StaticBody3D" unique_id=18990715 groups=["world"]]
+collision_mask = 0
+script = ExtResource("1_1g3ln")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=339790573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1695967339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_jpsmn")
+
+[node name="FloorTiles" type="Node3D" parent="." unique_id=1582109355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.5, -5)
+script = ExtResource("1_582tq")

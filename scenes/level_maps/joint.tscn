@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bl20qoloax4nk"]
+
+[ext_resource type="PackedScene" uid="uid://vcvxjw1jl4v3" path="res://scenes/level_maps/floor.tscn" id="1_mwwwi"]
+[ext_resource type="Script" uid="uid://bgqf168djh7wc" path="res://scenes/level_maps/zone.gd" id="3_ay6bh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3pco"]
+resource_local_to_scene = true
+size = Vector3(30, 4, 30)
+
+[node name="Joint" type="Node3D" unique_id=1061851708]
+
+[node name="Floor" parent="." unique_id=18990715 instance=ExtResource("1_mwwwi")]
+size = Vector2(30, 30)
+
+[node name="Walls" type="Node3D" parent="." unique_id=1276731528]
+
+[node name="ZoneDetector" type="Area3D" parent="." unique_id=1470951635]
+collision_layer = 4096
+collision_mask = 6
+script = ExtResource("3_ay6bh")
+zone_type = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneDetector" unique_id=1320893381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_u3pco")
+
+[connection signal="body_entered" from="ZoneDetector" to="ZoneDetector" method="_on_body_entered"]

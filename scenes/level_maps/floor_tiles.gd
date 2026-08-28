@@ -1,17 +1,16 @@
+@tool
 extends Node3D
 
 
 # PROPERTIES
 
-# Tile Countss
-@export var rows: int = 10
-@export var cols: int = 10
+# Tile Counts
+var rows: int = 10
+var cols: int = 10
 
 # Tile Attributes
 var color: Color = Color.DARK_SLATE_GRAY
-var width: float = 3.0
-var height: float = 1.1
-var depth: float = 2.0
+var size = Vector3(0.9, 1.1, 0.9)
 var gap: float = 0.1
 
 
@@ -22,9 +21,22 @@ func _ready() -> void:
 	_generate_tiles()
 
 
+# Updates tile counts and regenerates tiles.
+func set_tile_counts(new_rows: int, new_cols: int):
+	rows = new_rows
+	cols = new_cols
+	
+	for child in get_children():
+		child.queue_free()
+	
+	_generate_tiles()
+
+
+# HELPER FUNCTIONS
+
 func _generate_tiles():
-	var tile_position = Vector3(width, 0.0, depth) * (1 + gap)
-	var tile_offset = Vector3(width, 0.0, depth) * (0.5 + gap)
+	var tile_position = Vector3(size.x + gap, 0.0, size.z + gap)
+	var tile_offset = 0.5 * tile_position
 	
 	for x in range(rows):
 		for z in range(cols):
@@ -33,7 +45,7 @@ func _generate_tiles():
 			var material := StandardMaterial3D.new()
 			
 			material.albedo_color = color.lightened(randf_range(-0.1, 0.1))
-			mesh.size = Vector3(width, height, depth)
+			mesh.size = size
 			tile.mesh = mesh
 			tile.position = (tile_position * Vector3(x, 0.0, z)) + tile_offset
 			tile.material_override = material
