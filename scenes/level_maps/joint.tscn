@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bl20qoloax4nk"]
 
+[ext_resource type="Script" uid="uid://c6tk05mw8y2w6" path="res://scenes/level_maps/joint.gd" id="1_ay6bh"]
 [ext_resource type="PackedScene" uid="uid://vcvxjw1jl4v3" path="res://scenes/level_maps/floor.tscn" id="1_mwwwi"]
+[ext_resource type="PackedScene" uid="uid://b25ppmvq862rf" path="res://scenes/level_maps/door.tscn" id="2_mwwwi"]
+[ext_resource type="PackedScene" uid="uid://ccjtm7h46u1kp" path="res://scenes/level_maps/wall.tscn" id="2_qg30j"]
 [ext_resource type="Script" uid="uid://bgqf168djh7wc" path="res://scenes/level_maps/zone.gd" id="3_ay6bh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u3pco"]
@@ -8,6 +11,9 @@ resource_local_to_scene = true
 size = Vector3(30, 4, 30)
 
 [node name="Joint" type="Node3D" unique_id=1061851708]
+script = ExtResource("1_ay6bh")
+wall_scene = ExtResource("2_qg30j")
+door_scene = ExtResource("2_mwwwi")
 
 [node name="Floor" parent="." unique_id=18990715 instance=ExtResource("1_mwwwi")]
 size = Vector2(30, 30)
