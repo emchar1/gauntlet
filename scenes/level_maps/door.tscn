@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://b25ppmvq862rf"]
+
+[ext_resource type="PackedScene" uid="uid://ccjtm7h46u1kp" path="res://scenes/level_maps/wall.tscn" id="1_bv8hi"]
+[ext_resource type="Script" uid="uid://ctqtewac6c58h" path="res://scenes/level_maps/door.gd" id="1_ygqrh"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u3pco"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
+albedo_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
+metallic = 0.2
+roughness = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3pco"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 5)
+
+[node name="Door" type="Node3D" unique_id=929769732]
+script = ExtResource("1_ygqrh")
+
+[node name="Walls" type="Node3D" parent="." unique_id=1678208244]
+
+[node name="WallL" parent="Walls" unique_id=1885922609 instance=ExtResource("1_bv8hi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0)
+size = Vector2(12.5, 1)
+
+[node name="WallR" parent="Walls" unique_id=1743005921 instance=ExtResource("1_bv8hi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0)
+size = Vector2(12.5, 1)
+
+[node name="WallT" parent="Walls" unique_id=818661366 instance=ExtResource("1_bv8hi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+size = Vector2(5, 1)
+wall_height = 2.0
+
+[node name="Doorway" type="StaticBody3D" parent="." unique_id=1933777445 groups=["world"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
+collision_mask = 0
+
+[node name="Gate" type="Node3D" parent="Doorway" unique_id=1063892430]
+
+[node name="Bar" type="MeshInstance3D" parent="Doorway/Gate" unique_id=1533700605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0)
+mesh = SubResource("CylinderMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="Bar2" type="MeshInstance3D" parent="Doorway/Gate" unique_id=75166174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0)
+mesh = SubResource("CylinderMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="Bar3" type="MeshInstance3D" parent="Doorway/Gate" unique_id=1125892673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("CylinderMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="Bar4" type="MeshInstance3D" parent="Doorway/Gate" unique_id=2090492605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0)
+mesh = SubResource("CylinderMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="Bar5" type="MeshInstance3D" parent="Doorway/Gate" unique_id=1270547485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0)
+mesh = SubResource("CylinderMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doorway" unique_id=1363316752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_u3pco")
