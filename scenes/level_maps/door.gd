@@ -1,8 +1,14 @@
+@tool
 extends Node3D
+
 
 # PROPERTIES
 
-@export var is_open: bool = true
+@export var is_open: bool = true:
+	set(value):
+		is_open = value
+		_update_doorway()
+
 @onready var doorway = $Doorway
 
 var door_tween: Tween
@@ -12,7 +18,7 @@ var door_tween: Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	doorway.position.y = -8.0 if is_open else 0.0
+	_update_doorway()
 
 
 # Opens/closes the doorway.
@@ -32,3 +38,13 @@ func set_doorway(should_open: bool):
 		-8.0 if should_open else 0.0,
 		0.5
 	)
+
+
+# HELPER FUNCTIONS
+
+# Just a setter function, does not animate the opening door.
+func _update_doorway():
+	if not is_instance_valid(doorway):
+		return
+	
+	doorway.position.y = -8.0 if is_open else 0.0
