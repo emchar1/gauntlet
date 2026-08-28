@@ -336,6 +336,7 @@ func _fast_attack_commit():
 	if enemy_config.enemy_type == EnemyConfig.EnemyType.FAST:
 		fast_is_lunging = true
 
+
 func _fast_attack_end():
 	if enemy_config.enemy_type == EnemyConfig.EnemyType.FAST:
 		fast_is_attacking = false
