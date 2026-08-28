@@ -34,7 +34,10 @@ var aiming_tween: Tween
 var move_state: MoveState
 var attack_state: AttackState
 var facing_dir := Vector2.RIGHT
+
+# Too many bools
 var is_invincible: bool = false
+var is_resurrecting: bool = false
 
 # Ability-handling Properties
 var selected_ability: Ability
@@ -82,6 +85,12 @@ func _physics_process(delta: float) -> void:
 	hp_bar.position_hp(self)
 	
 	move_and_slide()
+	
+	# MUST go AFTER move_and_slide()
+	if is_resurrecting and is_on_floor():
+		_apply_resurrection_knockback()
+		GameState.shake_main_camera(2.5, 30)
+		is_resurrecting = false
 
 
 # PUBLIC FUNCTIONS
@@ -318,34 +327,67 @@ func _resurrect():
 		print("Can't resurrect. Not dead.")
 		return
 	
+	if is_resurrecting:
+		return
+	
+	is_resurrecting = true
+	
+	dissolve_body($Visuals, Color.BLACK, 3.0)
+	
 	hp_current = hp_max
 	hp_bar.update_health(hp_current)
 	_update_move_state(MoveState.IDLE)
 	
+	# Resurrect from above
+	var res_position = global_position
+	
+	global_position = res_position + Vector3.UP * 20
+	velocity.y = 0
+	
 	# Reset ability timers
 	combat_component.set_ability_timers()
+
+
+func dissolve_body(
+	visuals: Node3D,
+	dissolve_color: Color,
+	dissolve_speed: float
+):
+	var visuals_copy = visuals.duplicate()
+	var world_transform := visuals.global_transform
 	
-	# Apply resurrection knockback
-	$Resurrectbox.monitoring = true
+	var tween := create_tween()
+	var meshes := visuals_copy.find_children("*", "MeshInstance3D", true, false)
 	
-	# Wait a tick to register enemies
-	await get_tree().physics_frame
+	get_parent().add_child(visuals_copy)
+	visuals_copy.global_transform = world_transform
 	
-	var areas = $Resurrectbox.get_overlapping_areas()
-	
-	for area in areas:
-		if area.is_in_group("hurtbox"):
-			var enemy = area.get_parent() as Enemy
-			
-			if not enemy:
-				return
-			
-			var direction_to_enemy = enemy.global_position - global_position
-			var knockback_direction = GameState.map_3d_to_2d(direction_to_enemy)
-			
-			enemy.damage(0.0, knockback_direction, 6.0, 2)
-	
-	$Resurrectbox.monitoring = false
+	# Dissolve by fading to color, then out by going through all meshes.
+	for mesh in meshes:
+		var material = mesh.get_active_material(0)
+		
+		if material == null:
+			continue
+		
+		material = material.duplicate()
+		mesh.material_override = material
+		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		
+		tween.parallel().tween_property(
+			material,
+			"albedo_color",
+			dissolve_color,
+			dissolve_speed
+		)
+		
+		tween.parallel().tween_property(
+			material,
+			"albedo_color:a",
+			0.0,
+			dissolve_speed
+		)
+		
+	tween.finished.connect(visuals_copy.queue_free)
 
 
 # ANIMATION PLAYER: ATTACK - CALLBACK FUNCTIONS
@@ -435,3 +477,21 @@ func _helper_attack_executed(ability: Ability):
 			facing_dir = normalized_global_transform_basis_z
 		combat_component.magic_arrow:
 			facing_dir = normalized_global_transform_basis_z
+
+
+# Not really a signal callback, but is like one because you can check for 
+# overlapping areas on the Resurrectbox area3d.
+func _apply_resurrection_knockback():
+	var areas = $Resurrectbox.get_overlapping_areas()
+	
+	for area in areas:
+		if area.is_in_group("hurtbox"):
+			var enemy = area.get_parent() as Enemy
+			
+			if not enemy:
+				return
+			
+			var direction_to_enemy = enemy.global_position - global_position
+			var knockback_direction = GameState.map_3d_to_2d(direction_to_enemy)
+			
+			enemy.damage(0.0, knockback_direction, 6.0, 2)

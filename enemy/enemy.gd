@@ -66,7 +66,7 @@ func _process_movement():
 		return
 	
 	if current_state == State.IDLE:
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		current_speed = 0
 		_update_state(State.RUN)
 	
@@ -224,6 +224,7 @@ func slay():
 	_update_state(State.DEAD)
 	
 	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
+	var slay_speed := 3.0
 	var slay_tween := create_tween()
 	slay_tween.set_parallel(true)
 	
@@ -239,9 +240,16 @@ func slay():
 		
 		slay_tween.tween_property(
 			material,
+			"albedo_color",
+			Color.BLACK,
+			slay_speed
+		)
+		
+		slay_tween.tween_property(
+			material,
 			"albedo_color:a",
 			0.0,
-			3.0
+			slay_speed
 		)
 	
 	slay_tween.finished.connect(queue_free)
