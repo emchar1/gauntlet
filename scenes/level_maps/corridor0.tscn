@@ -19,7 +19,7 @@ size = Vector3(1, 10, 102)
 albedo_color = Color(0.46666667, 0.5921569, 0.5921569, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jpsmn"]
-size = Vector3(1, 10, 102)
+size = Vector3(4, 10, 102)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g8fmj"]
 size = Vector3(1, 10, 102)
@@ -28,7 +28,7 @@ size = Vector3(1, 10, 102)
 albedo_color = Color(0.46666667, 0.5921569, 0.5921569, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3gdj4"]
-size = Vector3(1, 10, 102)
+size = Vector3(4, 10, 102)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pv4fg"]
 size = Vector3(32, 10, 1)
@@ -37,7 +37,7 @@ size = Vector3(32, 10, 1)
 albedo_color = Color(0.46666667, 0.5921569, 0.5921569, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pk5nv"]
-size = Vector3(32, 10, 1)
+size = Vector3(32, 10, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u3pco"]
 size = Vector3(30, 4, 102)

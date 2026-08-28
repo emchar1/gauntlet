@@ -20,19 +20,19 @@ size = Vector3(1, 10, 38)
 albedo_color = Color(0.46666667, 0.5921569, 0.5921569, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sn8ar"]
-size = Vector3(1, 10, 38)
+size = Vector3(4, 10, 38)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lfv5x"]
 size = Vector3(1, 10, 38)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qqarb"]
-size = Vector3(1, 10, 38)
+size = Vector3(4, 10, 38)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dvwa6"]
 size = Vector3(1, 10, 81)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ngoim"]
-size = Vector3(1, 10, 81)
+size = Vector3(4, 10, 81)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qqarb"]
 size = Vector3(68, 10, 1)
@@ -41,19 +41,19 @@ size = Vector3(68, 10, 1)
 albedo_color = Color(0.46666667, 0.5921569, 0.5921569, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dvwa6"]
-size = Vector3(68, 10, 1)
+size = Vector3(68, 10, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sn8ar"]
 size = Vector3(68, 10, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4j0sb"]
-size = Vector3(68, 10, 1)
+size = Vector3(68, 10, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pmk42"]
 size = Vector3(141, 10, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7r0xj"]
-size = Vector3(141, 10, 1)
+size = Vector3(141, 10, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n56ti"]
 size = Vector3(140, 4, 80)
