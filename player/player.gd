@@ -321,6 +321,31 @@ func _resurrect():
 	hp_current = hp_max
 	hp_bar.update_health(hp_current)
 	_update_move_state(MoveState.IDLE)
+	
+	# Reset ability timers
+	combat_component.set_ability_timers()
+	
+	# Apply resurrection knockback
+	$Resurrectbox.monitoring = true
+	
+	# Wait a tick to register enemies
+	await get_tree().physics_frame
+	
+	var areas = $Resurrectbox.get_overlapping_areas()
+	
+	for area in areas:
+		if area.is_in_group("hurtbox"):
+			var enemy = area.get_parent() as Enemy
+			
+			if not enemy:
+				return
+			
+			var direction_to_enemy = enemy.global_position - global_position
+			var knockback_direction = GameState.map_3d_to_2d(direction_to_enemy)
+			
+			enemy.damage(0.0, knockback_direction, 6.0, 2)
+	
+	$Resurrectbox.monitoring = false
 
 
 # ANIMATION PLAYER: ATTACK - CALLBACK FUNCTIONS

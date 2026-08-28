@@ -31,12 +31,13 @@ func position_hp(actor: Node3D):
 	position = camera.unproject_position(world_position)
 
 
-func update_health(new_health: int) -> void:
+func update_health(new_health: int, show_bar: bool = true) -> void:
 	var ratio = float(new_health) / max_health
 	health_bar.scale.x = ratio
 	
-	modulate.a = 1.0
-	show_hp_timer.start()
+	if show_bar:
+		modulate.a = 1.0
+		show_hp_timer.start()
 
 
 func _on_show_hp_timer_timeout() -> void:

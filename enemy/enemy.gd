@@ -59,6 +59,17 @@ func _apply_gravity(delta: float):
 
 # Movement and follow player
 func _process_movement():
+	if not _can_target_player():
+		_stop_movement()
+		player_in_attack_range = false
+		_update_state(State.IDLE)
+		return
+	
+	if current_state == State.IDLE:
+		await get_tree().create_timer(1.0).timeout
+		current_speed = 0
+		_update_state(State.RUN)
+	
 	if current_state != State.RUN:
 		_stop_movement()
 		return
@@ -75,8 +86,6 @@ func _process_movement():
 func _move_towards_player(movement_speed: float, snap_follow: bool = true):
 	if not _can_target_player():
 		_stop_movement()
-		player_in_attack_range = false
-		_update_state(State.IDLE)
 		return
 	
 	nav_agent.target_position = player.global_position
@@ -173,7 +182,7 @@ func damage(
 	
 	current_hp -= amount
 	current_hp = clamp(current_hp, 0, enemy_config.hp)
-	hp_bar.update_health(current_hp)
+	hp_bar.update_health(current_hp, amount > 0)
 	
 	# Need to preserve these values!!!
 	knockback_strength = knockback
