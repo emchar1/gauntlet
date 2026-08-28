@@ -77,7 +77,7 @@ func _physics_process(delta: float) -> void:
 	
 	if move_state == MoveState.DEAD:
 		if resurrect_timer.is_stopped() and input_component.start_pressed:
-			_update_move_state(MoveState.IDLE)
+			_resurrect()
 	
 	hp_bar.position_hp(self)
 	
