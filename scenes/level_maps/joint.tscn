@@ -20,7 +20,7 @@ size = Vector2(30, 30)
 
 [node name="Walls" type="Node3D" parent="." unique_id=1276731528]
 
-[node name="ZoneDetector" type="Area3D" parent="." unique_id=1470951635]
+[node name="ZoneDetector" type="Area3D" parent="." unique_id=1470951635 groups=["zone"]]
 collision_layer = 4096
 collision_mask = 6
 script = ExtResource("3_ay6bh")

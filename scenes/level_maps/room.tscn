@@ -7,7 +7,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3ojm"]
 resource_local_to_scene = true
-size = Vector3(30, 4, 100)
+size = Vector3(140, 4, 80)
 
 [node name="Room" type="Node3D" unique_id=5132476]
 script = ExtResource("1_upnos")
