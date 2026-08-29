@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bo5gsbc8muutd"]
-
-[ext_resource type="Script" uid="uid://cr7rd3cbo6mfq" path="res://scenes/level_maps/floor_tiles.gd" id="1_lpcrj"]
-
-[node name="FloorTiles" type="Node3D" unique_id=1824261437]
-script = ExtResource("1_lpcrj")
