@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dpfqowi2ub34u"]
+
+[ext_resource type="PackedScene" uid="uid://vcvxjw1jl4v3" path="res://scenes/level_maps/floor.tscn" id="1_tacwg"]
+[ext_resource type="Script" uid="uid://b4f53huoygxfq" path="res://scenes/level_maps/room.gd" id="1_upnos"]
+[ext_resource type="PackedScene" uid="uid://ccjtm7h46u1kp" path="res://scenes/level_maps/wall.tscn" id="2_cynyj"]
+[ext_resource type="Script" uid="uid://bgqf168djh7wc" path="res://scenes/level_maps/zone.gd" id="4_i2b21"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3ojm"]
+resource_local_to_scene = true
+size = Vector3(30, 4, 100)
+
+[node name="Room" type="Node3D" unique_id=5132476]
+script = ExtResource("1_upnos")
+wall_scene = ExtResource("2_cynyj")
+
+[node name="Floor" parent="." unique_id=18990715 instance=ExtResource("1_tacwg")]
+size = Vector2(140, 80)
+
+[node name="StaticWalls" type="Node3D" parent="." unique_id=1956959624]
+
+[node name="WallT0" parent="StaticWalls" unique_id=1885922609 instance=ExtResource("2_cynyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5, 0, -39.5)
+size = Vector2(55, 1)
+
+[node name="WallT1" parent="StaticWalls" unique_id=1308158025 instance=ExtResource("2_cynyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 0, -39.5)
+size = Vector2(55, 1)
+
+[node name="WallL0" parent="StaticWalls" unique_id=889343158 instance=ExtResource("2_cynyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.5, 0, -27.5)
+size = Vector2(1, 25)
+
+[node name="WallL1" parent="StaticWalls" unique_id=12459640 instance=ExtResource("2_cynyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.5, 0, 27.5)
+size = Vector2(1, 25)
+
+[node name="WallB0" parent="StaticWalls" unique_id=1087949470 instance=ExtResource("2_cynyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5, 0, 39.5)
+size = Vector2(55, 1)
+
+[node name="WallB1" parent="StaticWalls" unique_id=1286187570 instance=ExtResource("2_cynyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 0, 39.5)
+size = Vector2(55, 1)
+
+[node name="WallR0" parent="StaticWalls" unique_id=1930802365 instance=ExtResource("2_cynyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.5, 0, -27.5)
+size = Vector2(1, 25)
+
+[node name="WallR1" parent="StaticWalls" unique_id=1746849132 instance=ExtResource("2_cynyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.5, 0, 27.5)
+size = Vector2(1, 25)
+
+[node name="Walls" type="Node3D" parent="." unique_id=99127138]
+
+[node name="ZoneDetector" type="Area3D" parent="." unique_id=430598258 groups=["zone"]]
+collision_layer = 4096
+collision_mask = 6
+script = ExtResource("4_i2b21")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneDetector" unique_id=583794386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_t3ojm")
+
+[node name="CenterPoint" type="Marker3D" parent="ZoneDetector" unique_id=871960840]
+transform = Transform3D(1, 0, 0, 0, 0.17364822, 0.9848077, 0, -0.9848077, 0.17364822, 0, 60, 15)
+
+[connection signal="body_entered" from="ZoneDetector" to="ZoneDetector" method="_on_body_entered"]
