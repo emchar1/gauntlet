@@ -89,11 +89,18 @@ wall_left = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31884, 0, -128.94014)
 collision_layer = 0
 collision_mask = 2
+total_enemies = 10
 enemy_type1 = ExtResource("5_j835t")
 enemy_type2 = ExtResource("5_j835t")
 
 [node name="CollisionShape3D" parent="EnemySpawners/CorridorSpawn" index="0" unique_id=2060437185]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1667423, 2, 97.57998)
+
+[node name="PathFollow3D" parent="EnemySpawners/CorridorSpawn/Path3D" parent_id_path=PackedInt32Array(153160979, 976154229) index="0" unique_id=1836418216]
+transform = Transform3D(0.013527351, 1.5198037e-05, -0.9999039, 9.0949053e-13, 1, 1.5199357e-05, 0.9999039, -2.0560985e-07, 0.013527351, -3.983705, 0.00390625, -4.0876045)
+
+[node name="EnemyTimer" parent="EnemySpawners/CorridorSpawn" index="2" unique_id=1155062022]
+wait_time = 2.0
 
 [node name="CorridorSpawn2" parent="EnemySpawners" unique_id=597244750 instance=ExtResource("4_6jptd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.10223, 0, -128.94014)
@@ -105,6 +112,9 @@ enemy_type2 = ExtResource("6_w321r")
 
 [node name="CollisionShape3D" parent="EnemySpawners/CorridorSpawn2" index="0" unique_id=2060437185]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.26462, 2, -0.22480774)
+
+[node name="PathFollow3D" parent="EnemySpawners/CorridorSpawn2/Path3D" parent_id_path=PackedInt32Array(597244750, 976154229) index="0" unique_id=1836418216]
+transform = Transform3D(0.013527351, 1.5198037e-05, -0.9999039, 9.0949053e-13, 1, 1.5199357e-05, 0.9999039, -2.0560985e-07, 0.013527351, -3.983705, 0.00390625, -4.0876045)
 
 [editable path="EnemySpawners/CorridorSpawn"]
 [editable path="EnemySpawners/CorridorSpawn2"]
