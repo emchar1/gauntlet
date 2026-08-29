@@ -13,8 +13,11 @@ albedo_color = Color(0.46666667, 0.5921569, 0.5921569, 1)
 resource_local_to_scene = true
 size = Vector3(2, 10, 5)
 
-[node name="Wall" type="StaticBody3D" unique_id=1885922609 groups=["world"]]
-collision_mask = 0
+[sub_resource type="BoxShape3D" id="BoxShape3D_lb7rc"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[node name="Wall" type="Node3D" unique_id=1999528153]
 script = ExtResource("1_emp6x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1398019965]
@@ -22,6 +25,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 mesh = SubResource("BoxMesh_u3pco")
 surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=376226762]
+[node name="PaddedCollision" type="StaticBody3D" parent="." unique_id=2025279087 groups=["world"]]
+collision_layer = 8192
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PaddedCollision" unique_id=376226762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 shape = SubResource("BoxShape3D_u3pco")
+
+[node name="HuggedCollision" type="StaticBody3D" parent="." unique_id=1691899399 groups=["world"]]
+collision_layer = 16384
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HuggedCollision" unique_id=1694232744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_lb7rc")
+debug_color = Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)

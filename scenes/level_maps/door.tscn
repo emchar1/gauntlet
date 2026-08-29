@@ -17,6 +17,10 @@ roughness = 0.5
 resource_local_to_scene = true
 size = Vector3(5, 8, 5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ygqrh"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 1)
+
 [node name="Door" type="Node3D" unique_id=929769732 groups=["door"]]
 script = ExtResource("1_ygqrh")
 
@@ -35,9 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 size = Vector2(5, 1)
 wall_height = 2.0
 
-[node name="Doorway" type="StaticBody3D" parent="." unique_id=1933777445 groups=["world"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
-collision_mask = 0
+[node name="Doorway" type="Node3D" parent="." unique_id=1013832128 groups=["world"]]
 
 [node name="Gate" type="Node3D" parent="Doorway" unique_id=1063892430]
 
@@ -66,6 +68,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0)
 mesh = SubResource("CylinderMesh_u3pco")
 surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doorway" unique_id=1363316752]
+[node name="PaddedCollision" type="StaticBody3D" parent="Doorway" unique_id=555419459 groups=["world"]]
+collision_layer = 8192
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doorway/PaddedCollision" unique_id=1363316752]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 shape = SubResource("BoxShape3D_u3pco")
+debug_color = Color(0, 0.6291682, 0.47502196, 0.41960785)
+
+[node name="HuggedCollision" type="StaticBody3D" parent="Doorway" unique_id=124742442 groups=["world"]]
+collision_layer = 16384
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doorway/HuggedCollision" unique_id=177160419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_ygqrh")
+debug_color = Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)

@@ -1,5 +1,5 @@
 @tool
-extends StaticBody3D
+extends Node3D
 class_name Wall
 
 
@@ -21,7 +21,8 @@ class_name Wall
 		_update_size()
 
 @onready var mesh: MeshInstance3D = $MeshInstance3D
-@onready var collision_shape: CollisionShape3D = $CollisionShape3D
+@onready var padded_shape: CollisionShape3D = $PaddedCollision/CollisionShape3D
+@onready var hugged_shape: CollisionShape3D = $HuggedCollision/CollisionShape3D
 
 
 # FUNCTIONS
@@ -32,7 +33,9 @@ func _ready() -> void:
 
 
 func _update_size():
-	if not is_instance_valid(mesh) or not is_instance_valid(collision_shape):
+	if not is_instance_valid(mesh) \
+	or not is_instance_valid(padded_shape) \
+	or not is_instance_valid(hugged_shape):
 		return
 	
 	# Update mesh size
@@ -41,11 +44,17 @@ func _update_size():
 		mesh.position.y = wall_height / 2.0
 		box_mesh.size = Vector3(size.x, wall_height, size.y)
 	
-	# Update collision shape size
-	var box_shape := collision_shape.shape as BoxShape3D
-	if box_shape:
-		collision_shape.position.y = wall_height / 2.0
-		box_shape.size = Vector3(
+	# Update hugged collision shape size
+	var box_hugged_shape := hugged_shape.shape as BoxShape3D
+	if box_hugged_shape:
+		hugged_shape.position.y = wall_height / 2
+		box_hugged_shape.size = Vector3(size.x, wall_height, size.y)
+	
+	# Update padded collision shape size
+	var box_padded_shape := padded_shape.shape as BoxShape3D
+	if box_padded_shape:
+		padded_shape.position.y = wall_height / 2.0
+		box_padded_shape.size = Vector3(
 			size.x + (collision_padding * 2.0 if size.y > 1 else 0.0),
 			wall_height,
 			size.y + (collision_padding * 2.0 if size.x > 1 else 0.0)

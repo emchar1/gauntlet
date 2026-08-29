@@ -49,7 +49,7 @@ point_count = 2
 
 [node name="Arrow" type="Area3D" unique_id=1013970594 groups=["hitbox"]]
 collision_layer = 16
-collision_mask = 1793
+collision_mask = 18177
 script = ExtResource("1_cxvvu")
 magic_bomb_focused = ExtResource("2_yjijy")
 
@@ -186,7 +186,7 @@ shape = SubResource("CapsuleShape3D_jpsmn")
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=567820599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 target_position = Vector3(0, 0, 0)
-collision_mask = 1793
+collision_mask = 18177
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1897019796]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5142298)

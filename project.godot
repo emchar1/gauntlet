@@ -95,7 +95,7 @@ start={
 
 [layer_names]
 
-3d_physics/layer_1="World"
+3d_physics/layer_1="World: Floor"
 3d_physics/layer_2="Player Body"
 3d_physics/layer_3="Enemy Body"
 3d_physics/layer_4="Spawner Body"
@@ -108,6 +108,8 @@ start={
 3d_physics/layer_11="Destructible"
 3d_physics/layer_12="Collectible"
 3d_physics/layer_13="Zone Trigger"
+3d_physics/layer_14="World: Padded Walls"
+3d_physics/layer_15="World: Hugged Walls"
 
 [physics]
 

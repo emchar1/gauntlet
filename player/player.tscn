@@ -2393,7 +2393,7 @@ height = 42
 
 [node name="Player" type="CharacterBody3D" unique_id=1083748732 groups=["player"]]
 collision_layer = 2
-collision_mask = 15
+collision_mask = 8207
 script = ExtResource("1_oul6g")
 hp_max = 35.0
 
