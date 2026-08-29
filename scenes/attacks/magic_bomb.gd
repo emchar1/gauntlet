@@ -66,7 +66,7 @@ func _is_exploding():
 	if bomb_type == BombType.NORMAL:
 		GameState.shake_main_camera(1.5, 5)
 	else:
-		GameState.shake_main_camera(0.75, 10)
+		GameState.shake_main_camera(2.5, 10)
 
 
 # Must free up bomb after it explodes otherwise it'll keep stacking.

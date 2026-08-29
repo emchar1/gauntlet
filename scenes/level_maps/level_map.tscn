@@ -100,7 +100,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.10223, 0, -128.94014)
 collision_layer = 0
 collision_mask = 2
 total_enemies = 15
-enemy_type1 = ExtResource("5_j835t")
+enemy_type1 = ExtResource("6_w321r")
 enemy_type2 = ExtResource("6_w321r")
 
 [node name="CollisionShape3D" parent="EnemySpawners/CorridorSpawn2" index="0" unique_id=2060437185]
