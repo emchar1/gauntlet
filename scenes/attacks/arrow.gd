@@ -167,18 +167,21 @@ func _explode():
 
 
 # Helper function to handle hit detection on a hurtbox, ideally.
-func _handle_hurbox_hit(hurbox: Node3D):
+func _handle_hurbox_hit(area: Node3D):
 	if has_hit and not piercing:
 		return
 	
 	has_hit = true
 	
-	var enemy = hurbox.get_parent() as Enemy
+	# Handle Enemy Hurt
+	var enemy = area.get_parent() as Enemy
+	if enemy:
+		enemy.damage(damage, direction, knockback, interrupt)
 	
-	if not enemy:
-		return
-	
-	enemy.damage(damage, direction, knockback, interrupt)
+	# Handle Spawner Hurt
+	var spawner = area.get_parent() as EnemySpawner
+	if spawner:
+		spawner.damage(damage)
 	
 	if not piercing:
 		dissolve_arrow(0)

@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://ckf6gsx38wmcv"]
+
+[ext_resource type="Script" uid="uid://50dxxlmu2646" path="res://scenes/level_maps/enemy_spawner.gd" id="1_m6wed"]
+[ext_resource type="Resource" uid="uid://wer364ngvc4a" path="res://resources/enemies/enemy_melee.tres" id="2_6vn6q"]
+[ext_resource type="Resource" uid="uid://dwu53ugce4dlh" path="res://resources/enemies/enemy_fast.tres" id="3_jl787"]
+[ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/hp_bar.tscn" id="4_jl787"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u3pco"]
+top_radius = 3.0
+bottom_radius = 5.0
+height = 15.0
+radial_segments = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
+albedo_color = Color(0.6431373, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_u3pco"]
+size = Vector3(4.25, 3, 4.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpsmn"]
+albedo_color = Color(0.6431373, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lmhc"]
+albedo_color = Color(0.6431373, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u3pco"]
+radius = 5.0
+height = 22.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0jumc"]
+radius = 5.0
+height = 22.0
+
+[sub_resource type="Curve3D" id="Curve3D_m6wed"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.4866924, 0.00390625, -7.4236784, 0, 0, 0, 0, 0, 0, 7.4017572, 0.0037841797, -7.360587, 0, 0, 0, 0, 0, 0, 7.4136624, -0.0034179688, 7.473947, 0, 0, 0, 0, 0, 0, -7.4616075, -0.003540039, 7.505609),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="RoomSpawn" type="Node3D" unique_id=424181489]
+script = ExtResource("1_m6wed")
+spawn_type = 0
+total_enemies = 6
+enemy_type1 = ExtResource("2_6vn6q")
+enemy_type2 = ExtResource("3_jl787")
+
+[node name="Spawner" type="StaticBody3D" parent="." unique_id=911822491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+collision_layer = 8
+collision_mask = 6
+
+[node name="Shaft" type="MeshInstance3D" parent="Spawner" unique_id=1339761420]
+mesh = SubResource("CylinderMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="Tip" type="MeshInstance3D" parent="Spawner" unique_id=557446501]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 9, 0)
+mesh = SubResource("PrismMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_jpsmn")
+
+[node name="Tip2" type="MeshInstance3D" parent="Spawner" unique_id=2126407072]
+transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071067, 0, 9, 0)
+mesh = SubResource("PrismMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_2lmhc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner" unique_id=960844751]
+shape = SubResource("CapsuleShape3D_u3pco")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=216625433 groups=["hurtbox"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1001371649]
+shape = SubResource("CapsuleShape3D_0jumc")
+debug_color = Color(0.94293565, 0.1730679, 0.4268677, 0.41960785)
+
+[node name="Path3D" type="Path3D" parent="." unique_id=364213543]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+curve = SubResource("Curve3D_m6wed")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=2011581210]
+transform = Transform3D(-0.004237548, 8.198847e-06, -0.9999592, 0, 1, 8.19866e-06, 0.9999592, 3.4744428e-08, -0.004237548, -7.4866924, 0.00390625, -7.4236784)
+
+[node name="EnemyTimer" type="Timer" parent="." unique_id=89057933]
+wait_time = 0.25
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1902448577]
+wait_time = 10.0
+
+[node name="HPBar" parent="." unique_id=1591301229 instance=ExtResource("4_jl787")]
+bar_scale = 0.5
+
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

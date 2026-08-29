@@ -34,6 +34,4 @@ transform = Transform3D(1, 0, 0, 0, 0.80281746, 0.59622484, 0, -0.59622484, 0.80
 transform = Transform3D(1, 0, 0, 0, 0.17364813, 0.9848072, 0, -0.9848072, 0.17364813, 0, 0, 0)
 follow_offset = Vector3(0, 50, 8)
 
-[node name="LevelMap" parent="." unique_id=925975153 node_paths=PackedStringArray("player") instance=ExtResource("2_0wfyh")]
-total_enemies = 9
-player = NodePath("../Player")
+[node name="LevelMap" parent="." unique_id=925975153 instance=ExtResource("2_0wfyh")]

@@ -51,15 +51,19 @@ func setup(pos: Vector3, dir: Vector2):
 
 func _on_area_entered(area: Area3D) -> void:
 	if area.is_in_group("hurtbox"):
+		
+		# Handle Enemy Hurt
 		var enemy = area.get_parent() as Enemy
+		if enemy:
+			var direction_to_enemy = enemy.global_position - global_position
+			var knockback_direction = GameState.map_3d_to_2d(direction_to_enemy)
+			
+			enemy.damage(damage, knockback_direction, knockback, interrupt)
 		
-		if not enemy:
-			return
-		
-		var direction_to_enemy = enemy.global_position - global_position
-		var knockback_direction = GameState.map_3d_to_2d(direction_to_enemy)
-		
-		enemy.damage(damage, knockback_direction, knockback, interrupt)
+		# Handle Spawner Hurt
+		var spawner = area.get_parent() as EnemySpawner
+		if spawner:
+			spawner.damage(damage)
 
 
 func _is_exploding():
