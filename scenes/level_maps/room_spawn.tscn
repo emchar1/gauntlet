@@ -233,7 +233,7 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70
 curve = SubResource("Curve3D_m6wed")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=2011581210]
-transform = Transform3D(-0.0042375457, 8.198847e-06, -0.9999586, 0, 1, 8.198655e-06, 0.9999586, 3.4744428e-08, -0.0042375457, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237545, 8.198847e-06, -0.99995846, 0, 1, 8.1986545e-06, 0.99995846, 3.4744428e-08, -0.004237545, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=89057933]
 wait_time = 0.25

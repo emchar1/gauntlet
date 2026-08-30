@@ -58,7 +58,7 @@ func follow_player():
 func _on_zone_entered(zone: Zone):
 	current_zone = zone
 	
-	if zone.zone_type == Zone.ZoneType.ROOM and not zone.is_cleared:
+	if zone.zone_type == Zone.ZoneType.ROOM:
 		switch_to_anchor(zone)
 	else:
 		switch_to_follow()

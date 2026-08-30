@@ -3,6 +3,8 @@ class_name Enemy
 
 # PROPERTIES
 
+signal died
+
 enum State {
 	NONE, IDLE, RUN, ATTACK, HURT, DEAD
 }
@@ -253,6 +255,7 @@ func slay():
 		)
 	
 	slay_tween.finished.connect(queue_free)
+	died.emit()
 
 
 func turn_off_collisions():

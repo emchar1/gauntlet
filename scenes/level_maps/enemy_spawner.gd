@@ -22,6 +22,7 @@ enum SpawnType {
 @onready var enemy_timer = $EnemyTimer
 
 # Room Spawner specific
+@onready var room = get_parent()
 @onready var spawn_timer = get_node_or_null("SpawnTimer")
 @onready var hp_bar = get_node_or_null("HPBar")
 @onready var anim_player = get_node_or_null("AnimationPlayer")
@@ -78,6 +79,15 @@ func damage(amount: float):
 			spawn_timer.stop()
 		
 		GameState.shake_main_camera(2.0, 5)
+		
+		if spawn_type == SpawnType.ROOM:
+			room.room_clear_count -= 10
+			print("room_clear_count: ", room.room_clear_count)
+		
+		if room.room_clear_count <= room.room_clear_threshold:
+			for door in room.doors:
+				door.is_open = true
+		
 	else:
 		if anim_player:
 			anim_player.play("damage")
@@ -101,6 +111,12 @@ func _on_body_entered(body: Node3D) -> void:
 			
 			if spawn_timer:
 				spawn_timer.start()
+			
+			room.room_clear_count += 10
+			print("room_clear_count: ", room.room_clear_count)
+			
+			for door in room.doors:
+				door.is_open = false
 
 
 func _on_enemy_timer_timeout() -> void:
@@ -118,13 +134,19 @@ func _on_enemy_timer_timeout() -> void:
 	enemy.enemy_config = enemy_config
 	enemy.spawn()
 	
+	if spawn_type == SpawnType.ROOM:
+		enemy.died.connect(room._on_enemy_died)
+	
 	get_tree().current_scene.add_child(enemy)
 	
 	# MUST come AFTER add_child!!
 	enemy.global_position = enemy_spawn_location.global_position
+	
+	if spawn_type == SpawnType.ROOM:
+		room.room_clear_count += 1
+		print("room_clear_count: ", room.room_clear_count)
 
 
-# TODO: - 
 func _on_spawn_timer_timeout() -> void:
 	current_enemy = 0
 	enemy_timer.start()

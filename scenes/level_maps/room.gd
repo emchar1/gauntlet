@@ -29,9 +29,13 @@ enum SideType {
 		_update_side(wall_right, Vector3(halves.x, 0, 0), Vector3(0, PI / 2, 0))
 
 @export var wall_scene: PackedScene
+
 @onready var walls = $Walls
+@onready var doors = get_tree().get_nodes_in_group("door")
 
 var halves := Vector2(69.5, 39.5)
+var room_clear_count: int = 0
+var room_clear_threshold: int = 3
 
 
 # FUNCTIONS
@@ -84,3 +88,14 @@ func _create_side(side_type: SideType, pos: Vector3, rot: Vector3):
 		side.size.x = 30.0
 	
 	walls.add_child(side)
+
+
+# SIGNAL CALLBACKS:
+
+func _on_enemy_died():
+	room_clear_count -= 1
+	print("room_clear_count: ", room_clear_count)
+		
+	if room_clear_count <= room_clear_threshold:
+		for door in doors:
+			door.is_open = true
