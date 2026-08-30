@@ -29,6 +29,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_owt6k"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_owt6k"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_narpp"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_lx7vr"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_oi0yg"]
 resource_local_to_scene = true
 _bundled = {
@@ -63,7 +79,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_kx3ne"]
+[sub_resource type="PackedScene" id="PackedScene_narpp"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -91,6 +107,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_lx7vr"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_6oj6t"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_x6pcr"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_3ly0d"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_xorof"]
 resource_local_to_scene = true
 _bundled = {
@@ -115,7 +147,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_3astt"]
+[sub_resource type="PackedScene" id="PackedScene_ischq"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -143,6 +175,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_cw1sg"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_wpe5y"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_i4w38"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_benxl"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_1stom"]
 resource_local_to_scene = true
 _bundled = {
@@ -167,7 +215,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_7bjn0"]
+[sub_resource type="PackedScene" id="PackedScene_kx3ne"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -195,6 +243,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_x6pcr"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_3c52t"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_stelh"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_3ja32"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_yabs3"]
 resource_local_to_scene = true
 _bundled = {
@@ -219,7 +283,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_bsrm6"]
+[sub_resource type="PackedScene" id="PackedScene_3ly0d"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -247,6 +311,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_gq4bh"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_bjw40"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ht5uc"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_24hch"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_trg8u"]
 resource_local_to_scene = true
 _bundled = {
@@ -271,7 +351,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_wp5p2"]
+[sub_resource type="PackedScene" id="PackedScene_10pxf"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -299,7 +379,7 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_6j8nr"]
+[sub_resource type="PackedScene" id="PackedScene_3astt"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -327,6 +407,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_wpe5y"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_hc3ck"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_4lvld"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ecygn"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_jj2ct"]
 resource_local_to_scene = true
 _bundled = {
@@ -351,7 +447,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_8agw1"]
+[sub_resource type="PackedScene" id="PackedScene_i4w38"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -379,7 +475,7 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_t74sh"]
+[sub_resource type="PackedScene" id="PackedScene_benxl"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -407,6 +503,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_guxbq"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_vbmvb"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_c47n2"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_mfpqn"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_so575"]
 resource_local_to_scene = true
 _bundled = {
@@ -431,7 +543,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_jwdil"]
+[sub_resource type="PackedScene" id="PackedScene_cvtyq"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -459,6 +571,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_7bjn0"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_sk4wa"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_qfakp"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_181wh"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_u6bl3"]
 resource_local_to_scene = true
 _bundled = {
@@ -483,7 +611,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_d26oq"]
+[sub_resource type="PackedScene" id="PackedScene_3c52t"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -511,7 +639,7 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_mx5nh"]
+[sub_resource type="PackedScene" id="PackedScene_stelh"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -539,6 +667,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_3ja32"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_cs0h0"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_it0y7"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ovo8a"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_r13vj"]
 resource_local_to_scene = true
 _bundled = {
@@ -563,7 +707,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_0arpv"]
+[sub_resource type="PackedScene" id="PackedScene_8ov5y"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -591,6 +735,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_2gyjr"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_dtiiv"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_bu2xh"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_6qisn"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_ih038"]
 resource_local_to_scene = true
 _bundled = {
@@ -615,7 +775,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_emcu8"]
+[sub_resource type="PackedScene" id="PackedScene_bsrm6"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -643,6 +803,22 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
+[sub_resource type="PackedScene" id="PackedScene_bjw40"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_narpp"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_oi0yg"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_kx3ne"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
 [sub_resource type="PackedScene" id="PackedScene_6oj6t"]
 resource_local_to_scene = true
 _bundled = {
@@ -667,7 +843,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_wpe5y"]
+[sub_resource type="PackedScene" id="PackedScene_ht5uc"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -694,8 +870,8 @@ navigation_mesh = SubResource("NavigationMesh_u3pco")
 wall_left = 0
 wall_bottom = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_oi0yg")
-door_scene = SubResource("PackedScene_kx3ne")
+wall_scene = SubResource("PackedScene_owt6k")
+door_scene = SubResource("PackedScene_narpp")
 
 [node name="Corridor" parent="NavigationRegion3D/JC" unique_id=114679621 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -721,8 +897,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 [node name="Joint" parent="NavigationRegion3D/JC2" unique_id=937117557 instance=ExtResource("6_j835t")]
 wall_left = 0
 wall_bottom = 0
-wall_scene = SubResource("PackedScene_xorof")
-door_scene = SubResource("PackedScene_3astt")
+wall_scene = SubResource("PackedScene_lx7vr")
+door_scene = SubResource("PackedScene_ischq")
 
 [node name="Corridor" parent="NavigationRegion3D/JC2" unique_id=626801826 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -746,8 +922,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -184)
 wall_left = 0
 wall_bottom = 1
 wall_right = 0
-wall_scene = SubResource("PackedScene_1stom")
-door_scene = SubResource("PackedScene_7bjn0")
+wall_scene = SubResource("PackedScene_cw1sg")
+door_scene = SubResource("PackedScene_kx3ne")
 
 [node name="Corridor" parent="NavigationRegion3D/JC3" unique_id=2068282783 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -758,8 +934,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -314)
 [node name="Joint" parent="NavigationRegion3D/JC4" unique_id=1524171702 instance=ExtResource("6_j835t")]
 wall_left = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_yabs3")
-door_scene = SubResource("PackedScene_bsrm6")
+wall_scene = SubResource("PackedScene_x6pcr")
+door_scene = SubResource("PackedScene_3ly0d")
 
 [node name="Corridor" parent="NavigationRegion3D/JC4" unique_id=926133132 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -779,14 +955,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, -130)
 wall_top = 0
 wall_bottom = 0
 wall_right = 1
-wall_scene = SubResource("PackedScene_trg8u")
-door_scene = SubResource("PackedScene_wp5p2")
+wall_scene = SubResource("PackedScene_gq4bh")
+door_scene = SubResource("PackedScene_10pxf")
 
 [node name="Room" parent="NavigationRegion3D/JR" unique_id=5132476 instance=ExtResource("4_2oqhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 0)
 wall_bottom = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_6j8nr")
+wall_scene = SubResource("PackedScene_3astt")
 
 [node name="RoomSpawn" parent="NavigationRegion3D/JR/Room" unique_id=424181489 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.378418, 0, 3.1834412)
@@ -796,7 +972,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09527588, 2, -2.1648865)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(424181489, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237543, 8.198847e-06, -0.9999579, 0, 1, 8.19865e-06, 0.9999579, 3.4744428e-08, -0.004237543, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375424, 8.198847e-06, -0.99995786, 0, 1, 8.198649e-06, 0.99995786, 3.4744428e-08, -0.0042375424, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JR2" type="Node3D" parent="NavigationRegion3D" unique_id=873015370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -444)
@@ -805,14 +981,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -444)
 wall_top = 1
 wall_left = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_jj2ct")
-door_scene = SubResource("PackedScene_8agw1")
+wall_scene = SubResource("PackedScene_wpe5y")
+door_scene = SubResource("PackedScene_i4w38")
 
 [node name="Room" parent="NavigationRegion3D/JR2" unique_id=1870904032 instance=ExtResource("4_2oqhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -54)
 wall_top = 0
 wall_left = 0
-wall_scene = SubResource("PackedScene_t74sh")
+wall_scene = SubResource("PackedScene_benxl")
 
 [node name="RoomSpawn" parent="NavigationRegion3D/JR2/Room" unique_id=2058241067 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.72583, 0, 17.557922)
@@ -822,7 +998,7 @@ total_enemies = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(2058241067, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237544, 8.198847e-06, -0.9999581, 0, 1, 8.198651e-06, 0.9999581, 3.4744428e-08, -0.004237544, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375433, 8.198847e-06, -0.99995804, 0, 1, 8.198651e-06, 0.99995804, 3.4744428e-08, -0.0042375433, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn2" parent="NavigationRegion3D/JR2/Room" unique_id=880574999 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
@@ -832,7 +1008,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(880574999, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237544, 8.198847e-06, -0.9999581, 0, 1, 8.198651e-06, 0.9999581, 3.4744428e-08, -0.004237544, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375433, 8.198847e-06, -0.99995804, 0, 1, 8.198651e-06, 0.99995804, 3.4744428e-08, -0.0042375433, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC5" type="Node3D" parent="NavigationRegion3D" unique_id=1181500894]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 298, 0, -498)
@@ -841,8 +1017,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 298,
 wall_left = 0
 wall_bottom = 1
 wall_right = 0
-wall_scene = SubResource("PackedScene_so575")
-door_scene = SubResource("PackedScene_jwdil")
+wall_scene = SubResource("PackedScene_guxbq")
+door_scene = SubResource("PackedScene_cvtyq")
 
 [node name="Corridor" parent="NavigationRegion3D/JC5" unique_id=1905311214 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -866,14 +1042,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 428, 0, -498.007)
 wall_top = 0
 wall_bottom = 0
 wall_right = 1
-wall_scene = SubResource("PackedScene_u6bl3")
-door_scene = SubResource("PackedScene_d26oq")
+wall_scene = SubResource("PackedScene_7bjn0")
+door_scene = SubResource("PackedScene_3c52t")
 
 [node name="Room" parent="NavigationRegion3D/JR3" unique_id=1816788407 instance=ExtResource("4_2oqhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 0)
 wall_top = 0
 wall_bottom = 0
-wall_scene = SubResource("PackedScene_mx5nh")
+wall_scene = SubResource("PackedScene_stelh")
 
 [node name="RoomSpawn" parent="NavigationRegion3D/JR3/Room" unique_id=1692621840 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.72583, 0, 17.557922)
@@ -883,7 +1059,7 @@ total_enemies = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(1692621840, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375433, 8.198847e-06, -0.99995804, 0, 1, 8.198651e-06, 0.99995804, 3.4744428e-08, -0.0042375433, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237543, 8.198847e-06, -0.999958, 0, 1, 8.19865e-06, 0.999958, 3.4744428e-08, -0.004237543, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn3" parent="NavigationRegion3D/JR3/Room" unique_id=1591570376 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.519165, 0, -0.71551514)
@@ -894,7 +1070,7 @@ enemy_type1 = ExtResource("6_w321r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6796875, 0, 1.0900269)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn3/Path3D" parent_id_path=PackedInt32Array(1591570376, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237543, 8.198847e-06, -0.999958, 0, 1, 8.19865e-06, 0.999958, 3.4744428e-08, -0.004237543, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237543, 8.198847e-06, -0.9999579, 0, 1, 8.19865e-06, 0.9999579, 3.4744428e-08, -0.004237543, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn2" parent="NavigationRegion3D/JR3/Room" unique_id=900729742 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
@@ -904,7 +1080,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(900729742, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375433, 8.198847e-06, -0.99995804, 0, 1, 8.198651e-06, 0.99995804, 3.4744428e-08, -0.0042375433, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237543, 8.198847e-06, -0.999958, 0, 1, 8.19865e-06, 0.999958, 3.4744428e-08, -0.004237543, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC6" type="Node3D" parent="NavigationRegion3D" unique_id=1161524291]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 596, 0, -498)
@@ -913,8 +1089,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 596,
 wall_left = 0
 wall_bottom = 1
 wall_right = 0
-wall_scene = SubResource("PackedScene_r13vj")
-door_scene = SubResource("PackedScene_0arpv")
+wall_scene = SubResource("PackedScene_3ja32")
+door_scene = SubResource("PackedScene_8ov5y")
 
 [node name="Corridor" parent="NavigationRegion3D/JC6" unique_id=922438960 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -925,16 +1101,16 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 726,
 [node name="Joint" parent="NavigationRegion3D/JC7" unique_id=976570076 instance=ExtResource("6_j835t")]
 wall_left = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_ih038")
-door_scene = SubResource("PackedScene_emcu8")
+wall_scene = SubResource("PackedScene_2gyjr")
+door_scene = SubResource("PackedScene_bsrm6")
 
 [node name="Corridor" parent="NavigationRegion3D/JC7" unique_id=1579370040 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
 
 [node name="Joint" parent="NavigationRegion3D" unique_id=910076873 instance=ExtResource("6_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 856, -500, -498)
-wall_scene = SubResource("PackedScene_6oj6t")
-door_scene = SubResource("PackedScene_wpe5y")
+wall_scene = SubResource("PackedScene_bjw40")
+door_scene = SubResource("PackedScene_ht5uc")
 
 [node name="Instructions" type="Node3D" parent="." unique_id=264174000]
 
@@ -1025,6 +1201,15 @@ text = "You died.
 Trust no one, sucker.
 Game over.
 Thanks for playing."
+font_size = 500
+outline_size = 0
+
+[node name="Label11" type="Label3D" parent="Instructions" unique_id=906214024]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 251.76736, 2, -108.26314)
+modulate = Color(1, 0, 0, 1)
+text = "If you die, press Enter to
+resurrect. But you don't need
+that. You're good. I can tell."
 font_size = 500
 outline_size = 0
 

@@ -2584,5 +2584,5 @@ metadata/_custom_type_script = "uid://b4kw2dp73cdpo"
 color = SubResource("GradientTexture2D_e8frx")
 
 [node name="ResurrectTimer" type="Timer" parent="." unique_id=1067119281]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
