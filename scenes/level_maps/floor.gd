@@ -42,4 +42,4 @@ func _update_size():
 	floor_tiles.position.z = -size.y / 2
 	
 	# Update tile counts
-	floor_tiles.set_tile_counts(int(size.x / 2), int(size.y / 2))
+	floor_tiles.set_tile_counts(int(size.x / 5), int(size.y / 5))

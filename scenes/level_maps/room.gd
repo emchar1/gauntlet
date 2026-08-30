@@ -45,6 +45,22 @@ func _ready() -> void:
 	_update_all_sides()
 
 
+# FUNCTIONS
+
+func open_doors():
+	for door in doors:
+		print("door open: ", self)
+		door.is_open = true
+
+
+func close_doors():
+	for door in doors:
+		print("door close: ", self)
+		door.is_open = false
+
+
+# HELPER FUNCTIONS
+
 func _update_all_sides():
 	for child in walls.get_children():
 		child.queue_free()
@@ -97,5 +113,4 @@ func _on_enemy_died():
 	print("room_clear_count: ", room_clear_count)
 		
 	if room_clear_count <= room_clear_threshold:
-		for door in doors:
-			door.is_open = true
+		open_doors()

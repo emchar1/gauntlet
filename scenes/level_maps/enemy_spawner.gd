@@ -83,10 +83,9 @@ func damage(amount: float):
 		if spawn_type == SpawnType.ROOM:
 			room.room_clear_count -= 10
 			print("room_clear_count: ", room.room_clear_count)
-		
-		if room.room_clear_count <= room.room_clear_threshold:
-			for door in room.doors:
-				door.is_open = true
+			
+			if room.room_clear_count <= room.room_clear_threshold:
+				room.open_doors()
 		
 	else:
 		if anim_player:
@@ -115,8 +114,7 @@ func _on_body_entered(body: Node3D) -> void:
 			room.room_clear_count += 10
 			print("room_clear_count: ", room.room_clear_count)
 			
-			for door in room.doors:
-				door.is_open = false
+			room.close_doors()
 
 
 func _on_enemy_timer_timeout() -> void:

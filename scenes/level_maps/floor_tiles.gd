@@ -10,7 +10,7 @@ var cols: int = 10
 
 # Tile Attributes
 var color: Color = Color.DARK_SLATE_GRAY
-var size = Vector3(1.9, 1.1, 1.9)
+var size = Vector3(4.9, 1.1, 4.9)
 var gap: float = 0.1
 
 
