@@ -146,6 +146,10 @@ func _on_enemy_timer_timeout() -> void:
 
 
 func _on_spawn_timer_timeout() -> void:
+	if room.room_clear_count >= room.room_clear_max:
+		print("too many")
+		return
+	
 	current_enemy = 0
 	enemy_timer.start()
 

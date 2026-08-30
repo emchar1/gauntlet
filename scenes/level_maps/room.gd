@@ -36,6 +36,7 @@ enum SideType {
 var halves := Vector2(69.5, 39.5)
 var room_clear_count: int = 0
 var room_clear_threshold: int = 3
+var room_clear_max: int = 90
 
 
 # FUNCTIONS
