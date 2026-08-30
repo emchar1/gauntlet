@@ -18,13 +18,19 @@ enum SpawnType {
 @export var room_spawner_wait_time: float = 10
 
 @onready var player = get_tree().get_first_node_in_group("player")
-@onready var enemy_timer = $EnemyTimer
-@onready var spawn_timer = get_node_or_null("SpawnTimer")
 @onready var enemy_spawn_location = $Path3D/PathFollow3D
+@onready var enemy_timer = $EnemyTimer
+
+# Room Spawner specific
+@onready var spawn_timer = get_node_or_null("SpawnTimer")
 @onready var hp_bar = get_node_or_null("HPBar")
+@onready var anim_player = get_node_or_null("AnimationPlayer")
 
 var current_enemy: int = 0
+
+# Room Spawner specific
 var current_hp: float
+var is_deactivated: bool = true
 
 
 # FUNCTIONS
@@ -41,8 +47,9 @@ func _ready() -> void:
 			
 			# FIXME: - temporary
 			# Start the timers!!
-			spawn_timer.start()
-			enemy_timer.start()
+			#spawn_timer.start()
+			#enemy_timer.start()
+			is_deactivated = false
 
 
 func _physics_process(_delta: float) -> void:
@@ -58,10 +65,28 @@ func _get_enemy_configs() -> Array[EnemyConfig]:
 
 
 func damage(amount: float):
-	print("damaged: ", amount)
+	if is_deactivated:
+		return
+	
 	current_hp -= amount
 	current_hp = clamp(current_hp, 0, room_spawner_hp)
 	hp_bar.update_health(current_hp)
+	
+	if current_hp <= 0:
+		is_deactivated = true
+		
+		if anim_player:
+			anim_player.play("died")
+			
+		enemy_timer.stop()
+		
+		if spawn_timer:
+			spawn_timer.stop()
+		
+		GameState.shake_main_camera(2.0, 5)
+	else:
+		if anim_player:
+			anim_player.play("damage")
 
 
 # CALLBACK FUNCTIONS
@@ -96,3 +121,8 @@ func _on_enemy_timer_timeout() -> void:
 func _on_spawn_timer_timeout() -> void:
 	current_enemy = 0
 	enemy_timer.start()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "died":
+		queue_free()

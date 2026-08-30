@@ -39,6 +39,145 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Animation" id="Animation_jl787"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spawner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spawner:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spawner/Shaft:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spawner/Tip:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Spawner/Tip2:transparency")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wgynh"]
+resource_name = "damage"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spawner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.08726646, 0.2617994, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uwgn0"]
+resource_name = "died"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spawner:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(2, 2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spawner/Shaft:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spawner/Tip:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spawner/Tip2:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uwgn0"]
+_data = {
+&"RESET": SubResource("Animation_jl787"),
+&"damage": SubResource("Animation_wgynh"),
+&"died": SubResource("Animation_uwgn0")
+}
+
 [node name="RoomSpawn" type="Node3D" unique_id=424181489]
 script = ExtResource("1_m6wed")
 spawn_type = 0
@@ -70,7 +209,7 @@ shape = SubResource("CapsuleShape3D_u3pco")
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=216625433 groups=["hurtbox"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
-collision_layer = 256
+collision_layer = 512
 collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1001371649]
@@ -82,7 +221,7 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70
 curve = SubResource("Curve3D_m6wed")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=2011581210]
-transform = Transform3D(-0.004237548, 8.198847e-06, -0.9999592, 0, 1, 8.19866e-06, 0.9999592, 3.4744428e-08, -0.004237548, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237547, 8.198847e-06, -0.99995893, 0, 1, 8.198658e-06, 0.99995893, 3.4744428e-08, -0.004237547, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=89057933]
 wait_time = 0.25
@@ -93,5 +232,9 @@ wait_time = 10.0
 [node name="HPBar" parent="." unique_id=1591301229 instance=ExtResource("4_jl787")]
 bar_scale = 0.5
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=530647605]
+libraries/ = SubResource("AnimationLibrary_uwgn0")
+
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
