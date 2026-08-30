@@ -44,12 +44,6 @@ func _ready() -> void:
 		
 		if spawn_timer:
 			spawn_timer.wait_time = room_spawner_wait_time
-			
-			# FIXME: - temporary
-			# Start the timers!!
-			#spawn_timer.start()
-			#enemy_timer.start()
-			is_deactivated = false
 
 
 func _physics_process(_delta: float) -> void:
@@ -93,7 +87,20 @@ func damage(amount: float):
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		enemy_timer.start()
+		if spawn_type == SpawnType.CORRIDOR:
+			enemy_timer.start()
+		else:
+			if not is_deactivated:
+				return
+			
+			print("Activating room timers")
+			
+			is_deactivated = false
+			
+			enemy_timer.start()
+			
+			if spawn_timer:
+				spawn_timer.start()
 
 
 func _on_enemy_timer_timeout() -> void:
@@ -111,7 +118,7 @@ func _on_enemy_timer_timeout() -> void:
 	enemy.enemy_config = enemy_config
 	enemy.spawn()
 	
-	add_child(enemy)
+	get_tree().current_scene.add_child(enemy)
 	
 	# MUST come AFTER add_child!!
 	enemy.global_position = enemy_spawn_location.global_position

@@ -54,6 +54,12 @@ transform = Transform3D(0.013527351, 1.5198037e-05, -0.9999039, 9.0949053e-13, 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.37842, 0, -126.81656)
 room_spawner_wait_time = 8.0
 
+[node name="CollisionShape3D" parent="NavigationRegion3D/EnemySpawners/RoomSpawn/SpawnerActivator" parent_id_path=PackedInt32Array(424181489, 1295560609) index="0" unique_id=2100837493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09527588, 2, -2.1648865)
+
+[node name="PathFollow3D" parent="NavigationRegion3D/EnemySpawners/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(424181489, 364213543) index="0" unique_id=2011581210]
+transform = Transform3D(-0.0042375457, 8.198847e-06, -0.99995863, 0, 1, 8.198655e-06, 0.99995863, 3.4744428e-08, -0.0042375457, -7.4866924, 0.00390625, -7.4236784)
+
 [node name="JC" type="Node3D" parent="NavigationRegion3D" unique_id=185585758]
 
 [node name="Joint" parent="NavigationRegion3D/JC" unique_id=1061851708 instance=ExtResource("6_j835t")]
@@ -123,3 +129,4 @@ wall_left = 0
 
 [editable path="NavigationRegion3D/EnemySpawners/CorridorSpawn"]
 [editable path="NavigationRegion3D/EnemySpawners/CorridorSpawn2"]
+[editable path="NavigationRegion3D/EnemySpawners/RoomSpawn"]
