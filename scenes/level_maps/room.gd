@@ -46,16 +46,20 @@ func _ready() -> void:
 	_update_all_sides()
 
 
+func _get_doors():
+	return get_tree().get_nodes_in_group("door")
+
+
 # FUNCTIONS
 
 func open_doors():
-	for door in doors:
+	for door in _get_doors():
 		print("door open: ", self)
 		door.is_open = true
 
 
 func close_doors():
-	for door in doors:
+	for door in _get_doors():
 		print("door close: ", self)
 		door.is_open = false
 
