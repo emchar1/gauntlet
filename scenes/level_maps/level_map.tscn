@@ -29,7 +29,7 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_owt6k"]
+[sub_resource type="PackedScene" id="PackedScene_oi0yg"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -45,7 +45,7 @@ _bundled = {
 "version": 3
 }
 
-[sub_resource type="PackedScene" id="PackedScene_oi0yg"]
+[sub_resource type="PackedScene" id="PackedScene_ischq"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -71,15 +71,15 @@ albedo_color = Color(0.49354547, 0.49354553, 0.49354553, 1)
 metallic = 0.2
 roughness = 0.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ischq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cw1sg"]
 resource_local_to_scene = true
 size = Vector3(5, 8, 5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cw1sg"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kx3ne"]
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_narpp"]
+[sub_resource type="PackedScene" id="PackedScene_6oj6t"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -91,223 +91,19 @@ _bundled = {
 "node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
 "node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_oi0yg"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_oi0yg"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_oi0yg"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_ischq"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_cw1sg"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_ischq"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_ischq"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_ischq"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_cw1sg"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_kx3ne"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_6oj6t"]
+[sub_resource type="BoxMesh" id="BoxMesh_x6pcr"]
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_x6pcr"]
-resource_local_to_scene = true
-size = Vector3(30, 4, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ly0d"]
 resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_lx7vr"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_6oj6t"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_x6pcr"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_3ly0d"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_xorof"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_6oj6t"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_x6pcr"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_3ly0d"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gq4bh"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_10pxf"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_ischq"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 16,
-"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
-"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_xorof"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_xorof"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_xorof"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_gq4bh"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_10pxf"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxMesh" id="BoxMesh_wpe5y"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_i4w38"]
-resource_local_to_scene = true
 size = Vector3(30, 4, 30)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_benxl"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_cw1sg"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_wpe5y"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_i4w38"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_benxl"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_1stom"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_wpe5y"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_i4w38"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_benxl"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_guxbq"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cvtyq"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_kx3ne"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 16,
-"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
-"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_1stom"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_1stom"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_1stom"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_guxbq"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_cvtyq"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxMesh" id="BoxMesh_3c52t"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_stelh"]
-resource_local_to_scene = true
-size = Vector3(30, 4, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3ja32"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_x6pcr"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_3c52t"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_stelh"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_3ja32"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_yabs3"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_3c52t"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_stelh"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_3ja32"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8ov5y"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2gyjr"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_3ly0d"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 16,
-"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
-"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_yabs3"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_yabs3"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_yabs3"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_8ov5y"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_2gyjr"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxMesh" id="BoxMesh_bjw40"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ht5uc"]
-resource_local_to_scene = true
-size = Vector3(30, 4, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_24hch"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xorof"]
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
@@ -323,33 +119,9 @@ _bundled = {
 "node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_bjw40"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ht5uc"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_24hch"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_x6pcr"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_3ly0d"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_xorof"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
-
-[sub_resource type="PackedScene" id="PackedScene_trg8u"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_bjw40"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ht5uc"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_24hch"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_07gg0"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8s2qo"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 1)
 
 [sub_resource type="PackedScene" id="PackedScene_10pxf"]
 resource_local_to_scene = true
@@ -357,93 +129,21 @@ _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
 "editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 16,
-"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
-"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_trg8u"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_trg8u"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_trg8u"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_07gg0"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_8s2qo"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxMesh" id="BoxMesh_hh4eb"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_j7223"]
-resource_local_to_scene = true
-size = Vector3(30, 4, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l0v7w"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_3astt"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
 "id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
 "names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
 "node_count": 6,
 "node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_hh4eb"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_j7223"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_l0v7w"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_x6pcr"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_3ly0d"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_xorof"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_hc3ck"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4lvld"]
-resource_local_to_scene = true
-size = Vector3(30, 4, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ecygn"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_wpe5y"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_hc3ck"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_4lvld"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ecygn"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_jj2ct"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_hc3ck"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_4lvld"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ecygn"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kvxfu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3astt"]
 resource_local_to_scene = true
 size = Vector3(5, 8, 5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cgsba"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wpe5y"]
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
@@ -459,89 +159,21 @@ _bundled = {
 "node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
 "node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_jj2ct"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_jj2ct"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_jj2ct"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_kvxfu"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_cgsba"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_10pxf"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_10pxf"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_10pxf"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_3astt"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_wpe5y"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_8l1kg"]
+[sub_resource type="BoxMesh" id="BoxMesh_benxl"]
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_e06v6"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1stom"]
 resource_local_to_scene = true
 size = Vector3(30, 4, 30)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2dr70"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_guxbq"]
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_benxl"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_8l1kg"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_e06v6"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_2dr70"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxMesh" id="BoxMesh_vbmvb"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_c47n2"]
-resource_local_to_scene = true
-size = Vector3(30, 4, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mfpqn"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_guxbq"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_vbmvb"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_c47n2"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_mfpqn"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_so575"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_vbmvb"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_c47n2"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_mfpqn"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
-"version": 3
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_owu7m"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pigvs"]
-resource_local_to_scene = true
-size = Vector3(5, 8, 1)
 
 [sub_resource type="PackedScene" id="PackedScene_cvtyq"]
 resource_local_to_scene = true
@@ -549,27 +181,15 @@ _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
 "editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 16,
-"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
-"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_so575"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_so575"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_so575"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_owu7m"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_pigvs"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_benxl"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_1stom"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_guxbq"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
-
-[sub_resource type="BoxMesh" id="BoxMesh_sk4wa"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qfakp"]
-resource_local_to_scene = true
-size = Vector3(30, 4, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_181wh"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
 
 [sub_resource type="PackedScene" id="PackedScene_7bjn0"]
 resource_local_to_scene = true
@@ -583,7 +203,319 @@ _bundled = {
 "node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_sk4wa"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_qfakp"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_181wh"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_benxl"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_1stom"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_guxbq"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3c52t"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_stelh"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_3ja32"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 16,
+"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
+"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_7bjn0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_7bjn0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_7bjn0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_3c52t"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_stelh"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_yabs3"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ov5y"]
+resource_local_to_scene = true
+size = Vector3(30, 4, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2gyjr"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_bsrm6"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_yabs3"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_8ov5y"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_2gyjr"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_bjw40"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_yabs3"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_8ov5y"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_2gyjr"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ht5uc"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_24hch"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_trg8u"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 16,
+"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
+"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_bjw40"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_bjw40"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_bjw40"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_ht5uc"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_24hch"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_07gg0"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8s2qo"]
+resource_local_to_scene = true
+size = Vector3(30, 4, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wp5p2"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_hh4eb"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_07gg0"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_8s2qo"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_wp5p2"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_j7223"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_07gg0"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_8s2qo"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_wp5p2"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l0v7w"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6j8nr"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_hc3ck"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 16,
+"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
+"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_j7223"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_j7223"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_j7223"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_l0v7w"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_6j8nr"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_4lvld"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ecygn"]
+resource_local_to_scene = true
+size = Vector3(30, 4, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jj2ct"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_kvxfu"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_4lvld"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ecygn"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_jj2ct"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_cgsba"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8agw1"]
+resource_local_to_scene = true
+size = Vector3(30, 4, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8l1kg"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_e06v6"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_cgsba"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_8agw1"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_8l1kg"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_2dr70"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_cgsba"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_8agw1"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_8l1kg"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t74sh"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vbmvb"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_c47n2"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 16,
+"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
+"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_2dr70"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_2dr70"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_2dr70"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_t74sh"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_vbmvb"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_mfpqn"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_so575"]
+resource_local_to_scene = true
+size = Vector3(30, 4, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_owu7m"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_pigvs"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_mfpqn"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_so575"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_owu7m"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_jwdil"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sk4wa"]
+resource_local_to_scene = true
+size = Vector3(30, 4, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qfakp"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_181wh"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_jwdil"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_sk4wa"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_qfakp"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
 
@@ -599,7 +531,7 @@ _bundled = {
 "node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_sk4wa"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_qfakp"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_181wh"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_jwdil"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_sk4wa"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_qfakp"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
 
@@ -611,7 +543,7 @@ size = Vector3(5, 8, 5)
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_3c52t"]
+[sub_resource type="PackedScene" id="PackedScene_d26oq"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -639,7 +571,7 @@ size = Vector3(30, 4, 30)
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_stelh"]
+[sub_resource type="PackedScene" id="PackedScene_mx5nh"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -655,19 +587,7 @@ _bundled = {
 "version": 3
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_cs0h0"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_it0y7"]
-resource_local_to_scene = true
-size = Vector3(30, 4, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ovo8a"]
-resource_local_to_scene = true
-size = Vector3(2, 10, 1)
-
-[sub_resource type="PackedScene" id="PackedScene_3ja32"]
+[sub_resource type="PackedScene" id="PackedScene_cs0h0"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -679,9 +599,17 @@ _bundled = {
 "node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_cs0h0"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_it0y7"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ovo8a"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_0xkdf"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_quf6s"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_8l0s8"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_it0y7"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ovo8a"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 1)
 
 [sub_resource type="PackedScene" id="PackedScene_r13vj"]
 resource_local_to_scene = true
@@ -689,53 +617,57 @@ _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
 "editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 6,
-"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
-"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_cs0h0"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_it0y7"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ovo8a"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 16,
+"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
+"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_cs0h0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_cs0h0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_cs0h0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_it0y7"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_ovo8a"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_he7up"]
+[sub_resource type="BoxMesh" id="BoxMesh_he7up"]
 resource_local_to_scene = true
-size = Vector3(5, 8, 5)
+size = Vector3(2, 10, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tsoum"]
 resource_local_to_scene = true
-size = Vector3(5, 8, 1)
+size = Vector3(30, 4, 30)
 
-[sub_resource type="PackedScene" id="PackedScene_8ov5y"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0arpv"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_dtiiv"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
 "conns": PackedInt32Array(),
 "editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
-"node_count": 16,
-"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
-"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_r13vj"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_r13vj"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_r13vj"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_he7up"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_tsoum"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_he7up"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_tsoum"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_0arpv"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_dtiiv"]
+[sub_resource type="BoxMesh" id="BoxMesh_bu2xh"]
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_bu2xh"]
-resource_local_to_scene = true
-size = Vector3(30, 4, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6qisn"]
 resource_local_to_scene = true
+size = Vector3(30, 4, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ih038"]
+resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_2gyjr"]
+[sub_resource type="PackedScene" id="PackedScene_2mo6r"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -747,11 +679,11 @@ _bundled = {
 "node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_dtiiv"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_bu2xh"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_6qisn"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_bu2xh"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_6qisn"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ih038"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="PackedScene" id="PackedScene_ih038"]
+[sub_resource type="PackedScene" id="PackedScene_pual6"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -763,19 +695,19 @@ _bundled = {
 "node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_dtiiv"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_bu2xh"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_6qisn"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_bu2xh"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_6qisn"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_ih038"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2mo6r"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_emcu8"]
 resource_local_to_scene = true
 size = Vector3(5, 8, 5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_pual6"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qfceh"]
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_bsrm6"]
+[sub_resource type="PackedScene" id="PackedScene_vqxgy"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -787,23 +719,23 @@ _bundled = {
 "node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
 "node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_ih038"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_ih038"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_ih038"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_2mo6r"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_pual6"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_pual6"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_pual6"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_pual6"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_emcu8"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_qfceh"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_narpp"]
+[sub_resource type="BoxMesh" id="BoxMesh_mw544"]
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oi0yg"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7wky4"]
 resource_local_to_scene = true
 size = Vector3(30, 4, 30)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kx3ne"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_57qdl"]
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_bjw40"]
+[sub_resource type="PackedScene" id="PackedScene_cnnfn"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -815,11 +747,11 @@ _bundled = {
 "node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_narpp"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_oi0yg"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_kx3ne"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_mw544"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_7wky4"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_57qdl"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="PackedScene" id="PackedScene_6oj6t"]
+[sub_resource type="PackedScene" id="PackedScene_c6b1u"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -831,19 +763,19 @@ _bundled = {
 "node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
 "node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
-"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_narpp"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_oi0yg"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_kx3ne"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_mw544"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_7wky4"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_57qdl"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xorof"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_reqem"]
 resource_local_to_scene = true
 size = Vector3(5, 8, 5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3astt"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_clkd1"]
 resource_local_to_scene = true
 size = Vector3(5, 8, 1)
 
-[sub_resource type="PackedScene" id="PackedScene_ht5uc"]
+[sub_resource type="PackedScene" id="PackedScene_mjo5u"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -855,9 +787,83 @@ _bundled = {
 "node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
 "node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
-"variants": [ExtResource("3_narpp"), SubResource("PackedScene_6oj6t"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_6oj6t"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_6oj6t"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_xorof"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_3astt"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_c6b1u"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_c6b1u"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_c6b1u"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_reqem"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_clkd1"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
 "version": 3
 }
+
+[sub_resource type="BoxMesh" id="BoxMesh_x2cof"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tlvnl"]
+resource_local_to_scene = true
+size = Vector3(30, 4, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jvr71"]
+resource_local_to_scene = true
+size = Vector3(2, 10, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_qgt7s"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_x2cof"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_tlvnl"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_jvr71"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_4jen8"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Wall", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 6,
+"node_ids": PackedInt32Array(1999528153, 1398019965, 2025279087, 376226762, 1691899399, 1694232744),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PaddedCollision"), NodePath("."), NodePath("./HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 2, 11, 4, 12, 5, 1, 10, 1073741826, 0, 14, 13, -1, 2, 15, 6, 16, 7, 0, 1073741827, 0, 18, 17, -1, 2, 20, 8, 21, 9, 1, 19, 1073741828, 0, 23, 22, -1, 3, 24, 10, 25, 11, 26, 12, 0),
+"variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_x2cof"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_tlvnl"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_jvr71"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ybobh"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q67g5"]
+resource_local_to_scene = true
+size = Vector3(5, 8, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_vy306"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Door", "Node3D", "door", "script", "Walls", "Node3D", "WallL", "transform", "size", "WallR", "transform", "size", "WallT", "transform", "size", "wall_height", "Doorway", "Node3D", "world", "Gate", "Node3D", "Bar", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar2", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar3", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar4", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "Bar5", "MeshInstance3D", "transform", "mesh", "surface_material_override/0", "PaddedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color", "HuggedCollision", "StaticBody3D", "world", "collision_layer", "collision_mask", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "debug_color"),
+"node_count": 16,
+"node_ids": PackedInt32Array(929769732, 1678208244, 1885922609, 1743005921, 818661366, 1013832128, 1063892430, 1533700605, 75166174, 1125892673, 2090492605, 1270547485, 555419459, 1363316752, 124742442, 177160419),
+"node_paths": [NodePath("."), NodePath("./Walls"), NodePath("./Walls"), NodePath("./Walls"), NodePath("."), NodePath("./Doorway"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway/Gate"), NodePath("./Doorway"), NodePath("./Doorway/PaddedCollision"), NodePath("./Doorway"), NodePath("./Doorway/HuggedCollision")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2, 1073741824, 0, 5, 4, -1, 0, 0, 1073741825, 0, 2147483647, 6, 1, 2, 7, 2, 8, 3, 0, 1073741826, 0, 2147483647, 9, 4, 2, 10, 5, 11, 6, 0, 1073741827, 0, 2147483647, 12, 7, 3, 13, 8, 14, 9, 15, 10, 0, 1073741828, 0, 17, 16, -1, 0, 1, 18, 1073741829, 0, 20, 19, -1, 0, 0, 1073741830, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741831, 0, 27, 26, -1, 3, 28, 14, 29, 15, 30, 16, 0, 1073741832, 0, 32, 31, -1, 3, 33, 17, 34, 18, 35, 19, 0, 1073741833, 0, 37, 36, -1, 3, 38, 20, 39, 21, 40, 22, 0, 1073741834, 0, 42, 41, -1, 3, 43, 23, 44, 24, 45, 25, 0, 1073741835, 0, 47, 46, -1, 2, 49, 26, 50, 27, 1, 48, 1073741836, 0, 52, 51, -1, 3, 53, 28, 54, 29, 55, 30, 0, 1073741837, 0, 57, 56, -1, 2, 59, 31, 60, 32, 1, 58, 1073741838, 0, 62, 61, -1, 3, 63, 33, 64, 34, 65, 35, 0),
+"variants": [ExtResource("3_narpp"), SubResource("PackedScene_4jen8"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_4jen8"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 0, 0), Vector2(12.5, 1), SubResource("PackedScene_4jen8"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0), Vector2(5, 1), 2.0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 0), SubResource("CylinderMesh_u3pco"), SubResource("StandardMaterial3D_jxm7d"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_ybobh"), Color(0, 0.6291682, 0.47502196, 0.41960785), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0), SubResource("BoxShape3D_q67g5"), Color(0.5845783, 0.5504993, 1.92523e-07, 0.41960785)],
+"version": 3
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3pco"]
+size = Vector3(30, 510, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_owt6k"]
+size = Vector3(30, 500, 1)
 
 [node name="LevelMap" type="Node3D" unique_id=925975153]
 
@@ -870,8 +876,8 @@ navigation_mesh = SubResource("NavigationMesh_u3pco")
 wall_left = 0
 wall_bottom = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_owt6k")
-door_scene = SubResource("PackedScene_narpp")
+wall_scene = SubResource("PackedScene_oi0yg")
+door_scene = SubResource("PackedScene_6oj6t")
 
 [node name="Corridor" parent="NavigationRegion3D/JC" unique_id=114679621 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -897,8 +903,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 [node name="Joint" parent="NavigationRegion3D/JC2" unique_id=937117557 instance=ExtResource("6_j835t")]
 wall_left = 0
 wall_bottom = 0
-wall_scene = SubResource("PackedScene_lx7vr")
-door_scene = SubResource("PackedScene_ischq")
+wall_scene = SubResource("PackedScene_gq4bh")
+door_scene = SubResource("PackedScene_i4w38")
 
 [node name="Corridor" parent="NavigationRegion3D/JC2" unique_id=626801826 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -922,8 +928,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -184)
 wall_left = 0
 wall_bottom = 1
 wall_right = 0
-wall_scene = SubResource("PackedScene_cw1sg")
-door_scene = SubResource("PackedScene_kx3ne")
+wall_scene = SubResource("PackedScene_cvtyq")
+door_scene = SubResource("PackedScene_3ja32")
 
 [node name="Corridor" parent="NavigationRegion3D/JC3" unique_id=2068282783 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -934,8 +940,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -314)
 [node name="Joint" parent="NavigationRegion3D/JC4" unique_id=1524171702 instance=ExtResource("6_j835t")]
 wall_left = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_x6pcr")
-door_scene = SubResource("PackedScene_3ly0d")
+wall_scene = SubResource("PackedScene_bsrm6")
+door_scene = SubResource("PackedScene_trg8u")
 
 [node name="Corridor" parent="NavigationRegion3D/JC4" unique_id=926133132 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -955,14 +961,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, -130)
 wall_top = 0
 wall_bottom = 0
 wall_right = 1
-wall_scene = SubResource("PackedScene_gq4bh")
-door_scene = SubResource("PackedScene_10pxf")
+wall_scene = SubResource("PackedScene_hh4eb")
+door_scene = SubResource("PackedScene_hc3ck")
 
 [node name="Room" parent="NavigationRegion3D/JR" unique_id=5132476 instance=ExtResource("4_2oqhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 0)
 wall_bottom = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_3astt")
+wall_scene = SubResource("PackedScene_kvxfu")
 
 [node name="RoomSpawn" parent="NavigationRegion3D/JR/Room" unique_id=424181489 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.378418, 0, 3.1834412)
@@ -972,7 +978,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09527588, 2, -2.1648865)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(424181489, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375424, 8.198847e-06, -0.99995786, 0, 1, 8.198649e-06, 0.99995786, 3.4744428e-08, -0.0042375424, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375415, 8.198847e-06, -0.9999576, 0, 1, 8.198647e-06, 0.9999576, 3.4744428e-08, -0.0042375415, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JR2" type="Node3D" parent="NavigationRegion3D" unique_id=873015370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -444)
@@ -981,14 +987,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -444)
 wall_top = 1
 wall_left = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_wpe5y")
-door_scene = SubResource("PackedScene_i4w38")
+wall_scene = SubResource("PackedScene_e06v6")
+door_scene = SubResource("PackedScene_c47n2")
 
 [node name="Room" parent="NavigationRegion3D/JR2" unique_id=1870904032 instance=ExtResource("4_2oqhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -54)
 wall_top = 0
 wall_left = 0
-wall_scene = SubResource("PackedScene_benxl")
+wall_scene = SubResource("PackedScene_pigvs")
 
 [node name="RoomSpawn" parent="NavigationRegion3D/JR2/Room" unique_id=2058241067 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.72583, 0, 17.557922)
@@ -998,7 +1004,7 @@ total_enemies = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(2058241067, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375433, 8.198847e-06, -0.99995804, 0, 1, 8.198651e-06, 0.99995804, 3.4744428e-08, -0.0042375433, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375424, 8.198847e-06, -0.9999578, 0, 1, 8.198649e-06, 0.9999578, 3.4744428e-08, -0.0042375424, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn2" parent="NavigationRegion3D/JR2/Room" unique_id=880574999 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
@@ -1008,7 +1014,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(880574999, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375433, 8.198847e-06, -0.99995804, 0, 1, 8.198651e-06, 0.99995804, 3.4744428e-08, -0.0042375433, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375424, 8.198847e-06, -0.9999578, 0, 1, 8.198649e-06, 0.9999578, 3.4744428e-08, -0.0042375424, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC5" type="Node3D" parent="NavigationRegion3D" unique_id=1181500894]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 298, 0, -498)
@@ -1017,8 +1023,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 298,
 wall_left = 0
 wall_bottom = 1
 wall_right = 0
-wall_scene = SubResource("PackedScene_guxbq")
-door_scene = SubResource("PackedScene_cvtyq")
+wall_scene = SubResource("PackedScene_181wh")
+door_scene = SubResource("PackedScene_d26oq")
 
 [node name="Corridor" parent="NavigationRegion3D/JC5" unique_id=1905311214 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -1042,14 +1048,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 428, 0, -498.007)
 wall_top = 0
 wall_bottom = 0
 wall_right = 1
-wall_scene = SubResource("PackedScene_7bjn0")
-door_scene = SubResource("PackedScene_3c52t")
+wall_scene = SubResource("PackedScene_mx5nh")
+door_scene = SubResource("PackedScene_r13vj")
 
 [node name="Room" parent="NavigationRegion3D/JR3" unique_id=1816788407 instance=ExtResource("4_2oqhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 0)
 wall_top = 0
 wall_bottom = 0
-wall_scene = SubResource("PackedScene_stelh")
+wall_scene = SubResource("PackedScene_dtiiv")
 
 [node name="RoomSpawn" parent="NavigationRegion3D/JR3/Room" unique_id=1692621840 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.72583, 0, 17.557922)
@@ -1059,7 +1065,7 @@ total_enemies = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(1692621840, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237543, 8.198847e-06, -0.999958, 0, 1, 8.19865e-06, 0.999958, 3.4744428e-08, -0.004237543, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237542, 8.198847e-06, -0.99995774, 0, 1, 8.198648e-06, 0.99995774, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn3" parent="NavigationRegion3D/JR3/Room" unique_id=1591570376 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.519165, 0, -0.71551514)
@@ -1070,7 +1076,7 @@ enemy_type1 = ExtResource("6_w321r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6796875, 0, 1.0900269)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn3/Path3D" parent_id_path=PackedInt32Array(1591570376, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237543, 8.198847e-06, -0.9999579, 0, 1, 8.19865e-06, 0.9999579, 3.4744428e-08, -0.004237543, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237542, 8.198847e-06, -0.9999577, 0, 1, 8.198648e-06, 0.9999577, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn2" parent="NavigationRegion3D/JR3/Room" unique_id=900729742 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
@@ -1080,7 +1086,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(900729742, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237543, 8.198847e-06, -0.999958, 0, 1, 8.19865e-06, 0.999958, 3.4744428e-08, -0.004237543, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237542, 8.198847e-06, -0.99995774, 0, 1, 8.198648e-06, 0.99995774, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC6" type="Node3D" parent="NavigationRegion3D" unique_id=1161524291]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 596, 0, -498)
@@ -1089,8 +1095,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 596,
 wall_left = 0
 wall_bottom = 1
 wall_right = 0
-wall_scene = SubResource("PackedScene_3ja32")
-door_scene = SubResource("PackedScene_8ov5y")
+wall_scene = SubResource("PackedScene_2mo6r")
+door_scene = SubResource("PackedScene_vqxgy")
 
 [node name="Corridor" parent="NavigationRegion3D/JC6" unique_id=922438960 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
@@ -1101,16 +1107,48 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 726,
 [node name="Joint" parent="NavigationRegion3D/JC7" unique_id=976570076 instance=ExtResource("6_j835t")]
 wall_left = 0
 wall_right = 0
-wall_scene = SubResource("PackedScene_2gyjr")
-door_scene = SubResource("PackedScene_bsrm6")
+wall_scene = SubResource("PackedScene_cnnfn")
+door_scene = SubResource("PackedScene_mjo5u")
 
 [node name="Corridor" parent="NavigationRegion3D/JC7" unique_id=1579370040 instance=ExtResource("5_cfrl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
 
 [node name="Joint" parent="NavigationRegion3D" unique_id=910076873 instance=ExtResource("6_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 856, -500, -498)
-wall_scene = SubResource("PackedScene_bjw40")
-door_scene = SubResource("PackedScene_ht5uc")
+wall_scene = SubResource("PackedScene_qgt7s")
+door_scene = SubResource("PackedScene_vy306")
+
+[node name="BoundaryTop" type="StaticBody3D" parent="NavigationRegion3D/Joint" unique_id=1708349083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 255, -14.5)
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Joint/BoundaryTop" unique_id=862186669]
+shape = SubResource("BoxShape3D_u3pco")
+
+[node name="BoundaryRight" type="StaticBody3D" parent="NavigationRegion3D/Joint" unique_id=1620295639]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14.5, 255, 0)
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Joint/BoundaryRight" unique_id=734725240]
+shape = SubResource("BoxShape3D_u3pco")
+
+[node name="BoundaryBottom" type="StaticBody3D" parent="NavigationRegion3D/Joint" unique_id=1606869340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 255, 14.5)
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Joint/BoundaryBottom" unique_id=345902245]
+shape = SubResource("BoxShape3D_u3pco")
+
+[node name="BoundaryLeft" type="StaticBody3D" parent="NavigationRegion3D/Joint" unique_id=1421726518]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.5, 250, 0)
+collision_layer = 8192
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Joint/BoundaryLeft" unique_id=1376353369]
+shape = SubResource("BoxShape3D_owt6k")
 
 [node name="Instructions" type="Node3D" parent="." unique_id=264174000]
 
@@ -1195,7 +1233,7 @@ font_size = 500
 outline_size = 0
 
 [node name="Label10" type="Label3D" parent="Instructions" unique_id=381544696]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 855.361, -498, -499.459)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 855.361, -499.9, -499.459)
 modulate = Color(1, 0, 0, 1)
 text = "You died.
 Trust no one, sucker.

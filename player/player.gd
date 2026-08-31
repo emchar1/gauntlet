@@ -124,6 +124,9 @@ func stop_movement():
 func _apply_gravity(delta: float):
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta
+	
+	if global_position.y <= -450:
+		_die()
 
 
 # Adds iframes to the player.
