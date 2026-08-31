@@ -5,11 +5,19 @@ extends Node
 enum AudioKey {
 	ARROW,
 	ARROW2,
+	ARROW_KILL,
+	BOMB_COOK,
+	BOMB_EXPLODE,
+	BOMB_SPARKLE,
 	COCK,
 	ENEMY0_DIE1,
 	ENEMY0_DIE2,
 	ENEMY0_DIE3,
-	ENEMY0_DIE4
+	ENEMY0_DIE4,
+	ENEMY1_DIE1,
+	ENEMY1_DIE2,
+	ENEMY1_DIE3,
+	ENEMY1_DIE4
 	#SILENCE_INTRO,
 	#SILENCE_LOOP,
 	#BLOODYTEARS_INTRO,
@@ -70,6 +78,22 @@ var sounds := {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/arrow2.ogg")
 	},
+	AudioKey.ARROW_KILL: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/arrow_kill.ogg")
+	},
+	AudioKey.BOMB_COOK: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/bomb_cook.ogg")
+	},
+	AudioKey.BOMB_EXPLODE: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/bomb_explode.ogg")
+	},
+	AudioKey.BOMB_SPARKLE: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/bomb_sparkle.ogg")
+	},
 	AudioKey.COCK: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/cock.ogg")
@@ -89,6 +113,22 @@ var sounds := {
 	AudioKey.ENEMY0_DIE4: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/enemy0_die4.ogg")
+	},
+	AudioKey.ENEMY1_DIE1: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/enemy1_die1.ogg")
+	},
+	AudioKey.ENEMY1_DIE2: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/enemy1_die2.ogg")
+	},
+	AudioKey.ENEMY1_DIE3: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/enemy1_die3.ogg")
+	},
+	AudioKey.ENEMY1_DIE4: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/enemy1_die4.ogg")
 	},
 	#AudioKey.SILENCE_LOOP: {
 		#"type": Type.MUSIC_LOOP,

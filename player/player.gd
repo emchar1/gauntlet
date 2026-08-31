@@ -412,7 +412,7 @@ func attack_loop_started():
 	
 	combat_component.is_aiming = true
 	combat_component.execute_attack(self, current_ability)
-	AudioManager.play(AudioData.AudioKey.ARROW2)
+	AudioManager.play(AudioData.AudioKey.ARROW)
 
 
 func attack_loop_finished():

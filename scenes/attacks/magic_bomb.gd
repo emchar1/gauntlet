@@ -40,6 +40,7 @@ func setup(pos: Vector3, dir: Vector2):
 	
 	if bomb_type == BombType.NORMAL:
 		position = pos + player_offset
+		AudioManager.play(AudioData.AudioKey.BOMB_COOK)
 	else:
 		position = pos
 	
@@ -69,8 +70,36 @@ func _on_area_entered(area: Area3D) -> void:
 func _is_exploding():
 	if bomb_type == BombType.NORMAL:
 		GameState.shake_main_camera(1.5, 5)
+		AudioManager.stop(AudioData.AudioKey.BOMB_COOK)
+		AudioManager.play(AudioData.AudioKey.BOMB_EXPLODE)
+		AudioManager.play(
+			AudioData.AudioKey.BOMB_SPARKLE,
+			0.0,
+			Vector2.ZERO,
+			true,
+			1.2
+		)
 	else:
+		var sound_volume := 0.0
+		var sound_position := Vector2.ZERO
+		var sound_should_vary_pitch := true
+		var sound_pitch_scale := 1.5 
+		
 		GameState.shake_main_camera(2.5, 10)
+		AudioManager.play(
+			AudioData.AudioKey.BOMB_EXPLODE,
+			sound_volume, 
+			sound_position, 
+			sound_should_vary_pitch, 
+			sound_pitch_scale
+		)
+		AudioManager.play(
+			AudioData.AudioKey.BOMB_SPARKLE,
+			sound_volume, 
+			sound_position, 
+			sound_should_vary_pitch, 
+			sound_pitch_scale
+		)
 
 
 # Must free up bomb after it explodes otherwise it'll keep stacking.

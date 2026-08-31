@@ -29,11 +29,18 @@ var interrupt_strength: int = 0
 var current_speed: float = 0
 var move_dir: Vector3 = Vector3.ZERO
 
-var death_sounds := [
+var death_sounds_melee: Array[AudioData.AudioKey] = [
 	AudioData.AudioKey.ENEMY0_DIE1,
 	AudioData.AudioKey.ENEMY0_DIE2,
 	AudioData.AudioKey.ENEMY0_DIE3,
 	AudioData.AudioKey.ENEMY0_DIE4,
+]
+
+var death_sounds_fast: Array[AudioData.AudioKey] = [
+	AudioData.AudioKey.ENEMY1_DIE1,
+	AudioData.AudioKey.ENEMY1_DIE2,
+	AudioData.AudioKey.ENEMY1_DIE3,
+	AudioData.AudioKey.ENEMY1_DIE4,
 ]
 
 
@@ -261,10 +268,21 @@ func slay():
 			slay_speed
 		)
 	
-	var death_sound = death_sounds.pick_random()
+	var death_sound = death_sounds_melee.pick_random()
+	
+	if enemy_config.enemy_type == EnemyConfig.EnemyType.FAST:
+		death_sound = death_sounds_fast.pick_random()
 	
 	if not AudioManager.is_playing(death_sound):
 		AudioManager.play(death_sound)
+	
+	if not AudioManager.is_playing(AudioData.AudioKey.ARROW_KILL):
+		AudioManager.play(
+			AudioData.AudioKey.ARROW_KILL,
+			0.0,
+			Vector2.ZERO,
+			true
+		)
 	
 	slay_tween.finished.connect(queue_free)
 	died.emit()

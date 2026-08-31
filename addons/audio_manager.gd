@@ -18,7 +18,8 @@ func play(
 	sound: AudioData.AudioKey,
 	volume := 0.0,
 	position := Vector2.ZERO,
-	vary_pitch := false
+	vary_pitch := false,
+	pitch_scale := randf_range(0.8, 1.2)
 ) -> AudioStreamPlayer:
 	
 	if not AudioData.sounds.has(sound):
@@ -38,7 +39,7 @@ func play(
 	
 	# tiny variation in pitch for variety
 	if vary_pitch:
-		player.pitch_scale = randf_range(0.8, 1.2)
+		player.pitch_scale = pitch_scale
 	
 	# pan position in world space - INVALID FOR AudioSteamPlayer (not -2D)
 	#player.position = position
