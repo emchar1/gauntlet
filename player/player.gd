@@ -46,6 +46,16 @@ var current_ability: Ability
 var last_ability: Ability
 var can_fire_charged: bool = false
 
+var hurt_sounds: Array[AudioData.AudioKey] = [
+	AudioData.AudioKey.PLAYER_HURT0,
+	AudioData.AudioKey.PLAYER_HURT1
+]
+
+var dodge_sounds: Array[AudioData.AudioKey] = [
+	AudioData.AudioKey.PLAYER_JUMP0,
+	AudioData.AudioKey.PLAYER_JUMP1
+]
+
 
 # INIT FUNCTIONS
 
@@ -114,6 +124,10 @@ func update_hp(amount: float):
 		_reset_attack()
 		_update_move_state(MoveState.HURT)
 		_update_iframes()
+		
+		var hurt_sound = hurt_sounds.pick_random()
+		if not AudioManager.is_playing(hurt_sound):
+			AudioManager.play(hurt_sound)
 
 
 func stop_movement():
@@ -328,6 +342,7 @@ func _die():
 	
 	_reset_attack()
 	_update_move_state(MoveState.DEAD)
+	AudioManager.play(AudioData.AudioKey.PLAYER_DIE)
 	resurrect_timer.start()
 
 
@@ -418,7 +433,7 @@ func attack_loop_started():
 	combat_component.is_aiming = true
 	combat_component.execute_attack(self, current_ability)
 	
-	AudioManager.play(AudioData.AudioKey.ARROW)
+	AudioManager.play(AudioData.AudioKey.ARROW3)
 	if current_ability == combat_component.magic_arrow:
 		AudioManager.play(AudioData.AudioKey.MAGIC_ARROW)
 
@@ -449,6 +464,7 @@ func _dodge_begin():
 	_reset_attack()
 	_update_move_state(MoveState.DODGE)
 	AudioManager.play(AudioData.AudioKey.ROLL)
+	AudioManager.play(dodge_sounds.pick_random())
 
 
 func _dodge_launch():

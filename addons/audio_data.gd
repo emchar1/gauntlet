@@ -5,6 +5,7 @@ extends Node
 enum AudioKey {
 	ARROW,
 	ARROW2,
+	ARROW3,
 	ARROW_KILL,
 	BODY_LAND,
 	BOMB_COOK,
@@ -23,6 +24,12 @@ enum AudioKey {
 	ENEMY1_DIE3,
 	ENEMY1_DIE4,
 	MAGIC_ARROW,
+	PLAYER_DIE,
+	PLAYER_HURT0,
+	PLAYER_HURT1,
+	PLAYER_JUMP0,
+	PLAYER_JUMP1,
+	PLAYER_JUMP2,
 	ROLL,
 	SPAWNER_DAMAGE,
 	SPAWNER_DIE,
@@ -87,6 +94,10 @@ var sounds := {
 	AudioKey.ARROW2: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/arrow2.ogg")
+	},
+	AudioKey.ARROW3: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/arrow3.ogg")
 	},
 	AudioKey.ARROW_KILL: {
 		"type": Type.SOUND,
@@ -159,6 +170,30 @@ var sounds := {
 	AudioKey.MAGIC_ARROW: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/magic_arrow.ogg")
+	},
+	AudioKey.PLAYER_DIE: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/player_die.ogg")
+	},
+	AudioKey.PLAYER_HURT0: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/player_hurt0.ogg")
+	},
+	AudioKey.PLAYER_HURT1: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/player_hurt1.ogg")
+	},
+	AudioKey.PLAYER_JUMP0: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/player_jump0.ogg")
+	},
+	AudioKey.PLAYER_JUMP1: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/player_jump1.ogg")
+	},
+	AudioKey.PLAYER_JUMP2: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/player_jump2.ogg")
 	},
 	AudioKey.ROLL: {
 		"type": Type.SOUND,
