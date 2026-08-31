@@ -978,7 +978,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09527588, 2, -2.1648865)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(424181489, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375415, 8.198847e-06, -0.9999576, 0, 1, 8.198647e-06, 0.9999576, 3.4744428e-08, -0.0042375415, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375415, 8.198847e-06, -0.99995756, 0, 1, 8.198647e-06, 0.99995756, 3.4744428e-08, -0.0042375415, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JR2" type="Node3D" parent="NavigationRegion3D" unique_id=873015370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -444)
@@ -1004,7 +1004,7 @@ total_enemies = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(2058241067, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375424, 8.198847e-06, -0.9999578, 0, 1, 8.198649e-06, 0.9999578, 3.4744428e-08, -0.0042375424, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237542, 8.198847e-06, -0.99995774, 0, 1, 8.198648e-06, 0.99995774, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn2" parent="NavigationRegion3D/JR2/Room" unique_id=880574999 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
@@ -1014,7 +1014,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(880574999, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375424, 8.198847e-06, -0.9999578, 0, 1, 8.198649e-06, 0.9999578, 3.4744428e-08, -0.0042375424, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237542, 8.198847e-06, -0.99995774, 0, 1, 8.198648e-06, 0.99995774, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC5" type="Node3D" parent="NavigationRegion3D" unique_id=1181500894]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 298, 0, -498)
@@ -1065,7 +1065,7 @@ total_enemies = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(1692621840, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237542, 8.198847e-06, -0.99995774, 0, 1, 8.198648e-06, 0.99995774, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237542, 8.198847e-06, -0.9999577, 0, 1, 8.198648e-06, 0.9999577, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn3" parent="NavigationRegion3D/JR3/Room" unique_id=1591570376 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.519165, 0, -0.71551514)
@@ -1076,7 +1076,7 @@ enemy_type1 = ExtResource("6_w321r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6796875, 0, 1.0900269)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn3/Path3D" parent_id_path=PackedInt32Array(1591570376, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237542, 8.198847e-06, -0.9999577, 0, 1, 8.198648e-06, 0.9999577, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375415, 8.198847e-06, -0.9999576, 0, 1, 8.198647e-06, 0.9999576, 3.4744428e-08, -0.0042375415, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn2" parent="NavigationRegion3D/JR3/Room" unique_id=900729742 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
@@ -1086,7 +1086,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(900729742, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237542, 8.198847e-06, -0.99995774, 0, 1, 8.198648e-06, 0.99995774, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237542, 8.198847e-06, -0.9999577, 0, 1, 8.198648e-06, 0.9999577, 3.4744428e-08, -0.004237542, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC6" type="Node3D" parent="NavigationRegion3D" unique_id=1161524291]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 596, 0, -498)
@@ -1155,10 +1155,9 @@ shape = SubResource("BoxShape3D_owt6k")
 [node name="Label" type="Label3D" parent="Instructions" unique_id=135265815]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2, 0)
 modulate = Color(1, 0, 0, 1)
-text = "WASD to move
--
+text = "WASD to move.
 Tap or hold LMB
-to fire arrows"
+to fire arrows."
 font_size = 500
 outline_size = 0
 
@@ -1183,28 +1182,26 @@ outline_size = 0
 [node name="Label4" type="Label3D" parent="Instructions" unique_id=1827289157]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 110.85909, 2, -129.32913)
 modulate = Color(1, 0, 0, 1)
-text = "Tap RMB to set a timed bomb.
+text = "Tap RMB to place a timed bomb.
 Watch enemies go boom. Fun!
 There's a 6s cooldown in between bombs.
-Test here before entering the room.
 Try it in sniper mode!"
 font_size = 500
 outline_size = 0
 
 [node name="Label5" type="Label3D" parent="Instructions" unique_id=718998339]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 180.52623, 2, -157.47931)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 177.22623, 1.999527, -154.88568)
 modulate = Color(1, 0, 0, 1)
-text = "Destroy spawners and defeat all enemies
-to open the doors.
-Oh! And try out your dodge/roll
-by hitting space."
+text = "Destroy spawners and enemies
+to open the doors."
 font_size = 500
 outline_size = 0
 
 [node name="Label6" type="Label3D" parent="Instructions" unique_id=1037225202]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 215.25467, 2, -302.00873)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 213.99893, 2, -301.96222)
 modulate = Color(1, 0, 0, 1)
-text = "You ready for more?"
+text = "You ready for more?
+This way to freedom."
 font_size = 500
 outline_size = 0
 
@@ -1216,38 +1213,51 @@ font_size = 500
 outline_size = 0
 
 [node name="Label8" type="Label3D" parent="Instructions" unique_id=352872876]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 668.34155, 2, -498.20993)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 668.4202, 2, -498.1663)
 modulate = Color(1, 0, 0, 1)
-text = "YAY!!! We're almost to the finish line. Don't give up, just 27 more rooms to go.. Just kidding, we're almost to the end. You can trust me."
+text = "YAY!! We're almost there. Don't give up, only 27 more rooms to go... Just kidding. The end is near, I promise..."
 font_size = 500
 outline_size = 0
 
 [node name="Label9" type="Label3D" parent="Instructions" unique_id=2099228537]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 820.46875, 2, -498.46225)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 818.3427, 2, -497.87167)
 modulate = Color(1, 0, 0, 1)
-text = "You made it to the end.
-Now, jump --->
-
+text = "Whew! You made it to the end.
+Now, JUMP! Trust me.
 Freedom awaits..."
 font_size = 500
 outline_size = 0
 
 [node name="Label10" type="Label3D" parent="Instructions" unique_id=381544696]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 855.361, -499.9, -499.459)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 856.18506, -499.9, -498.27786)
 modulate = Color(1, 0, 0, 1)
 text = "You died.
-Trust no one, sucker.
+Trust no one.
 Game over.
-Thanks for playing."
+Thanks for playing!"
 font_size = 500
 outline_size = 0
 
 [node name="Label11" type="Label3D" parent="Instructions" unique_id=906214024]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 251.76736, 2, -108.26314)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 257.06937, 1.9979401, -104.15514)
 modulate = Color(1, 0, 0, 1)
-text = "If you die, press Enter to
-resurrect. But you don't need
-that. You're good. I can tell."
+text = "If you do die,
+press Enter to resurrect."
+font_size = 500
+outline_size = 0
+
+[node name="Label12" type="Label3D" parent="Instructions" unique_id=470799501]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 259.0167, 1.9981537, -154.38736)
+modulate = Color(1, 0, 0, 1)
+text = "Do a dodge/roll
+by hitting Space."
+font_size = 500
+outline_size = 0
+
+[node name="Label13" type="Label3D" parent="Instructions" unique_id=1714631397]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 171.103, 1.9538422, -101.70535)
+modulate = Color(1, 0, 0, 1)
+text = "Try not to die."
 font_size = 500
 outline_size = 0
 
