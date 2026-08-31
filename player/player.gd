@@ -67,8 +67,9 @@ func _physics_process(delta: float) -> void:
 	_apply_gravity(delta)
 	
 	# Read input and update timers independently of player state.
-	input_component.read_input(self)
-	combat_component.update_ability_timers(delta)
+	if global_position.y > -450:
+		input_component.read_input(self)
+		combat_component.update_ability_timers(delta)
 	
 	_player_move()
 	_update_facing()
