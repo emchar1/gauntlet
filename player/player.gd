@@ -396,6 +396,10 @@ func dissolve_body(
 
 # ANIMATION PLAYER: ATTACK - CALLBACK FUNCTIONS
 
+func attack_start_started():
+	AudioManager.play(AudioData.AudioKey.COCK)
+
+
 func attack_start_finished():
 	can_fire_charged = true
 
@@ -408,6 +412,7 @@ func attack_loop_started():
 	
 	combat_component.is_aiming = true
 	combat_component.execute_attack(self, current_ability)
+	AudioManager.play(AudioData.AudioKey.ARROW2)
 
 
 func attack_loop_finished():

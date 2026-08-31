@@ -29,6 +29,13 @@ var interrupt_strength: int = 0
 var current_speed: float = 0
 var move_dir: Vector3 = Vector3.ZERO
 
+var death_sounds := [
+	AudioData.AudioKey.ENEMY0_DIE1,
+	AudioData.AudioKey.ENEMY0_DIE2,
+	AudioData.AudioKey.ENEMY0_DIE3,
+	AudioData.AudioKey.ENEMY0_DIE4,
+]
+
 
 # FUNCTIONS
 
@@ -253,6 +260,11 @@ func slay():
 			0.0,
 			slay_speed
 		)
+	
+	var death_sound = death_sounds.pick_random()
+	
+	if not AudioManager.is_playing(death_sound):
+		AudioManager.play(death_sound)
 	
 	slay_tween.finished.connect(queue_free)
 	died.emit()
