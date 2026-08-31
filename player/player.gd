@@ -5,6 +5,7 @@ class_name Player
 # PROPERTIES
 
 signal died
+signal final_death
 
 enum MoveState {
 	IDLE, RUN, DODGE, HURT, DEAD
@@ -129,6 +130,7 @@ func _apply_gravity(delta: float):
 	
 	if global_position.y <= -450:
 		_die()
+		final_death.emit()
 
 
 # Adds iframes to the player.

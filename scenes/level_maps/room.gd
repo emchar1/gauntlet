@@ -55,7 +55,6 @@ func _get_doors():
 
 func open_doors(open_delay: float = 0.0):
 	if doors_open:
-		print("doors open, exiting..")
 		return
 	
 	doors_open = true
@@ -72,7 +71,6 @@ func open_doors(open_delay: float = 0.0):
 
 func close_doors():
 	if not doors_open:
-		print("doors closed, exiting..")
 		return
 	
 	doors_open = false
