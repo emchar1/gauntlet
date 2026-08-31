@@ -37,6 +37,7 @@ var halves := Vector2(69.5, 39.5)
 var room_clear_count: int = 0
 var room_clear_threshold: int = 3
 var room_clear_max: int = 90
+var doors_open: bool = true
 
 
 # FUNCTIONS
@@ -52,14 +53,35 @@ func _get_doors():
 
 # FUNCTIONS
 
-func open_doors():
+func open_doors(open_delay: float = 0.0):
+	if doors_open:
+		print("doors open, exiting..")
+		return
+	
+	doors_open = true
+	
+	if open_delay > 0.0:
+		await get_tree().create_timer(open_delay).timeout
+	
 	for door in _get_doors():
-		door.is_open = true
+		door.set_doorway(true)
+	
+	if not AudioManager.is_playing(AudioData.AudioKey.DOOR_OPEN):
+		AudioManager.play(AudioData.AudioKey.DOOR_OPEN)
 
 
 func close_doors():
+	if not doors_open:
+		print("doors closed, exiting..")
+		return
+	
+	doors_open = false
+	
 	for door in _get_doors():
-		door.is_open = false
+		door.set_doorway(false)
+	
+	if not AudioManager.is_playing(AudioData.AudioKey.DOOR_CLOSE):
+		AudioManager.play(AudioData.AudioKey.DOOR_CLOSE)
 
 
 # HELPER FUNCTIONS
@@ -115,4 +137,4 @@ func _on_enemy_died():
 	room_clear_count -= 1
 	
 	if room_clear_count <= room_clear_threshold:
-		open_doors()
+		open_doors(2.0)

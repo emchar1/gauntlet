@@ -85,7 +85,7 @@ func damage(amount: float):
 			room.room_clear_count -= 10
 			
 			if room.room_clear_count <= room.room_clear_threshold:
-				room.open_doors()
+				room.open_doors(2.0)
 		
 	else:
 		if anim_player:
@@ -110,6 +110,10 @@ func _on_body_entered(body: Node3D) -> void:
 				return
 			
 			is_deactivated = false
+			room.room_clear_count += 10
+			room.close_doors()
+			
+			await get_tree().create_timer(1.0).timeout
 			
 			if anim_player:
 				anim_player.play("spawn")
@@ -120,9 +124,6 @@ func _on_body_entered(body: Node3D) -> void:
 			
 			if spawn_timer:
 				spawn_timer.start()
-			
-			room.room_clear_count += 10
-			room.close_doors()
 
 
 func _on_enemy_timer_timeout() -> void:

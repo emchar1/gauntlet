@@ -7,7 +7,7 @@ extends Node3D
 @export var is_open: bool = true:
 	set(value):
 		is_open = value
-		_update_doorway()
+		set_doorway(value)
 
 @onready var doorway = $Doorway
 

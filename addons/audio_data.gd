@@ -12,6 +12,8 @@ enum AudioKey {
 	BOMB_EXPLODE2,
 	BOMB_SPARKLE,
 	COCK,
+	DOOR_CLOSE,
+	DOOR_OPEN,
 	ENEMY0_DIE1,
 	ENEMY0_DIE2,
 	ENEMY0_DIE3,
@@ -112,6 +114,14 @@ var sounds := {
 	AudioKey.COCK: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/cock.ogg")
+	},
+	AudioKey.DOOR_CLOSE: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/door_close.ogg")
+	},
+	AudioKey.DOOR_OPEN: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/door_open.ogg")
 	},
 	AudioKey.ENEMY0_DIE1: {
 		"type": Type.SOUND,
