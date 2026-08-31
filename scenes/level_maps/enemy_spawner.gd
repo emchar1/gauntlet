@@ -72,7 +72,8 @@ func damage(amount: float):
 		
 		if anim_player:
 			anim_player.play("died")
-			
+			AudioManager.play(AudioData.AudioKey.SPAWNER_DIE)
+		
 		enemy_timer.stop()
 		
 		if spawn_timer:
@@ -89,6 +90,13 @@ func damage(amount: float):
 	else:
 		if anim_player:
 			anim_player.play("damage")
+			AudioManager.play(
+				AudioData.AudioKey.SPAWNER_DAMAGE,
+				0.0,
+				Vector2.ZERO,
+				true
+			)
+
 
 
 # CALLBACK FUNCTIONS
@@ -102,8 +110,13 @@ func _on_body_entered(body: Node3D) -> void:
 				return
 			
 			is_deactivated = false
-			anim_player.play("spawn")
-			GameState.shake_main_camera(0.75, 2)
+			
+			if anim_player:
+				anim_player.play("spawn")
+				GameState.shake_main_camera(0.75, 2)
+			
+			if not AudioManager.is_playing(AudioData.AudioKey.SPAWNER_SPAWN):
+				AudioManager.play(AudioData.AudioKey.SPAWNER_SPAWN)
 			
 			if spawn_timer:
 				spawn_timer.start()

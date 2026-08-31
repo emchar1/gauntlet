@@ -117,6 +117,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hurtbox:monitorable")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_wgynh"]
 resource_name = "damage"
@@ -128,7 +140,7 @@ tracks/0/path = NodePath("Spawner:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
+"times": PackedFloat32Array(0, 0.033333335, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.08726646, 0.2617994, 0), Vector3(0, 0, 0)]
@@ -188,6 +200,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_qotok"]
 resource_name = "spawn"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -195,7 +208,7 @@ tracks/0/path = NodePath("Spawner:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.90000004, 1),
+"times": PackedFloat32Array(0, 1, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -7.5, 0), Vector3(0, -7.5, 0), Vector3(0, 7.5, 0)]
@@ -207,10 +220,22 @@ tracks/1/path = NodePath("Spawner:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(-0.08726646, 0, -0.08726646), Vector3(0.08726646, 0, 0.08726646), Vector3(0, 0, 0)]
+"values": [Vector3(-0.08726646, 0, 0), Vector3(0.08726646, 0.2617994, 0), Vector3(0, 0, -0.08726646), Vector3(0, 0.2617994, 0.08726646), Vector3(-0.08726646, 0.2617994, 0), Vector3(0.08726646, 0.2617994, 0), Vector3(0, 0, -0.08726646), Vector3(0, 0.2617994, 0.08726646), Vector3(-0.08726646, 0, 0), Vector3(0.08726646, 0.2617994, 0), Vector3(0, 0, -0.08726646), Vector3(0, 0.2617994, 0.08726646), Vector3(-0.08726646, 0, 0), Vector3(0.08726646, 0.2617994, 0), Vector3(0, 0, -0.08726646), Vector3(0, 0.2617994, 0.08726646), Vector3(-0.08726646, 0, 0), Vector3(0.08726646, 0.2617994, 0), Vector3(0, 0, -0.08726646), Vector3(0, 0.2617994, 0.08726646), Vector3(-0.08726646, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hurtbox:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uwgn0"]
@@ -263,6 +288,7 @@ debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
 collision_layer = 512
 collision_mask = 16
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1001371649]
 shape = SubResource("CapsuleShape3D_0jumc")
@@ -273,7 +299,7 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70
 curve = SubResource("Curve3D_m6wed")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=2011581210]
-transform = Transform3D(-0.0042375447, 8.198847e-06, -0.99995834, 0, 1, 8.198654e-06, 0.99995834, 3.4744428e-08, -0.0042375447, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375443, 8.198847e-06, -0.9999583, 0, 1, 8.198653e-06, 0.9999583, 3.4744428e-08, -0.0042375443, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=89057933]
 wait_time = 0.25

@@ -6,8 +6,10 @@ enum AudioKey {
 	ARROW,
 	ARROW2,
 	ARROW_KILL,
+	BODY_LAND,
 	BOMB_COOK,
 	BOMB_EXPLODE,
+	BOMB_EXPLODE2,
 	BOMB_SPARKLE,
 	COCK,
 	ENEMY0_DIE1,
@@ -17,7 +19,12 @@ enum AudioKey {
 	ENEMY1_DIE1,
 	ENEMY1_DIE2,
 	ENEMY1_DIE3,
-	ENEMY1_DIE4
+	ENEMY1_DIE4,
+	MAGIC_ARROW,
+	ROLL,
+	SPAWNER_DAMAGE,
+	SPAWNER_DIE,
+	SPAWNER_SPAWN
 	#SILENCE_INTRO,
 	#SILENCE_LOOP,
 	#BLOODYTEARS_INTRO,
@@ -82,6 +89,10 @@ var sounds := {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/arrow_kill.ogg")
 	},
+	AudioKey.BODY_LAND: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/body_land.ogg")
+	},
 	AudioKey.BOMB_COOK: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/bomb_cook.ogg")
@@ -89,6 +100,10 @@ var sounds := {
 	AudioKey.BOMB_EXPLODE: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/bomb_explode.ogg")
+	},
+	AudioKey.BOMB_EXPLODE2: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/bomb_explode2.ogg")
 	},
 	AudioKey.BOMB_SPARKLE: {
 		"type": Type.SOUND,
@@ -129,6 +144,26 @@ var sounds := {
 	AudioKey.ENEMY1_DIE4: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/enemy1_die4.ogg")
+	},
+	AudioKey.MAGIC_ARROW: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/magic_arrow.ogg")
+	},
+	AudioKey.ROLL: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/roll.ogg")
+	},
+	AudioKey.SPAWNER_DAMAGE: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/spawner_damage.ogg")
+	},
+	AudioKey.SPAWNER_DIE: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/spawner_die.ogg")
+	},
+	AudioKey.SPAWNER_SPAWN: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/spawner_spawn.ogg")
 	},
 	#AudioKey.SILENCE_LOOP: {
 		#"type": Type.MUSIC_LOOP,

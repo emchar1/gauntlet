@@ -91,6 +91,7 @@ func _physics_process(delta: float) -> void:
 	if is_resurrecting and is_on_floor():
 		_apply_resurrection_knockback()
 		GameState.shake_main_camera(3.5, 30)
+		AudioManager.play(AudioData.AudioKey.BODY_LAND)
 		is_resurrecting = false
 
 
@@ -412,7 +413,10 @@ func attack_loop_started():
 	
 	combat_component.is_aiming = true
 	combat_component.execute_attack(self, current_ability)
+	
 	AudioManager.play(AudioData.AudioKey.ARROW)
+	if current_ability == combat_component.magic_arrow:
+		AudioManager.play(AudioData.AudioKey.MAGIC_ARROW)
 
 
 func attack_loop_finished():
@@ -440,6 +444,7 @@ func _dodge_begin():
 	
 	_reset_attack()
 	_update_move_state(MoveState.DODGE)
+	AudioManager.play(AudioData.AudioKey.ROLL)
 
 
 func _dodge_launch():

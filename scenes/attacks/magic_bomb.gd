@@ -88,16 +88,16 @@ func _is_exploding():
 		GameState.shake_main_camera(2.5, 10)
 		AudioManager.play(
 			AudioData.AudioKey.BOMB_EXPLODE,
-			sound_volume, 
-			sound_position, 
-			sound_should_vary_pitch, 
+			sound_volume,
+			sound_position,
+			sound_should_vary_pitch,
 			sound_pitch_scale
 		)
 		AudioManager.play(
 			AudioData.AudioKey.BOMB_SPARKLE,
-			sound_volume, 
-			sound_position, 
-			sound_should_vary_pitch, 
+			sound_volume,
+			sound_position,
+			sound_should_vary_pitch,
 			sound_pitch_scale
 		)
 
