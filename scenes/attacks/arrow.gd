@@ -80,11 +80,9 @@ func _fire(delta: float):
 		var collider = ray_cast.get_collider()
 		
 		if collider.is_in_group("world"):
-			print("collide WORLD via ray_cast")
 			dissolve_arrow()
 			return
 		elif collider.is_in_group("hurtbox"):
-			print("collide ENEMY via ray_cast")
 			_handle_hurbox_hit(collider)
 			return
 	

@@ -54,13 +54,11 @@ func _get_doors():
 
 func open_doors():
 	for door in _get_doors():
-		print("door open: ", self)
 		door.is_open = true
 
 
 func close_doors():
 	for door in _get_doors():
-		print("door close: ", self)
 		door.is_open = false
 
 
@@ -115,7 +113,6 @@ func _create_side(side_type: SideType, pos: Vector3, rot: Vector3):
 
 func _on_enemy_died():
 	room_clear_count -= 1
-	print("room_clear_count: ", room_clear_count)
-		
+	
 	if room_clear_count <= room_clear_threshold:
 		open_doors()

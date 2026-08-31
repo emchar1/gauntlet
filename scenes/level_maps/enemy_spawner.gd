@@ -82,7 +82,6 @@ func damage(amount: float):
 		
 		if spawn_type == SpawnType.ROOM:
 			room.room_clear_count -= 10
-			print("room_clear_count: ", room.room_clear_count)
 			
 			if room.room_clear_count <= room.room_clear_threshold:
 				room.open_doors()
@@ -102,18 +101,13 @@ func _on_body_entered(body: Node3D) -> void:
 			if not is_deactivated:
 				return
 			
-			print("Activating room timers")
-			
 			is_deactivated = false
-			
 			enemy_timer.start()
 			
 			if spawn_timer:
 				spawn_timer.start()
 			
 			room.room_clear_count += 10
-			print("room_clear_count: ", room.room_clear_count)
-			
 			room.close_doors()
 
 
@@ -142,12 +136,10 @@ func _on_enemy_timer_timeout() -> void:
 	
 	if spawn_type == SpawnType.ROOM:
 		room.room_clear_count += 1
-		print("room_clear_count: ", room.room_clear_count)
 
 
 func _on_spawn_timer_timeout() -> void:
 	if room.room_clear_count >= room.room_clear_max:
-		print("too many")
 		return
 	
 	current_enemy = 0
