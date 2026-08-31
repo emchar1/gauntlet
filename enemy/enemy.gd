@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	_process_movement()
 	hp_bar.position_hp(self)
 	
-	if fast_is_attacking:
+	if fast_is_attacking and not is_slaying:
 		_move_towards_player(enemy_config.speed * 2, false)
 	
 	move_and_slide()
@@ -75,6 +75,10 @@ func _apply_gravity(delta: float):
 
 # Movement and follow player
 func _process_movement():
+	if is_slaying:
+		_stop_movement()
+		return
+	
 	if not _can_target_player():
 		_stop_movement()
 		player_in_attack_range = false

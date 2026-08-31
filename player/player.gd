@@ -128,9 +128,11 @@ func _apply_gravity(delta: float):
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta
 	
-	if global_position.y <= -450:
+	if global_position.y <= -450 and move_state != MoveState.DEAD:
 		_die()
+		AudioManager.play(AudioData.AudioKey.SPLAT)
 		final_death.emit()
+		GameState.shake_main_camera(3.0, 5)
 
 
 # Adds iframes to the player.

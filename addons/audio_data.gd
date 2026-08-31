@@ -26,7 +26,8 @@ enum AudioKey {
 	ROLL,
 	SPAWNER_DAMAGE,
 	SPAWNER_DIE,
-	SPAWNER_SPAWN
+	SPAWNER_SPAWN,
+	SPLAT
 	#SILENCE_INTRO,
 	#SILENCE_LOOP,
 	#BLOODYTEARS_INTRO,
@@ -174,6 +175,10 @@ var sounds := {
 	AudioKey.SPAWNER_SPAWN: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/spawner_spawn.ogg")
+	},
+	AudioKey.SPLAT: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/splat.ogg")
 	},
 	#AudioKey.SILENCE_LOOP: {
 		#"type": Type.MUSIC_LOOP,
