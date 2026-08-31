@@ -1048,7 +1048,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09527588, 2, -2.1648865)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(424181489, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375396, 8.198847e-06, -0.9999572, 0, 1, 8.198644e-06, 0.9999572, 3.4744428e-08, -0.0042375396, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375396, 8.198847e-06, -0.99995714, 0, 1, 8.198644e-06, 0.99995714, 3.4744428e-08, -0.0042375396, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JR2" type="Node3D" parent="NavigationRegion3D" unique_id=873015370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -444)
@@ -1074,7 +1074,7 @@ total_enemies = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(2058241067, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375405, 8.198847e-06, -0.9999574, 0, 1, 8.198645e-06, 0.9999574, 3.4744428e-08, -0.0042375405, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375405, 8.198847e-06, -0.9999573, 0, 1, 8.1986445e-06, 0.9999573, 3.4744428e-08, -0.0042375405, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn2" parent="NavigationRegion3D/JR2/Room" unique_id=880574999 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
@@ -1084,7 +1084,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(880574999, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375405, 8.198847e-06, -0.9999574, 0, 1, 8.198645e-06, 0.9999574, 3.4744428e-08, -0.0042375405, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375405, 8.198847e-06, -0.9999573, 0, 1, 8.1986445e-06, 0.9999573, 3.4744428e-08, -0.0042375405, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC5" type="Node3D" parent="NavigationRegion3D" unique_id=1181500894]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 298, 0, -498)
@@ -1135,7 +1135,7 @@ total_enemies = 7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(1692621840, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375405, 8.198847e-06, -0.9999573, 0, 1, 8.1986445e-06, 0.9999573, 3.4744428e-08, -0.0042375405, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.00423754, 8.198847e-06, -0.99995726, 0, 1, 8.1986445e-06, 0.99995726, 3.4744428e-08, -0.00423754, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn3" parent="NavigationRegion3D/JR3/Room" unique_id=1591570376 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.519165, 0, -0.71551514)
@@ -1146,7 +1146,7 @@ enemy_type1 = ExtResource("6_w321r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6796875, 0, 1.0900269)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn3/Path3D" parent_id_path=PackedInt32Array(1591570376, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.00423754, 8.198847e-06, -0.99995726, 0, 1, 8.1986445e-06, 0.99995726, 3.4744428e-08, -0.00423754, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375396, 8.198847e-06, -0.9999572, 0, 1, 8.198644e-06, 0.9999572, 3.4744428e-08, -0.0042375396, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn2" parent="NavigationRegion3D/JR3/Room" unique_id=900729742 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
@@ -1156,7 +1156,7 @@ room_spawner_wait_time = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(900729742, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375405, 8.198847e-06, -0.9999573, 0, 1, 8.1986445e-06, 0.9999573, 3.4744428e-08, -0.0042375405, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.00423754, 8.198847e-06, -0.99995726, 0, 1, 8.1986445e-06, 0.99995726, 3.4744428e-08, -0.00423754, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC6" type="Node3D" parent="NavigationRegion3D" unique_id=1161524291]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 596, 0, -498)
@@ -1183,6 +1183,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.26462, 2, -0.22480774)
 [node name="PathFollow3D" parent="NavigationRegion3D/JC6/Corridor/CorridorSpawn2/Path3D" parent_id_path=PackedInt32Array(1332915862, 976154229) index="0" unique_id=1836418216]
 transform = Transform3D(0.013527351, 1.5198037e-05, -0.9999039, 9.0949053e-13, 1, 1.5199357e-05, 0.9999039, -2.0560985e-07, 0.013527351, -3.983705, 0.00390625, -4.0876045)
 
+[node name="EnemyTimer" parent="NavigationRegion3D/JC6/Corridor/CorridorSpawn2" index="2" unique_id=1155062022]
+wait_time = 0.75
+
 [node name="JC7" type="Node3D" parent="NavigationRegion3D" unique_id=1699830733]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 726, 0, -498)
 
@@ -1197,7 +1200,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -65)
 
 [node name="CorridorSpawn2" parent="NavigationRegion3D/JC7/Corridor" unique_id=523201090 instance=ExtResource("4_6jptd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.047821045, 0, -33.579346)
-total_enemies = 20
+total_enemies = 50
 enemy_type1 = ExtResource("5_j835t")
 enemy_type2 = ExtResource("6_w321r")
 
@@ -1206,6 +1209,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.26462, 2, -0.22480774)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JC7/Corridor/CorridorSpawn2/Path3D" parent_id_path=PackedInt32Array(523201090, 976154229) index="0" unique_id=1836418216]
 transform = Transform3D(0.013527351, 1.5198037e-05, -0.9999039, 9.0949053e-13, 1, 1.5199357e-05, 0.9999039, -2.0560985e-07, 0.013527351, -3.983705, 0.00390625, -4.0876045)
+
+[node name="EnemyTimer" parent="NavigationRegion3D/JC7/Corridor/CorridorSpawn2" index="2" unique_id=1155062022]
+wait_time = 0.5
 
 [node name="JC8" type="Node3D" parent="NavigationRegion3D" unique_id=1587524509]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 856, 0, -498)
