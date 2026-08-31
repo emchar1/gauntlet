@@ -102,7 +102,8 @@ func _on_body_entered(body: Node3D) -> void:
 				return
 			
 			is_deactivated = false
-			enemy_timer.start()
+			anim_player.play("spawn")
+			GameState.shake_main_camera(0.75, 2)
 			
 			if spawn_timer:
 				spawn_timer.start()
@@ -149,3 +150,5 @@ func _on_spawn_timer_timeout() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "died":
 		queue_free()
+	if anim_name == "spawn":
+		enemy_timer.start()
