@@ -12,16 +12,16 @@ height = 15.0
 radial_segments = 4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
-albedo_color = Color(0.6431373, 0.41568628, 0.41568628, 1)
+albedo_color = Color(0.6431373, 0.76862746, 0.8784314, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_u3pco"]
 size = Vector3(4.25, 3, 4.25)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpsmn"]
-albedo_color = Color(0.6431373, 0.41568628, 0.41568628, 1)
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lmhc"]
-albedo_color = Color(0.6431373, 0.41568628, 0.41568628, 1)
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u3pco"]
 radius = 5.0
@@ -299,7 +299,7 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70
 curve = SubResource("Curve3D_m6wed")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=2011581210]
-transform = Transform3D(-0.0042375443, 8.198847e-06, -0.9999583, 0, 1, 8.198653e-06, 0.9999583, 3.4744428e-08, -0.0042375443, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237544, 8.198847e-06, -0.99995816, 0, 1, 8.198652e-06, 0.99995816, 3.4744428e-08, -0.004237544, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=89057933]
 wait_time = 0.25
