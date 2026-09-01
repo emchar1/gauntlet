@@ -18,6 +18,9 @@ const COLLISION_DESTRUCTIBLE = 11
 const COLLISION_COLLECTIBLE = 12
 const COLLISION_ZONE_TRIGGER = 13
 
+var music_volume := 1.0
+var sfx_volume := 1.0
+
 
 # FUNCTIONS
 

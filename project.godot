@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gauntlet"
-run/main_scene="uid://csrqul1o4rknl"
+run/main_scene="uid://cou6t0rd15uw0"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

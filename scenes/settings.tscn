@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://blv77kgrx8r0m"]
+
+[ext_resource type="Script" uid="uid://cdacg1tmi0osm" path="res://scripts/settings.gd" id="1_r6d6q"]
+[ext_resource type="AudioStream" uid="uid://p86gggfos5vd" path="res://assets/sounds/bgm.ogg" id="2_6wm04"]
+[ext_resource type="AudioStream" uid="uid://cwd4e3wtb55m1" path="res://assets/sounds/splat.ogg" id="3_f4mfi"]
+
+[node name="Settings" type="Node" unique_id=29830959]
+script = ExtResource("1_r6d6q")
+
+[node name="Background" type="ColorRect" parent="." unique_id=313707117]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.29411766, 0.29411766, 0.3254902, 1)
+
+[node name="Settings" type="Label" parent="." unique_id=1267000088]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 64
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="." unique_id=486002403]
+offset_left = 1072.0
+offset_top = 40.0
+offset_right = 1116.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 32
+text = "X"
+
+[node name="MusicLabel" type="Label" parent="." unique_id=1062615781]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -47.0
+offset_right = -213.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Music:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SFXLabel" type="Label" parent="." unique_id=210644938]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = 57.0
+offset_right = -249.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "SFX:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="." unique_id=748402791]
+anchors_preset = -1
+offset_left = 384.0
+offset_top = 285.0
+offset_right = 896.0
+offset_bottom = 333.0
+max_value = 1.0
+step = 0.1
+value = 1.0
+tick_count = 10
+ticks_position = 3
+
+[node name="SFXSlider" type="HSlider" parent="." unique_id=1705270752]
+anchors_preset = -1
+offset_left = 384.0
+offset_top = 389.0
+offset_right = 896.0
+offset_bottom = 437.0
+max_value = 1.0
+step = 0.1
+value = 1.0
+tick_count = 10
+ticks_position = 3
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=871905208]
+stream = ExtResource("2_6wm04")
+bus = &"Music"
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=776159413]
+stream = ExtResource("3_f4mfi")
+bus = &"SFX"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]
