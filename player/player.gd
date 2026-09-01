@@ -120,6 +120,7 @@ func update_hp(amount: float):
 	
 	if hp_current <= 0:
 		_die()
+		GameState.died_count += 1
 		return
 	
 	if amount < 0:

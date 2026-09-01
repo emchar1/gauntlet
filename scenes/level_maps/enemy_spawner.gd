@@ -69,6 +69,7 @@ func damage(amount: float):
 	
 	if current_hp <= 0:
 		is_deactivated = true
+		GameState.spawners_destroyed += 1
 		
 		if anim_player:
 			anim_player.play("died")
@@ -96,7 +97,6 @@ func damage(amount: float):
 				Vector2.ZERO,
 				true
 			)
-
 
 
 # CALLBACK FUNCTIONS

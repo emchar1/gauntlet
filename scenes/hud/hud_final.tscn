@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://nox72tdpdevm"]
+
+[ext_resource type="Script" uid="uid://d38bkgi3tnqpd" path="res://scenes/hud/hud_final.gd" id="1_shkqx"]
+
+[node name="HudFinal" type="Control" unique_id=281086198]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_shkqx")
+
+[node name="Label" type="Label" parent="." unique_id=857332371]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 920.0
+offset_top = 272.0
+offset_right = 1084.0
+offset_bottom = 373.0
+text = "Enemies Defeated:
+Spawners Destroyed:
+Times Died:"

@@ -18,8 +18,11 @@ const COLLISION_DESTRUCTIBLE = 11
 const COLLISION_COLLECTIBLE = 12
 const COLLISION_ZONE_TRIGGER = 13
 
-var music_volume := 1.0
-var sfx_volume := 1.0
+var music_volume: float = 1.0
+var sfx_volume: float = 1.0
+var enemies_killed: int = 0
+var spawners_destroyed: int = 0
+var died_count: int = 0
 
 
 # FUNCTIONS

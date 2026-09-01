@@ -242,6 +242,7 @@ func slay():
 	is_slaying = true
 	turn_off_collisions()
 	_update_state(State.DEAD)
+	GameState.enemies_killed += 1
 	
 	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
 	var slay_speed := 3.0
