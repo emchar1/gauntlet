@@ -7,6 +7,9 @@ enum AudioKey {
 	ARROW2,
 	ARROW3,
 	ARROW_KILL,
+	BGM_CORRIDOR,
+	BGM_ROOM,
+	BGM_ROOM_END,
 	BODY_LAND,
 	BOMB_COOK,
 	BOMB_EXPLODE,
@@ -35,28 +38,10 @@ enum AudioKey {
 	SPAWNER_DIE,
 	SPAWNER_SPAWN,
 	SPLAT
-	#SILENCE_INTRO,
-	#SILENCE_LOOP,
-	#BLOODYTEARS_INTRO,
-	#BLOODYTEARS_LOOP,
-	#MONSTERDANCE,
-	#SWITCHWITHME,
-	#ENERGIA,
-	#ATTACK_SWING,
-	#ATTACK_SWING2,
-	#ATTACK_KILL,
-	#ATTACK_MISS,
-	#HOWL,
-	#HOWL_SHORT,
-	#CURSE_PICKUP,
-	#HEALTH_PICKUP,
-	#COIN_PICKUP,
-	#LAND,
-	#DEATH
 }
 
 enum Music {
-	NONE, #SILENCE, BLOODYTEARS, MONSTERDANCE, SWITCHWITHME, ENERGIA
+	NONE, BGM_CORRIDOR, BGM_ROOM
 }
 
 enum Type {
@@ -64,26 +49,14 @@ enum Type {
 }
 
 var music_map := {
-	#Music.SILENCE: {
-		#"intro": AudioKey.SILENCE_INTRO,
-		#"loop": AudioKey.SILENCE_LOOP
-	#},
-	#Music.BLOODYTEARS: {
-		#"intro": AudioKey.BLOODYTEARS_INTRO,
-		#"loop": AudioKey.BLOODYTEARS_LOOP
-	#},
-	#Music.MONSTERDANCE: {
-		#"intro": null,
-		#"loop": AudioKey.MONSTERDANCE
-	#},
-	#Music.SWITCHWITHME: {
-		#"intro": null,
-		#"loop": AudioKey.SWITCHWITHME
-	#},
-	#Music.ENERGIA: {
-		#"intro": null,
-		#"loop": AudioKey.ENERGIA
-	#}
+	Music.BGM_CORRIDOR: {
+		"intro": null,
+		"loop": AudioKey.BGM_CORRIDOR
+	},
+	Music.BGM_ROOM: {
+		"intro": null,
+		"loop": AudioKey.BGM_ROOM
+	}
 }
 
 var sounds := {
@@ -102,6 +75,18 @@ var sounds := {
 	AudioKey.ARROW_KILL: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/arrow_kill.ogg")
+	},
+	AudioKey.BGM_CORRIDOR: {
+		"type": Type.MUSIC_LOOP,
+		"stream": preload("res://assets/sounds/bgm_corridor.ogg")
+	},
+	AudioKey.BGM_ROOM: {
+		"type": Type.MUSIC_LOOP,
+		"stream": preload("res://assets/sounds/bgm_room.ogg")
+	},
+	AudioKey.BGM_ROOM_END: {
+		"type": Type.MUSIC_INTRO,
+		"stream": preload("res://assets/sounds/bgm_room_end.ogg")
 	},
 	AudioKey.BODY_LAND: {
 		"type": Type.SOUND,
@@ -214,73 +199,5 @@ var sounds := {
 	AudioKey.SPLAT: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/splat.ogg")
-	},
-	#AudioKey.SILENCE_LOOP: {
-		#"type": Type.MUSIC_LOOP,
-		#"stream": preload("res://assets/sounds/silence_loop.ogg")
-	#},
-	#AudioKey.BLOODYTEARS_INTRO: {
-		#"type": Type.MUSIC_INTRO,
-		#"stream": preload("res://assets/sounds/bloodytears_intro.ogg")
-	#},
-	#AudioKey.BLOODYTEARS_LOOP: {
-		#"type": Type.MUSIC_LOOP,
-		#"stream": preload("res://assets/sounds/bloodytears_loop.ogg")
-	#},
-	#AudioKey.MONSTERDANCE: {
-		#"type": Type.MUSIC_LOOP,
-		#"stream": preload("res://assets/sounds/monsterdance.ogg")
-	#},
-	#AudioKey.SWITCHWITHME: {
-		#"type": Type.MUSIC_LOOP,
-		#"stream": preload("res://assets/sounds/switchwithme.ogg")
-	#},
-	#AudioKey.ENERGIA: {
-		#"type": Type.MUSIC_LOOP,
-		#"stream": preload("res://assets/sounds/energia.ogg")
-	#},
-	#AudioKey.ATTACK_SWING: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/attack_swing.ogg")
-	#},
-	#AudioKey.ATTACK_SWING2: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/attack_swing2.ogg")
-	#},
-	#AudioKey.ATTACK_KILL: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/attack_kill.ogg")
-	#},
-	#AudioKey.ATTACK_MISS: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/attack_miss.ogg")
-	#},
-	#AudioKey.HOWL: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/howl.ogg")
-	#},
-	#AudioKey.HOWL_SHORT: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/howl_short.ogg")
-	#},
-	#AudioKey.CURSE_PICKUP: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/curse_pickup.ogg")
-	#},
-	#AudioKey.HEALTH_PICKUP: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/health_pickup.ogg")
-	#},
-	#AudioKey.COIN_PICKUP: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/coin.ogg")
-	#},
-	#AudioKey.LAND: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/land.ogg")
-	#},
-	#AudioKey.DEATH: {
-		#"type": Type.SOUND,
-		#"stream": preload("res://assets/sounds/death.ogg")
-	#}
+	}
 }

@@ -67,6 +67,12 @@ func open_doors(open_delay: float = 0.0):
 	
 	if not AudioManager.is_playing(AudioData.AudioKey.DOOR_OPEN):
 		AudioManager.play(AudioData.AudioKey.DOOR_OPEN)
+	
+	if AudioManager.current_music != AudioData.Music.BGM_CORRIDOR:
+		AudioManager.stop_all_music()
+		AudioManager.play(AudioData.AudioKey.BGM_ROOM_END)
+		AudioManager.play_music(AudioData.Music.BGM_CORRIDOR)
+
 
 
 func close_doors():
@@ -80,6 +86,10 @@ func close_doors():
 	
 	if not AudioManager.is_playing(AudioData.AudioKey.DOOR_CLOSE):
 		AudioManager.play(AudioData.AudioKey.DOOR_CLOSE)
+	
+	if AudioManager.current_music != AudioData.Music.BGM_ROOM:
+		AudioManager.stop_all_music()
+		AudioManager.play_music(AudioData.Music.BGM_ROOM)
 
 
 # HELPER FUNCTIONS
