@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://c8npf6jr2fjq1"]
+
+[ext_resource type="Script" uid="uid://pgxu5w6sbmeo" path="res://scenes/hud/hud.gd" id="1_48c2t"]
+
+[sub_resource type="Gradient" id="Gradient_6kolt"]
+offsets = PackedFloat32Array(0.71590906, 0.9931818)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u3pco"]
+gradient = SubResource("Gradient_6kolt")
+width = 16
+height = 8
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_c45xl"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0bx4p"]
+gradient = SubResource("Gradient_c45xl")
+width = 16
+height = 8
+
+[sub_resource type="Gradient" id="Gradient_cgeww"]
+offsets = PackedFloat32Array(0.0090909, 1)
+colors = PackedColorArray(0, 0.59607846, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jpsmn"]
+gradient = SubResource("Gradient_cgeww")
+width = 16
+height = 8
+
+[sub_resource type="Gradient" id="Gradient_48c2t"]
+colors = PackedColorArray(0, 0, 0, 1, 0.18000486, 0.18000486, 0.18000486, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cgeww"]
+gradient = SubResource("Gradient_48c2t")
+width = 16
+height = 4
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_0bx4p"]
+offsets = PackedFloat32Array(0.0090909, 1)
+colors = PackedColorArray(0.59607846, 0.59607846, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mgtrf"]
+gradient = SubResource("Gradient_0bx4p")
+width = 16
+height = 4
+
+[node name="Hud" type="Control" unique_id=281086198]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48c2t")
+
+[node name="HP" type="Control" parent="." unique_id=2094740633]
+layout_mode = 1
+anchor_top = 0.014
+anchor_bottom = 0.014
+offset_left = 8.0
+offset_top = -1.0720005
+offset_right = 232.0
+offset_bottom = 32.928
+metadata/_edit_group_ = true
+
+[node name="Frame" type="TextureRect" parent="HP" unique_id=39691788]
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 14.0
+texture = SubResource("GradientTexture2D_u3pco")
+
+[node name="Empty" type="TextureRect" parent="HP" unique_id=264143955]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 178.0
+offset_bottom = 12.0
+texture = SubResource("GradientTexture2D_0bx4p")
+
+[node name="Filled" type="TextureRect" parent="HP" unique_id=1131271116]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 178.0
+offset_bottom = 12.0
+texture = SubResource("GradientTexture2D_jpsmn")
+
+[node name="Special" type="Control" parent="." unique_id=2007971950]
+layout_mode = 1
+anchor_top = 0.014
+anchor_bottom = 0.014
+offset_left = 8.0
+offset_top = 16.928
+offset_right = 232.0
+offset_bottom = 50.928
+metadata/_edit_group_ = true
+
+[node name="Empty" type="TextureRect" parent="Special" unique_id=2011684240]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 179.0
+offset_bottom = 5.0
+texture = SubResource("GradientTexture2D_cgeww")
+
+[node name="Filled" type="TextureRect" parent="Special" unique_id=1489074591]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 180.0
+offset_bottom = 4.0
+texture = SubResource("GradientTexture2D_mgtrf")

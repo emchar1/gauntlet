@@ -6,6 +6,7 @@ class_name Player
 
 signal died
 signal final_death
+signal hp_did_update(current: float, max: float)
 
 enum MoveState {
 	IDLE, RUN, DODGE, HURT, DEAD
@@ -115,6 +116,7 @@ func update_hp(amount: float):
 	hp_current += amount
 	hp_current = clamp(hp_current, 0, hp_max)
 	hp_bar.update_health(hp_current)
+	hp_did_update.emit(hp_current, hp_max)
 	
 	if hp_current <= 0:
 		_die()

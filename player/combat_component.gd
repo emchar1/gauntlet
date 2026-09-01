@@ -5,6 +5,7 @@ class_name CombatComponent
 # PROPERTIES
 
 signal attack_executed(ability: Ability)
+signal timers_did_update(magic_bomb_timer: float, cooldown: float)
 
 @export var input_component: InputComponent
 @export var movement_component: MovementComponent
@@ -38,6 +39,9 @@ func set_ability_timers() -> void:
 func update_ability_timers(delta: float) -> void:
 	for ability in ability_timers:
 		ability_timers[ability] -= delta
+		
+		if ability == magic_bomb:
+			timers_did_update.emit(ability_timers[ability], ability.cooldown)
 
 
 # Executes attack for the specified actor (player, enemy, etc.)

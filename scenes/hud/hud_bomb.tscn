@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://3lat8h8fxkto"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u3pco"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpsmn"]
+albedo_color = Color(0.48235294, 1, 0.54901963, 1)
+metallic = 0.35
+roughness = 0.5
+emission_enabled = true
+emission = Color(0, 1, 0.32156864, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_u3pco"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
+albedo_color = Color(0.48235294, 1, 0.54901963, 1)
+metallic = 0.35
+roughness = 0.2
+emission_enabled = true
+emission = Color(0, 1, 0.32156864, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="Animation" id="Animation_0jibi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head:surface_material_override/0:emission_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bomb:surface_material_override/0:emission_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dsqe3"]
+resource_name = "activate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head:surface_material_override/0:emission_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bomb:surface_material_override/0:emission_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oump5"]
+_data = {
+&"RESET": SubResource("Animation_0jibi"),
+&"activate": SubResource("Animation_dsqe3")
+}
+
+[node name="HudBomb" type="Node3D" unique_id=1759526130]
+
+[node name="head" type="MeshInstance3D" parent="." unique_id=1965412216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5309572, 0)
+mesh = SubResource("CylinderMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_jpsmn")
+
+[node name="bomb" type="MeshInstance3D" parent="." unique_id=1155630586]
+mesh = SubResource("SphereMesh_u3pco")
+surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1137533507]
+libraries/ = SubResource("AnimationLibrary_oump5")

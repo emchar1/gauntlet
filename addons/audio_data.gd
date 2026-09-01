@@ -7,9 +7,7 @@ enum AudioKey {
 	ARROW2,
 	ARROW3,
 	ARROW_KILL,
-	BGM_CORRIDOR,
-	BGM_ROOM,
-	BGM_ROOM_END,
+	BGM,
 	BODY_LAND,
 	BOMB_COOK,
 	BOMB_EXPLODE,
@@ -41,7 +39,7 @@ enum AudioKey {
 }
 
 enum Music {
-	NONE, BGM_CORRIDOR, BGM_ROOM
+	NONE, BGM
 }
 
 enum Type {
@@ -49,13 +47,9 @@ enum Type {
 }
 
 var music_map := {
-	Music.BGM_CORRIDOR: {
+	Music.BGM: {
 		"intro": null,
-		"loop": AudioKey.BGM_CORRIDOR
-	},
-	Music.BGM_ROOM: {
-		"intro": null,
-		"loop": AudioKey.BGM_ROOM
+		"loop": AudioKey.BGM
 	}
 }
 
@@ -76,17 +70,9 @@ var sounds := {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/arrow_kill.ogg")
 	},
-	AudioKey.BGM_CORRIDOR: {
+	AudioKey.BGM: {
 		"type": Type.MUSIC_LOOP,
-		"stream": preload("res://assets/sounds/bgm_corridor.ogg")
-	},
-	AudioKey.BGM_ROOM: {
-		"type": Type.MUSIC_LOOP,
-		"stream": preload("res://assets/sounds/bgm_room.ogg")
-	},
-	AudioKey.BGM_ROOM_END: {
-		"type": Type.MUSIC_INTRO,
-		"stream": preload("res://assets/sounds/bgm_room_end.ogg")
+		"stream": preload("res://assets/sounds/bgm.ogg")
 	},
 	AudioKey.BODY_LAND: {
 		"type": Type.SOUND,
