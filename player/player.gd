@@ -363,6 +363,7 @@ func _resurrect():
 	
 	hp_current = hp_max
 	hp_bar.update_health(hp_current)
+	hp_did_update.emit(hp_current, hp_max)
 	_update_move_state(MoveState.IDLE)
 	
 	# Resurrect from above
