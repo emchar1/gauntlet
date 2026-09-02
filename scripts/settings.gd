@@ -4,8 +4,8 @@ extends Node
 # PROPERTIES
 
 @onready var close_button = $CloseButton
-@onready var music_slider = $MusicSlider
-@onready var sfx_slider = $SFXSlider
+@onready var music_slider = $MusicNode/MusicSlider
+@onready var sfx_slider = $SFXNode/SFXSlider
 @onready var music = $Music
 @onready var sound = $Sound
 

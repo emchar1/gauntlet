@@ -35,7 +35,8 @@ enum AudioKey {
 	SPAWNER_DAMAGE,
 	SPAWNER_DIE,
 	SPAWNER_SPAWN,
-	SPLAT
+	SPLAT,
+	UIBUTTON
 }
 
 enum Music {
@@ -185,5 +186,9 @@ var sounds := {
 	AudioKey.SPLAT: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/splat.ogg")
+	},
+	AudioKey.UIBUTTON: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/uibutton.ogg")
 	}
 }

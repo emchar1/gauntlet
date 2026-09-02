@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cou6t0rd15uw0"]
 
 [ext_resource type="Script" uid="uid://ea21ym3lgetr" path="res://scripts/title.gd" id="1_4ignj"]
+[ext_resource type="Texture2D" uid="uid://61dywk2uaje1" path="res://assets/images/title.png" id="2_wosw1"]
+[ext_resource type="Texture2D" uid="uid://byq3kae1kwb0m" path="res://assets/images/title_black.png" id="3_p6dhs"]
 
 [sub_resource type="Gradient" id="Gradient_pvspv"]
 offsets = PackedFloat32Array(0, 0.98636365)
@@ -16,10 +18,47 @@ colors = PackedColorArray(1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_p6dhs"]
 gradient = SubResource("Gradient_wosw1")
 
+[sub_resource type="Animation" id="Animation_pyl7j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b3w7a"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4rr2b"]
+_data = {
+&"RESET": SubResource("Animation_pyl7j"),
+&"blink": SubResource("Animation_b3w7a")
+}
+
 [node name="Title" type="CanvasLayer" unique_id=1227241817]
 script = ExtResource("1_4ignj")
-metadata/_edit_vertical_guides_ = [1152.0]
-metadata/_edit_horizontal_guides_ = [648.0]
+metadata/_edit_vertical_guides_ = [1152.0, 576.0]
+metadata/_edit_horizontal_guides_ = [648.0, 325.0]
 
 [node name="BackgroundRect" type="TextureRect" parent="." unique_id=1526705580]
 anchors_preset = 15
@@ -29,29 +68,45 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_lb7rc")
 
-[node name="Title" type="Label" parent="." unique_id=755880213]
-offset_right = 1152.0
-offset_bottom = 320.0
-theme_override_font_sizes/font_size = 64
-text = "ESCAPE!"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Title" type="TextureRect" parent="." unique_id=1276364409]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 120.0
+offset_right = 350.0
+offset_bottom = 270.0
+grow_horizontal = 2
+texture = ExtResource("2_wosw1")
+
+[node name="Title2" type="TextureRect" parent="." unique_id=1903479210]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 120.0
+offset_right = 350.0
+offset_bottom = 270.0
+grow_horizontal = 2
+texture = ExtResource("3_p6dhs")
 
 [node name="StartButton" type="Button" parent="." unique_id=1127165503]
 offset_left = 504.0
-offset_top = 344.0
+offset_top = 384.0
 offset_right = 647.0
-offset_bottom = 397.0
+offset_bottom = 437.0
 theme_override_font_sizes/font_size = 32
 text = "START"
+flat = true
 
 [node name="SettingsButton" type="Button" parent="." unique_id=35798782]
 offset_left = 488.0
-offset_top = 424.0
+offset_top = 464.0
 offset_right = 664.0
-offset_bottom = 477.0
+offset_bottom = 517.0
 theme_override_font_sizes/font_size = 32
 text = "SETTINGS"
+flat = true
 
 [node name="FadeRect" type="TextureRect" parent="." unique_id=746596006]
 modulate = Color(1, 1, 1, 0)
@@ -62,6 +117,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_p6dhs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1026205116]
+libraries/ = SubResource("AnimationLibrary_4rr2b")
+autoplay = &"blink"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
