@@ -30,7 +30,7 @@ func _on_start_button_pressed() -> void:
 		fade_rect,
 		"modulate:a",
 		1.0,
-		3.0
+		2.0
 	)
 	
 	await fade_tween.finished
