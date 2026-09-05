@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8npf6jr2fjq1"]
 
 [ext_resource type="Script" uid="uid://pgxu5w6sbmeo" path="res://scenes/hud/hud.gd" id="1_48c2t"]
+[ext_resource type="FontFile" uid="uid://wqrib60w2rog" path="res://assets/fonts/Age-Regular.ttf" id="2_cgeww"]
 
 [sub_resource type="Gradient" id="Gradient_6kolt"]
 offsets = PackedFloat32Array(0.71590906, 0.9931818)
@@ -113,3 +114,52 @@ offset_left = 1.0
 offset_right = 180.0
 offset_bottom = 4.0
 texture = SubResource("GradientTexture2D_mgtrf")
+
+[node name="Resurrect" type="Control" parent="." unique_id=1365512051]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Resurrect" unique_id=717350453]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Resurrect in
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Countdown" type="Label" parent="Resurrect" unique_id=818760984]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cgeww")
+theme_override_font_sizes/font_size = 80
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1

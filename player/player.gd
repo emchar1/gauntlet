@@ -5,8 +5,11 @@ class_name Player
 # PROPERTIES
 
 signal died
+signal resurrect_ready
+signal did_resurrect
 signal final_death
 signal hp_did_update(current: float, max: float)
+signal resurrect_timer_did_update(_timer: float)
 
 enum MoveState {
 	IDLE, RUN, DODGE, HURT, DEAD
@@ -39,7 +42,9 @@ var facing_dir := Vector2.RIGHT
 
 # Too many bools
 var is_invincible: bool = false
+var resurrect_ready_emitted: bool = false
 var is_resurrecting: bool = false
+var is_dead_finally: bool = false
 
 # Ability-handling Properties
 var selected_ability: Ability
@@ -92,8 +97,16 @@ func _physics_process(delta: float) -> void:
 		movement_component.traverse_dodge(self)
 	
 	if move_state == MoveState.DEAD:
-		if resurrect_timer.is_stopped() and input_component.start_pressed:
-			_resurrect()
+		if resurrect_timer.is_stopped():
+			if not resurrect_ready_emitted:
+				resurrect_ready_emitted = true
+				resurrect_ready.emit()
+			
+			if input_component.start_pressed:
+				_resurrect()
+				resurrect_ready_emitted = false
+		else:
+			resurrect_timer_did_update.emit(resurrect_timer.time_left)
 	
 	hp_bar.position_hp(self)
 	
@@ -149,6 +162,8 @@ func _apply_gravity(delta: float):
 		_die()
 		AudioManager.play(AudioData.AudioKey.SPLAT)
 		final_death.emit()
+		is_dead_finally = true
+		resurrect_timer.stop()
 		GameState.shake_main_camera(3.0, 5)
 
 
@@ -358,6 +373,7 @@ func _resurrect():
 		return
 	
 	is_resurrecting = true
+	did_resurrect.emit()
 	
 	dissolve_body($Visuals, Color.BLACK, 3.0)
 	
@@ -493,6 +509,9 @@ func _hurt_finished():
 
 
 func _dead_finished():
+	if is_dead_finally:
+		return
+	
 	died.emit()
 
 

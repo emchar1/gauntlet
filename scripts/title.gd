@@ -22,6 +22,7 @@ func _on_start_button_pressed() -> void:
 	settings_button.disabled = true
 	
 	AudioManager.play(AudioData.AudioKey.SPLAT)
+	AudioManager.play(AudioData.AudioKey.PLAYER_DIE)
 	
 	if fade_tween:
 		fade_tween.kill()
