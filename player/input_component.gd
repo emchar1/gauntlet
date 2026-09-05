@@ -15,6 +15,12 @@ const ATTACK_MAIN = "attack_main"
 const ATTACK_CHARGE = "attack_charge"
 const ATTACK_SPECIAL = "attack_special"
 
+# Attack - Gamepad
+const AIM_UP = "aim_up"
+const AIM_LEFT = "aim_left"
+const AIM_DOWN = "aim_down"
+const AIM_RIGHT = "aim_right"
+
 # Special
 const DODGE = "dodge"
 const USE_POTION = "use_potion"
@@ -36,8 +42,18 @@ var relic_pressed := false
 var start_pressed := false
 var start_released := false
 
+# Gamepad - charged attacking
+var gamepad_aim_pressed := false
+var gamepad_aiming := false
+
 
 # FUNCTIONS
+
+# Revert to mouse control if gamepad not used
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton or event is InputEventMouseMotion:
+		gamepad_aiming = false
+
 
 # Convenience function. Reads all input: movement, combat, aiming.
 func read_input(actor: CharacterBody3D) -> void:
@@ -76,8 +92,29 @@ func read_combat() -> void:
 	relic_pressed = Input.is_action_just_pressed(USE_RELIC)
 
 
-# Reads in mouse and actor positioning to calculate aiming.
+# Reads in mouse/gamepad and actor positioning to calculate aiming.
 func read_aiming(actor: CharacterBody3D) -> void:
+	# Gamepad aiming
+	var gamepad_stick_direction := Input.get_vector(
+		AIM_LEFT,
+		AIM_RIGHT,
+		AIM_UP,
+		AIM_DOWN
+	)
+	
+	if gamepad_stick_direction.length() > 0.1:
+		gamepad_aiming = true
+		gamepad_aim_pressed = true
+		aim_direction = gamepad_stick_direction
+		return
+	
+	gamepad_aim_pressed = false
+	
+	if gamepad_aiming:
+		return
+	
+	
+	# Mouse aiming
 	var camera := actor.get_viewport().get_camera_3d()
 	var mouse_pos := actor.get_viewport().get_mouse_position()
 	
