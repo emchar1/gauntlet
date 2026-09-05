@@ -159,6 +159,10 @@ func _on_spawn_timer_timeout() -> void:
 	
 	current_enemy = 0
 	enemy_timer.start()
+	
+	if anim_player:
+		anim_player.play("activate")
+		AudioManager.play(AudioData.AudioKey.SPAWNER_ACTIVATE)
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

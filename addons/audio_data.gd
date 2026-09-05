@@ -32,6 +32,7 @@ enum AudioKey {
 	PLAYER_JUMP1,
 	PLAYER_JUMP2,
 	ROLL,
+	SPAWNER_ACTIVATE,
 	SPAWNER_DAMAGE,
 	SPAWNER_DIE,
 	SPAWNER_SPAWN,
@@ -170,6 +171,10 @@ var sounds := {
 	AudioKey.ROLL: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/roll.ogg")
+	},
+	AudioKey.SPAWNER_ACTIVATE: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/spawner_activate.ogg")
 	},
 	AudioKey.SPAWNER_DAMAGE: {
 		"type": Type.SOUND,

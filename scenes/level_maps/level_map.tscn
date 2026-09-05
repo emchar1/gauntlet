@@ -396,6 +396,15 @@ _bundled = {
 "version": 3
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_narpp"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx7vr"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi0yg"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_8agw1"]
 resource_local_to_scene = true
 size = Vector3(2, 10, 1)
@@ -491,6 +500,24 @@ _bundled = {
 "variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_so575"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_owu7m"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_pigvs"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ischq"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw1sg"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kx3ne"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oj6t"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6pcr"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ly0d"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sk4wa"]
 resource_local_to_scene = true
@@ -655,6 +682,33 @@ _bundled = {
 "variants": [ExtResource("2_owt6k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxMesh_tsoum"), SubResource("StandardMaterial3D_lb7rc"), 8192, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_0arpv"), 16384, 0, Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0), SubResource("BoxShape3D_dtiiv"), Color(0.6414469, 0.5245689, 3.85046e-07, 0.41960785)],
 "version": 3
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xorof"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gq4bh"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10pxf"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3astt"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpe5y"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4w38"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_benxl"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1stom"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_guxbq"]
+albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6qisn"]
 resource_local_to_scene = true
@@ -1099,11 +1153,20 @@ wall_scene = SubResource("PackedScene_cgsba")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.378418, 0, 3.1834412)
 room_spawner_wait_time = 8.0
 
+[node name="Shaft" parent="NavigationRegion3D/JR/Room/RoomSpawn/Spawner" parent_id_path=PackedInt32Array(424181489, 911822491) index="0" unique_id=1339761420]
+surface_material_override/0 = SubResource("StandardMaterial3D_narpp")
+
+[node name="Tip" parent="NavigationRegion3D/JR/Room/RoomSpawn/Spawner" parent_id_path=PackedInt32Array(424181489, 911822491) index="1" unique_id=557446501]
+surface_material_override/0 = SubResource("StandardMaterial3D_lx7vr")
+
+[node name="Tip2" parent="NavigationRegion3D/JR/Room/RoomSpawn/Spawner" parent_id_path=PackedInt32Array(424181489, 911822491) index="2" unique_id=2126407072]
+surface_material_override/0 = SubResource("StandardMaterial3D_oi0yg")
+
 [node name="CollisionShape3D" parent="NavigationRegion3D/JR/Room/RoomSpawn/SpawnerActivator" parent_id_path=PackedInt32Array(424181489, 1295560609) index="0" unique_id=2100837493]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09527588, 2, -2.1648865)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(424181489, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375354, 8.198847e-06, -0.9999562, 0, 1, 8.198635e-06, 0.9999562, 3.4744428e-08, -0.0042375354, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375326, 8.198847e-06, -0.9999555, 0, 1, 8.19863e-06, 0.9999555, 3.4744428e-08, -0.0042375326, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JR2" type="Node3D" parent="NavigationRegion3D" unique_id=873015370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -444)
@@ -1121,25 +1184,43 @@ wall_top = 0
 wall_left = 0
 wall_scene = SubResource("PackedScene_jwdil")
 
-[node name="RoomSpawn" parent="NavigationRegion3D/JR2/Room" unique_id=2058241067 instance=ExtResource("7_j835t")]
+[node name="RoomSpawn2" parent="NavigationRegion3D/JR2/Room" unique_id=2058241067 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.72583, 0, 17.557922)
 total_enemies = 7
 
-[node name="SpawnerActivator" parent="NavigationRegion3D/JR2/Room/RoomSpawn" index="1" unique_id=1295560609]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
+[node name="Shaft" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Spawner" parent_id_path=PackedInt32Array(2058241067, 911822491) index="0" unique_id=1339761420]
+surface_material_override/0 = SubResource("StandardMaterial3D_ischq")
 
-[node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(2058241067, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375363, 8.198847e-06, -0.99995637, 0, 1, 8.198637e-06, 0.99995637, 3.4744428e-08, -0.0042375363, -7.4866924, 0.00390625, -7.4236784)
+[node name="Tip" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Spawner" parent_id_path=PackedInt32Array(2058241067, 911822491) index="1" unique_id=557446501]
+surface_material_override/0 = SubResource("StandardMaterial3D_cw1sg")
 
-[node name="RoomSpawn2" parent="NavigationRegion3D/JR2/Room" unique_id=880574999 instance=ExtResource("7_j835t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
-room_spawner_wait_time = 8.0
+[node name="Tip2" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Spawner" parent_id_path=PackedInt32Array(2058241067, 911822491) index="2" unique_id=2126407072]
+surface_material_override/0 = SubResource("StandardMaterial3D_kx3ne")
 
 [node name="SpawnerActivator" parent="NavigationRegion3D/JR2/Room/RoomSpawn2" index="1" unique_id=1295560609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
+
+[node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(2058241067, 364213543) index="0" unique_id=2011581210]
+transform = Transform3D(-0.004237533, 8.198847e-06, -0.99995565, 0, 1, 8.198631e-06, 0.99995565, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
+
+[node name="RoomSpawn3" parent="NavigationRegion3D/JR2/Room" unique_id=880574999 instance=ExtResource("7_j835t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
+room_spawner_wait_time = 15.0
+
+[node name="Shaft" parent="NavigationRegion3D/JR2/Room/RoomSpawn3/Spawner" parent_id_path=PackedInt32Array(880574999, 911822491) index="0" unique_id=1339761420]
+surface_material_override/0 = SubResource("StandardMaterial3D_6oj6t")
+
+[node name="Tip" parent="NavigationRegion3D/JR2/Room/RoomSpawn3/Spawner" parent_id_path=PackedInt32Array(880574999, 911822491) index="1" unique_id=557446501]
+surface_material_override/0 = SubResource("StandardMaterial3D_x6pcr")
+
+[node name="Tip2" parent="NavigationRegion3D/JR2/Room/RoomSpawn3/Spawner" parent_id_path=PackedInt32Array(880574999, 911822491) index="2" unique_id=2126407072]
+surface_material_override/0 = SubResource("StandardMaterial3D_3ly0d")
+
+[node name="SpawnerActivator" parent="NavigationRegion3D/JR2/Room/RoomSpawn3" index="1" unique_id=1295560609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
-[node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(880574999, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375363, 8.198847e-06, -0.99995637, 0, 1, 8.198637e-06, 0.99995637, 3.4744428e-08, -0.0042375363, -7.4866924, 0.00390625, -7.4236784)
+[node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn3/Path3D" parent_id_path=PackedInt32Array(880574999, 364213543) index="0" unique_id=2011581210]
+transform = Transform3D(-0.004237533, 8.198847e-06, -0.99995565, 0, 1, 8.198631e-06, 0.99995565, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC5" type="Node3D" parent="NavigationRegion3D" unique_id=1181500894]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 298, 0, -498)
@@ -1182,36 +1263,64 @@ wall_top = 0
 wall_bottom = 0
 wall_scene = SubResource("PackedScene_bu2xh")
 
-[node name="RoomSpawn" parent="NavigationRegion3D/JR3/Room" unique_id=1692621840 instance=ExtResource("7_j835t")]
+[node name="RoomSpawn4" parent="NavigationRegion3D/JR3/Room" unique_id=1692621840 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.72583, 0, 17.557922)
 total_enemies = 7
 
-[node name="SpawnerActivator" parent="NavigationRegion3D/JR3/Room/RoomSpawn" index="1" unique_id=1295560609]
+[node name="Shaft" parent="NavigationRegion3D/JR3/Room/RoomSpawn4/Spawner" parent_id_path=PackedInt32Array(1692621840, 911822491) index="0" unique_id=1339761420]
+surface_material_override/0 = SubResource("StandardMaterial3D_xorof")
+
+[node name="Tip" parent="NavigationRegion3D/JR3/Room/RoomSpawn4/Spawner" parent_id_path=PackedInt32Array(1692621840, 911822491) index="1" unique_id=557446501]
+surface_material_override/0 = SubResource("StandardMaterial3D_gq4bh")
+
+[node name="Tip2" parent="NavigationRegion3D/JR3/Room/RoomSpawn4/Spawner" parent_id_path=PackedInt32Array(1692621840, 911822491) index="2" unique_id=2126407072]
+surface_material_override/0 = SubResource("StandardMaterial3D_10pxf")
+
+[node name="SpawnerActivator" parent="NavigationRegion3D/JR3/Room/RoomSpawn4" index="1" unique_id=1295560609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
-[node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(1692621840, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237536, 8.198847e-06, -0.9999563, 0, 1, 8.198636e-06, 0.9999563, 3.4744428e-08, -0.004237536, -7.4866924, 0.00390625, -7.4236784)
+[node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn4/Path3D" parent_id_path=PackedInt32Array(1692621840, 364213543) index="0" unique_id=2011581210]
+transform = Transform3D(-0.004237533, 8.198847e-06, -0.9999556, 0, 1, 8.198631e-06, 0.9999556, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
 
-[node name="RoomSpawn3" parent="NavigationRegion3D/JR3/Room" unique_id=1591570376 instance=ExtResource("7_j835t")]
+[node name="RoomSpawn5" parent="NavigationRegion3D/JR3/Room" unique_id=1591570376 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.519165, 0, -0.71551514)
 total_enemies = 8
 enemy_type1 = ExtResource("6_w321r")
+room_spawner_wait_time = 15.0
 
-[node name="SpawnerActivator" parent="NavigationRegion3D/JR3/Room/RoomSpawn3" index="1" unique_id=1295560609]
+[node name="Shaft" parent="NavigationRegion3D/JR3/Room/RoomSpawn5/Spawner" parent_id_path=PackedInt32Array(1591570376, 911822491) index="0" unique_id=1339761420]
+surface_material_override/0 = SubResource("StandardMaterial3D_3astt")
+
+[node name="Tip" parent="NavigationRegion3D/JR3/Room/RoomSpawn5/Spawner" parent_id_path=PackedInt32Array(1591570376, 911822491) index="1" unique_id=557446501]
+surface_material_override/0 = SubResource("StandardMaterial3D_wpe5y")
+
+[node name="Tip2" parent="NavigationRegion3D/JR3/Room/RoomSpawn5/Spawner" parent_id_path=PackedInt32Array(1591570376, 911822491) index="2" unique_id=2126407072]
+surface_material_override/0 = SubResource("StandardMaterial3D_i4w38")
+
+[node name="SpawnerActivator" parent="NavigationRegion3D/JR3/Room/RoomSpawn5" index="1" unique_id=1295560609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6796875, 0, 1.0900269)
 
-[node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn3/Path3D" parent_id_path=PackedInt32Array(1591570376, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237536, 8.198847e-06, -0.99995625, 0, 1, 8.198636e-06, 0.99995625, 3.4744428e-08, -0.004237536, -7.4866924, 0.00390625, -7.4236784)
+[node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn5/Path3D" parent_id_path=PackedInt32Array(1591570376, 364213543) index="0" unique_id=2011581210]
+transform = Transform3D(-0.0042375326, 8.198847e-06, -0.99995553, 0, 1, 8.19863e-06, 0.99995553, 3.4744428e-08, -0.0042375326, -7.4866924, 0.00390625, -7.4236784)
 
-[node name="RoomSpawn2" parent="NavigationRegion3D/JR3/Room" unique_id=900729742 instance=ExtResource("7_j835t")]
+[node name="RoomSpawn6" parent="NavigationRegion3D/JR3/Room" unique_id=900729742 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
-room_spawner_wait_time = 8.0
+room_spawner_wait_time = 20.0
 
-[node name="SpawnerActivator" parent="NavigationRegion3D/JR3/Room/RoomSpawn2" index="1" unique_id=1295560609]
+[node name="Shaft" parent="NavigationRegion3D/JR3/Room/RoomSpawn6/Spawner" parent_id_path=PackedInt32Array(900729742, 911822491) index="0" unique_id=1339761420]
+surface_material_override/0 = SubResource("StandardMaterial3D_benxl")
+
+[node name="Tip" parent="NavigationRegion3D/JR3/Room/RoomSpawn6/Spawner" parent_id_path=PackedInt32Array(900729742, 911822491) index="1" unique_id=557446501]
+surface_material_override/0 = SubResource("StandardMaterial3D_1stom")
+
+[node name="Tip2" parent="NavigationRegion3D/JR3/Room/RoomSpawn6/Spawner" parent_id_path=PackedInt32Array(900729742, 911822491) index="2" unique_id=2126407072]
+surface_material_override/0 = SubResource("StandardMaterial3D_guxbq")
+
+[node name="SpawnerActivator" parent="NavigationRegion3D/JR3/Room/RoomSpawn6" index="1" unique_id=1295560609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
-[node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(900729742, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237536, 8.198847e-06, -0.9999563, 0, 1, 8.198636e-06, 0.9999563, 3.4744428e-08, -0.004237536, -7.4866924, 0.00390625, -7.4236784)
+[node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn6/Path3D" parent_id_path=PackedInt32Array(900729742, 364213543) index="0" unique_id=2011581210]
+transform = Transform3D(-0.004237533, 8.198847e-06, -0.9999556, 0, 1, 8.198631e-06, 0.9999556, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC6" type="Node3D" parent="NavigationRegion3D" unique_id=1161524291]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 596, 0, -498)
@@ -1458,12 +1567,12 @@ outline_size = 0
 [editable path="NavigationRegion3D/JC4/Corridor/CorridorSpawn"]
 [editable path="NavigationRegion3D/JC4/Corridor/CorridorSpawn2"]
 [editable path="NavigationRegion3D/JR/Room/RoomSpawn"]
-[editable path="NavigationRegion3D/JR2/Room/RoomSpawn"]
 [editable path="NavigationRegion3D/JR2/Room/RoomSpawn2"]
+[editable path="NavigationRegion3D/JR2/Room/RoomSpawn3"]
 [editable path="NavigationRegion3D/JC5/Corridor/CorridorSpawn2"]
-[editable path="NavigationRegion3D/JR3/Room/RoomSpawn"]
-[editable path="NavigationRegion3D/JR3/Room/RoomSpawn3"]
-[editable path="NavigationRegion3D/JR3/Room/RoomSpawn2"]
+[editable path="NavigationRegion3D/JR3/Room/RoomSpawn4"]
+[editable path="NavigationRegion3D/JR3/Room/RoomSpawn5"]
+[editable path="NavigationRegion3D/JR3/Room/RoomSpawn6"]
 [editable path="NavigationRegion3D/JC6/Corridor/CorridorSpawn2"]
 [editable path="NavigationRegion3D/JC7/Corridor/CorridorSpawn2"]
 [editable path="NavigationRegion3D/JC7/Corridor/CorridorSpawn3"]
