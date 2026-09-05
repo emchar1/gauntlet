@@ -45,12 +45,12 @@ var is_invincible: bool = false
 var resurrect_ready_emitted: bool = false
 var is_resurrecting: bool = false
 var is_dead_finally: bool = false
+var can_fire_charged: bool = false
 
 # Ability-handling Properties
 var selected_ability: Ability
 var current_ability: Ability
 var last_ability: Ability
-var can_fire_charged: bool = false
 
 var hurt_sounds: Array[AudioData.AudioKey] = [
 	AudioData.AudioKey.PLAYER_HURT0,
@@ -202,11 +202,12 @@ func _update_facing() -> void:
 	or move_state == MoveState.DEAD:
 		return
 	
-	if input_component.charge_pressed:
-		var target_angle := _get_target_angle(-input_component.aim_direction)
-		rotation.y = target_angle
-		
-	elif input_component.charge_held and can_fire_charged:
+	# DONT NEED THIS ANYMORE DUE TO GAMEPAD INPUT
+	#if input_component.charge_pressed:
+		#var target_angle := _get_target_angle(-input_component.aim_direction)
+		#rotation.y = target_angle
+		#
+	if input_component.charge_held and can_fire_charged:
 		var target_angle := _get_target_angle(-input_component.aim_direction)
 		rotation.y = lerp_angle(rotation.y, target_angle, 0.02)
 		
