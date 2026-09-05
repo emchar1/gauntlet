@@ -437,6 +437,9 @@ func dissolve_body(
 # ANIMATION PLAYER: ATTACK - CALLBACK FUNCTIONS
 
 func attack_start_started():
+	if AudioManager.is_playing(AudioData.AudioKey.COCK):
+		AudioManager.stop(AudioData.AudioKey.COCK)
+	
 	AudioManager.play(AudioData.AudioKey.COCK)
 
 
@@ -456,6 +459,17 @@ func attack_loop_started():
 	AudioManager.play(AudioData.AudioKey.ARROW3)
 	if current_ability == combat_component.magic_arrow:
 		AudioManager.play(AudioData.AudioKey.MAGIC_ARROW)
+	
+	# Reset aiming after each fired charged arrow.
+	if selected_ability == combat_component.charged_arrow:
+		_reset_aiming()
+		_set_aiming()
+		
+		if AudioManager.is_playing(AudioData.AudioKey.COCK):
+			AudioManager.stop(AudioData.AudioKey.COCK)
+		
+		AudioManager.play(AudioData.AudioKey.COCK)
+
 
 
 func attack_loop_finished():
@@ -500,6 +514,14 @@ func _dodge_land():
 
 func _dodge_recover():
 	_update_move_state(MoveState.IDLE)
+	
+	# Re-engage sniper mode if SHIFT is still held down after dodge.
+	if input_component.charge_held:
+		selected_ability = combat_component.charged_arrow
+		current_ability = selected_ability
+		_update_attack_state(AttackState.STARTING)
+		
+		_set_aiming()
 
 
 # ANIMATION PLAYER: HURT/DEAD - CALLBACK FUNCTIONS
