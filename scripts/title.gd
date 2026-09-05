@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var fade_rect = $FadeRect
 @onready var start_button = $StartButton
 @onready var settings_button = $SettingsButton
+@onready var anim_player = $AnimationPlayer
 
 var fade_tween: Tween
 
@@ -32,6 +33,8 @@ func _on_start_button_pressed() -> void:
 		1.0,
 		2.0
 	)
+	
+	anim_player.stop()
 	
 	await fade_tween.finished
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
