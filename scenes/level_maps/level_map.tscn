@@ -1166,7 +1166,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_oi0yg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09527588, 2, -2.1648865)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR/Room/RoomSpawn/Path3D" parent_id_path=PackedInt32Array(424181489, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375326, 8.198847e-06, -0.9999555, 0, 1, 8.19863e-06, 0.9999555, 3.4744428e-08, -0.0042375326, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237532, 8.198847e-06, -0.9999554, 0, 1, 8.198629e-06, 0.9999554, 3.4744428e-08, -0.004237532, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JR2" type="Node3D" parent="NavigationRegion3D" unique_id=873015370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 0, -444)
@@ -1201,11 +1201,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_kx3ne")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn2/Path3D" parent_id_path=PackedInt32Array(2058241067, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237533, 8.198847e-06, -0.99995565, 0, 1, 8.198631e-06, 0.99995565, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237533, 8.198847e-06, -0.9999556, 0, 1, 8.198631e-06, 0.9999556, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn3" parent="NavigationRegion3D/JR2/Room" unique_id=880574999 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
-room_spawner_wait_time = 15.0
+room_spawner_wait_time = 8.0
 
 [node name="Shaft" parent="NavigationRegion3D/JR2/Room/RoomSpawn3/Spawner" parent_id_path=PackedInt32Array(880574999, 911822491) index="0" unique_id=1339761420]
 surface_material_override/0 = SubResource("StandardMaterial3D_6oj6t")
@@ -1220,7 +1220,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3ly0d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR2/Room/RoomSpawn3/Path3D" parent_id_path=PackedInt32Array(880574999, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237533, 8.198847e-06, -0.99995565, 0, 1, 8.198631e-06, 0.99995565, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237533, 8.198847e-06, -0.9999556, 0, 1, 8.198631e-06, 0.9999556, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC5" type="Node3D" parent="NavigationRegion3D" unique_id=1181500894]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 298, 0, -498)
@@ -1266,6 +1266,8 @@ wall_scene = SubResource("PackedScene_bu2xh")
 [node name="RoomSpawn4" parent="NavigationRegion3D/JR3/Room" unique_id=1692621840 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.72583, 0, 17.557922)
 total_enemies = 7
+enemy_type2 = ExtResource("5_j835t")
+room_spawner_wait_time = 9.0
 
 [node name="Shaft" parent="NavigationRegion3D/JR3/Room/RoomSpawn4/Spawner" parent_id_path=PackedInt32Array(1692621840, 911822491) index="0" unique_id=1339761420]
 surface_material_override/0 = SubResource("StandardMaterial3D_xorof")
@@ -1280,13 +1282,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_10pxf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.685577, 0, -17.483795)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn4/Path3D" parent_id_path=PackedInt32Array(1692621840, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237533, 8.198847e-06, -0.9999556, 0, 1, 8.198631e-06, 0.9999556, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375326, 8.198847e-06, -0.99995553, 0, 1, 8.19863e-06, 0.99995553, 3.4744428e-08, -0.0042375326, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn5" parent="NavigationRegion3D/JR3/Room" unique_id=1591570376 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.519165, 0, -0.71551514)
 total_enemies = 8
-enemy_type1 = ExtResource("6_w321r")
-room_spawner_wait_time = 15.0
+room_spawner_wait_time = 8.0
 
 [node name="Shaft" parent="NavigationRegion3D/JR3/Room/RoomSpawn5/Spawner" parent_id_path=PackedInt32Array(1591570376, 911822491) index="0" unique_id=1339761420]
 surface_material_override/0 = SubResource("StandardMaterial3D_3astt")
@@ -1301,11 +1302,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_i4w38")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6796875, 0, 1.0900269)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn5/Path3D" parent_id_path=PackedInt32Array(1591570376, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.0042375326, 8.198847e-06, -0.99995553, 0, 1, 8.19863e-06, 0.99995553, 3.4744428e-08, -0.0042375326, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375326, 8.198847e-06, -0.9999555, 0, 1, 8.19863e-06, 0.9999555, 3.4744428e-08, -0.0042375326, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="RoomSpawn6" parent="NavigationRegion3D/JR3/Room" unique_id=900729742 instance=ExtResource("7_j835t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.039658, 0, -17.718018)
-room_spawner_wait_time = 20.0
+enemy_type1 = ExtResource("6_w321r")
 
 [node name="Shaft" parent="NavigationRegion3D/JR3/Room/RoomSpawn6/Spawner" parent_id_path=PackedInt32Array(900729742, 911822491) index="0" unique_id=1339761420]
 surface_material_override/0 = SubResource("StandardMaterial3D_benxl")
@@ -1320,7 +1321,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_guxbq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.96768, 0, 17.759705)
 
 [node name="PathFollow3D" parent="NavigationRegion3D/JR3/Room/RoomSpawn6/Path3D" parent_id_path=PackedInt32Array(900729742, 364213543) index="0" unique_id=2011581210]
-transform = Transform3D(-0.004237533, 8.198847e-06, -0.9999556, 0, 1, 8.198631e-06, 0.9999556, 3.4744428e-08, -0.004237533, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.0042375326, 8.198847e-06, -0.99995553, 0, 1, 8.19863e-06, 0.99995553, 3.4744428e-08, -0.0042375326, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="JC6" type="Node3D" parent="NavigationRegion3D" unique_id=1161524291]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 596, 0, -498)
