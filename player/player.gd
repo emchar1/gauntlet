@@ -295,6 +295,12 @@ func _player_attack():
 	elif input_component.main_released:
 		combat_component.is_aiming = false
 		
+	# Gamepad Quick Attack
+	elif input_component.gamepad_aim_pressed and \
+	not input_component.charge_held:
+			current_ability = combat_component.quick_arrow
+			_update_attack_state(AttackState.FIRING)
+	
 	# Magical Attacks
 	elif input_component.special_pressed:
 		if can_fire_charged:
