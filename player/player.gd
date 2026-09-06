@@ -478,7 +478,6 @@ func attack_loop_started():
 		AudioManager.play(AudioData.AudioKey.COCK)
 
 
-
 func attack_loop_finished():
 	if selected_ability == combat_component.charged_arrow:
 		_update_attack_state(AttackState.CHARGED)
