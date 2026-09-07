@@ -1032,7 +1032,7 @@ tracks/17/keys = {
 "method": &"attack_loop_started"
 }, {
 "args": [],
-"method": &"attack_loop_finished"
+"method": &"attack_loop_slow_finished"
 }]
 }
 
