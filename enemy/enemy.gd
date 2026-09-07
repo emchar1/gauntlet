@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	hp_bar.position_hp(self)
 	
 	if fast_is_attacking and not is_slaying:
-		_move_towards_player(enemy_config.speed * 2, false)
+		_move_towards_player(enemy_config.speed * 1.5, false)
 	
 	move_and_slide()
 
