@@ -513,7 +513,11 @@ func attack_loop_finished():
 
 
 func attack_loop_slow_finished():
-	_update_attack_state(AttackState.CHARGED)
+	# Need to switch to ENDING otherwise attack_state stays CHARGED forever.
+	if input_component.charge_held:
+		_update_attack_state(AttackState.CHARGED)
+	else:
+		_update_attack_state(AttackState.ENDING)
 
 
 func attack_end_finished():
