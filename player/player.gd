@@ -306,8 +306,8 @@ func _player_attack():
 	elif input_component.gamepad_aim_pressed and \
 	not input_component.charge_held and \
 	selected_ability != combat_component.charged_arrow:
-			current_ability = combat_component.quick_arrow
-			_update_attack_state(AttackState.FIRING)
+		current_ability = combat_component.quick_arrow
+		_update_attack_state(AttackState.FIRING)
 		
 	# Magical Attacks
 	elif input_component.special_pressed:
