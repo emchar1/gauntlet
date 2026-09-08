@@ -460,13 +460,22 @@ func attack_start_started():
 
 func attack_start_finished():
 	can_fire_charged = true
+	
+	# Gamepad: fires the arrow here if R2 was released during STARTING.
+	if input_component.charge_held:
+		_update_attack_state(AttackState.CHARGED)
+	else:
+		can_fire_charged = false
+		_reset_aiming()
+		_update_attack_state(AttackState.FIRING)
 
 
 func attack_loop_started():
-	# Quickly snap to mouse pointer direction on first attack press.
-	if not combat_component.is_aiming:
-		var target_angle := _get_target_angle(-input_component.aim_direction)
-		rotation.y = target_angle
+	## Quickly snap to mouse pointer direction on first attack press.
+	## If commented out, arrow will release at current facing_dir.
+	#if not combat_component.is_aiming:
+		#var target_angle := _get_target_angle(-input_component.aim_direction)
+		#rotation.y = target_angle
 	
 	combat_component.is_aiming = true
 	combat_component.execute_attack(self, current_ability)
@@ -485,7 +494,8 @@ func attack_loop_started():
 		AudioManager.play(AudioData.AudioKey.MAGIC_ARROW)
 	
 	# Reset aiming after each fired charged arrow.
-	if selected_ability == combat_component.charged_arrow:
+	if selected_ability == combat_component.charged_arrow and \
+	input_component.charge_held:
 		_reset_aiming()
 		_set_aiming()
 		
