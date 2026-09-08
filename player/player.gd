@@ -271,16 +271,8 @@ func _player_attack():
 			combat_component.execute_attack(self, combat_component.magic_bomb)
 		return
 	
-	# Magical Attacks
-	if input_component.special_pressed:
-		if can_fire_charged:
-			current_ability = combat_component.magic_arrow
-			_update_attack_state(AttackState.FIRING)
-		else:
-			combat_component.execute_attack(self, combat_component.magic_bomb)
-		
 	# Charge Attacks
-	elif input_component.charge_pressed:
+	if input_component.charge_pressed:
 		selected_ability = combat_component.charged_arrow
 		current_ability = selected_ability
 		_set_aiming()
@@ -318,6 +310,14 @@ func _player_attack():
 	selected_ability != combat_component.charged_arrow:
 			current_ability = combat_component.quick_arrow
 			_update_attack_state(AttackState.FIRING)
+		
+	# Magical Attacks
+	elif input_component.special_pressed:
+		if can_fire_charged:
+			current_ability = combat_component.magic_arrow
+			_update_attack_state(AttackState.FIRING)
+		else:
+			combat_component.execute_attack(self, combat_component.magic_bomb)
 
 
 # Updates the move state and animation
