@@ -202,21 +202,18 @@ func _update_facing() -> void:
 	or move_state == MoveState.DEAD:
 		return
 	
+	var target_angle := _get_target_angle(-input_component.aim_direction)
+	
 	# DONT NEED THIS ANYMORE DUE TO GAMEPAD INPUT
 	#if input_component.charge_pressed:
 		#var target_angle := _get_target_angle(-input_component.aim_direction)
 		#rotation.y = target_angle
 		#
 	if input_component.charge_held and can_fire_charged:
-		var target_angle := _get_target_angle(-input_component.aim_direction)
 		rotation.y = lerp_angle(rotation.y, target_angle, 0.02)
-		
 	elif combat_component.is_aiming:
-		var target_angle := _get_target_angle(-input_component.aim_direction)
 		rotation.y = lerp_angle(rotation.y, target_angle, 0.5)
-		
 	elif movement_component.is_moving:
-		var target_angle := _get_target_angle(-input_component.move_direction)
 		rotation.y = lerp_angle(rotation.y, target_angle, 0.5)
 
 
