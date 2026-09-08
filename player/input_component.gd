@@ -13,7 +13,7 @@ const MOVE_RIGHT = "move_right"
 # Attack
 const ATTACK_MAIN = "attack_main"
 const ATTACK_SPECIAL = "attack_special"
-const ATTACK_CHARGE = "attack_charge"
+const ATTACK_CHARGE_KB = "attack_charge_keyboard"
 const ATTACK_CHARGE_PAD = "attack_charge_gamepad"
 
 # Attack - Gamepad
@@ -33,18 +33,23 @@ var move_direction := Vector2.ZERO
 var aim_direction := Vector2.ZERO
 var main_pressed := false
 var main_released := false
-var charge_pressed := false
-var charge_held := false
-var charge_released := false
-var gamepad_charge_pressed := false
-var gamepad_charge_held := false
-var gamepad_charge_released := false
 var special_pressed := false
 var potion_pressed := false
 var dodge_pressed := false
 var relic_pressed := false
 var start_pressed := false
 var start_released := false
+
+# Charge States
+var charge_pressed := false
+var charge_held := false
+var charge_released := false
+var charge_pressed_kb := false
+var charge_held_kb := false
+var charge_released_kb := false
+var charge_pressed_pad := false
+var charge_held_pad := false
+var charge_released_pad := false
 
 # Gamepad - charged attacking
 var gamepad_aim_pressed := false
@@ -87,16 +92,21 @@ func read_movement() -> void:
 func read_combat() -> void:
 	main_pressed = Input.is_action_pressed(ATTACK_MAIN)
 	main_released = Input.is_action_just_released(ATTACK_MAIN)
-	charge_pressed = Input.is_action_just_pressed(ATTACK_CHARGE)
-	charge_held = Input.is_action_pressed(ATTACK_CHARGE)
-	charge_released = Input.is_action_just_released(ATTACK_CHARGE)
-	gamepad_charge_pressed = Input.is_action_just_pressed(ATTACK_CHARGE_PAD)
-	gamepad_charge_held = Input.is_action_pressed(ATTACK_CHARGE_PAD)
-	gamepad_charge_released = Input.is_action_just_released(ATTACK_CHARGE_PAD)
 	special_pressed = Input.is_action_just_pressed(ATTACK_SPECIAL)
 	potion_pressed = Input.is_action_just_pressed(USE_POTION)
 	dodge_pressed = Input.is_action_just_pressed(DODGE)
 	relic_pressed = Input.is_action_just_pressed(USE_RELIC)
+	
+	# Charge Inputs
+	charge_pressed_kb = Input.is_action_just_pressed(ATTACK_CHARGE_KB)
+	charge_held_kb = Input.is_action_pressed(ATTACK_CHARGE_KB)
+	charge_released_kb = Input.is_action_just_released(ATTACK_CHARGE_KB)
+	charge_pressed_pad = Input.is_action_just_pressed(ATTACK_CHARGE_PAD)
+	charge_held_pad = Input.is_action_pressed(ATTACK_CHARGE_PAD)
+	charge_released_pad = Input.is_action_just_released(ATTACK_CHARGE_PAD)
+	charge_pressed = charge_pressed_kb or charge_pressed_pad
+	charge_held = charge_held_kb or charge_held_pad
+	charge_released = charge_released_kb or charge_released_pad
 
 
 # Reads in mouse/gamepad and actor positioning to calculate aiming.

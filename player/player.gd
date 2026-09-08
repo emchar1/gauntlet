@@ -271,18 +271,24 @@ func _player_attack():
 			combat_component.execute_attack(self, combat_component.magic_bomb)
 		return
 	
-	# Basic Attacks
+	# Charge Attacks
 	if input_component.charge_pressed:
 		selected_ability = combat_component.charged_arrow
 		current_ability = selected_ability
 		_update_attack_state(AttackState.STARTING)
 		
-	elif input_component.charge_released:
+	elif input_component.charge_released_kb:
 		can_fire_charged = false
 		selected_ability = combat_component.quick_arrow
 		current_ability = selected_ability
 		_update_attack_state(AttackState.ENDING)
 		
+	elif input_component.charge_released_pad:
+		if can_fire_charged:
+			can_fire_charged = false
+			_update_attack_state(AttackState.FIRING)
+		
+	# Keyboard Quick Attack
 	elif input_component.main_pressed:
 		if selected_ability == combat_component.charged_arrow:
 			if can_fire_charged:
@@ -297,7 +303,8 @@ func _player_attack():
 		
 	# Gamepad Quick Attack
 	elif input_component.gamepad_aim_pressed and \
-	not input_component.charge_held:
+	not input_component.charge_held and \
+	selected_ability != combat_component.charged_arrow:
 			current_ability = combat_component.quick_arrow
 			_update_attack_state(AttackState.FIRING)
 		
@@ -491,6 +498,7 @@ func attack_loop_slow_finished():
 
 func attack_end_finished():
 	combat_component.is_aiming = false
+	selected_ability = combat_component.quick_arrow
 	current_ability = selected_ability
 	_update_attack_state(AttackState.NONE)
 
