@@ -90,7 +90,7 @@ func _physics_process(delta: float) -> void:
 	
 	_player_move()
 	_update_facing()
-	_update_aiming_reticle()
+	#_update_aiming_reticle()
 	_player_attack()
 	
 	if movement_component.is_dodging:
@@ -220,17 +220,17 @@ func _update_facing() -> void:
 		rotation.y = lerp_angle(rotation.y, target_angle, 0.5)
 
 
-func _update_aiming_reticle():
-	if move_state == MoveState.DODGE \
-	or move_state == MoveState.HURT \
-	or move_state == MoveState.DEAD:
-		return
-	
-	if input_component.charge_pressed:
-		_set_aiming()
-		
-	elif input_component.charge_released:
-		_reset_aiming()
+#func _update_aiming_reticle():
+	#if move_state == MoveState.DODGE \
+	#or move_state == MoveState.HURT \
+	#or move_state == MoveState.DEAD:
+		#return
+	#
+	#if input_component.charge_pressed:
+		#_set_aiming()
+		#
+	#elif input_component.charge_released:
+		#_reset_aiming()
 
 
 func _set_aiming():
@@ -271,21 +271,32 @@ func _player_attack():
 			combat_component.execute_attack(self, combat_component.magic_bomb)
 		return
 	
+	# Magical Attacks
+	if input_component.special_pressed:
+		if can_fire_charged:
+			current_ability = combat_component.magic_arrow
+			_update_attack_state(AttackState.FIRING)
+		else:
+			combat_component.execute_attack(self, combat_component.magic_bomb)
+		
 	# Charge Attacks
-	if input_component.charge_pressed:
+	elif input_component.charge_pressed:
 		selected_ability = combat_component.charged_arrow
 		current_ability = selected_ability
+		_set_aiming()
 		_update_attack_state(AttackState.STARTING)
 		
 	elif input_component.charge_released_kb:
 		can_fire_charged = false
 		selected_ability = combat_component.quick_arrow
 		current_ability = selected_ability
+		_reset_aiming()
 		_update_attack_state(AttackState.ENDING)
 		
 	elif input_component.charge_released_pad:
 		if can_fire_charged:
 			can_fire_charged = false
+			_reset_aiming()
 			_update_attack_state(AttackState.FIRING)
 		
 	# Keyboard Quick Attack
@@ -307,14 +318,6 @@ func _player_attack():
 	selected_ability != combat_component.charged_arrow:
 			current_ability = combat_component.quick_arrow
 			_update_attack_state(AttackState.FIRING)
-		
-	# Magical Attacks
-	elif input_component.special_pressed:
-		if can_fire_charged:
-			current_ability = combat_component.magic_arrow
-			_update_attack_state(AttackState.FIRING)
-		else:
-			combat_component.execute_attack(self, combat_component.magic_bomb)
 
 
 # Updates the move state and animation
@@ -470,7 +473,17 @@ func attack_loop_started():
 	combat_component.is_aiming = true
 	combat_component.execute_attack(self, current_ability)
 	
-	AudioManager.play(AudioData.AudioKey.ARROW3)
+	if can_fire_charged:
+		AudioManager.play(
+			AudioData.AudioKey.ARROW3,
+			0.0,
+			Vector2.ZERO,
+			true,
+			0.85
+		)
+	else:
+		AudioManager.play(AudioData.AudioKey.ARROW3)
+	
 	if current_ability == combat_component.magic_arrow:
 		AudioManager.play(AudioData.AudioKey.MAGIC_ARROW)
 	
