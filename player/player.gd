@@ -203,19 +203,19 @@ func _update_facing() -> void:
 		return
 	
 	if input_component.charge_pressed:
-		# Gives it a snap aim at lerp speed 1.0.
-		var target_angle := _get_target_angle(-input_component.aim_direction)
-		rotation.y = lerp_angle(rotation.y, target_angle, 0.02)
-		pass
+		# Gives a snap aim. Use 1.0 for instant snap, 0.02 for smoother turn.
+		_lerp_rotation_y(-input_component.aim_direction, 0.02)
 	elif current_ability == combat_component.charged_arrow:
-		var target_angle := _get_target_angle(-input_component.aim_direction)
-		rotation.y = lerp_angle(rotation.y, target_angle, 0.02)
+		_lerp_rotation_y(-input_component.aim_direction, 0.02)
 	elif combat_component.is_aiming:
-		var target_angle := _get_target_angle(-input_component.aim_direction)
-		rotation.y = lerp_angle(rotation.y, target_angle, 0.5)
+		_lerp_rotation_y(-input_component.aim_direction, 0.5)
 	elif movement_component.is_moving:
-		var target_angle := _get_target_angle(-input_component.move_direction)
-		rotation.y = lerp_angle(rotation.y, target_angle, 0.5)
+		_lerp_rotation_y(-input_component.move_direction, 0.5)
+
+
+func _lerp_rotation_y(target_dir: Vector2, weight: float):
+	var target_angle = _get_target_angle(target_dir)
+	rotation.y = lerp_angle(rotation.y, target_angle, weight)
 
 
 #func _update_aiming_reticle():
