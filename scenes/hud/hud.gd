@@ -54,6 +54,7 @@ func player_resurrect_ready():
 		resurrect_tween.kill()
 	
 	var blink_speed: float = 0.1
+	var lightening: float = 0.6
 	
 	resurrect_tween = create_tween()
 	resurrect_tween.set_loops()
@@ -61,25 +62,25 @@ func player_resurrect_ready():
 	resurrect_tween.tween_property(
 		resurrect_timer_label,
 		"modulate",
-		Color.MAGENTA,
+		Color.MAGENTA.lightened(lightening),
 		blink_speed
 	)
 	resurrect_tween.tween_property(
 		resurrect_timer_label,
 		"modulate",
-		Color.YELLOW,
+		Color.YELLOW.lightened(lightening),
 		blink_speed
 	)
 	resurrect_tween.tween_property(
 		resurrect_timer_label,
 		"modulate",
-		Color.GREEN,
+		Color.GREEN.lightened(lightening),
 		blink_speed
 	)
 	resurrect_tween.tween_property(
 		resurrect_timer_label,
 		"modulate",
-		Color.CYAN,
+		Color.CYAN.lightened(lightening),
 		blink_speed
 	)
 
