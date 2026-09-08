@@ -473,7 +473,7 @@ func attack_loop_started():
 	combat_component.is_aiming = true
 	combat_component.execute_attack(self, current_ability)
 	
-	if can_fire_charged:
+	if current_ability == combat_component.charged_arrow:
 		AudioManager.play(
 			AudioData.AudioKey.ARROW3,
 			0.0,
@@ -481,10 +481,9 @@ func attack_loop_started():
 			true,
 			0.85
 		)
-	else:
+	elif current_ability == combat_component.quick_arrow:
 		AudioManager.play(AudioData.AudioKey.ARROW3)
-	
-	if current_ability == combat_component.magic_arrow:
+	elif current_ability == combat_component.magic_arrow:
 		AudioManager.play(AudioData.AudioKey.MAGIC_ARROW)
 	
 	# Reset aiming after each fired charged arrow.
