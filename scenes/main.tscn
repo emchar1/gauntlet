@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dtl8dv746mrep" path="res://scenes/camera_controller.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c8npf6jr2fjq1" path="res://scenes/hud/hud.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://nox72tdpdevm" path="res://scenes/hud/hud_final.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://brtg7d34oijnc" path="res://scenes/pause_menu.tscn" id="7_o6xl0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tefeu"]
 sky_top_color = Color(0, 0.63179016, 0.9786901, 1)
@@ -44,3 +45,5 @@ follow_offset = Vector3(0, 50, 8)
 [node name="Hud" parent="." unique_id=281086198 instance=ExtResource("5_tbgi4")]
 
 [node name="HudFinal" parent="." unique_id=1533052417 instance=ExtResource("6_tefeu")]
+
+[node name="PauseMenu" parent="." unique_id=1879673148 instance=ExtResource("7_o6xl0")]
