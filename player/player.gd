@@ -46,6 +46,7 @@ var resurrect_ready_emitted: bool = false
 var is_resurrecting: bool = false
 var is_dead_finally: bool = false
 var can_fire_charged: bool = false
+var can_enemies_target: bool = true
 
 # Ability-handling Properties
 var selected_ability: Ability
@@ -373,6 +374,7 @@ func _die():
 	if move_state == MoveState.DEAD:
 		return
 	
+	can_enemies_target = false
 	_reset_attack()
 	_update_move_state(MoveState.DEAD)
 	AudioManager.play(AudioData.AudioKey.PLAYER_DIE)
@@ -405,6 +407,9 @@ func _resurrect():
 	
 	# Reset ability timers
 	combat_component.set_ability_timers()
+	
+	await get_tree().create_timer(2.0).timeout
+	can_enemies_target = true
 
 
 func dissolve_body(
@@ -612,4 +617,4 @@ func _apply_resurrection_knockback():
 			var direction_to_enemy = enemy.global_position - global_position
 			var knockback_direction = GameState.map_3d_to_2d(direction_to_enemy)
 			
-			enemy.damage(0.0, knockback_direction, 6.0, 2)
+			enemy.damage(0.0, knockback_direction, 8.0, 2)

@@ -19,6 +19,9 @@ height = 4.224285
 radius = 1.5
 height = 4.224285
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3pco"]
+size = Vector3(150, 5, 150)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7p1mj"]
 radius = 0.4
 height = 1.8
@@ -1334,15 +1337,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 1.5)
 shape = SubResource("CapsuleShape3D_md0e3")
 debug_color = Color(0.64157456, 0.52293575, 0.0062679714, 0.41960785)
 
-[node name="PlayerDetector" type="Area3D" parent="." unique_id=407054416]
+[node name="AttackDetector" type="Area3D" parent="." unique_id=407054416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.487381)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector" unique_id=278705425]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackDetector" unique_id=278705425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 1.5)
 shape = SubResource("CapsuleShape3D_4ra3w")
 debug_color = Color(0.06200199, 0.5917603, 0.7279707, 0.41960785)
+
+[node name="MovementDetector" type="Area3D" parent="." unique_id=458095882]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MovementDetector" unique_id=2101384839]
+shape = SubResource("BoxShape3D_u3pco")
 
 [node name="Visuals" type="Node3D" parent="." unique_id=659667911]
 
@@ -1356,7 +1366,7 @@ mesh = SubResource("CapsuleMesh_7p1mj")
 surface_material_override/0 = SubResource("StandardMaterial3D_md0e3")
 
 [node name="Head" type="MeshInstance3D" parent="Visuals/BodyPivot/TorsoPivot" unique_id=1460065352]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.99374986, 0.111618884, 0, -0.111618884, 0.99374986, 0, 1.349552, -0.36090708)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9937498, 0.11161888, 0, -0.11161888, 0.9937498, 0, 1.349552, -0.36090708)
 mesh = SubResource("CapsuleMesh_4ra3w")
 surface_material_override/0 = SubResource("StandardMaterial3D_5uy6h")
 
@@ -1462,6 +1472,7 @@ path_desired_distance = 2.0
 bar_scale = 0.5
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
-[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
-[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]
+[connection signal="body_entered" from="AttackDetector" to="." method="_on_attack_detector_body_entered"]
+[connection signal="body_exited" from="AttackDetector" to="." method="_on_attack_detector_body_exited"]
+[connection signal="body_entered" from="MovementDetector" to="." method="_on_movement_detector_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

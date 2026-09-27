@@ -17,6 +17,7 @@ var enemy_config: EnemyConfig
 var player: Player
 var current_state: State
 var player_in_attack_range: bool = false
+var player_detected: bool = false
 
 var has_spawned: bool = false
 var is_slaying: bool = false
@@ -64,7 +65,7 @@ func _physics_process(delta: float) -> void:
 func _setup_enemy():
 	hp_bar.setup_values(enemy_config.hp)
 	current_hp = enemy_config.hp
-	_update_state(State.RUN)
+	_update_state(State.IDLE)
 
 
 # Anchors the player to the ground.
@@ -86,7 +87,7 @@ func _process_movement():
 		return
 	
 	if current_state == State.IDLE:
-		await get_tree().create_timer(2.0).timeout
+		#await get_tree().create_timer(2.0).timeout
 		current_speed = 0
 		_update_state(State.RUN)
 	
@@ -158,7 +159,9 @@ func _update_state(state: State):
 
 
 func _can_target_player() -> bool:
-	return player != null and player.move_state != Player.MoveState.DEAD
+	return player_detected and \
+	player != null and \
+	player.can_enemies_target
 
 
 func _stop_movement():
@@ -317,8 +320,8 @@ func _on_hitbox_area_entered(area: Area3D) -> void:
 		player.update_hp(-enemy_config.attack_dmg)
 
 
-# This detector triggers when player enters enemy's PlayerDetector.
-func _on_player_detector_body_entered(body: Node3D) -> void:
+# This detector triggers when player enters enemy's AttackDetector.
+func _on_attack_detector_body_entered(body: Node3D) -> void:
 	if not _can_target_player():
 		return
 	
@@ -329,13 +332,18 @@ func _on_player_detector_body_entered(body: Node3D) -> void:
 			_update_state(State.ATTACK)
 
 
-# This triggers when player leaves PlayerDetector.
-func _on_player_detector_body_exited(body: Node3D) -> void:
+# This triggers when player leaves AttackDetector.
+func _on_attack_detector_body_exited(body: Node3D) -> void:
 	if not _can_target_player():
 		return
 	
 	if body.is_in_group("player"):
 		player_in_attack_range = false
+
+
+func _on_movement_detector_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		player_detected = true
 
 
 # And this causes enemy to re-attack if player is still in detector.

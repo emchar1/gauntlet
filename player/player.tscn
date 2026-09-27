@@ -20,7 +20,7 @@ height = 4.5
 height = 4.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u3pco"]
-radius = 8.0
+radius = 10.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u3pco"]
 
