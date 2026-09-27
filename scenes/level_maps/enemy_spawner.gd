@@ -142,6 +142,7 @@ func _on_enemy_timer_timeout() -> void:
 	enemy.spawn()
 	
 	if spawn_type == SpawnType.ROOM:
+		enemy.player_detected = true
 		enemy.died.connect(room._on_enemy_died)
 	
 	get_tree().current_scene.add_child(enemy)
