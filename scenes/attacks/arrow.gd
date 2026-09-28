@@ -7,6 +7,8 @@ extends Area3D
 
 @onready var particles = $CPUParticles3D
 @onready var ray_cast = $RayCast3D
+@onready var visuals = $Visuals
+@onready var tail_trail = $Visuals/TailTrail
 
 var initial_position: Vector2
 var direction := Vector2.ZERO
@@ -37,6 +39,10 @@ var is_inert := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if not obeys_gravity:
+		_add_glow()
+	
+	tail_trail.visible = not obeys_gravity
 	particles.visible = explodes
 
 
@@ -83,7 +89,7 @@ func _fire(delta: float):
 			dissolve_arrow()
 			return
 		elif collider.is_in_group("hurtbox"):
-			_handle_hurbox_hit(collider)
+			_handle_hurtbox_hit(collider)
 			return
 	
 	# Move
@@ -100,6 +106,23 @@ func _fire(delta: float):
 		queue_free()
 
 
+func _add_glow():
+	var meshes = visuals.find_children("*", "MeshInstance3D", true, false)
+	
+	for mesh in meshes:
+		var material = mesh.get_active_material(0)
+		
+		if material == null:
+			continue
+		
+		material = material.duplicate()
+		mesh.material_override = material
+		
+		material.emission_enabled = true
+		material.emission = Color(32.0/255.0, 255.0/255.0, 32.0/255.0)
+		material.emission_energy_multiplier = 6.0
+
+
 # SIGNAL CALLBACK FUNCTIONS
 
 func _on_body_entered(body: Node3D) -> void:
@@ -109,7 +132,7 @@ func _on_body_entered(body: Node3D) -> void:
 
 func _on_area_entered(area: Area3D) -> void:
 	if area.is_in_group("hurtbox"):
-		_handle_hurbox_hit(area)
+		_handle_hurtbox_hit(area)
 
 
 # SIGNAL HELPER FUNCTIONS
@@ -125,7 +148,7 @@ func dissolve_arrow(dissolve_speed: float = 0.5):
 	is_inert = true
 	
 	var tween := create_tween()
-	var meshes := $Visuals.find_children("*", "MeshInstance3D", true, false)
+	var meshes := visuals.find_children("*", "MeshInstance3D", true, false)
 	
 	# Dissolve arrow by fading to black, then out by going through all meshes.
 	for mesh in meshes:
@@ -136,7 +159,9 @@ func dissolve_arrow(dissolve_speed: float = 0.5):
 		
 		material = material.duplicate()
 		mesh.material_override = material
+		
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		material.emission_enabled = false
 		
 		tween.parallel().tween_property(
 			material,
@@ -165,7 +190,7 @@ func _explode():
 
 
 # Helper function to handle hit detection on a hurtbox, ideally.
-func _handle_hurbox_hit(area: Node3D):
+func _handle_hurtbox_hit(area: Node3D):
 	if has_hit and not piercing:
 		return
 	
