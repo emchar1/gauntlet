@@ -2589,3 +2589,8 @@ color = SubResource("GradientTexture2D_e8frx")
 [node name="ResurrectTimer" type="Timer" parent="." unique_id=1067119281]
 wait_time = 4.0
 one_shot = true
+
+[node name="InputDisableTimer" type="Timer" parent="." unique_id=2086856165]
+wait_time = 0.5
+
+[connection signal="timeout" from="InputDisableTimer" to="." method="_on_input_disable_timer_timeout"]

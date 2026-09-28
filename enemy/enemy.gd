@@ -70,6 +70,9 @@ func _setup_enemy():
 
 # Anchors the player to the ground.
 func _apply_gravity(delta: float):
+	if global_position.y <= -450:
+		slay()
+	
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta
 

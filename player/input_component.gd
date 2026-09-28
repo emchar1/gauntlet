@@ -55,6 +55,8 @@ var charge_released_pad := false
 var gamepad_aim_pressed := false
 var gamepad_aiming := false
 
+var can_input := true
+
 
 # FUNCTIONS
 
@@ -73,12 +75,20 @@ func read_input(actor: CharacterBody3D) -> void:
 
 
 func read_start() -> void:
+	if not can_input:
+		_reset_all()
+		return
+	
 	start_pressed = Input.is_action_just_pressed(START)
 	start_released = Input.is_action_just_released(START)
 
 
 # Reads in directional movement input.
 func read_movement() -> void:
+	if not can_input:
+		_reset_all()
+		return
+	
 	# Modern implementation to d-movement. DO NOT CHANGE THIS ORDER!
 	move_direction = Input.get_vector(
 		MOVE_LEFT,
@@ -90,6 +100,10 @@ func read_movement() -> void:
 
 # Reads in attack combat input.
 func read_combat() -> void:
+	if not can_input:
+		_reset_all()
+		return
+	
 	main_pressed = Input.is_action_pressed(ATTACK_MAIN)
 	main_released = Input.is_action_just_released(ATTACK_MAIN)
 	special_pressed = Input.is_action_just_pressed(ATTACK_SPECIAL)
@@ -111,6 +125,10 @@ func read_combat() -> void:
 
 # Reads in mouse/gamepad and actor positioning to calculate aiming.
 func read_aiming(actor: CharacterBody3D) -> void:
+	if not can_input:
+		_reset_all()
+		return
+	
 	# Gamepad aiming
 	var gamepad_stick_direction := Input.get_vector(
 		AIM_LEFT,
@@ -151,3 +169,27 @@ func read_aiming(actor: CharacterBody3D) -> void:
 			direction_3d = -direction_3d
 		
 		aim_direction = GameState.map_3d_to_2d(direction_3d).normalized()
+
+
+func _reset_all():
+	move_direction = Vector2.ZERO
+	aim_direction = Vector2.ZERO
+	main_pressed = false
+	main_released = false
+	special_pressed = false
+	potion_pressed = false
+	dodge_pressed = false
+	relic_pressed = false
+	start_pressed = false
+	start_released = false
+	
+	# Charge States
+	charge_pressed = false
+	charge_held = false
+	charge_released = false
+	charge_pressed_kb = false
+	charge_held_kb = false
+	charge_released_kb = false
+	charge_pressed_pad = false
+	charge_held_pad = false
+	charge_released_pad = false

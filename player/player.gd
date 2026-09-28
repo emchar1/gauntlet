@@ -31,6 +31,7 @@ var hp_current: float
 @onready var bow = %Bow
 
 @onready var resurrect_timer = $ResurrectTimer
+@onready var input_disable_timer = $InputDisableTimer
 @onready var hp_bar = $HPBar
 @onready var aiming_l = $AimingReticleL
 @onready var aiming_r = $AimingReticleR
@@ -392,6 +393,9 @@ func _resurrect():
 	is_resurrecting = true
 	did_resurrect.emit()
 	
+	input_component.can_input = false
+	input_disable_timer.start()
+	
 	dissolve_body($Visuals, Color.BLACK, 3.0)
 	
 	hp_current = hp_max
@@ -618,3 +622,7 @@ func _apply_resurrection_knockback():
 			var knockback_direction = GameState.map_3d_to_2d(direction_to_enemy)
 			
 			enemy.damage(0.0, knockback_direction, 8.0, 2)
+
+
+func _on_input_disable_timer_timeout() -> void:
+	input_component.can_input = true
