@@ -9,6 +9,7 @@ extends Area3D
 @onready var ray_cast = $RayCast3D
 @onready var visuals = $Visuals
 @onready var tail_trail = $Visuals/TailTrail
+@onready var player = get_tree().get_first_node_in_group("player")
 
 var initial_position: Vector2
 var direction := Vector2.ZERO
@@ -42,7 +43,6 @@ func _ready() -> void:
 	if not obeys_gravity:
 		_add_glow()
 	
-	tail_trail.visible = not obeys_gravity
 	particles.visible = explodes
 
 
@@ -94,6 +94,15 @@ func _fire(delta: float):
 	
 	# Move
 	global_position += movement
+	
+	# Create arrow trail
+	if player:
+		var distance = player.global_position.distance_to(global_position)
+		var trail_length = 2.0 if obeys_gravity else 1.5
+		
+		tail_trail.mesh.size.y = distance / trail_length
+		tail_trail.position.z = tail_trail.mesh.size.y / 2.0
+		tail_trail.show()
 	
 	# Point arrow along its actual trajectory
 	if velocity_3d.length_squared() > 0.001:

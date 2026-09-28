@@ -28,6 +28,7 @@ fill_to = Vector2(0, 1)
 albedo_texture = SubResource("GradientTexture2D_ontfe")
 
 [sub_resource type="QuadMesh" id="QuadMesh_sl6jm"]
+resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ptt24")
 size = Vector2(0.125, 24)
 
@@ -76,6 +77,7 @@ mesh = SubResource("CylinderMesh_lb7rc")
 
 [node name="TailTrail" type="MeshInstance3D" parent="Visuals" unique_id=160503040]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 12)
+visible = false
 mesh = SubResource("QuadMesh_sl6jm")
 
 [node name="Fletching" type="Node3D" parent="Visuals" unique_id=692853265]
