@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://brtg7d34oijnc" path="res://scenes/pause_menu.tscn" id="7_o6xl0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tefeu"]
-sky_top_color = Color(0, 0.63179016, 0.9786901, 1)
-sky_horizon_color = Color(0.9788274, 0.51292163, 0, 1)
-ground_bottom_color = Color(0.08932016, 0.07491837, 0.05028837, 1)
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(1, 1, 1, 1)
+ground_bottom_color = Color(0.105882354, 0.105882354, 0, 1)
 ground_horizon_color = Color(0, 0, 0, 1)
 use_debanding = false
 

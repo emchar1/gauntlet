@@ -5,23 +5,22 @@
 [ext_resource type="Resource" uid="uid://dwu53ugce4dlh" path="res://resources/enemies/enemy_fast.tres" id="3_jl787"]
 [ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/hp_bar.tscn" id="4_jl787"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jl787"]
+albedo_color = Color(0.3254902, 0.6666667, 1, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_u3pco"]
+material = SubResource("StandardMaterial3D_jl787")
 top_radius = 3.0
 bottom_radius = 5.0
 height = 15.0
 radial_segments = 4
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
-albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgynh"]
+albedo_color = Color(0.3254902, 0.6666667, 1, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_u3pco"]
+material = SubResource("StandardMaterial3D_wgynh")
 size = Vector3(4.25, 3, 4.25)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpsmn"]
-albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lmhc"]
-albedo_color = Color(0.5008244, 0.66829944, 0.80395293, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u3pco"]
 radius = 5.0
@@ -337,19 +336,16 @@ collision_mask = 6
 
 [node name="Shaft" type="MeshInstance3D" parent="Spawner" unique_id=1339761420]
 mesh = SubResource("CylinderMesh_u3pco")
-surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
 
 [node name="Tip" type="MeshInstance3D" parent="Spawner" unique_id=557446501]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 9, 0)
 sorting_offset = 1.0
 mesh = SubResource("PrismMesh_u3pco")
-surface_material_override/0 = SubResource("StandardMaterial3D_jpsmn")
 
 [node name="Tip2" type="MeshInstance3D" parent="Spawner" unique_id=2126407072]
 transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071067, 0, 9, 0)
 sorting_offset = 2.0
 mesh = SubResource("PrismMesh_u3pco")
-surface_material_override/0 = SubResource("StandardMaterial3D_2lmhc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner" unique_id=960844751]
 shape = SubResource("CapsuleShape3D_u3pco")
@@ -378,7 +374,7 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70
 curve = SubResource("Curve3D_m6wed")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=2011581210]
-transform = Transform3D(-0.0042375424, 8.198847e-06, -0.9999578, 0, 1, 8.198649e-06, 0.9999578, 3.4744428e-08, -0.0042375424, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237541, 8.198847e-06, -0.9999575, 0, 1, 8.198646e-06, 0.9999575, 3.4744428e-08, -0.004237541, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=89057933]
 wait_time = 0.05
