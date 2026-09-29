@@ -8,7 +8,7 @@ resource_local_to_scene = true
 size = Vector3(10, 1, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
-albedo_color = Color(0.23777552, 0.30820453, 0.30820453, 1)
+albedo_color = Color(0.29294148, 0.18247081, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jpsmn"]
 resource_local_to_scene = true

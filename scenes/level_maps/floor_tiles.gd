@@ -9,7 +9,7 @@ var rows: int = 10
 var cols: int = 10
 
 # Tile Attributes
-var color: Color = Color.DARK_SLATE_GRAY
+var color: Color = Color(220.0/255.0, 0.0/255.0, 122.0/255.0)
 var size = Vector3(4.9, 1.1, 4.9)
 var gap: float = 0.1
 
@@ -44,7 +44,7 @@ func _generate_tiles():
 			var mesh := BoxMesh.new()
 			var material := StandardMaterial3D.new()
 			
-			material.albedo_color = color.lightened(randf_range(-0.1, 0.1))
+			material.albedo_color = color.lightened(randf_range(-0.2, 0.2))
 			mesh.size = size
 			tile.mesh = mesh
 			tile.position = (tile_position * Vector3(x, 0.0, z)) + tile_offset
