@@ -58,7 +58,7 @@ func setup(pos: Vector3, dir: Vector2):
 	var forward := GameState.map_2d_to_3d(dir).normalized()
 	var offset := Vector3(fwd_mult * forward.x, 1.0, fwd_mult * forward.z)
 	
-	position = pos + offset
+	global_position = pos + offset
 	initial_position = GameState.map_3d_to_2d(pos)
 	direction = dir
 	rotation.y = -direction.angle() - (PI / 2.0)

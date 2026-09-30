@@ -12,6 +12,8 @@
 [ext_resource type="Resource" uid="uid://cs17y0saltl64" path="res://resources/abilities/magic_bomb.tres" id="7_2ieo8"]
 [ext_resource type="Resource" uid="uid://co6l1vs3lveq1" path="res://resources/abilities/magic_arrow.tres" id="7_ebec5"]
 [ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/hp_bar.tscn" id="10_8t03j"]
+[ext_resource type="Script" uid="uid://crqrx3b8b2lf1" path="res://player/relic_component.gd" id="12_yllr7"]
+[ext_resource type="Resource" uid="uid://doc36nbs8lneq" path="res://resources/relics/freeze.tres" id="13_wodsf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tuyoq"]
 height = 4.5
@@ -2581,6 +2583,11 @@ metadata/_custom_type_script = "uid://pj2an3p32h0r"
 unique_name_in_owner = true
 script = ExtResource("3_qjkh3")
 metadata/_custom_type_script = "uid://b4kw2dp73cdpo"
+
+[node name="RelicComponent" type="Node" parent="Components" unique_id=1181253526]
+unique_name_in_owner = true
+script = ExtResource("12_yllr7")
+freeze_relic = ExtResource("13_wodsf")
 
 [node name="HPBar" parent="." unique_id=1591301229 instance=ExtResource("10_8t03j")]
 color = SubResource("GradientTexture2D_e8frx")

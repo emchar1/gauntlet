@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RelicConfig" format=3 uid="uid://doc36nbs8lneq"]
+
+[ext_resource type="PackedScene" uid="uid://dfqxqgb5oalmy" path="res://scenes/relics/freeze.tscn" id="1_07wxo"]
+[ext_resource type="Script" uid="uid://db4fkatm2nsrr" path="res://resources/relics/relic_config.gd" id="1_oeeub"]
+
+[resource]
+script = ExtResource("1_oeeub")
+scene = ExtResource("1_07wxo")
+cooldown = 25.0
+damage = 0.0
+metadata/_custom_type_script = "uid://db4fkatm2nsrr"

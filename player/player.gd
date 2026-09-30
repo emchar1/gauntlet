@@ -28,6 +28,7 @@ var hp_current: float
 @onready var dodge_component = %DodgeComponent
 @onready var input_component = %InputComponent
 @onready var movement_component = %MovementComponent
+@onready var relic_component = %RelicComponent
 @onready var bow = %Bow
 
 @onready var resurrect_timer = $ResurrectTimer
@@ -54,6 +55,8 @@ var selected_ability: Ability
 var current_ability: Ability
 var last_ability: Ability
 
+var current_relic: RelicConfig
+
 var hurt_sounds: Array[AudioData.AudioKey] = [
 	AudioData.AudioKey.PLAYER_HURT0,
 	AudioData.AudioKey.PLAYER_HURT1
@@ -75,6 +78,8 @@ func _ready() -> void:
 	current_ability = selected_ability
 	last_ability = selected_ability
 	
+	current_relic = relic_component.freeze_relic
+	
 	hp_bar.setup_values(hp_max)
 	hp_current = hp_max
 	
@@ -89,6 +94,7 @@ func _physics_process(delta: float) -> void:
 	if global_position.y > -450:
 		input_component.read_input(self)
 		combat_component.update_ability_timers(delta)
+		relic_component.update_timer(delta)
 	
 	_player_move()
 	_update_facing()
@@ -318,6 +324,10 @@ func _player_attack():
 			_update_attack_state(AttackState.FIRING)
 		else:
 			combat_component.execute_attack(self, combat_component.magic_bomb)
+		
+	# Relic Use
+	elif input_component.relic_pressed:
+		relic_component.activate(self, current_relic)
 
 
 # Updates the move state and animation

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dfqxqgb5oalmy"]
+
+[ext_resource type="Script" uid="uid://yvydmgk0totd" path="res://scenes/relics/freeze.gd" id="1_52w6k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt7rg"]
+albedo_color = Color(0.4, 1, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_47650"]
+material = SubResource("StandardMaterial3D_wt7rg")
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.05
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u3pco"]
+radius = 1.0
+
+[node name="Freeze" type="Area3D" unique_id=118717147]
+script = ExtResource("1_52w6k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=435510]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
+mesh = SubResource("CylinderMesh_47650")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=156833796]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+shape = SubResource("SphereShape3D_u3pco")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=338361822]
