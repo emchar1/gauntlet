@@ -5,8 +5,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43a1f"]
 albedo_color = Color(0, 0.33333334, 1, 1)
 emission_enabled = true
-emission = Color(0.3254902, 1, 1, 1)
-emission_energy_multiplier = 5.0
+emission = Color(0.3137255, 1, 1, 1)
+emission_energy_multiplier = 4.0
 
 [sub_resource type="TorusMesh" id="TorusMesh_lj6km"]
 material = SubResource("StandardMaterial3D_43a1f")
@@ -20,7 +20,7 @@ radius = 1.0
 transparency = 1
 albedo_color = Color(0, 0.24705882, 1, 1)
 emission_enabled = true
-emission = Color(0, 0.6862745, 1, 1)
+emission = Color(0.47058824, 0.8156863, 1, 1)
 emission_energy_multiplier = 8.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_28cnc"]
@@ -79,10 +79,22 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.117]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_xlv2s"]
 resource_name = "activate"
-length = 0.25
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -131,6 +143,32 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.2, 1.0, 1.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_did_finish_activating"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x5iqe"]
 _data = {
@@ -139,20 +177,22 @@ _data = {
 }
 
 [node name="Freeze" type="Area3D" unique_id=118717147]
+collision_layer = 16
+collision_mask = 256
 script = ExtResource("1_52w6k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=435510]
-transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("TorusMesh_lj6km")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=156833796]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("SphereShape3D_u3pco")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=338361822]
 emitting = false
 amount = 200
-lifetime = 0.51
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 lifetime_randomness = 0.58
@@ -162,8 +202,8 @@ emission_sphere_radius = 2.0
 spread = 180.0
 flatness = 1.0
 gravity = Vector3(0, 9, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 40.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
 angular_velocity_min = 50.0
 angular_velocity_max = 50.0
 tangential_accel_max = 100.0
@@ -171,4 +211,5 @@ scale_amount_max = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=782157864]
 libraries/ = SubResource("AnimationLibrary_x5iqe")
-autoplay = &"activate"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
