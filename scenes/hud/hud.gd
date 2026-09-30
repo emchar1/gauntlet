@@ -4,6 +4,7 @@ extends Control
 
 @onready var hp_filled = $HP/Filled
 @onready var special_filled = $Special/Filled
+@onready var relic_filled = $Relic/Filled
 @onready var resurrect_control = $Resurrect
 @onready var resurrect_label = $Resurrect/Label
 @onready var resurrect_timer_label = $Resurrect/Countdown
@@ -101,5 +102,9 @@ func resurrect_timer_did_update(_timer: float):
 
 func special_did_update(_timer: float, cooldown: float):
 	var _timer_clamped = clamp(_timer, 0, cooldown)
-	
 	special_filled.scale.x = (cooldown - _timer_clamped) / cooldown
+
+
+func relic_did_update(_timer: float, cooldown: float):
+	var _timer_clamped = clamp(_timer, 0, cooldown)
+	relic_filled.scale.x = (cooldown - _timer_clamped) / cooldown

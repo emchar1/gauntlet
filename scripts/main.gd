@@ -7,6 +7,7 @@ extends Node3D
 @onready var hud = $Hud
 @onready var hud_final = $HudFinal
 @onready var combat_component = $Player/Components/CombatComponent
+@onready var relic_component = $Player/Components/RelicComponent
 
 
 # FUNCTIONS
@@ -22,5 +23,6 @@ func _ready() -> void:
 	player.resurrect_timer_did_update.connect(hud.resurrect_timer_did_update)
 	player.final_death.connect(hud_final.show_final_results)
 	combat_component.timers_did_update.connect(hud.special_did_update)
+	relic_component.timer_did_update.connect(hud.relic_did_update)
 	
 	AudioManager.play_music(AudioData.Music.BGM)

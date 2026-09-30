@@ -2,27 +2,173 @@
 
 [ext_resource type="Script" uid="uid://yvydmgk0totd" path="res://scenes/relics/freeze.gd" id="1_52w6k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt7rg"]
-albedo_color = Color(0.4, 1, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43a1f"]
+albedo_color = Color(0, 0.33333334, 1, 1)
+emission_enabled = true
+emission = Color(0.3254902, 1, 1, 1)
+emission_energy_multiplier = 5.0
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_47650"]
-material = SubResource("StandardMaterial3D_wt7rg")
-top_radius = 1.0
-bottom_radius = 1.0
-height = 0.05
+[sub_resource type="TorusMesh" id="TorusMesh_lj6km"]
+material = SubResource("StandardMaterial3D_43a1f")
+inner_radius = 0.1
+outer_radius = 0.117
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u3pco"]
 radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i16fx"]
+transparency = 1
+albedo_color = Color(0, 0.24705882, 1, 1)
+emission_enabled = true
+emission = Color(0, 0.6862745, 1, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_28cnc"]
+material = SubResource("StandardMaterial3D_i16fx")
+top_radius = 0.0
+bottom_radius = 0.2
+height = 4.0
+
+[sub_resource type="Animation" id="Animation_52w6k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:inner_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D:mesh:outer_radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.117]
+}
+
+[sub_resource type="Animation" id="Animation_xlv2s"]
+resource_name = "activate"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:inner_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.1, 0.65, 0.99]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D:mesh:outer_radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.2, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x5iqe"]
+_data = {
+&"RESET": SubResource("Animation_52w6k"),
+&"activate": SubResource("Animation_xlv2s")
+}
 
 [node name="Freeze" type="Area3D" unique_id=118717147]
 script = ExtResource("1_52w6k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=435510]
 transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
-mesh = SubResource("CylinderMesh_47650")
+mesh = SubResource("TorusMesh_lj6km")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=156833796]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 shape = SubResource("SphereShape3D_u3pco")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=338361822]
+emitting = false
+amount = 200
+lifetime = 0.51
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.58
+mesh = SubResource("CylinderMesh_28cnc")
+emission_shape = 1
+emission_sphere_radius = 2.0
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 9, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = 50.0
+angular_velocity_max = 50.0
+tangential_accel_max = 100.0
+scale_amount_max = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=782157864]
+libraries/ = SubResource("AnimationLibrary_x5iqe")
+autoplay = &"activate"
