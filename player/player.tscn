@@ -2580,7 +2580,6 @@ metadata/_custom_type_script = "uid://pj2an3p32h0r"
 [node name="MovementComponent" type="Node" parent="Components" unique_id=1316346280]
 unique_name_in_owner = true
 script = ExtResource("3_qjkh3")
-dodge_speed = 32.0
 metadata/_custom_type_script = "uid://b4kw2dp73cdpo"
 
 [node name="HPBar" parent="." unique_id=1591301229 instance=ExtResource("10_8t03j")]

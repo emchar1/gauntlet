@@ -64,10 +64,10 @@ func _use_ability(actor: CharacterBody3D, ability: Ability) -> void:
 	
 	# Create Ability object
 	var obj = ability.scene.instantiate()
-	obj.setup(actor.global_position, actor.facing_dir)
-	
-	ability.configure(obj)
 	get_tree().current_scene.add_child(obj)
+	
+	obj.setup(actor.global_position, actor.facing_dir)
+	ability.configure(obj)
 	
 	# Update timers
 	ability_timers[ability] = ability.cooldown
