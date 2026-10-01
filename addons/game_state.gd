@@ -1,6 +1,5 @@
 extends Node
 
-
 # PROPERTIES
 
 # Collision Layers/Masks

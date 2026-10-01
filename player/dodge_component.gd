@@ -1,7 +1,6 @@
 extends Node
 class_name DodgeComponent
 
-
 # PROPERTIES
 
 signal dodge_started

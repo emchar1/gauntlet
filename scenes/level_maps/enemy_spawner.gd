@@ -1,7 +1,6 @@
 extends Node3D
 class_name EnemySpawner
 
-
 # PROPERTIES
 
 enum SpawnType {

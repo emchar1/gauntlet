@@ -31,7 +31,7 @@ class_name Ability
 
 # FUNCTIONS
 
-func configure(obj):
+func configure(obj: Area3D):
 	obj.damage = damage
 	obj.speed = speed
 	obj.knockback = knockback

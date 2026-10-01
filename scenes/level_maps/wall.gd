@@ -2,7 +2,6 @@
 extends Node3D
 class_name Wall
 
-
 # PROPERTIES
 
 @export var size: Vector2 = Vector2(2, 1):

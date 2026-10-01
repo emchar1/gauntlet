@@ -1,7 +1,6 @@
 extends Node
 class_name MovementComponent
 
-
 # PROPERTIES
 
 @export var speed: float = 12.0

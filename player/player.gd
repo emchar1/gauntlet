@@ -1,7 +1,6 @@
 extends CharacterBody3D
 class_name Player
 
-
 # PROPERTIES
 
 signal died
@@ -98,7 +97,6 @@ func _physics_process(delta: float) -> void:
 	
 	_player_move()
 	_update_facing()
-	#_update_aiming_reticle()
 	_player_attack()
 	
 	if movement_component.is_dodging:
@@ -224,19 +222,6 @@ func _update_facing() -> void:
 func _lerp_rotation_y(target_dir: Vector2, weight: float):
 	var target_angle = _get_target_angle(target_dir)
 	rotation.y = lerp_angle(rotation.y, target_angle, weight)
-
-
-#func _update_aiming_reticle():
-	#if move_state == MoveState.DODGE \
-	#or move_state == MoveState.HURT \
-	#or move_state == MoveState.DEAD:
-		#return
-	#
-	#if input_component.charge_pressed:
-		#_set_aiming()
-		#
-	#elif input_component.charge_released:
-		#_reset_aiming()
 
 
 func _set_aiming():

@@ -1,7 +1,6 @@
 @tool
 extends Node3D
 
-
 # PROPERTIES
 
 enum SideType {

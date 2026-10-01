@@ -1,7 +1,6 @@
 extends Node
 class_name CombatComponent
 
-
 # PROPERTIES
 
 signal attack_executed(ability: Ability)

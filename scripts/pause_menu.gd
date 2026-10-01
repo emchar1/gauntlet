@@ -1,6 +1,5 @@
 extends Node
 
-
 # PROPERTIES
 
 @onready var pause_label = $Label

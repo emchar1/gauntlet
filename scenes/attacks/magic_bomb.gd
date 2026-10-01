@@ -1,6 +1,5 @@
 extends Area3D
 
-
 # PROPERTIES
 
 enum BombType { 

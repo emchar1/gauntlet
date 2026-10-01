@@ -1,7 +1,6 @@
 extends Node
 class_name AnimationComponent
 
-
 # PROPERTIES
 
 # Animation constants

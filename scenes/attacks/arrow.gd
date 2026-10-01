@@ -1,6 +1,5 @@
 extends Area3D
 
-
 # PROPERTIES
 
 @export var magic_bomb_focused: Ability

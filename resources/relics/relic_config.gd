@@ -14,6 +14,6 @@ class_name RelicConfig
 
 # FUNCTIONS
 
-func configure(obj):
+func configure(obj: Area3D):
 	obj.cooldown = cooldown
 	obj.damage = damage

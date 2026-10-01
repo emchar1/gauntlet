@@ -1,6 +1,5 @@
 extends Node
 
-
 # PROPERTIES
 
 @onready var close_button = $CloseButton

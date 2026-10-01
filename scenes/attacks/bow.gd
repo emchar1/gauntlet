@@ -1,6 +1,5 @@
 extends Node3D
 
-
 # PROPERTIES
 
 const BOW_RADIUS := 0.1
