@@ -31,6 +31,7 @@ enum AudioKey {
 	PLAYER_JUMP0,
 	PLAYER_JUMP1,
 	PLAYER_JUMP2,
+	RELIC_FREEZE,
 	ROLL,
 	SPAWNER_ACTIVATE,
 	SPAWNER_DAMAGE,
@@ -167,6 +168,10 @@ var sounds := {
 	AudioKey.PLAYER_JUMP2: {
 		"type": Type.SOUND,
 		"stream": preload("res://assets/sounds/player_jump2.ogg")
+	},
+	AudioKey.RELIC_FREEZE: {
+		"type": Type.SOUND,
+		"stream": preload("res://assets/sounds/relic_freeze.ogg")
 	},
 	AudioKey.ROLL: {
 		"type": Type.SOUND,

@@ -24,6 +24,7 @@ func _on_area_entered(area: Area3D) -> void:
 
 func _has_begun_activating():
 	GameState.shake_main_camera(1, 20)
+	AudioManager.play(AudioData.AudioKey.RELIC_FREEZE)
 
 
 func _did_finish_activating():
