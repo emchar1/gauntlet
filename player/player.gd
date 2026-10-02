@@ -260,6 +260,8 @@ func _player_attack():
 	if move_state == MoveState.DODGE:
 		if input_component.special_pressed:
 			combat_component.execute_attack(self, combat_component.magic_bomb)
+		elif input_component.relic_pressed:
+			relic_component.activate(self, current_relic)
 		return
 	
 	# Charge Attacks
