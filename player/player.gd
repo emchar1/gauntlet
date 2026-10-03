@@ -409,8 +409,12 @@ func _resurrect():
 	# Reset ability timers
 	combat_component.set_ability_timers()
 	
+	# Allow enemies to re-target
 	await get_tree().create_timer(2.0).timeout
 	can_enemies_target = true
+	
+	for enemy in get_tree().get_nodes_in_group("enemy"):
+		enemy.refresh_combat()
 
 
 func dissolve_body(
