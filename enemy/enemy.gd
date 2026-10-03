@@ -6,7 +6,7 @@ class_name Enemy
 signal died
 
 enum State {
-	NONE, IDLE, RUN, ATTACK, HURT, DEAD
+	NONE, IDLE, RUN, ATTACK, HURT, FROZEN, DEAD
 }
 
 @onready var animation_player = $AnimationPlayer
@@ -29,6 +29,7 @@ var interrupt_strength: int = 0
 
 var current_speed: float = 0
 var move_dir: Vector3 = Vector3.ZERO
+var freeze_timer: Timer
 
 var death_sounds_melee: Array[AudioData.AudioKey] = [
 	AudioData.AudioKey.ENEMY0_DIE1,
@@ -49,6 +50,12 @@ var death_sounds_fast: Array[AudioData.AudioKey] = [
 
 func _ready() -> void:
 	_setup_enemy()
+	
+	# Set up freeze timer one time.
+	freeze_timer = Timer.new()
+	add_child(freeze_timer)
+	freeze_timer.one_shot = true
+	freeze_timer.timeout.connect(_on_freeze_timer_timeout)
 
 
 func _physics_process(delta: float) -> void:
@@ -79,7 +86,7 @@ func _apply_gravity(delta: float):
 
 # Movement and follow player
 func _process_movement():
-	if is_slaying:
+	if is_slaying or current_state == State.FROZEN:
 		_stop_movement()
 		return
 	
@@ -155,6 +162,8 @@ func _update_state(state: State):
 				animation_player.play("hurt_knockback")
 			else:
 				animation_player.play("hurt")
+		State.FROZEN:
+			animation_player.pause()
 		State.DEAD:
 			animation_player.play("dead")
 		_:
@@ -162,9 +171,10 @@ func _update_state(state: State):
 
 
 func _can_target_player() -> bool:
-	return player_detected and \
-	player != null and \
-	player.can_enemies_target
+	return player != null and \
+	player_detected and \
+	player.can_enemies_target and \
+	current_state != State.FROZEN
 
 
 func _stop_movement():
@@ -239,6 +249,11 @@ func apply_knockback(direction: Vector2, knockback: float):
 		target_position,
 		0.5
 	)
+
+
+func freeze(duration: float):
+	freeze_timer.start(duration)
+	_update_state(State.FROZEN)
 
 
 func slay():
@@ -349,6 +364,19 @@ func _on_movement_detector_body_entered(body: Node3D) -> void:
 		player_detected = true
 
 
+# Used to re-evaluate attack detection when state changes within range.
+func refresh_combat() -> void:
+	player_in_attack_range = player in $AttackDetector.get_overlapping_bodies()
+	player_detected = player in $MovementDetector.get_overlapping_bodies()
+	
+	if player_in_attack_range:
+		_update_state(State.ATTACK)
+	elif player_detected:
+		_update_state(State.RUN)
+	else:
+		_update_state(State.IDLE)
+
+
 # And this causes enemy to re-attack if player is still in detector.
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if not _can_target_player():
@@ -372,6 +400,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 						return
 			
 			_update_state(State.RUN)
+
+
+func _on_freeze_timer_timeout():
+	refresh_combat()
 
 
 # ANIMATION CALLBACK FUNCTIONS
