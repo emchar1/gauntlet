@@ -13,6 +13,8 @@ enum State {
 @onready var nav_agent = $NavigationAgent3D
 @onready var hp_bar = $HPBar
 
+var frost_visuals: Array[Node] = []
+
 var enemy_config: EnemyConfig
 var player: Player
 var current_state: State
@@ -70,6 +72,15 @@ func _physics_process(delta: float) -> void:
 
 
 func _setup_enemy():
+	frost_visuals = $Visuals.find_children(
+		"FrostMesh",
+		"MeshInstance3D",
+		true,
+		false
+	)
+	
+	_set_frost_visible(false)
+	
 	hp_bar.setup_values(enemy_config.hp)
 	current_hp = enemy_config.hp
 	_update_state(State.IDLE)
@@ -182,6 +193,11 @@ func _stop_movement():
 	velocity.z = 0
 
 
+func _set_frost_visible(should_show: bool):
+	for node in frost_visuals:
+		node.visible = should_show
+
+
 # OTHER FUNCTIONS
 
 func spawn():
@@ -254,6 +270,7 @@ func apply_knockback(direction: Vector2, knockback: float):
 func freeze(duration: float):
 	freeze_timer.start(duration)
 	_update_state(State.FROZEN)
+	_set_frost_visible(true)
 
 
 func slay():
@@ -404,6 +421,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_freeze_timer_timeout():
 	refresh_combat()
+	_set_frost_visible(false)
 
 
 # ANIMATION CALLBACK FUNCTIONS

@@ -406,8 +406,9 @@ func _resurrect():
 	global_position = res_position + Vector3.UP * 30
 	velocity.y = 0
 	
-	# Reset ability timers
+	# Reset timers
 	combat_component.set_ability_timers()
+	relic_component.set_timer()
 	
 	# Allow enemies to re-target
 	await get_tree().create_timer(2.0).timeout
