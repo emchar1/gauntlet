@@ -284,6 +284,18 @@ func _player_attack():
 			_reset_aiming()
 			_update_attack_state(AttackState.FIRING)
 		
+	# Magical Attacks
+	elif input_component.special_pressed:
+		if can_fire_charged:
+			current_ability = combat_component.magic_arrow
+			_update_attack_state(AttackState.FIRING)
+		else:
+			combat_component.execute_attack(self, combat_component.magic_bomb)
+		
+	# Relic Use
+	elif input_component.relic_pressed:
+		relic_component.activate(self, current_relic)
+		
 	# Keyboard Quick Attack
 	elif input_component.main_pressed:
 		if selected_ability == combat_component.charged_arrow:
@@ -303,18 +315,6 @@ func _player_attack():
 	selected_ability != combat_component.charged_arrow:
 		current_ability = combat_component.quick_arrow
 		_update_attack_state(AttackState.FIRING)
-		
-	# Magical Attacks
-	elif input_component.special_pressed:
-		if can_fire_charged:
-			current_ability = combat_component.magic_arrow
-			_update_attack_state(AttackState.FIRING)
-		else:
-			combat_component.execute_attack(self, combat_component.magic_bomb)
-		
-	# Relic Use
-	elif input_component.relic_pressed:
-		relic_component.activate(self, current_relic)
 
 
 # Updates the move state and animation
@@ -414,8 +414,11 @@ func _resurrect():
 	await get_tree().create_timer(2.0).timeout
 	can_enemies_target = true
 	
+	# FIXME: - if freeze immediately upon resurrect, after 2s this will run
+	# and refresh_combat() deliberately breaks the FREEZE mechanic!!!!
 	for enemy in get_tree().get_nodes_in_group("enemy"):
-		enemy.refresh_combat()
+		if enemy.current_state != Enemy.State.FROZEN:
+			enemy.refresh_combat()
 
 
 func dissolve_body(
