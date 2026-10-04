@@ -13,9 +13,15 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	music_slider.grab_focus()
 	music_slider.value = GameState.music_volume
 	sfx_slider.value = GameState.sfx_volume
 	music.play()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		_on_close_pressed()
 
 
 func _on_master_slider_value_changed(value: float) -> void:

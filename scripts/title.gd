@@ -14,6 +14,7 @@ var fade_tween: Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	start_button.grab_focus()
 	pass # Replace with function body.
 
 
