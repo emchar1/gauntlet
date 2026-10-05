@@ -212,10 +212,8 @@ func _update_facing() -> void:
 	var is_magic_charged = current_ability == combat_component.magic_arrow
 	var is_charged = is_basic_charged or is_magic_charged
 	
-	if input_component.charge_pressed:
-		# Gives a snap aim. Use 1.0 for instant snap, 0.02 for smoother turn.
-		_lerp_rotation_y(-input_component.aim_direction, 0.02)
-	elif is_charged:
+	if is_charged:
+		# Gives a snap aim. Use 1.0 for instant snap, 0.02 for slower turn.
 		_lerp_rotation_y(-input_component.aim_direction, 0.02)
 	elif combat_component.is_aiming:
 		_lerp_rotation_y(-input_component.aim_direction, 0.5)
