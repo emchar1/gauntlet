@@ -322,9 +322,11 @@ func _player_attack():
 		combat_component.is_aiming = false
 		
 	# Gamepad Quick Attack
-	elif input_component.gamepad_aim_pressed \
-	and not input_component.charge_held \
-	and selected_ability != combat_component.charged_arrow:
+	elif (
+		input_component.gamepad_aim_pressed
+		and not input_component.charge_held
+		and selected_ability != combat_component.charged_arrow
+	):
 		current_ability = combat_component.quick_arrow
 		_update_attack_state(AttackState.FIRING)
 
