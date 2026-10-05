@@ -281,10 +281,14 @@ func _player_attack():
 		_update_attack_state(AttackState.ENDING)
 		
 	elif input_component.charge_released_pad:
-		if can_fire_charged:
+		if can_fire_charged \
+		and current_ability == combat_component.charged_arrow:
 			can_fire_charged = false
 			_reset_aiming()
 			_update_attack_state(AttackState.FIRING)
+		else:
+			_reset_aiming()
+			_update_attack_state(AttackState.ENDING)
 		
 	# Magical Attacks
 	elif input_component.special_pressed:
@@ -334,7 +338,8 @@ func _update_attack_state(state: AttackState):
 	if attack_state == state and last_ability == current_ability:
 		return
 	
-	if not combat_component._can_use(current_ability):
+	if state == AttackState.FIRING \
+	and not combat_component._can_use(current_ability):
 		# If you don't set last_ability == null, function will always return
 		# via above guard check due to last_ability = current_ability!
 		# This is especially needed for attacks with a cooldown, i.e. the
@@ -538,6 +543,7 @@ func attack_loop_slow_finished():
 
 func attack_end_finished():
 	combat_component.is_aiming = false
+	can_fire_charged = false
 	selected_ability = combat_component.quick_arrow
 	current_ability = selected_ability
 	_update_attack_state(AttackState.NONE)
