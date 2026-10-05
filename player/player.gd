@@ -211,7 +211,8 @@ func _update_facing() -> void:
 	if input_component.charge_pressed:
 		# Gives a snap aim. Use 1.0 for instant snap, 0.02 for smoother turn.
 		_lerp_rotation_y(-input_component.aim_direction, 0.02)
-	elif current_ability == combat_component.charged_arrow:
+	elif current_ability == combat_component.charged_arrow or \
+	current_ability == combat_component.magic_arrow:
 		_lerp_rotation_y(-input_component.aim_direction, 0.02)
 	elif combat_component.is_aiming:
 		_lerp_rotation_y(-input_component.aim_direction, 0.5)
@@ -226,7 +227,7 @@ func _lerp_rotation_y(target_dir: Vector2, weight: float):
 
 func _set_aiming():
 	if aiming_tween:
-			aiming_tween.kill()
+		aiming_tween.kill()
 	
 	var speed := 0.5
 	
@@ -243,7 +244,7 @@ func _set_aiming():
 func _reset_aiming():
 	if aiming_tween:
 		aiming_tween.kill()
-		
+	
 	aiming_l.transparency = 1.0
 	aiming_r.transparency = 1.0
 	aiming_l.rotation.y = 8.0 * PI / 180
