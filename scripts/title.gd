@@ -15,7 +15,6 @@ var fade_tween: Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_button.grab_focus()
-	pass # Replace with function body.
 
 
 func _on_start_button_pressed() -> void:
@@ -47,3 +46,11 @@ func _on_settings_button_pressed() -> void:
 	settings_button.disabled = true
 	
 	get_tree().change_scene_to_file("res://scenes/settings.tscn")
+
+
+func _on_start_button_mouse_entered() -> void:
+	start_button.grab_focus()
+
+
+func _on_settings_button_mouse_entered() -> void:
+	settings_button.grab_focus()

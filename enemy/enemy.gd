@@ -182,10 +182,10 @@ func _update_state(state: State):
 
 
 func _can_target_player() -> bool:
-	return player != null and \
-	player_detected and \
-	player.can_enemies_target and \
-	current_state != State.FROZEN
+	return player != null \
+	and player_detected \
+	and player.can_enemies_target \
+	and current_state != State.FROZEN
 
 
 func _stop_movement():

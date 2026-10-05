@@ -208,11 +208,14 @@ func _update_facing() -> void:
 	or move_state == MoveState.DEAD:
 		return
 	
+	var is_basic_charged = current_ability == combat_component.charged_arrow
+	var is_magic_charged = current_ability == combat_component.magic_arrow
+	var is_charged = is_basic_charged or is_magic_charged
+	
 	if input_component.charge_pressed:
 		# Gives a snap aim. Use 1.0 for instant snap, 0.02 for smoother turn.
 		_lerp_rotation_y(-input_component.aim_direction, 0.02)
-	elif current_ability == combat_component.charged_arrow or \
-	current_ability == combat_component.magic_arrow:
+	elif is_charged:
 		_lerp_rotation_y(-input_component.aim_direction, 0.02)
 	elif combat_component.is_aiming:
 		_lerp_rotation_y(-input_component.aim_direction, 0.5)
@@ -311,9 +314,9 @@ func _player_attack():
 		combat_component.is_aiming = false
 		
 	# Gamepad Quick Attack
-	elif input_component.gamepad_aim_pressed and \
-	not input_component.charge_held and \
-	selected_ability != combat_component.charged_arrow:
+	elif input_component.gamepad_aim_pressed \
+	and not input_component.charge_held \
+	and selected_ability != combat_component.charged_arrow:
 		current_ability = combat_component.quick_arrow
 		_update_attack_state(AttackState.FIRING)
 

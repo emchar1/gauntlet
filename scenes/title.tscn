@@ -11,10 +11,6 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lb7rc"]
 gradient = SubResource("Gradient_pvspv")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyl7j"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6dhs"]
-
 [sub_resource type="Gradient" id="Gradient_wosw1"]
 offsets = PackedFloat32Array(0.0022727272)
 colors = PackedColorArray(1, 0, 0.39215687, 1)
@@ -105,11 +101,7 @@ focus_neighbor_right = NodePath("../SettingsButton")
 focus_neighbor_bottom = NodePath("../SettingsButton")
 focus_next = NodePath("../SettingsButton")
 focus_previous = NodePath("../SettingsButton")
-theme_override_colors/font_focus_color = Color(0, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 0, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_pyl7j")
 text = "START"
 flat = true
 
@@ -124,11 +116,7 @@ focus_neighbor_right = NodePath("../StartButton")
 focus_neighbor_bottom = NodePath("../StartButton")
 focus_next = NodePath("../StartButton")
 focus_previous = NodePath("../StartButton")
-theme_override_colors/font_focus_color = Color(0, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 0, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_p6dhs")
 text = "SETTINGS"
 flat = true
 
@@ -146,5 +134,7 @@ texture = SubResource("GradientTexture2D_p6dhs")
 libraries/ = SubResource("AnimationLibrary_4rr2b")
 autoplay = &"blink"
 
+[connection signal="mouse_entered" from="StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="SettingsButton" to="." method="_on_settings_button_mouse_entered"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
