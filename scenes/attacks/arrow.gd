@@ -98,9 +98,11 @@ func _fire(delta: float):
 	if player:
 		var distance = player.global_position.distance_to(global_position)
 		var trail_length = 2.0 if obeys_gravity else 1.5
+		var albedo = Color.WHITE if obeys_gravity else Color.GREEN
 		
 		tail_trail.mesh.size.y = distance / trail_length
 		tail_trail.position.z = tail_trail.mesh.size.y / 2.0
+		tail_trail.mesh.material.albedo_color = albedo
 		tail_trail.show()
 	
 	# Point arrow along its actual trajectory
