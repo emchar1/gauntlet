@@ -210,13 +210,14 @@ func _update_facing() -> void:
 	):
 		return
 	
-	#var is_basic_charged = current_ability == combat_component.charged_arrow
-	#var is_magic_charged = current_ability == combat_component.magic_arrow
-	#var is_charged = is_basic_charged or is_magic_charged
+	var is_basic_charged = current_ability == combat_component.charged_arrow
+	var is_magic_charged = current_ability == combat_component.magic_arrow
+	var is_charged = is_basic_charged or is_magic_charged
 	
-	#if is_charged:
+	if is_charged:
 	# Replaced the above if statement with this, which feels snappier.
-	if input_component.charge_held:
+	# ...but also is unpredictable due to snapping, so never mind.
+	#if input_component.charge_held:
 		# Gives a snap aim. Use 1.0 for instant snap, 0.02 for slower turn.
 		_lerp_rotation_y(-input_component.aim_direction, 0.02)
 	elif combat_component.is_aiming:
