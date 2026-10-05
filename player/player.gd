@@ -203,16 +203,20 @@ func _player_move():
 
 # Updates the direction player is facing based on if aiming vs movement
 func _update_facing() -> void:
-	if move_state == MoveState.DODGE \
-	or move_state == MoveState.HURT \
-	or move_state == MoveState.DEAD:
+	if (
+		move_state == MoveState.DODGE
+		or move_state == MoveState.HURT
+		or move_state == MoveState.DEAD
+	):
 		return
 	
-	var is_basic_charged = current_ability == combat_component.charged_arrow
-	var is_magic_charged = current_ability == combat_component.magic_arrow
-	var is_charged = is_basic_charged or is_magic_charged
+	#var is_basic_charged = current_ability == combat_component.charged_arrow
+	#var is_magic_charged = current_ability == combat_component.magic_arrow
+	#var is_charged = is_basic_charged or is_magic_charged
 	
-	if is_charged:
+	#if is_charged:
+	# Replaced the above if statement with this, which feels snappier.
+	if input_component.charge_held:
 		# Gives a snap aim. Use 1.0 for instant snap, 0.02 for slower turn.
 		_lerp_rotation_y(-input_component.aim_direction, 0.02)
 	elif combat_component.is_aiming:
@@ -281,8 +285,10 @@ func _player_attack():
 		_update_attack_state(AttackState.ENDING)
 		
 	elif input_component.charge_released_pad:
-		if can_fire_charged \
-		and current_ability == combat_component.charged_arrow:
+		if (
+			can_fire_charged
+			and current_ability == combat_component.charged_arrow
+		):
 			can_fire_charged = false
 			_reset_aiming()
 			_update_attack_state(AttackState.FIRING)
@@ -338,8 +344,10 @@ func _update_attack_state(state: AttackState):
 	if attack_state == state and last_ability == current_ability:
 		return
 	
-	if state == AttackState.FIRING \
-	and not combat_component._can_use(current_ability):
+	if (
+		state == AttackState.FIRING
+		and not combat_component._can_use(current_ability)
+	):
 		# If you don't set last_ability == null, function will always return
 		# via above guard check due to last_ability = current_ability!
 		# This is especially needed for attacks with a cooldown, i.e. the
@@ -515,8 +523,10 @@ func attack_loop_started():
 		AudioManager.play(AudioData.AudioKey.MAGIC_ARROW)
 	
 	# Reset aiming after each fired charged arrow.
-	if selected_ability == combat_component.charged_arrow and \
-	input_component.charge_held:
+	if (
+		selected_ability == combat_component.charged_arrow
+		and input_component.charge_held
+	):
 		_reset_aiming()
 		_set_aiming()
 		

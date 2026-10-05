@@ -11,8 +11,10 @@ func _ready() -> void:
 
 
 func update_label(enemies_defeated: int, spawners_destroyed: int, died: int):
-	label.text = "Enemies Defeated: %d\nSpawners Destroyed: %d\nDied: %d" % \
-	[enemies_defeated, spawners_destroyed, died]
+	label.text = (
+		"Enemies Defeated: %d\nSpawners Destroyed: %d\nDied: %d"
+		% [enemies_defeated, spawners_destroyed, died]
+	)
 
 
 func show_label():

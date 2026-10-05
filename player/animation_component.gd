@@ -78,11 +78,9 @@ func get_combat() -> AnimationNodeStateMachinePlayback:
 
 # OneShot Play Helper
 func play_one_shot():
-	animation_tree[ONESHOT_PATH] = \
-	AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+	animation_tree[ONESHOT_PATH] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
 
 
 # OneShot Stop Helper
 func stop_one_shot():
-	animation_tree[ONESHOT_PATH] = \
-	AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT
+	animation_tree[ONESHOT_PATH] = AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT

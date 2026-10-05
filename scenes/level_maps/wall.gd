@@ -32,9 +32,11 @@ func _ready() -> void:
 
 
 func _update_size():
-	if not is_instance_valid(mesh) \
-	or not is_instance_valid(padded_shape) \
-	or not is_instance_valid(hugged_shape):
+	if (
+		not is_instance_valid(mesh)
+		or not is_instance_valid(padded_shape)
+		or not is_instance_valid(hugged_shape)
+	):
 		return
 	
 	# Update mesh size

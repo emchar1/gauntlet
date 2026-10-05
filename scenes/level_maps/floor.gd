@@ -22,9 +22,11 @@ func _ready() -> void:
 
 
 func _update_size():
-	if not is_instance_valid(mesh) \
-	or not is_instance_valid(collision_shape) \
-	or not is_instance_valid(floor_tiles):
+	if (
+		not is_instance_valid(mesh)
+		or not is_instance_valid(collision_shape)
+		or not is_instance_valid(floor_tiles)
+	):
 		return
 	
 	# Update mesh size

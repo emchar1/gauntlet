@@ -182,10 +182,12 @@ func _update_state(state: State):
 
 
 func _can_target_player() -> bool:
-	return player != null \
-	and player_detected \
-	and player.can_enemies_target \
-	and current_state != State.FROZEN
+	return (
+		player != null
+		and player_detected
+		and player.can_enemies_target
+		and current_state != State.FROZEN
+	)
 
 
 func _stop_movement():
@@ -402,9 +404,11 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if is_slaying:
 		return
 	
-	if anim_name == "attack" \
-	or anim_name == "hurt" \
-	or anim_name == "hurt_knockback":
+	if (
+		anim_name == "attack"
+		or anim_name == "hurt"
+		or anim_name == "hurt_knockback"
+	):
 		if player_in_attack_range:
 			_update_state(State.ATTACK)
 		else:
