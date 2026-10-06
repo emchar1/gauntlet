@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/hp_bar.tscn" id="10_8t03j"]
 [ext_resource type="Script" uid="uid://crqrx3b8b2lf1" path="res://player/relic_component.gd" id="12_yllr7"]
 [ext_resource type="Resource" uid="uid://doc36nbs8lneq" path="res://resources/relics/freeze.tres" id="13_wodsf"]
+[ext_resource type="PackedScene" uid="uid://d136vyvinf746" path="res://scenes/ability_bar.tscn" id="15_wodsf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tuyoq"]
 height = 4.5
@@ -2591,6 +2592,10 @@ freeze_relic = ExtResource("13_wodsf")
 
 [node name="HPBar" parent="." unique_id=1591301229 instance=ExtResource("10_8t03j")]
 color = SubResource("GradientTexture2D_e8frx")
+
+[node name="AbilityBar" parent="." unique_id=218616661 instance=ExtResource("15_wodsf")]
+
+[node name="RelicBar" parent="." unique_id=756579514 instance=ExtResource("15_wodsf")]
 
 [node name="ResurrectTimer" type="Timer" parent="." unique_id=1067119281]
 wait_time = 4.0

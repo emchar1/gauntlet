@@ -33,6 +33,8 @@ var hp_current: float
 @onready var resurrect_timer = $ResurrectTimer
 @onready var input_disable_timer = $InputDisableTimer
 @onready var hp_bar = $HPBar
+@onready var ability_bar = $AbilityBar
+@onready var relic_bar = $RelicBar
 @onready var aiming_l = $AimingReticleL
 @onready var aiming_r = $AimingReticleR
 var aiming_tween: Tween
@@ -81,6 +83,8 @@ func _ready() -> void:
 	
 	hp_bar.setup_values(hp_max)
 	hp_current = hp_max
+	ability_bar.setup_values()
+	relic_bar.setup_values()
 	
 	combat_component.set_ability_timers()
 	combat_component.attack_executed.connect(_helper_attack_executed)
@@ -115,6 +119,8 @@ func _physics_process(delta: float) -> void:
 			resurrect_timer_did_update.emit(resurrect_timer.time_left)
 	
 	hp_bar.position_hp(self)
+	ability_bar.position_bar(self, -1.5)
+	relic_bar.position_bar(self, 1.5)
 	
 	move_and_slide()
 	
@@ -655,3 +661,11 @@ func _apply_resurrection_knockback():
 
 func _on_input_disable_timer_timeout() -> void:
 	input_component.can_input = true
+
+
+func special_is_ready():
+	ability_bar.show_bar()
+
+
+func relic_is_ready():
+	relic_bar.show_bar()

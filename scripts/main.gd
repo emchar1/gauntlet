@@ -24,5 +24,7 @@ func _ready() -> void:
 	player.final_death.connect(hud_final.show_final_results)
 	combat_component.timers_did_update.connect(hud.special_did_update)
 	relic_component.timer_did_update.connect(hud.relic_did_update)
+	hud.special_ready.connect(player.special_is_ready)
+	hud.relic_ready.connect(player.relic_is_ready)
 	
 	AudioManager.play_music(AudioData.Music.BGM)

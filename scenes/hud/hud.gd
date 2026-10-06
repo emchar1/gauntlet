@@ -2,6 +2,9 @@ extends Control
 
 # PROPERTIES
 
+signal special_ready
+signal relic_ready
+
 @onready var hp_filled = $HP/Filled
 @onready var special_filled = $Special/Filled
 @onready var relic_filled = $Relic/Filled
@@ -12,6 +15,9 @@ extends Control
 var hp_tween: Tween
 var resurrect_tween: Tween
 var resurrect_timer: int
+
+var special_did_emit: bool = false
+var relic_did_emit: bool = false
 
 
 # FUNCTIONS
@@ -103,8 +109,26 @@ func resurrect_timer_did_update(_timer: float):
 func special_did_update(_timer: float, cooldown: float):
 	var _timer_clamped = clamp(_timer, 0, cooldown)
 	special_filled.scale.x = (cooldown - _timer_clamped) / cooldown
+	
+	if _timer_clamped <= 0:
+		if special_did_emit:
+			return
+		
+		special_did_emit = true
+		special_ready.emit()
+	else:
+		special_did_emit = false
 
 
 func relic_did_update(_timer: float, cooldown: float):
 	var _timer_clamped = clamp(_timer, 0, cooldown)
 	relic_filled.scale.x = (cooldown - _timer_clamped) / cooldown
+	
+	if _timer_clamped <= 0:
+		if relic_did_emit:
+			return
+		
+		relic_did_emit = true
+		relic_ready.emit()
+	else:
+		relic_did_emit = false
