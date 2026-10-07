@@ -346,6 +346,10 @@ func _update_move_state(state: MoveState):
 	if move_state == state:
 		return
 	
+	# Prevents bug where player keeps gliding if hit during a dodge/roll.
+	if state == MoveState.HURT and movement_component.is_dodging:
+		movement_component.stop_dodge(self)
+	
 	move_state = state
 	animation_component.play_locomotion(state)
 
