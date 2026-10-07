@@ -2,24 +2,27 @@ extends Node2D
 
 # PROPERTIES
 
-@export var bar_scale := 1.0
-@export var color: Color
+@export var texture: Texture
 
-@onready var control = $Control
-@onready var background = $Control/Background
+@onready var icon = $Icon
 @onready var show_timer = $Timer
 
 var timer_tween: Tween
 var camera: Camera3D
 
+var icon_length: float = 30.0
+
 
 # FUNCTIONS
 
 func setup_values():
+	var texture_size = texture.get_size()
+	
 	camera = get_viewport().get_camera_3d()
 	scale = Vector2.ZERO
-	control.scale = Vector2(bar_scale, bar_scale)
-	background.color = color
+	
+	icon.texture = texture
+	icon.scale = Vector2(icon_length, icon_length) / texture_size
 
 
 func position_bar(actor: Node3D, x_offset: float):

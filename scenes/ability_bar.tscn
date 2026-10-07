@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cn27shrurwi6n" path="res://scripts/ability_bar.gd" id="1_ggfjx"]
 
+[sub_resource type="Gradient" id="Gradient_jqpa2"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tqiix"]
+gradient = SubResource("Gradient_jqpa2")
+width = 28
+height = 28
+
 [sub_resource type="Gradient" id="Gradient_8cbqm"]
 offsets = PackedFloat32Array(0.43674698, 1)
 colors = PackedColorArray(0.7121294, 0.7121294, 0.71212935, 1, 1, 1, 1, 1)
@@ -12,31 +21,30 @@ width = 32
 height = 32
 fill_from = Vector2(0, 1)
 
+[sub_resource type="Gradient" id="Gradient_ggfjx"]
+colors = PackedColorArray(0.14225578, 0.14225581, 0.14225575, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lb7rc"]
+gradient = SubResource("Gradient_ggfjx")
+width = 30
+height = 30
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="ImageTexture" id="ImageTexture_u3pco"]
+
 [node name="AbilityBar" type="Node2D" unique_id=218616661]
 script = ExtResource("1_ggfjx")
+texture = SubResource("GradientTexture2D_tqiix")
 
-[node name="Control" type="Control" parent="." unique_id=1100999567]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -16.0
-offset_top = -16.0
-offset_right = -16.0
-offset_bottom = -16.0
-metadata/_edit_group_ = true
-
-[node name="Border" type="TextureRect" parent="Control" unique_id=387366183]
-layout_mode = 0
-offset_right = 24.0
-offset_bottom = 24.0
+[node name="Border" type="Sprite2D" parent="." unique_id=1181352823]
 texture = SubResource("GradientTexture2D_7nxfh")
 
-[node name="Background" type="ColorRect" parent="Control" unique_id=1399740863]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 30.0
-offset_bottom = 30.0
-color = Color(0.12041845, 0.12041845, 0.12041845, 1)
+[node name="Background" type="Sprite2D" parent="." unique_id=852022701]
+texture = SubResource("GradientTexture2D_lb7rc")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1058811443]
+texture = SubResource("ImageTexture_u3pco")
 
 [node name="Timer" type="Timer" parent="." unique_id=268169390]
 one_shot = true

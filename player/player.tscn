@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://crqrx3b8b2lf1" path="res://player/relic_component.gd" id="12_yllr7"]
 [ext_resource type="Resource" uid="uid://doc36nbs8lneq" path="res://resources/relics/freeze.tres" id="13_wodsf"]
 [ext_resource type="PackedScene" uid="uid://d136vyvinf746" path="res://scenes/ability_bar.tscn" id="15_wodsf"]
+[ext_resource type="Texture2D" uid="uid://dh4bt0uuoea8e" path="res://assets/images/icon_bomb.png" id="16_32hag"]
+[ext_resource type="Texture2D" uid="uid://yfcsskwve3pr" path="res://assets/images/icon_freeze.png" id="17_tqiix"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tuyoq"]
 height = 4.5
@@ -2594,10 +2596,10 @@ freeze_relic = ExtResource("13_wodsf")
 color = SubResource("GradientTexture2D_e8frx")
 
 [node name="AbilityBar" parent="." unique_id=218616661 instance=ExtResource("15_wodsf")]
-color = Color(0.44705883, 1, 0, 1)
+texture = ExtResource("16_32hag")
 
 [node name="RelicBar" parent="." unique_id=756579514 instance=ExtResource("15_wodsf")]
-color = Color(0, 0.89411765, 1, 1)
+texture = ExtResource("17_tqiix")
 
 [node name="ResurrectTimer" type="Timer" parent="." unique_id=1067119281]
 wait_time = 4.0
