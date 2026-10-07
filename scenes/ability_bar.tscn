@@ -8,18 +8,9 @@ colors = PackedColorArray(0.7121294, 0.7121294, 0.71212935, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7nxfh"]
 gradient = SubResource("Gradient_8cbqm")
-width = 300
-height = 300
+width = 32
+height = 32
 fill_from = Vector2(0, 1)
-
-[sub_resource type="Gradient" id="Gradient_vd27a"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ggfjx"]
-gradient = SubResource("Gradient_vd27a")
-width = 280
-height = 280
 
 [node name="AbilityBar" type="Node2D" unique_id=218616661]
 script = ExtResource("1_ggfjx")
@@ -27,23 +18,25 @@ script = ExtResource("1_ggfjx")
 [node name="Control" type="Control" parent="." unique_id=1100999567]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.5, 0.5)
+offset_left = -16.0
+offset_top = -16.0
+offset_right = -16.0
+offset_bottom = -16.0
+metadata/_edit_group_ = true
 
 [node name="Border" type="TextureRect" parent="Control" unique_id=387366183]
 layout_mode = 0
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 290.0
-offset_bottom = 290.0
+offset_right = 24.0
+offset_bottom = 24.0
 texture = SubResource("GradientTexture2D_7nxfh")
 
-[node name="Background" type="TextureRect" parent="Control" unique_id=264196459]
+[node name="Background" type="ColorRect" parent="Control" unique_id=1399740863]
 layout_mode = 0
-offset_right = 280.0
-offset_bottom = 280.0
-texture = SubResource("GradientTexture2D_ggfjx")
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.12041845, 0.12041845, 0.12041845, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=268169390]
 one_shot = true

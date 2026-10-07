@@ -119,8 +119,8 @@ func _physics_process(delta: float) -> void:
 			resurrect_timer_did_update.emit(resurrect_timer.time_left)
 	
 	hp_bar.position_hp(self)
-	ability_bar.position_bar(self, -1.5)
-	relic_bar.position_bar(self, 1.5)
+	ability_bar.position_bar(self, -1.75)
+	relic_bar.position_bar(self, 1.75)
 	
 	move_and_slide()
 	

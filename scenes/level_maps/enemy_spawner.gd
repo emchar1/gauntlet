@@ -71,7 +71,8 @@ func damage(amount: float):
 		GameState.spawners_destroyed += 1
 		
 		if anim_player:
-			anim_player.play("died")
+			anim_player.play("idle")
+			anim_player.queue("died")
 			AudioManager.play(AudioData.AudioKey.SPAWNER_DIE)
 		
 		enemy_timer.stop()
@@ -89,7 +90,8 @@ func damage(amount: float):
 		
 	else:
 		if anim_player:
-			anim_player.play("damage")
+			anim_player.play("idle")
+			anim_player.queue("damage")
 			AudioManager.play(
 				AudioData.AudioKey.SPAWNER_DAMAGE,
 				0.0,
@@ -161,7 +163,8 @@ func _on_spawn_timer_timeout() -> void:
 	enemy_timer.start()
 	
 	if anim_player:
-		anim_player.play("activate")
+		anim_player.play("idle")
+		anim_player.queue("activate")
 		AudioManager.play(AudioData.AudioKey.SPAWNER_ACTIVATE)
 
 

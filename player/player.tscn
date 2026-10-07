@@ -2594,8 +2594,10 @@ freeze_relic = ExtResource("13_wodsf")
 color = SubResource("GradientTexture2D_e8frx")
 
 [node name="AbilityBar" parent="." unique_id=218616661 instance=ExtResource("15_wodsf")]
+color = Color(0.44705883, 1, 0, 1)
 
 [node name="RelicBar" parent="." unique_id=756579514 instance=ExtResource("15_wodsf")]
+color = Color(0, 0.89411765, 1, 1)
 
 [node name="ResurrectTimer" type="Timer" parent="." unique_id=1067119281]
 wait_time = 4.0

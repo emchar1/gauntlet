@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bly6lllpd5h1i" path="res://scenes/hp_bar.tscn" id="4_jl787"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jl787"]
-albedo_color = Color(0.3254902, 0.6666667, 1, 1)
+albedo_color = Color(0.5370987, 0.29279816, 0, 1)
+roughness = 0.3
+emission_enabled = true
+emission = Color(0.9999998, 0.68245083, 0.40705135, 1)
+emission_energy_multiplier = 0.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_u3pco"]
 material = SubResource("StandardMaterial3D_jl787")
@@ -16,7 +20,11 @@ height = 15.0
 radial_segments = 4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgynh"]
-albedo_color = Color(0.3254902, 0.6666667, 1, 1)
+albedo_color = Color(0.5370987, 0.29279816, 0, 1)
+roughness = 0.3
+emission_enabled = true
+emission = Color(1, 0.68235296, 0.40784314, 1)
+emission_energy_multiplier = 0.0
 
 [sub_resource type="PrismMesh" id="PrismMesh_u3pco"]
 material = SubResource("StandardMaterial3D_wgynh")
@@ -131,38 +139,26 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Spawner/Tip:surface_material_override/0:albedo_color")
+tracks/7/path = NodePath("Spawner/Shaft:mesh:material:emission_energy_multiplier")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.5008244, 0.66829944, 0.80395293, 1)]
+"values": [0.0]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Spawner/Tip2:surface_material_override/0:albedo_color")
+tracks/8/path = NodePath("Spawner/Tip:mesh:material:emission_energy_multiplier")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.5008244, 0.66829944, 0.80395293, 1)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Spawner/Shaft:surface_material_override/0:albedo_color")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.5008244, 0.66829944, 0.80395293, 1)]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_0gq3n"]
@@ -171,38 +167,26 @@ length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Spawner/Shaft:surface_material_override/0:albedo_color")
+tracks/0/path = NodePath("Spawner/Shaft:mesh:material:emission_energy_multiplier")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.23333329, 0.26666665, 0.3, 0.3333333, 0.36666662, 0.39999998, 0.43333334, 0.46666664, 0.49999994, 0.5333333, 0.8, 1.0333334, 1.0666667, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.19999999, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1)]
+"values": [0.0, 10.0, 10.0, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Spawner/Tip:surface_material_override/0:albedo_color")
+tracks/1/path = NodePath("Spawner/Tip:mesh:material:emission_energy_multiplier")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.23333329, 0.26666665, 0.3, 0.3333333, 0.36666662, 0.39999998, 0.43333334, 0.46666664, 0.49999994, 0.5333333, 0.8, 1.0333334, 1.0666667, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.19999999, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Spawner/Tip2:surface_material_override/0:albedo_color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.23333329, 0.26666665, 0.3, 0.3333333, 0.36666662, 0.39999998, 0.43333334, 0.46666664, 0.49999994, 0.5333333, 0.8, 1.0333334, 1.0666667, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1), Color(1, 1, 1, 1), Color(0.5008244, 0.66829944, 0.80395293, 1)]
+"values": [0.0, 10.0, 10.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_wgynh"]
@@ -273,6 +257,118 @@ tracks/3/keys = {
 "values": [0.0, 0.0, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_ou1da"]
+resource_name = "idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spawner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 7.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spawner:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spawner:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spawner/Shaft:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Spawner/Tip:transparency")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Spawner/Tip2:transparency")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hurtbox:monitorable")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Spawner/Shaft:mesh:material:emission_energy_multiplier")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Spawner/Tip:mesh:material:emission_energy_multiplier")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_qotok"]
 resource_name = "spawn"
 length = 1.5
@@ -319,6 +415,7 @@ _data = {
 &"activate": SubResource("Animation_0gq3n"),
 &"damage": SubResource("Animation_wgynh"),
 &"died": SubResource("Animation_uwgn0"),
+&"idle": SubResource("Animation_ou1da"),
 &"spawn": SubResource("Animation_qotok")
 }
 
@@ -374,7 +471,7 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70
 curve = SubResource("Curve3D_m6wed")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=2011581210]
-transform = Transform3D(-0.004237541, 8.198847e-06, -0.9999575, 0, 1, 8.198646e-06, 0.9999575, 3.4744428e-08, -0.004237541, -7.4866924, 0.00390625, -7.4236784)
+transform = Transform3D(-0.004237541, 8.198847e-06, -0.99995744, 0, 1, 8.198645e-06, 0.99995744, 3.4744428e-08, -0.004237541, -7.4866924, 0.00390625, -7.4236784)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=89057933]
 wait_time = 0.05

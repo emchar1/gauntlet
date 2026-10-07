@@ -23,6 +23,13 @@ emission_enabled = true
 emission = Color(0, 1, 0.32156864, 1)
 emission_energy_multiplier = 0.0
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_lb7rc"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lmhc"]
+
 [sub_resource type="Animation" id="Animation_0jibi"]
 length = 0.001
 tracks/0/type = "value"
@@ -94,6 +101,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jpsmn")
 [node name="bomb" type="MeshInstance3D" parent="." unique_id=1155630586]
 mesh = SubResource("SphereMesh_u3pco")
 surface_material_override/0 = SubResource("StandardMaterial3D_lb7rc")
+
+[node name="wick" type="MeshInstance3D" parent="." unique_id=1996130289]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.75, 0)
+mesh = SubResource("CylinderMesh_lb7rc")
+surface_material_override/0 = SubResource("StandardMaterial3D_2lmhc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1137533507]
 libraries/ = SubResource("AnimationLibrary_oump5")
