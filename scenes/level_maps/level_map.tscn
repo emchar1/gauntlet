@@ -898,7 +898,7 @@ outline_size = 0
 [node name="Label3" type="Label3D" parent="Instructions" unique_id=2143537570]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2, -129.29895)
 modulate = Color(1, 1, 0, 1)
-text = "Easy, right?! Hold
+text = "Easy, right? Hold
 SHIFT to switch
 to sniper mode.
 Arrows are deadlier."
@@ -991,6 +991,15 @@ outline_size = 0
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 793.0398, 2, -497.8254)
 modulate = Color(1, 1, 0, 1)
 text = "Just kidding. The end is near, I promise."
+font_size = 500
+outline_size = 0
+
+[node name="Label15" type="Label3D" parent="Instructions" unique_id=1811616619]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 213.6809, 1.999939, -498.14285)
+modulate = Color(1, 1, 0, 1)
+text = "Can't take the heat?
+Tap E to unleash your
+Freeze Relic attack!"
 font_size = 500
 outline_size = 0
 

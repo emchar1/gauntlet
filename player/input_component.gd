@@ -3,6 +3,8 @@ class_name InputComponent
 
 # PROPERTIES
 
+signal gamepad_aiming_did_update(gamepad_active: bool)
+
 # D-Pad
 const MOVE_UP = "move_up"
 const MOVE_LEFT = "move_left"
@@ -62,7 +64,16 @@ var can_input := true
 # Revert to mouse control if gamepad not used
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton or event is InputEventMouseMotion:
+		if gamepad_aiming:
+			gamepad_aiming_did_update.emit(false)
+		
 		gamepad_aiming = false
+		
+	elif event is InputEventJoypadButton:
+		if not gamepad_aiming:
+			gamepad_aiming_did_update.emit(true)
+		
+		gamepad_aiming = true
 
 
 # Convenience function. Reads all input: movement, combat, aiming.
@@ -137,6 +148,9 @@ func read_aiming(actor: CharacterBody3D) -> void:
 	)
 	
 	if gamepad_stick_direction.length() > 0.1:
+		if not gamepad_aiming:
+			gamepad_aiming_did_update.emit(true)
+		
 		gamepad_aiming = true
 		gamepad_aim_pressed = true
 		aim_direction = gamepad_stick_direction
