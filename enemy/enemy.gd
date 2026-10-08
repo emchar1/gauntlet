@@ -385,6 +385,9 @@ func _on_movement_detector_body_entered(body: Node3D) -> void:
 
 # Used to re-evaluate attack detection when state changes within range.
 func refresh_combat() -> void:
+	if current_state == State.DEAD:
+		return
+	
 	player_in_attack_range = player in $AttackDetector.get_overlapping_bodies()
 	player_detected = player in $MovementDetector.get_overlapping_bodies()
 	

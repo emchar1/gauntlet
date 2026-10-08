@@ -21,7 +21,7 @@ func _on_area_entered(area: Area3D) -> void:
 	if area.is_in_group("hurtbox"):
 		var enemy = area.get_parent() as Enemy
 		if enemy:
-			enemy.freeze(10)
+			enemy.freeze(5.0)
 
 
 func _has_begun_activating():
