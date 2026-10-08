@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameState="*uid://cw76i22tp88yk"
 AudioManager="*uid://c3xnvklsgolec"
 AudioData="*uid://cg06n554qerdu"
+NetworkManager="*uid://si0l2fcpefnu"
 
 [display]
 
