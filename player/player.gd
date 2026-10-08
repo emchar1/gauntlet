@@ -243,6 +243,9 @@ func _set_aiming():
 	
 	var speed := 0.5
 	
+	aiming_l.show()
+	aiming_r.show()
+	
 	aiming_tween = create_tween()
 	aiming_tween.set_parallel(true)
 	aiming_tween.tween_property(aiming_l, "transparency", 0.0, speed)
@@ -263,6 +266,9 @@ func _reset_aiming():
 	aiming_r.rotation.y = -8.0 * PI / 180
 	aiming_l.texture.height = 1
 	aiming_r.texture.height = 1
+	
+	aiming_l.hide()
+	aiming_r.hide()
 
 
 # Player attack function.
