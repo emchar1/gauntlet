@@ -27,7 +27,28 @@ emission_energy_multiplier = 8.0
 material = SubResource("StandardMaterial3D_i16fx")
 top_radius = 0.0
 bottom_radius = 0.2
-height = 4.0
+
+[sub_resource type="Curve" id="Curve_xqgcu"]
+_data = [Vector2(0.49794245, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb7rc"]
+albedo_color = Color(0, 0, 1, 1)
+emission_enabled = true
+emission = Color(0.33333334, 0.33333334, 1, 1)
+emission_energy_multiplier = 12.0
+grow_amount = 0.14
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u3pco"]
+material = SubResource("StandardMaterial3D_lb7rc")
+radius = 0.1
+height = 0.2
+radial_segments = 6
+rings = 1
+
+[sub_resource type="Curve" id="Curve_52w6k"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49382722, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Animation" id="Animation_52w6k"]
 length = 0.001
@@ -91,10 +112,22 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CPUParticles3D2:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_xlv2s"]
 resource_name = "activate"
-length = 0.5
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -134,35 +167,47 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("MeshInstance3D:mesh:outer_radius")
+tracks/3/path = NodePath("CPUParticles3D2:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D:mesh:outer_radius")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.2, 1.0, 1.0]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:monitoring")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:monitoring")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5),
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -193,6 +238,7 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("SphereShape3D_u3pco")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=338361822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 emitting = false
 amount = 200
 lifetime = 0.5
@@ -211,6 +257,27 @@ angular_velocity_min = 50.0
 angular_velocity_max = 50.0
 tangential_accel_max = 100.0
 scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_xqgcu")
+
+[node name="CPUParticles3D2" type="CPUParticles3D" parent="." unique_id=237200078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+emitting = false
+amount = 300
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.6
+lifetime_randomness = 1.0
+mesh = SubResource("CapsuleMesh_u3pco")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 2.0
+emission_ring_radius = 16.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, -2.3, 0)
+tangential_accel_max = 0.2
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_52w6k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=782157864]
 libraries/ = SubResource("AnimationLibrary_x5iqe")
