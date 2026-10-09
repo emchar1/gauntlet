@@ -65,7 +65,7 @@ func _use_ability(actor: CharacterBody3D, ability: Ability) -> void:
 	var obj = ability.scene.instantiate()
 	get_tree().current_scene.add_child(obj)
 	
-	obj.setup(actor.global_position, actor.facing_dir)
+	obj.setup(actor, actor.global_position, actor.facing_dir)
 	ability.configure(obj)
 	
 	# Update timers

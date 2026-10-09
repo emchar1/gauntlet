@@ -8,8 +8,8 @@ extends Area3D
 @onready var ray_cast = $RayCast3D
 @onready var visuals = $Visuals
 @onready var tail_trail = $Visuals/TailTrail
-@onready var player = get_tree().get_first_node_in_group("player")
 
+var player: Player
 var initial_position: Vector2
 var direction := Vector2.ZERO
 
@@ -52,11 +52,12 @@ func _physics_process(delta: float) -> void:
 
 
 # Call this after instantiation to configure BEFORE adding to the scene tree.
-func setup(pos: Vector3, dir: Vector2):
+func setup(actor: Player, pos: Vector3, dir: Vector2):
 	var fwd_mult := 2.0
 	var forward := GameState.map_2d_to_3d(dir).normalized()
 	var offset := Vector3(fwd_mult * forward.x, 1.0, fwd_mult * forward.z)
 	
+	player = actor
 	global_position = pos + offset
 	initial_position = GameState.map_3d_to_2d(pos)
 	direction = dir
@@ -65,6 +66,10 @@ func setup(pos: Vector3, dir: Vector2):
 
 
 func _fire(delta: float):
+	if player == null:
+		print("Arrow: cannot find player.")
+		return
+	
 	# Horizontal velocity
 	var velocity_3d := GameState.map_2d_to_3d(direction) * speed
 	
@@ -95,15 +100,14 @@ func _fire(delta: float):
 	global_position += movement
 	
 	# Create arrow trail
-	if player:
-		var distance = player.global_position.distance_to(global_position)
-		var trail_length = 2.0 if obeys_gravity else 1.5
-		var albedo = Color.WHITE if obeys_gravity else Color.GREEN
-		
-		tail_trail.mesh.size.y = distance / trail_length
-		tail_trail.position.z = tail_trail.mesh.size.y / 2.0
-		tail_trail.mesh.material.albedo_color = albedo
-		tail_trail.show()
+	var distance = player.global_position.distance_to(global_position)
+	var trail_length = 2.0 if obeys_gravity else 1.5
+	var albedo = Color.WHITE if obeys_gravity else Color.GREEN
+	
+	tail_trail.mesh.size.y = distance / trail_length
+	tail_trail.position.z = tail_trail.mesh.size.y / 2.0
+	tail_trail.mesh.material.albedo_color = albedo
+	tail_trail.show()
 	
 	# Point arrow along its actual trajectory
 	if velocity_3d.length_squared() > 0.001:
@@ -193,7 +197,7 @@ func dissolve_arrow(dissolve_speed: float = 0.5):
 # Explodes a magic arrow on contact.
 func _explode():
 	var bomb = magic_bomb_focused.scene.instantiate()
-	bomb.setup(global_position, direction)
+	bomb.setup(player, global_position, direction)
 	
 	magic_bomb_focused.configure(bomb)
 	get_tree().current_scene.add_child(bomb)

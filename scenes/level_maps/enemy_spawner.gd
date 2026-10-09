@@ -16,7 +16,6 @@ enum SpawnType {
 @export var room_spawner_hp: float = 100
 @export var room_spawner_wait_time: float = 10
 
-@onready var player = get_tree().get_first_node_in_group("player")
 @onready var enemy_spawn_location = $Path3D/PathFollow3D
 @onready var enemy_timer = $EnemyTimer
 
@@ -26,6 +25,7 @@ enum SpawnType {
 @onready var hp_bar = get_node_or_null("HPBar")
 @onready var anim_player = get_node_or_null("AnimationPlayer")
 
+var player: Player
 var current_enemy: int = 0
 
 # Room Spawner specific
@@ -132,8 +132,14 @@ func _on_enemy_timer_timeout() -> void:
 		enemy_timer.stop()
 		return
 	
-	current_enemy += 1
+	# TODO: - In multiplayer enemy should target certain player not first found.
+	player = get_tree().get_first_node_in_group("player") as Player
 	
+	if player == null:
+		print("EnemySpawner: cannot find player.")
+		return
+	
+	current_enemy += 1
 	enemy_spawn_location.progress_ratio = randf()
 	
 	var enemy_config = _get_enemy_configs().pick_random()

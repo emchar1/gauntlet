@@ -7,7 +7,6 @@ enum CameraMode {
 }
 
 @onready var camera = $Camera3D
-@onready var player = get_tree().get_first_node_in_group("player")
 
 # Camera Presets
 @export var follow_offset = Vector3(0.0, 30.0, 4.0)
@@ -15,6 +14,8 @@ enum CameraMode {
 
 var zones = []
 var mode = CameraMode.FOLLOW
+
+var player: Player
 var tween: Tween
 var current_zone: Zone
 
@@ -35,6 +36,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if player == null:
+		# TODO: - In multiplayer, camera should follow "multiplayer authority."
+		player = get_tree().get_first_node_in_group("player") as Player
+	
 	if mode == CameraMode.FOLLOW:
 		follow_player()
 	
@@ -43,10 +48,7 @@ func _process(delta: float) -> void:
 
 # Call this in _process() to track the object
 func follow_player():
-	if player == null:
-		return
-	
-	if current_zone == null:
+	if player == null or current_zone == null:
 		return
 	
 	global_position = global_position.lerp(

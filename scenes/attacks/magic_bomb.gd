@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func setup(pos: Vector3, dir: Vector2):
+func setup(_actor: Player, pos: Vector3, dir: Vector2):
 	var player_offset = Vector3(0, -2.5, 0)
 	
 	if bomb_type == BombType.NORMAL:
