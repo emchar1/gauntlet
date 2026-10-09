@@ -28,12 +28,7 @@ func _on_start_button_pressed() -> void:
 		fade_tween.kill()
 	
 	fade_tween = create_tween()
-	fade_tween.tween_property(
-		fade_rect,
-		"modulate:a",
-		1.0,
-		2.0
-	)
+	fade_tween.tween_property(fade_rect, "modulate:a", 1.0, 2.0)
 	
 	anim_player.stop()
 	
