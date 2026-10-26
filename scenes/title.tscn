@@ -51,7 +51,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Title2:modulate")
+tracks/0/path = NodePath("TitleBlack:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -67,7 +67,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Title2:modulate")
+tracks/0/path = NodePath("TitleBlack:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -96,7 +96,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_lb7rc")
 
-[node name="Title" type="TextureRect" parent="." unique_id=1276364409]
+[node name="TitleWhite" type="TextureRect" parent="." unique_id=1276364409]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -107,7 +107,7 @@ offset_bottom = 270.0
 grow_horizontal = 2
 texture = ExtResource("2_wosw1")
 
-[node name="Title2" type="TextureRect" parent="." unique_id=1903479210]
+[node name="TitleBlack" type="TextureRect" parent="." unique_id=1903479210]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

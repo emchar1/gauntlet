@@ -4,7 +4,7 @@ extends Node
 
 signal connection_succeeded
 
-const PORT = 7000
+const PORT = 7008
 const MAX_PLAYERS = 2
 
 
@@ -74,7 +74,6 @@ func _on_server_disconnected() -> void:
 
 # PLAYER LOOKUP FUNCTIONS
 
-# FIXME: - Is this the correct way to express this function?
 func find_player(peer_id: int) -> Player:
 	var players := get_tree().get_nodes_in_group("player")
 	
