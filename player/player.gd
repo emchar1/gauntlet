@@ -55,7 +55,6 @@ var can_enemies_target: bool = true
 var selected_ability: Ability
 var current_ability: Ability
 var last_ability: Ability
-
 var current_relic: RelicConfig
 
 var hurt_sounds: Array[AudioData.AudioKey] = [

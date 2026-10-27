@@ -80,8 +80,8 @@ func find_player(peer_id: int) -> Player:
 	for node in players:
 		var candidate := node as Player
 		
-		if candidate != null and candidate.name == str(peer_id):
-			print("Found local player: ", candidate.name)
+		if candidate != null and candidate.peer_id == peer_id:
+			print("Found local player: ", candidate.peer_id)
 			return candidate
 	
 	return null
