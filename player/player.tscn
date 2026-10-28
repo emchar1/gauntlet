@@ -2390,6 +2390,25 @@ gradient = SubResource("Gradient_ebec5")
 width = 512
 height = 42
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_e7oew"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tqiix"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:move_state")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:attack_state")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:facing_dir")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:current_ability")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
 [node name="Player" type="CharacterBody3D" unique_id=1083748732 groups=["player"]]
 collision_layer = 2
 collision_mask = 8207
@@ -2593,5 +2612,11 @@ one_shot = true
 
 [node name="InputDisableTimer" type="Timer" parent="." unique_id=2086856165]
 wait_time = 0.5
+
+[node name="ServerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=198997123]
+replication_config = SubResource("SceneReplicationConfig_e7oew")
+
+[node name="ClientSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1607902797]
+replication_config = SubResource("SceneReplicationConfig_tqiix")
 
 [connection signal="timeout" from="InputDisableTimer" to="." method="_on_input_disable_timer_timeout"]

@@ -15,6 +15,10 @@ var fade_tween: Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_button.grab_focus()
+	
+	NetworkManager.connection_succeeded.connect(
+		_on_client_connection_to_server_succeeded
+	)
 
 
 func _on_start_button_pressed() -> void:
@@ -49,3 +53,19 @@ func _on_start_button_mouse_entered() -> void:
 
 func _on_settings_button_mouse_entered() -> void:
 	settings_button.grab_focus()
+
+
+# MULTIPLAYER FUNCTIONS
+
+func _on_host_button_pressed() -> void:
+	NetworkManager.host()
+	_on_start_button_pressed()
+
+
+func _on_join_button_pressed() -> void:
+	NetworkManager.join("127.0.0.1")
+
+
+# This only executes if host is established and client has joined.
+func _on_client_connection_to_server_succeeded():
+	_on_start_button_pressed()

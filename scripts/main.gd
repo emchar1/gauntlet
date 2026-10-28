@@ -10,7 +10,6 @@ extends Node3D
 
 # Player Properties
 @onready var players = $Players
-@onready var spawner = $Players/MultiplayerSpawner
 
 
 # FUNCTIONS
@@ -19,19 +18,45 @@ extends Node3D
 func _ready() -> void:
 	AudioManager.play_music(AudioData.Music.BGM)
 	
-	# TODO: - Multiplayer capabilities
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	
 	if multiplayer.is_server():
-		_spawn_player(multiplayer.get_unique_id())
+		# Don't do anything. Host player gets spawned in _client_main_ready()
 		print("Server Mode: ON (listening for connections...)")
+	else:
+		_client_main_ready.rpc_id(1)
+		print("Client: sent ready RPC to host")
+
+
+# MULTIPLAYER FUNCTIONS
+
+# Remote Procedure Call (RPC) requested by a client; server executes function.
+@rpc("any_peer", "reliable")
+func _client_main_ready():
+	if not multiplayer.is_server():
+		return
+	
+	var peer_id := multiplayer.get_remote_sender_id()
+	_spawn_host_player()
+	
+	if not players.has_node(str(peer_id)):
+		_spawn_player(peer_id)
 
 
 func _on_peer_connected(peer_id: int):
 	if not multiplayer.is_server():
 		return
 	
-	_spawn_player(peer_id)
+	print("Peer connected; waiting for client Main to be ready: ", peer_id)
+
+
+# PLAYER SPAWNING FUNCTIONS
+
+func _spawn_host_player():
+	var host_id := multiplayer.get_unique_id()
+	
+	if not players.has_node(str(host_id)):
+		_spawn_player(host_id)
 
 
 func _spawn_player(peer_id: int):
@@ -41,8 +66,7 @@ func _spawn_player(peer_id: int):
 		print("Main: Error creating player.")
 		return
 	
-	player.name = str(peer_id)
-	player.set_multiplayer_authority(peer_id)
+	player.setup(peer_id)
 	players.add_child(player)
 	
 	# Signal connections

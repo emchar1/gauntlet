@@ -57,6 +57,9 @@ var current_ability: Ability
 var last_ability: Ability
 var current_relic: RelicConfig
 
+# Networking Properties
+var peer_id: int = 1 # The peer that controls this player
+
 var hurt_sounds: Array[AudioData.AudioKey] = [
 	AudioData.AudioKey.PLAYER_HURT0,
 	AudioData.AudioKey.PLAYER_HURT1
@@ -89,7 +92,20 @@ func _ready() -> void:
 	combat_component.attack_executed.connect(_helper_attack_executed)
 
 
+func setup(id: int) -> void:
+	name = str(id)
+
+
+func _enter_tree() -> void:
+	peer_id = int(name)
+	set_multiplayer_authority(peer_id)
+	$ClientSynchronizer.set_multiplayer_authority(peer_id)
+
+
 func _physics_process(delta: float) -> void:
+	if not is_multiplayer_authority():
+		return
+	
 	_apply_gravity(delta)
 	
 	# Read input and update timers independently of player state.
