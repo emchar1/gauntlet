@@ -39,7 +39,16 @@ var hp_current: float
 @onready var aiming_r = $AimingReticleR
 var aiming_tween: Tween
 
-var move_state: MoveState
+var move_state: MoveState:
+	set(value):
+		if move_state == value:
+			return
+		
+		move_state = value
+		
+		if is_node_ready():
+			animation_component.play_locomotion(value)
+
 var attack_state: AttackState
 var facing_dir := Vector2.RIGHT
 
@@ -372,7 +381,6 @@ func _update_move_state(state: MoveState):
 		movement_component.stop_dodge(self)
 	
 	move_state = state
-	animation_component.play_locomotion(state)
 
 
 # Updates the attack state and animation
