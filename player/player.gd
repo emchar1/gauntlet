@@ -49,7 +49,16 @@ var move_state: MoveState:
 		if is_node_ready():
 			animation_component.play_locomotion(value)
 
-var attack_state: AttackState
+var attack_state: AttackState:
+	set(value):
+		if attack_state == value:
+			return
+		
+		attack_state = value
+		
+		if is_node_ready():
+			animation_component.play_combat(value, attack_is_charged)
+
 var facing_dir := Vector2.RIGHT
 
 # Too many bools
@@ -61,13 +70,19 @@ var can_fire_charged: bool = false
 var can_enemies_target: bool = true
 
 # Ability-handling Properties
-var selected_ability: Ability
-var current_ability: Ability
-var last_ability: Ability
 var current_relic: RelicConfig
+var selected_ability: Ability
+var last_ability: Ability
+var current_ability: Ability:
+	set(value):
+		current_ability = value
 
 # Networking Properties
 var peer_id: int = 1 # The peer that controls this player
+var attack_is_charged: bool = false:
+	set(value):
+		# Used for replication to remote peers for charged attack animation.
+		attack_is_charged = value
 
 var hurt_sounds: Array[AudioData.AudioKey] = [
 	AudioData.AudioKey.PLAYER_HURT0,
@@ -240,9 +255,10 @@ func _update_facing() -> void:
 	):
 		return
 	
-	var is_basic_charged = current_ability == combat_component.charged_arrow
-	var is_magic_charged = current_ability == combat_component.magic_arrow
-	var is_charged = is_basic_charged or is_magic_charged
+	var is_charged = (
+		current_ability == combat_component.charged_arrow
+		or current_ability == combat_component.magic_arrow
+	)
 	
 	if is_charged:
 	# Replaced the above if statement with this, which feels snappier.
@@ -385,6 +401,9 @@ func _update_move_state(state: MoveState):
 
 # Updates the attack state and animation
 func _update_attack_state(state: AttackState):
+	if not is_multiplayer_authority():
+		return
+	
 	# Prevents locking when holding down the attack button.
 	if attack_state == state and last_ability == current_ability:
 		return
@@ -402,12 +421,12 @@ func _update_attack_state(state: AttackState):
 	
 	last_ability = current_ability
 	
-	var is_basic_charged = current_ability == combat_component.charged_arrow
-	var is_magic_charged = current_ability == combat_component.magic_arrow
-	var is_charged = is_basic_charged or is_magic_charged
+	attack_is_charged = (
+		current_ability == combat_component.charged_arrow
+		or current_ability == combat_component.magic_arrow
+	)
 	
 	attack_state = state
-	animation_component.play_combat(state, is_charged)
 
 
 # Resets attack_state, esp useful for dodge movement.
