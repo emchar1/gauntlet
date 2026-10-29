@@ -196,7 +196,8 @@ func dissolve_arrow(dissolve_speed: float = 0.5):
 
 # Explodes a magic arrow on contact.
 func _explode():
-	var bomb = magic_bomb_focused.scene.instantiate()
+	var scene = magic_bomb_focused.get_scene()
+	var bomb = scene.instantiate()
 	bomb.setup(player, global_position, direction)
 	
 	magic_bomb_focused.configure(bomb)

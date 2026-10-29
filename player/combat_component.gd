@@ -62,7 +62,8 @@ func _use_ability(actor: CharacterBody3D, ability: Ability) -> void:
 		return
 	
 	# Create Ability object
-	var obj = ability.scene.instantiate()
+	var scene = ability.get_scene()
+	var obj = scene.instantiate()
 	get_tree().current_scene.add_child(obj)
 	
 	obj.setup(actor, actor.global_position, actor.facing_dir)

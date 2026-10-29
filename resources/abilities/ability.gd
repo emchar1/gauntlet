@@ -4,8 +4,9 @@ class_name Ability
 
 # VISUALS / SPAWNING
 
-@export var scene: PackedScene
-
+enum Type {
+	QUICK_ARROW, CHARGED_ARROW, MAGIC_ARROW, MAGIC_BOMB, MAGIC_BOMB_FOCUSED
+}
 
 # STATS
 # Interrupt values:
@@ -13,6 +14,7 @@ class_name Ability
 #    1 - half interrupt
 #    2 - complete interrupt
 
+@export var type: Type
 @export var cooldown: float = 0.2
 @export var damage: float = 2
 @export var speed: float = 10
@@ -42,3 +44,21 @@ func configure(obj: Area3D):
 	obj.piercing = piercing
 	obj.explodes = explodes
 	obj.usable_while_dodging = usable_while_dodging
+
+
+func get_scene() -> PackedScene:
+	match type:
+		# Do not use preload() here. It causes crashes???
+		
+		Ability.Type.QUICK_ARROW:
+			return load("res://scenes/attacks/arrow.tscn")
+		Ability.Type.CHARGED_ARROW:
+			return load("res://scenes/attacks/arrow.tscn")
+		Ability.Type.MAGIC_ARROW:
+			return load("res://scenes/attacks/arrow.tscn")
+		Ability.Type.MAGIC_BOMB:
+			return load("res://scenes/attacks/magic_bomb.tscn")
+		Ability.Type.MAGIC_BOMB_FOCUSED:
+			return load("res://scenes/attacks/magic_bomb_focused.tscn")
+	
+	return null

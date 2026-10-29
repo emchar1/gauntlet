@@ -73,17 +73,14 @@ var can_enemies_target: bool = true
 var current_relic: RelicConfig
 var selected_ability: Ability
 var last_ability: Ability
-var current_ability: Ability:
-	set(value):
-		current_ability = value
+var current_ability: Ability
 
 # Networking Properties
 var peer_id: int = 1 # The peer that controls this player
-var attack_is_charged: bool = false:
-	set(value):
-		# Used for replication to remote peers for charged attack animation.
-		attack_is_charged = value
+var ability_type: Ability.Type = Ability.Type.CHARGED_ARROW
+var attack_is_charged: bool = false
 
+# Sounds
 var hurt_sounds: Array[AudioData.AudioKey] = [
 	AudioData.AudioKey.PLAYER_HURT0,
 	AudioData.AudioKey.PLAYER_HURT1

@@ -1,11 +1,10 @@
 [gd_resource type="Resource" script_class="Ability" format=3 uid="uid://bbqhly2bk7mef"]
 
-[ext_resource type="PackedScene" uid="uid://3lr1pxxn2te0" path="res://scenes/attacks/arrow.tscn" id="1_attil"]
 [ext_resource type="Script" uid="uid://bevu6tut80mwa" path="res://resources/abilities/ability.gd" id="2_attil"]
 
 [resource]
 script = ExtResource("2_attil")
-scene = ExtResource("1_attil")
+type = 1
 cooldown = 0.0
 damage = 16.0
 speed = 200.0
