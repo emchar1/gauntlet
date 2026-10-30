@@ -4,8 +4,8 @@ extends Area3D
 
 @onready var anim_player = $AnimationPlayer
 
-var cooldown: float = 20.0
-var damage: float = 2.0
+var cooldown: float
+var damage: float
 
 
 # FUNCTIONS
@@ -23,6 +23,8 @@ func _on_area_entered(area: Area3D) -> void:
 		if enemy:
 			enemy.freeze(5.0)
 
+
+# ANIMATION CALLBACK FUNCTIONS
 
 func _has_begun_activating():
 	GameState.shake_main_camera(1, 20)

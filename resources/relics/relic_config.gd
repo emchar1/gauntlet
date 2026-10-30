@@ -8,8 +8,8 @@ class_name RelicConfig
 
 # STATS
 
-@export var cooldown: float = 30.0
-@export var damage: float = 1.0
+@export var cooldown: float = 25.0
+@export var damage: float = 0.0
 
 
 # FUNCTIONS
