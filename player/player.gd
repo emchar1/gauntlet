@@ -163,7 +163,7 @@ func _physics_process(delta: float) -> void:
 	# MUST go AFTER move_and_slide()
 	if is_resurrecting and is_on_floor():
 		_apply_resurrection_knockback()
-		GameState.shake_main_camera(3.5, 30)
+		GameState.shake_main_camera(7.0, 15.0)
 		AudioManager.play(AudioData.AudioKey.BODY_LAND)
 		is_resurrecting = false
 
@@ -212,7 +212,7 @@ func _apply_gravity(delta: float):
 		final_death.emit()
 		is_dead_finally = true
 		resurrect_timer.stop()
-		GameState.shake_main_camera(3.0, 5)
+		GameState.shake_main_camera(6.0, 4.0)
 
 
 # Adds iframes to the player.

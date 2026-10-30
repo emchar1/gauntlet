@@ -6,7 +6,8 @@ enum CameraMode {
 	FOLLOW, ANCHOR
 }
 
-@onready var camera = $Camera3D
+@onready var shake_rig = $ShakeRig
+@onready var camera = $ShakeRig/Camera3D
 
 # Camera Presets
 @export var follow_offset = Vector3(0.0, 30.0, 4.0)
@@ -125,7 +126,7 @@ func _update_shake(delta: float):
 		randf_range(-shake_strength, shake_strength)
 	)
 	
-	global_position += shake_offset
+	shake_rig.position = shake_offset
 
 
 func shake(strength: float, speed: float = 5):

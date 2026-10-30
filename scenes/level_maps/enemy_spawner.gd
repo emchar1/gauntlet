@@ -80,7 +80,7 @@ func damage(amount: float):
 		if spawn_timer:
 			spawn_timer.stop()
 		
-		GameState.shake_main_camera(2.0, 5)
+		GameState.shake_main_camera(10.0, 8.0)
 		
 		if spawn_type == SpawnType.ROOM:
 			room.room_clear_count -= 10
@@ -118,7 +118,7 @@ func _on_body_entered(body: Node3D) -> void:
 			
 			if anim_player:
 				anim_player.play("spawn")
-				GameState.shake_main_camera(0.75, 2)
+				GameState.shake_main_camera(2.0, 2.0)
 			
 			if not AudioManager.is_playing(AudioData.AudioKey.SPAWNER_SPAWN):
 				AudioManager.play(AudioData.AudioKey.SPAWNER_SPAWN)

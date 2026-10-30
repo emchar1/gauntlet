@@ -68,7 +68,7 @@ func _on_area_entered(area: Area3D) -> void:
 
 func _is_exploding():
 	if bomb_type == BombType.NORMAL:
-		GameState.shake_main_camera(1.5, 5)
+		GameState.shake_main_camera(3.0, 5.0)
 		AudioManager.stop(AudioData.AudioKey.BOMB_COOK)
 		AudioManager.play(AudioData.AudioKey.BOMB_EXPLODE)
 		AudioManager.play(
@@ -84,7 +84,7 @@ func _is_exploding():
 		var sound_should_vary_pitch := true
 		var sound_pitch_scale := 1.5 
 		
-		GameState.shake_main_camera(2.5, 10)
+		GameState.shake_main_camera(3.5, 10.0)
 		AudioManager.play(
 			AudioData.AudioKey.BOMB_EXPLODE,
 			sound_volume,

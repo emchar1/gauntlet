@@ -27,7 +27,7 @@ func _on_area_entered(area: Area3D) -> void:
 # ANIMATION CALLBACK FUNCTIONS
 
 func _has_begun_activating():
-	GameState.shake_main_camera(1, 20)
+	GameState.shake_main_camera(1.0, 10.0)
 	AudioManager.play(AudioData.AudioKey.RELIC_FREEZE)
 
 
