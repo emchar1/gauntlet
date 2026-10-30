@@ -36,25 +36,43 @@ func activate(actor: Node3D, config: RelicConfig):
 	if timer > 0:
 		return
 	
-	# Create RelicConfig object
-	var scene = config.get_scene()
-	var obj = scene.instantiate()
-	get_tree().current_scene.add_child(obj)
-	
-	obj.setup(actor.global_position)
-	config.configure(obj)
-	
 	# Update timers and emit
 	timer = config.cooldown
 	relic_did_activate.emit()
+	
+	# Now spawn across peers.
+	_spawn_relic.rpc(actor.global_position, int(config.type))
+
+
+@rpc("authority", "call_local", "reliable")
+func _spawn_relic(pos: Vector3, config_type: int) -> void:
+	var config := get_relic_for(config_type)
+	if not config:
+		push_error("Relic configuration not found.")
+		return
+	
+	var scene := config.get_scene()
+	if not scene:
+		push_error("Relic scene not found.")
+		return
+	
+	var obj := scene.instantiate()
+	get_tree().current_scene.add_child(obj)
+	
+	obj.setup(pos)
+	config.configure(obj)
 
 
 # HELPER FUNCTIONS
 
 func get_current_relic() -> RelicConfig:
+	return get_relic_for(type)
+
+
+func get_relic_for(relic_type: int) -> RelicConfig:
 	var current_relic: RelicConfig
 	
-	match type:
+	match relic_type:
 		RelicConfig.Type.FREEZE:
 			current_relic = load("res://resources/relics/freeze.tres")
 		RelicConfig.Type.TORNADO:
