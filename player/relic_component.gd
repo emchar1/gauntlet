@@ -6,14 +6,7 @@ class_name RelicComponent
 signal relic_did_activate
 signal timer_did_update(_timer: float, cooldown: float)
 
-enum Type {
-	FREEZE, TORNADO, SPEED
-}
-
-@export var type: Type
-@export var freeze_relic: RelicConfig
-@export var tornado_relic: RelicConfig
-@export var speed_relic: RelicConfig
+@export var type: RelicConfig.Type
 
 var timer: float
 
@@ -29,7 +22,10 @@ func set_timer() -> void:
 func update_timer(delta: float) -> void:
 	timer -= delta
 	
-	timer_did_update.emit(timer, _get_current_relic().cooldown)
+	var current_relic = get_current_relic()
+	
+	if current_relic:
+		timer_did_update.emit(timer, current_relic.cooldown)
 
 
 func activate(actor: Node3D, config: RelicConfig):
@@ -41,7 +37,8 @@ func activate(actor: Node3D, config: RelicConfig):
 		return
 	
 	# Create RelicConfig object
-	var obj = config.scene.instantiate()
+	var scene = config.get_scene()
+	var obj = scene.instantiate()
 	get_tree().current_scene.add_child(obj)
 	
 	obj.setup(actor.global_position)
@@ -54,15 +51,15 @@ func activate(actor: Node3D, config: RelicConfig):
 
 # HELPER FUNCTIONS
 
-func _get_current_relic() -> RelicConfig:
+func get_current_relic() -> RelicConfig:
 	var current_relic: RelicConfig
 	
 	match type:
-		Type.FREEZE:
-			current_relic = freeze_relic
-		Type.TORNADO:
-			current_relic = tornado_relic
-		Type.SPEED:
-			current_relic = speed_relic
+		RelicConfig.Type.FREEZE:
+			current_relic = load("res://resources/relics/freeze.tres")
+		RelicConfig.Type.TORNADO:
+			current_relic = null
+		RelicConfig.Type.SPEED:
+			current_relic = null
 	
 	return current_relic
