@@ -49,16 +49,7 @@ var move_state: MoveState:
 		if is_node_ready():
 			animation_component.play_locomotion(value)
 
-var attack_state: AttackState:
-	set(value):
-		if attack_state == value:
-			return
-		
-		attack_state = value
-		
-		if is_node_ready():
-			animation_component.play_combat(value, attack_is_charged)
-
+var attack_state: AttackState
 var facing_dir := Vector2.RIGHT
 
 # Too many bools
@@ -73,7 +64,12 @@ var can_enemies_target: bool = true
 var current_relic: RelicConfig
 var selected_ability: Ability
 var last_ability: Ability
-var current_ability: Ability
+var current_ability: Ability:
+	set(value):
+		current_ability = value
+		
+		if is_multiplayer_authority() and value != null:
+			ability_type = value.type
 
 # Networking Properties
 var peer_id: int = 1 # The peer that controls this player
@@ -102,7 +98,7 @@ func _ready() -> void:
 	current_ability = selected_ability
 	last_ability = selected_ability
 	
-	current_relic = relic_component.freeze_relic
+	current_relic = relic_component.get_current_relic()
 	
 	hp_bar.setup_values(hp_max)
 	hp_current = hp_max
@@ -124,6 +120,11 @@ func _enter_tree() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# Sync ability timers across all peers.
+	if global_position.y > -450:
+		combat_component.update_ability_timers(delta)
+	
+	# Now filter out non-authority peers in a multiplayer game.
 	if not is_multiplayer_authority():
 		return
 	
@@ -132,7 +133,6 @@ func _physics_process(delta: float) -> void:
 	# Read input and update timers independently of player state.
 	if global_position.y > -450:
 		input_component.read_input(self)
-		combat_component.update_ability_timers(delta)
 		relic_component.update_timer(delta)
 	
 	_player_move()
@@ -315,7 +315,7 @@ func _player_attack():
 	
 	if move_state == MoveState.DODGE:
 		if input_component.special_pressed:
-			combat_component.execute_attack(self, combat_component.magic_bomb)
+			_spawn_magic_bomb.rpc()
 		elif input_component.relic_pressed:
 			relic_component.activate(self, current_relic)
 		return
@@ -352,7 +352,7 @@ func _player_attack():
 			current_ability = combat_component.magic_arrow
 			_update_attack_state(AttackState.FIRING)
 		else:
-			combat_component.execute_attack(self, combat_component.magic_bomb)
+			_spawn_magic_bomb.rpc()
 		
 	# Relic Use
 	elif input_component.relic_pressed:
@@ -424,6 +424,7 @@ func _update_attack_state(state: AttackState):
 	)
 	
 	attack_state = state
+	_play_combat_animation.rpc(state, attack_is_charged)
 
 
 # Resets attack_state, esp useful for dodge movement.
@@ -539,6 +540,36 @@ func dissolve_body(
 	tween.finished.connect(visuals_copy.queue_free)
 
 
+# NETWORKING FUNCTIONS
+
+func _get_ability_from_type(type: Ability.Type) -> Ability:
+	match type:
+		Ability.Type.QUICK_ARROW:
+			return combat_component.quick_arrow
+		Ability.Type.CHARGED_ARROW:
+			return combat_component.charged_arrow
+		Ability.Type.MAGIC_ARROW:
+			return combat_component.magic_arrow
+		Ability.Type.MAGIC_BOMB:
+			return combat_component.magic_bomb
+		Ability.Type.MAGIC_BOMB_FOCUSED:
+			return combat_component.magic_bomb_focused
+	
+	return combat_component.quick_arrow
+
+
+# Syncs magic bomb attack across all peers.
+@rpc("authority", "call_local", "reliable")
+func _spawn_magic_bomb() -> void:
+	combat_component.execute_attack(self, combat_component.magic_bomb)
+
+
+# Syncs attack animations across all peers.
+@rpc("authority", "call_local", "reliable")
+func _play_combat_animation(state: AttackState, charged: bool) -> void:
+	animation_component.play_combat(state, charged)
+
+
 # ANIMATION PLAYER: ATTACK - CALLBACK FUNCTIONS
 
 func attack_start_started():
@@ -567,10 +598,12 @@ func attack_loop_started():
 		#var target_angle := _get_target_angle(-input_component.aim_direction)
 		#rotation.y = target_angle
 	
-	combat_component.is_aiming = true
-	combat_component.execute_attack(self, current_ability)
+	var ability := _get_ability_from_type(ability_type)
 	
-	if current_ability == combat_component.charged_arrow:
+	combat_component.is_aiming = true
+	combat_component.execute_attack(self, ability)
+	
+	if ability == combat_component.charged_arrow:
 		AudioManager.play(
 			AudioData.AudioKey.ARROW3,
 			0.0,
@@ -578,9 +611,9 @@ func attack_loop_started():
 			true,
 			0.85
 		)
-	elif current_ability == combat_component.quick_arrow:
+	elif ability == combat_component.quick_arrow:
 		AudioManager.play(AudioData.AudioKey.ARROW3)
-	elif current_ability == combat_component.magic_arrow:
+	elif ability == combat_component.magic_arrow:
 		AudioManager.play(AudioData.AudioKey.MAGIC_ARROW)
 	
 	# Reset aiming after each fired charged arrow.
