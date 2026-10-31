@@ -36,6 +36,9 @@ func update_health(new_health: int, show_bar: bool = true) -> void:
 	health_bar.scale.x = ratio
 	
 	if show_bar:
+		if timer_tween:
+			timer_tween.kill()
+		
 		modulate.a = 1.0
 		show_hp_timer.start()
 
