@@ -19,7 +19,15 @@ enum AttackState {
 }
 
 @export var hp_max := 100.0
-var hp_current: float
+var hp_current: float:
+	set(value):
+		hp_current = value
+		
+		if is_instance_valid(hp_bar):
+			hp_bar.update_health(hp_current)
+		
+		hp_did_update.emit(hp_current, hp_max)
+
 
 # Components
 @onready var animation_component = %AnimationComponent
@@ -121,6 +129,10 @@ func _enter_tree() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Sync ability timers across all peers.
+	hp_bar.position_hp(self)
+	ability_bar.position_bar(self, -1.75)
+	relic_bar.position_bar(self, 1.75)
+	
 	if global_position.y > -450:
 		combat_component.update_ability_timers(delta)
 		relic_component.update_timer(delta)
@@ -154,10 +166,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			resurrect_timer_did_update.emit(resurrect_timer.time_left)
 	
-	hp_bar.position_hp(self)
-	ability_bar.position_bar(self, -1.75)
-	relic_bar.position_bar(self, 1.75)
-	
 	move_and_slide()
 	
 	# MUST go AFTER move_and_slide()
@@ -176,8 +184,6 @@ func update_hp(amount: float):
 	
 	hp_current += amount
 	hp_current = clamp(hp_current, 0, hp_max)
-	hp_bar.update_health(hp_current)
-	hp_did_update.emit(hp_current, hp_max)
 	
 	if hp_current <= 0:
 		_die()
@@ -473,8 +479,6 @@ func _resurrect():
 	dissolve_body($Visuals, Color.BLACK, 3.0)
 	
 	hp_current = hp_max
-	hp_bar.update_health(hp_current)
-	hp_did_update.emit(hp_current, hp_max)
 	_update_move_state(MoveState.IDLE)
 	
 	# Resurrect from above
