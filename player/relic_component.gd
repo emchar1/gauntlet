@@ -36,12 +36,16 @@ func activate(actor: Node3D, config: RelicConfig):
 	if timer > 0:
 		return
 	
-	# Update timers and emit
-	timer = config.cooldown
 	relic_did_activate.emit()
 	
-	# Now spawn across peers.
+	# Update and spawn across peers.
+	_update_cooldown_timer.rpc(config.cooldown)
 	_spawn_relic.rpc(actor.global_position, int(config.type))
+
+
+@rpc("authority", "call_local", "reliable")
+func _update_cooldown_timer(cooldown: float) -> void:
+	timer = cooldown
 
 
 @rpc("authority", "call_local", "reliable")

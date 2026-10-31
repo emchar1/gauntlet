@@ -123,6 +123,7 @@ func _physics_process(delta: float) -> void:
 	# Sync ability timers across all peers.
 	if global_position.y > -450:
 		combat_component.update_ability_timers(delta)
+		relic_component.update_timer(delta)
 	
 	# Now filter out non-authority peers in a multiplayer game.
 	if not is_multiplayer_authority():
@@ -133,7 +134,6 @@ func _physics_process(delta: float) -> void:
 	# Read input and update timers independently of player state.
 	if global_position.y > -450:
 		input_component.read_input(self)
-		relic_component.update_timer(delta)
 	
 	_player_move()
 	_update_facing()

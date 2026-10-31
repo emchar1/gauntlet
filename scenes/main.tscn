@@ -27,6 +27,7 @@ glow_enabled = true
 [node name="Main" type="Node3D" unique_id=1117782995]
 script = ExtResource("1_jyhfs")
 player_scene = ExtResource("1_o5qli")
+hud_scene = ExtResource("5_tbgi4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1107843745]
 environment = SubResource("Environment_u3pco")
@@ -41,13 +42,19 @@ spawn_limit = 2
 
 [node name="Players" type="Node3D" parent="." unique_id=664954556]
 
+[node name="Huds" type="Control" parent="." unique_id=613697665]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="CameraController" parent="." unique_id=1757878680 instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 0.17364813, 0.9848072, 0, -0.9848072, 0.17364813, 0, 0, 0)
 follow_offset = Vector3(0, 50, 8)
 
 [node name="LevelMap" parent="." unique_id=925975153 instance=ExtResource("2_0wfyh")]
-
-[node name="Hud" parent="." unique_id=281086198 instance=ExtResource("5_tbgi4")]
 
 [node name="HudFinal" parent="." unique_id=1533052417 instance=ExtResource("6_tefeu")]
 
